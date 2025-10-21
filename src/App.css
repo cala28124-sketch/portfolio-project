@@ -1,0 +1,12 @@
+body {
+  background-color: grey;
+}
+
+.navbar-text{
+  margin-left: 50px
+}
+
+.box-text {
+  margin-left: 50px;
+  margin-top: 50px;
+}
