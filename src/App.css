@@ -1,10 +1,24 @@
 body {
-  background-color: grey;
+  background-color: #060d19;
+  min-height: 200vh;
 }
 
-.navbar-text{
-  margin-left: 50px
+.navbar-image-space{
+  margin-left: 200px;
 }
+
+.navbar-image-initial{
+  margin-left: 600px;
+}
+
+.navbar-space-initial{
+  margin-left: 200px;
+}
+
+.navbar-space{
+  margin-left: 100px
+}
+
 
 .box-text {
   margin-left: 50px;
@@ -23,4 +37,19 @@ body {
   height: 500px;
   width: 250px;
 
+
+}
+
+.color_box{
+  background-color: #131b29;
+  color: white;
+}
+
+.navbar-logo{
+  width: 50px;
+  height: 50px;
+}
+
+.box-image{
+  width: 1150px
 }
