@@ -60,3 +60,13 @@ body {
   object-fit: cover;
   display: block;
 }
+
+.nav-text{
+  text-decoration: none;
+  color:white;
+}
+
+.navbar-image{
+  margin-left: 25px;
+
+}
