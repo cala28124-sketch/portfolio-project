@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-
-const Box = () => {
-  const [Videoshow, setStop] = useState(true);
-  const [Menushow, setMenu] = useState(false);
-  // might be some bugs here later since its a pure timeout? figure that out later
+interface Props {
+  Videoshow: boolean;
+  Menushow: boolean;
+}
+// might be some bugs here later since its a pure timeout? figure that out later
+/*
   const timer = setTimeout(() => {
     setStop(false);
     setMenu(true);
   }, 5000);
+  */
+const Box = ({ Videoshow, Menushow }: Props) => {
   return (
     <>
       <div className="d-flex justify-content-center align-items-center vh-100">

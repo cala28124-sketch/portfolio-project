@@ -1,6 +1,9 @@
 import React from "react";
+interface Props {
+  menuclick: () => void;
+}
 
-const Navbar = () => {
+const Navbar = ({ menuclick }: Props) => {
   return (
     <>
       <div
@@ -96,6 +99,7 @@ const Navbar = () => {
             aria-controls="navbarToggleExternalContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={menuclick}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
