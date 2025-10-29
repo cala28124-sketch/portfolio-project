@@ -1,9 +1,11 @@
 import React from "react";
+import { useState } from "react";
 interface Props {
   menuclick: () => void;
 }
 
 const Navbar = ({ menuclick }: Props) => {
+  const [navtoggle, setnav] = useState(false);
   return (
     <>
       <div
@@ -94,12 +96,17 @@ const Navbar = ({ menuclick }: Props) => {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
+            data-bs-toggle={navtoggle ? "collapse" : ""}
             data-bs-target="#navbarToggleExternalContent"
             aria-controls="navbarToggleExternalContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            onClick={menuclick}
+            onClick={() => {
+              menuclick();
+              setTimeout(() => {
+                setnav(true);
+              }, 6000);
+            }}
           >
             <span className="navbar-toggler-icon"></span>
           </button>

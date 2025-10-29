@@ -19,13 +19,14 @@ const Box = ({ Videoshow, Menushow }: Props) => {
         <div className="color_box rounded-3 w-50 h-75 shadow ">
           <div className="box-text">
             {Videoshow && (
-              <video className="box-image" src="/hand1.mp4" autoPlay muted />
+              <video className="box-image" src="/mevideo.mp4" autoPlay />
             )}
             {Menushow && (
-              <audio controls preload="auto" autoPlay>
-                <source src="/alicia.mp3" type="audio/mp3" />
-                Your browser does not support the audio element.
-              </audio>
+              <img
+                className="box-full"
+                src="/mevideoimage.jpg"
+                alt="its me!"
+              ></img>
             )}
           </div>
         </div>
