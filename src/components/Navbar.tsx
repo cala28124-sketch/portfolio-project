@@ -4,10 +4,17 @@ interface Props {
   menuclick: () => void;
   menuSkip: () => void;
   Videoshow: boolean;
+  navtoggle: boolean;
+  setnav: (arg0: boolean) => void;
 }
 
-const Navbar = ({ menuclick, menuSkip, Videoshow }: Props) => {
-  const [navtoggle, setnav] = useState(false);
+const Navbar = ({
+  menuclick,
+  menuSkip,
+  Videoshow,
+  navtoggle,
+  setnav,
+}: Props) => {
   return (
     <>
       <div
@@ -114,26 +121,6 @@ const Navbar = ({ menuclick, menuSkip, Videoshow }: Props) => {
           </button>
         </div>
       </nav>
-      {Videoshow && (
-        <button
-          className="navbar-toggler nav-text skip-button"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          onClick={() => {
-            menuSkip();
-            setTimeout(() => {
-              setnav(true);
-            }, 6000);
-          }}
-        >
-          Skip Video
-        </button>
-        // replace text with image later
-      )}
     </>
   );
 };
