@@ -51,7 +51,9 @@ body {
 }
 
 .box-image{
-  width: 1150px
+  width: 1050px;
+  justify-content: center;
+  margin-left: 60px;
 }
 
 .box-full{
@@ -69,4 +71,9 @@ body {
 .navbar-image{
   margin-left: 25px;
 
+}
+.skip-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

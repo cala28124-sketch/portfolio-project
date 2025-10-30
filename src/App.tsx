@@ -10,9 +10,13 @@ function App() {
     setStop(true);
     setMenu(false);
   };
+  const menuSkip = () => {
+    setStop(false);
+    setMenu(true);
+  };
   return (
     <div>
-      <Navbar menuclick={menuClick} />
+      <Navbar menuclick={menuClick} menuSkip={menuSkip} Videoshow={Videoshow} />
       <Box Videoshow={Videoshow} Menushow={Menushow} />
     </div>
   );

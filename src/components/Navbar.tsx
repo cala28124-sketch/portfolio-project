@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 interface Props {
   menuclick: () => void;
+  menuSkip: () => void;
+  Videoshow: boolean;
 }
 
-const Navbar = ({ menuclick }: Props) => {
+const Navbar = ({ menuclick, menuSkip, Videoshow }: Props) => {
   const [navtoggle, setnav] = useState(false);
   return (
     <>
@@ -112,6 +114,26 @@ const Navbar = ({ menuclick }: Props) => {
           </button>
         </div>
       </nav>
+      {Videoshow && (
+        <button
+          className="navbar-toggler nav-text skip-button"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          onClick={() => {
+            menuSkip();
+            setTimeout(() => {
+              setnav(true);
+            }, 6000);
+          }}
+        >
+          Skip Video
+        </button>
+        // replace text with image later
+      )}
     </>
   );
 };

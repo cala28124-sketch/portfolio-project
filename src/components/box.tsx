@@ -16,19 +16,17 @@ const Box = ({ Videoshow, Menushow }: Props) => {
     <>
       <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="color_box rounded-3 box-left shadow "></div>
-        <div className="color_box rounded-3 w-50 h-75 shadow ">
-          <div className="box-text">
-            {Videoshow && (
-              <video className="box-image" src="/mevideo.mp4" autoPlay />
-            )}
-            {Menushow && (
-              <img
-                className="box-full"
-                src="/mevideoimage.jpg"
-                alt="its me!"
-              ></img>
-            )}
-          </div>
+        <div className="color_box rounded-3 w-50 h-50 shadow ">
+          {Videoshow && (
+            <video className="box-full" src="/mevideo.mp4" autoPlay />
+          )}
+          {Menushow && (
+            <img
+              className="box-full"
+              src="/mevideoimage.jpg"
+              alt="its me!"
+            ></img>
+          )}
         </div>
         <div className="color_box rounded-3 box-right shadow ">
           {Videoshow && (
