@@ -41,7 +41,7 @@ const Navbar = ({
           <a
             className="nav-text active navbar-space-initial"
             aria-current="page"
-            href="#"
+            href="/about.html"
           >
             About
           </a>
