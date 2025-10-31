@@ -1,11 +1,12 @@
 import Navbar from "./components/Navbar";
-import Box from "./components/box";
+import Box from "./components/notes";
 import { useState } from "react";
 
 function App() {
   const [Videoshow, setStop] = useState(false);
   const [Menushow, setMenu] = useState(true);
   const [navtoggle, setnav] = useState(false);
+  const [interactiveText, setInteractiveText] = useState(false);
 
   const menuClick = () => {
     setStop(true);
@@ -13,7 +14,7 @@ function App() {
   };
   const menuSkip = () => {
     setStop(false);
-    setMenu(true);
+    setInteractiveText(true);
   };
 
   return (
@@ -22,10 +23,10 @@ function App() {
         menuclick={menuClick}
         menuSkip={menuSkip}
         Videoshow={Videoshow}
-        navtoggle={false}
-        setnav={function (arg0: boolean): void {
-          throw new Error("Function not implemented.");
-        }}
+        navtoggle={navtoggle}
+        setnav={setnav}
+        setInteractiveText={setInteractiveText}
+        setVideoshow={setStop}
       />
 
       <div className="d-flex justify-content-center align-items-center vh-100">
@@ -46,7 +47,7 @@ function App() {
                   menuSkip();
                   setTimeout(() => {
                     setnav(true);
-                  }, 6000);
+                  }, 6500);
                 }}
               >
                 <img className="skip-button" src="/test_logo.webp"></img>
@@ -59,6 +60,9 @@ function App() {
               src="/mevideoimage.jpg"
               alt="its me!"
             ></img>
+          )}
+          {interactiveText && (
+            <img className="box-full" src="/test_logo.webp"></img>
           )}
         </div>
         <div className="color_box rounded-3 box-right shadow ">

@@ -41,3 +41,19 @@ const Box = ({ Videoshow, Menushow }: Props) => {
 export default Box;
 
 // THIS OLD NO LONGER NEED TO USE
+
+/*
+.test{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+*/
+
+// css for the text in the middle of the image when menu is shown

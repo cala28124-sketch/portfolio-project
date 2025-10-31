@@ -6,6 +6,8 @@ interface Props {
   Videoshow: boolean;
   navtoggle: boolean;
   setnav: (arg0: boolean) => void;
+  setInteractiveText: (arg0: boolean) => void;
+  setVideoshow: (arg0: boolean) => void;
 }
 
 const Navbar = ({
@@ -14,7 +16,10 @@ const Navbar = ({
   Videoshow,
   navtoggle,
   setnav,
+  setInteractiveText,
+  setVideoshow,
 }: Props) => {
+  const [firstclick, setfirstclick] = useState(true);
   return (
     <>
       <div
@@ -43,7 +48,8 @@ const Navbar = ({
           <a
             className="nav-text active navbar-space"
             aria-current="page"
-            href="#"
+            href="/career.html"
+            target="_blank"
           >
             Career
           </a>
@@ -111,10 +117,15 @@ const Navbar = ({
             aria-expanded="false"
             aria-label="Toggle navigation"
             onClick={() => {
-              menuclick();
-              setTimeout(() => {
-                setnav(true);
-              }, 6000);
+              {
+                firstclick && menuclick();
+                setTimeout(() => {
+                  setnav(true);
+                  setInteractiveText(true);
+                  setVideoshow(false);
+                  setfirstclick(false);
+                }, 6750);
+              }
             }}
           >
             <span className="navbar-toggler-icon"></span>
