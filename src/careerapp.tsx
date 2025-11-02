@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import { useState } from "react";
+import Dropbox from "./components/dropbox.tsx";
 
 function CareerApp() {
   const [Videoshow, setStop] = useState(false);
@@ -18,15 +19,18 @@ function CareerApp() {
 
   return (
     <div>
-      <Navbar
-        menuclick={menuClick}
-        menuSkip={menuSkip}
-        Videoshow={Videoshow}
-        navtoggle={navtoggle}
-        setnav={setnav}
-        setInteractiveText={setInteractiveText}
-        setVideoshow={setStop}
-      />
+      <>
+        <Navbar
+          menuclick={menuClick}
+          menuSkip={menuSkip}
+          Videoshow={Videoshow}
+          navtoggle={navtoggle}
+          setnav={setnav}
+          setInteractiveText={setInteractiveText}
+          setVideoshow={setStop}
+        />
+        <Dropbox />
+      </>
     </div>
   );
 }
