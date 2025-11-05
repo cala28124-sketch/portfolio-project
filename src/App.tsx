@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Navbar from "./components/Navbar";
 import Box from "./components/notes";
 import { useState } from "react";

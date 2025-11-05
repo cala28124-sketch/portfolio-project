@@ -1,14 +1,21 @@
 
 .testchange{
-  width: 500px;
+  width: 250px;
   margin-top: 10%;
   margin-left: 10%;
 }
 
 .testchange2{
-  width: 500px;
-  length: 500px;
-  margin-left: 10%;
+  width: 100vw;
+  height: 100vh;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1030;
+
+  background-color: #131b29;
 }
 
 
