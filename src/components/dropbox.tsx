@@ -40,7 +40,29 @@ const Dropbox = ({
         id="dropboxToggleExternalContent"
         data-bs-theme="dark"
       >
-        <div className="bg-dark p-4">
+                  <nav className="navbar navbar-dark color_box testchange3">
+        <div className="container-fluid">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#dropboxToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            onClick={() => {if(isClosed){
+              setIsOpen(true);
+              setIsClosed(false);
+            } else {
+              setIsOpen(false);
+              setIsClosed(true);
+            }}}
+          >
+            <div> close image</div>
+          </button>
+        </div>
+      </nav>
+        <div className="color_box p-4">
           <span className="text-body-secondary">
             <div className="fade-in-image">
             {Text}
@@ -49,6 +71,7 @@ const Dropbox = ({
           {isOpen && (
             <audio src="/alicia.mp3" preload="auto" autoPlay hidden />
           )}
+
         </div>
       </div>
     </>
