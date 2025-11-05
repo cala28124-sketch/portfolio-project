@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { useState } from "react";
 interface Props {
@@ -118,6 +119,7 @@ const Navbar = ({
             aria-label="Toggle navigation"
             onClick={() => {
               {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                 firstclick && menuclick();
                 setTimeout(() => {
                   setnav(true);

@@ -28,6 +28,7 @@ const Dropbox = () => {
       >
         <div className="bg-dark p-4">
           <span className="text-body-secondary">
+            <div className="fade-in-image">
             Toggleable via the navbar brand.Toggleable via the navbar
             brand.Toggleable via the navbar brand.Toggleable via the navbar
             brand.Toggleable via the navbar brand.Toggleable via the navbar
@@ -44,6 +45,7 @@ const Dropbox = () => {
             brand.Toggleable via the navbar brand.Toggleable via the navbar
             brand.Toggleable via the navbar brand.Toggleable via the navbar
             brand.Toggleable via the navbar brand.
+            </div>
           </span>
           {isOpen && (
             <audio src="/alicia.mp3" preload="auto" autoPlay controls />
