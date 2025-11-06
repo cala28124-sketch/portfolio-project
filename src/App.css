@@ -1,27 +1,61 @@
 
 .testchange{
-  width: 250px;
-  margin-top: 10%;
-  margin-left: 10%;
+  justify-content: center;
+  top: 50%;
 }
 
-.testchange2{
-  width: 100vw;
-  height: 100vh;
+
+.openbox{
+  width: 50wh;
+  height: 50vh;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
   
+  z-index: 1030;
+}
+
+.overlay{
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1020;
+}
 
+.overlay:hover{
+  cursor: default;
+}
+
+.closebutton{
+  cursor: pointer;
   z-index: 1030;
-  transition: background-color 2s ease-in-out;
-  background-color: #131b29;
+  margin-left: 95%;
 }
 
-.testchange3{
-  margin-left: 90%;
+
+
+.boxbutton{
+  width: 250px;
+  height: 250px;
+  display: block;
+  border: none;
+  margin-left: 10%;
+  margin-top: 10%;
+  transition: transform 0.3s ease;
+
 }
 
+.boxbutton:hover{
+   cursor: pointer;
+  background-color: #373737;
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
 
 
 

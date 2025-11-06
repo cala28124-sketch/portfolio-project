@@ -1,79 +1,66 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-unused-vars */
+
 import React from "react";
 import { useState } from "react";
 interface Props {
   Text: string;
 }
 
-const Dropbox = ({
-  Text}: Props
-) => {
+const Dropbox = ({ Text }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
   return (
     <>
-      <nav className="navbar navbar-dark bg-dark testchange">
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#dropboxToggleExternalContent"
-            aria-controls="navbarToggleExternalContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            onClick={() => {if(isClosed){
-              setIsOpen(true);
-              setIsClosed(false);
-            } else {
-              setIsOpen(false);
-              setIsClosed(true);
-            }}}
-          >
-            <div> a test dropbox</div>
-          </button>
-        </div>
-      </nav>
-      <div
-        className="collapse testchange2"
-        id="dropboxToggleExternalContent"
-        data-bs-theme="dark"
+      <button
+        className="boxbutton color_box"
+        onClick={() => {
+          if (isClosed) {
+            setIsOpen(true);
+            setIsClosed(false);
+          } else {
+            setIsOpen(false);
+            setIsClosed(true);
+          }
+        }}
       >
-                  <nav className="navbar navbar-dark color_box testchange3">
-        <div className="container-fluid">
+        test
+      </button>
+      {isOpen && (
+        <>
           <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#dropboxToggleExternalContent"
-            aria-controls="navbarToggleExternalContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            onClick={() => {if(isClosed){
-              setIsOpen(true);
-              setIsClosed(false);
-            } else {
-              setIsOpen(false);
-              setIsClosed(true);
-            }}}
-          >
-            <div> close image</div>
-          </button>
-        </div>
-      </nav>
-        <div className="color_box p-4">
-          <span className="text-body-secondary">
-            <div className="fade-in-image">
-            {Text}
-            </div>
-          </span>
-          {isOpen && (
-            <audio src="/alicia.mp3" preload="auto" autoPlay hidden />
-          )}
+            className="overlay"
+            onClick={() => {
+              if (isClosed) {
+                setIsOpen(true);
+                setIsClosed(false);
+              } else {
+                setIsOpen(false);
+                setIsClosed(true);
+              }
+            }}
+          ></button>
 
-        </div>
-      </div>
+          <div className=" openbox color_box shadow">
+            {" "}
+            <button
+              className="closebutton"
+              onClick={() => {
+                if (isClosed) {
+                  setIsOpen(true);
+                  setIsClosed(false);
+                } else {
+                  setIsOpen(false);
+                  setIsClosed(true);
+                }
+              }}
+            >
+              button
+            </button>
+            <div className="testchange">{Text}</div>
+          </div>
+        </>
+      )}
     </>
   );
 };
