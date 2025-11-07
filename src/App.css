@@ -1,12 +1,32 @@
 
-.testchange{
-  justify-content: center;
-  top: 50%;
+.viewport-text{
+  position: relative;
+  color: white;
+  font-style: bold;
+  text-align: center;
+}
+
+.viewport-image{
+  position: relative;
+  left: 150%;
+  bottom: 500px;
+  width: 500px;
+  height: 500px;
+}
+
+.testbox{
+  position: relative;
+  width: 20%;
+  height: 20%;
+  color: white;
+  font-style: bold;
+  top: 50vh;
+  left: 25%;
 }
 
 
 .openbox{
-  width: 50wh;
+  width: 50vh;
   height: 50vh;
   position: absolute;
   top: 100%;
@@ -61,7 +81,7 @@
 
 body {
   background-color: #060d19;
-  min-height: 200vh;
+  height: 200vh;
 }
 
 .navbar-image-space{
