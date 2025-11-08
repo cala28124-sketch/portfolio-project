@@ -2,6 +2,7 @@
 import Navbar from "./components/Navbar";
 import Box from "./components/notes";
 import { useState } from "react";
+import Paragraph from "./components/paragraph";
 
 function App() {
   const [Videoshow, setStop] = useState(false);
@@ -74,7 +75,8 @@ function App() {
       <div className="testbox">
         <div className="viewport-text">
           <h1>Welcome to My Portfolio</h1>
-          Overall, the activity I performed at this volunteering opportunity was
+          <Paragraph
+            Text={`Overall, the activity I performed at this volunteering opportunity was
           split into two parts- the set up, and the duration of the event. At
           the beginning we had set up for the charity auction, setting tables,
           putting out what was to be sold, etc. Afterwards, we helped out with
@@ -90,7 +92,8 @@ function App() {
           do good in the world. At the end of the day, I feel it important to
           keep in mind the good service you can bring to the community when
           helping others, and how much it can mean to people when volunteers
-          come out to help them with activities like this.
+          come out to help them with activities like this.`}
+          />
         </div>
         <img
           className="viewport-image"
