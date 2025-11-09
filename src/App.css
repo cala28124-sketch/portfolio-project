@@ -4,14 +4,27 @@
   color: white;
   font-style: bold;
   text-align: center;
+  font-size: 100%;
 }
+
+
 
 .viewport-image{
   position: relative;
-  left: 150%;
-  bottom: 500px;
   width: 500px;
-  height: 500px;
+  length: 500px;
+  left: 100%;
+  bottom: 25%;
+}
+
+@media screen and (max-width: 800px) {
+  .viewport-image{
+    position: relative;
+  width: 500px;
+  float: right;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  }
 }
 
 .testbox{
