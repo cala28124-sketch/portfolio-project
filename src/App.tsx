@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Box from "./components/notes";
 import { useState } from "react";
 import Paragraph from "./components/Paragraph";
+import Dropbox from "./components/dropbox.tsx";
 
 function App() {
   const [Videoshow, setStop] = useState(false);
@@ -104,7 +105,13 @@ function App() {
           alt="thats me fr"
         />
       </div>
-      <div className="floor-background"></div>
+      <div className="floor-background">
+        <Dropbox
+          Text={
+            "Welcome to the Career Page! Here, you can explore various career opportunities and resources to help you advance in your professional journey. Whether you're looking for job listings, career advice, or networking tips, we've got you covered. Start your journey towards a fulfilling career today!"
+          }
+        />
+      </div>
     </>
   );
 }
