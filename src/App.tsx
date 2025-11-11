@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <div className="sky-background" style={{ height: "100vh" }}>
+      <div className="sky-background">
         <Navbar
           menuclick={menuClick}
           menuSkip={menuSkip}
@@ -74,8 +74,7 @@ function App() {
             )}
           </div>
         </div>
-      </div>
-      <div className="floor-background">
+
         <div className="testbox">
           <div className="viewport-text">
             <h1>Welcome to My Portfolio</h1>
@@ -98,13 +97,14 @@ function App() {
             people when volunteers come out to help them with activities like
             this
           </div>
-          <img
-            className="viewport-image"
-            src="headshotme.jpg"
-            alt="thats me fr"
-          />
         </div>
+        <img
+          className="viewport-image"
+          src="headshotme.jpg"
+          alt="thats me fr"
+        />
       </div>
+      <div className="floor-background"></div>
     </>
   );
 }

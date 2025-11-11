@@ -1,23 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+
+
+
+
 
 .viewport-text{
   position: relative;
   color: white;
   font-style: bold;
-  text-align: center;
-  font-size: 100%;
+  text-align: left;
+  font-size: clamp(26px, 1vw, 52px);
+  
 }
 
 
 
 .viewport-image{
   position: relative;
-  width: 500px;
-  length: 500px;
-  left: 100%;
-  bottom: 25%;
+  width: 30vw;
+  height: 40vh;
+  bottom: 20vh;
+  float: right;
+  right: 10vw;
+  
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1px) {
   .viewport-image{
     position: relative;
   width: 500px;
@@ -34,11 +42,10 @@
   color: white;
   font-style: bold;
   top: 25vh;
-  left: 10vw;
+  left: 5vw;
   flex-direction: column;
-  background-color: #131b29;
-  word-wrap:break-word;
-  word-break: break-word;
+  background-color: transparent;
+ 
 }
 
 
@@ -118,15 +125,20 @@
   background: linear-gradient(-45deg,#75AAF0, #7BC1FA, #8FDAFA, #A3E3FA, #82CEFA);
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
+  height: 250vh
     
 }
 
 .floor-background{
   position: relative;
-  background: linear-gradient(-45deg, green, darkgreen, green, darkgreen);
+  background: linear-gradient(-45deg, #00A619
+, #008013
+, #09B051
+, #59A608
+);
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
-  height: 400vh;
+  height: 250vh;
     
 }
 
