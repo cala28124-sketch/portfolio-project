@@ -71,6 +71,10 @@
   z-index: 1020;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .overlay:hover{
   cursor: default;
 }

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 interface Props {
   Text: string;
@@ -10,6 +10,19 @@ interface Props {
 const Dropbox = ({ Text }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isOpen]);
+
   return (
     <>
       <button
@@ -40,7 +53,6 @@ const Dropbox = ({ Text }: Props) => {
               }
             }}
           ></button>
-
           <div className=" openbox color_box shadow">
             {" "}
             <button
