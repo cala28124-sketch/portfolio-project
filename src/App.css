@@ -124,8 +124,24 @@ body.no-scroll {
   }
 }
 .sky-background{
+
   position: relative;
-  background: linear-gradient(-45deg,#75AAF0, #7BC1FA, #8FDAFA, #A3E3FA, #82CEFA);
+  background: linear-gradient(
+        -45deg,
+        /* Start of Day */
+        #75AAF0,    
+        #A3E3FA,    
+        /* Transition to Sunset */
+        #FF8A8A, 
+        #B84E7B, 
+        /* Transition to Night */
+        #5F3A8A, 
+        #1C1F4A, 
+        /* Deep Night */
+        #0E122B,
+        /* Loop back to Day color to ensure smooth rotation */
+        #75AAF0 
+    );
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
   height: 200vh
@@ -138,9 +154,10 @@ body.no-scroll {
 , #008013
 , #09B051
 , #59A608
+
 );
   background-size: 400% 400%;
-  animation: gradient 5s ease infinite;
+  animation: gradient 60s ease infinite;
   height: 300vh;
     
 }
@@ -152,13 +169,21 @@ body {
 
 @keyframes gradient {
     0% {
-        background-position: 0% 100%;
+        background-position: 0% 0%;
     }
-    50% {
+    25% {
         background-position: 100% 0%;
     }
-    100% {
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
         background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
     }
 }
 
