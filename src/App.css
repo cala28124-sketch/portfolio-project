@@ -128,22 +128,40 @@ body.no-scroll {
   position: relative;
   background: linear-gradient(
         -45deg,
-        /* Start of Day */
-        #75AAF0,    
-        #A3E3FA,    
-        /* Transition to Sunset */
-        #FF8A8A, 
-        #B84E7B, 
-        /* Transition to Night */
-        #5F3A8A, 
-        #1C1F4A, 
-        /* Deep Night */
+        
+        #75AAF0,
+        #A3E3FA,
+        #A3E3FA,
+        #A3E3FA,
+        #75AAF0,
+        #75AAF0,
+        #75AAF0,
+        #B84E7B,
+        #B84E7B,
+        #FF8A8A,
+        #5F3A8A,
+        #1C1F4A,
         #0E122B,
-        /* Loop back to Day color to ensure smooth rotation */
-        #75AAF0 
+        #0E122B,
+        #0E122B,
+        #1C1F4A, 
+         #5F3A8A,
+         #FF8A8A,
+         #B84E7B,
+         #B84E7B,
+         #75AAF0,
+         #75AAF0,
+         #75AAF0,
+         #A3E3FA,
+         #A3E3FA,
+        #A3E3FA,
+        #75AAF0
+
+     
     );
   background-size: 400% 400%;
-  animation: gradient 5s ease infinite;
+  animation: gradient 120s ease infinite;
+  
   height: 200vh
     
 }
@@ -170,21 +188,17 @@ body {
 @keyframes gradient {
     0% {
         background-position: 0% 0%;
-    }
-    25% {
-        background-position: 100% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
 
-    75% {
-        background-position: 0% 100%;
-    }
+          }
+    
 
     100% {
-        background-position: 0% 0%;
+        background-position: 100% 100%;
+        
     }
+
+    
+    
 }
 
 
@@ -272,3 +286,5 @@ animation: fadeIn 5s;
 0% { opacity: 0; }
 100% { opacity: 1; }
 }
+
+
