@@ -96,7 +96,7 @@ const Navbar = ({
             />
           </a>
           <a
-            className="navbar-brand navbar-image"
+            className="navbar-brand nav-image2"
             href="https://www.coolmathgames.com/"
           >
             <img
