@@ -2,13 +2,17 @@
 import Navbar from "./components/Navbar";
 import Box from "./components/notes";
 import { useState } from "react";
-import Paragraph from "./components/Paragraph";
+import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
 
 function careerApp() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [Videoshow, setStop] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [Menushow, setMenu] = useState(true);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [navtoggle, setnav] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [interactiveText, setInteractiveText] = useState(false);
 
   const menuClick = () => {

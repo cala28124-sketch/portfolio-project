@@ -11,11 +11,24 @@ interface Props {
   setVideoshow: (arg0: boolean) => void;
 }
 
-// eslint-disable-next-line no-empty-pattern
-const Navbar = ({}: Props) => {
+const oldNavbar = ({
+  menuclick,
+  menuSkip,
+  Videoshow,
+  navtoggle,
+  setnav,
+  setInteractiveText,
+  setVideoshow,
+}: Props) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [firstclick, setfirstclick] = useState(true);
   return (
     <>
+      <div
+        className="collapse"
+        id="navbarToggleExternalContent"
+        data-bs-theme="dark"
+      >
         <div className="color_box p-4">
           <a
             className="navbar-brand navbar-image-initial"
@@ -94,9 +107,36 @@ const Navbar = ({}: Props) => {
             />
           </a>
         </div>
-      
+      </div>
+      <nav className="navbar navbar-dark body">
+        <div className="container-fluid">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle={navtoggle ? "collapse" : ""}
+            data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            onClick={() => {
+              {
+                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+                firstclick && menuclick();
+                setTimeout(() => {
+                  setnav(true);
+                  setInteractiveText(true);
+                  setVideoshow(false);
+                  setfirstclick(false);
+                }, 6750);
+              }
+            }}
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
     </>
   );
 };
 
-export default Navbar;
+export default oldNavbar;
