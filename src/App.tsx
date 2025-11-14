@@ -22,6 +22,9 @@ function App() {
 
   return (
     <>
+      <div className="cloud" />
+      <div className="dot"></div>
+      <div className="sun"></div>
       <Navbar
         menuclick={menuClick}
         menuSkip={menuSkip}
@@ -31,9 +34,6 @@ function App() {
         setInteractiveText={setInteractiveText}
         setVideoshow={setStop}
       />
-      <div className="cloud" />
-      <div className="dot"></div>
-      <div className="sun"></div>
     </>
   );
 }

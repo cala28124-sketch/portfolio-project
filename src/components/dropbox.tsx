@@ -4,10 +4,12 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 interface Props {
-  Text: string;
+  Textinside: string;
+  Textoutside: string;
+  className?: string;
 }
 
-const Dropbox = ({ Text }: Props) => {
+const Dropbox = ({ Textinside, Textoutside, className }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
 
@@ -26,7 +28,7 @@ const Dropbox = ({ Text }: Props) => {
   return (
     <>
       <button
-        className="boxbutton color_box"
+        className={"textbutton color_box" + className}
         onClick={() => {
           if (isClosed) {
             setIsOpen(true);
@@ -37,7 +39,7 @@ const Dropbox = ({ Text }: Props) => {
           }
         }}
       >
-        test
+        {Textoutside}
       </button>
       {isOpen && (
         <>
@@ -69,7 +71,7 @@ const Dropbox = ({ Text }: Props) => {
             >
               button
             </button>
-            <div className="testchange">{Text}</div>
+            <div className="testchange">{Textinside}</div>
           </div>
         </>
       )}

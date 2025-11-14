@@ -19,7 +19,7 @@ const Navbar = ({}: Props) => {
     <>
       <div className="color_box p-4">
         <a
-          className="navbar-brand navbar-image-initial"
+          className="navbar-image-initial"
           href="https://www.coolmathgames.com/"
         >
           <img
@@ -28,13 +28,11 @@ const Navbar = ({}: Props) => {
             alt="shhhh silly"
           />
         </a>
-        <a
-          className="nav-text active navbar-space-initial"
-          aria-current="page"
-          href="/about.html"
-        >
-          About
-        </a>
+        <Dropbox
+          className=" nav-text active navbar-space-initial"
+          Textinside={"about me test"}
+          Textoutside="about"
+        ></Dropbox>
         <a
           className="nav-text active navbar-space"
           aria-current="page"
