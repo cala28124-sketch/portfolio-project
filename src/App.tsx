@@ -33,9 +33,9 @@ function App() {
       />
       <div className="cloud" />
       <div className="dot"></div>
+      <div className="sun"></div>
     </>
   );
 }
 
 export default App;
-

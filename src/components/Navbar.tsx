@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { useState } from "react";
+import Dropbox from "./dropbox";
 interface Props {
   menuclick: () => void;
   menuSkip: () => void;
@@ -16,85 +17,84 @@ const Navbar = ({}: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   return (
     <>
-        <div className="color_box p-4">
-          <a
-            className="navbar-brand navbar-image-initial"
-            href="https://www.coolmathgames.com/"
-          >
-            <img
-              className="navbar-logo"
-              src="/test_logo.webp"
-              alt="shhhh silly"
-            />
-          </a>
-          <a
-            className="nav-text active navbar-space-initial"
-            aria-current="page"
-            href="/about.html"
-          >
-            About
-          </a>
-          <a
-            className="nav-text active navbar-space"
-            aria-current="page"
-            href="/career.html"
-            target="_blank"
-          >
-            Career
-          </a>
-          <a
-            className="nav-text active navbar-space"
-            aria-current="page"
-            href="#"
-          >
-            Projects
-          </a>
-          <a
-            className="nav-text active navbar-space"
-            aria-current="page"
-            href="#"
-          >
-            Skill
-          </a>
-          <a
-            className="nav-text active navbar-space"
-            aria-current="page"
-            href="#"
-          >
-            featured
-          </a>
-          <a
-            className="navbar-brand navbar-image-space"
-            href="https://www.coolmathgames.com/"
-          >
-            <img
-              className="navbar-logo"
-              src="/test_logo.webp"
-              alt="shhhh silly"
-            />
-          </a>
-          <a
-            className="navbar-brand navbar-image"
-            href="https://www.coolmathgames.com/"
-          >
-            <img
-              className="navbar-logo"
-              src="/test_logo.webp"
-              alt="shhhh silly"
-            />
-          </a>
-          <a
-            className="navbar-brand nav-image2"
-            href="https://www.coolmathgames.com/"
-          >
-            <img
-              className="navbar-logo"
-              src="/test_logo.webp"
-              alt="shhhh silly"
-            />
-          </a>
-        </div>
-      
+      <div className="color_box p-4">
+        <a
+          className="navbar-brand navbar-image-initial"
+          href="https://www.coolmathgames.com/"
+        >
+          <img
+            className="navbar-logo"
+            src="/test_logo.webp"
+            alt="shhhh silly"
+          />
+        </a>
+        <a
+          className="nav-text active navbar-space-initial"
+          aria-current="page"
+          href="/about.html"
+        >
+          About
+        </a>
+        <a
+          className="nav-text active navbar-space"
+          aria-current="page"
+          href="/career.html"
+          target="_blank"
+        >
+          Career
+        </a>
+        <a
+          className="nav-text active navbar-space"
+          aria-current="page"
+          href="#"
+        >
+          Projects
+        </a>
+        <a
+          className="nav-text active navbar-space"
+          aria-current="page"
+          href="#"
+        >
+          Skill
+        </a>
+        <a
+          className="nav-text active navbar-space"
+          aria-current="page"
+          href="#"
+        >
+          featured
+        </a>
+        <a
+          className="navbar-brand navbar-image-space"
+          href="https://www.coolmathgames.com/"
+        >
+          <img
+            className="navbar-logo"
+            src="/test_logo.webp"
+            alt="shhhh silly"
+          />
+        </a>
+        <a
+          className="navbar-brand navbar-image"
+          href="https://www.coolmathgames.com/"
+        >
+          <img
+            className="navbar-logo"
+            src="/test_logo.webp"
+            alt="shhhh silly"
+          />
+        </a>
+        <a
+          className="navbar-brand nav-image2"
+          href="https://www.coolmathgames.com/"
+        >
+          <img
+            className="navbar-logo"
+            src="/test_logo.webp"
+            alt="shhhh silly"
+          />
+        </a>
+      </div>
     </>
   );
 };

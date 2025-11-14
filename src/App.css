@@ -123,82 +123,21 @@ body.no-scroll {
     transform: translateX(100vw)
   }
 }
-.sky-background{
 
-  position: relative;
-  background: linear-gradient(
-        -45deg,
-        
-        #75AAF0,
-        #A3E3FA,
-        #A3E3FA,
-        #A3E3FA,
-        #A3E3FA,
-        #75AAF0,
-        #75AAF0,
-        #75AAF0,
-        /* sunset colors
-        #B84E7B,
-        #B84E7B,
-        #FF8A8A,
-        */
-        #5F3A8A,
-        #1C1F4A,
-        #0E122B,
-        #0E122B,
-        #0E122B,
-        #1C1F4A, 
-         #5F3A8A,
-         /* sunset color
-         #FF8A8A,
-         #B84E7B,
-         #B84E7B,
-         */
-         #75AAF0,
-         #75AAF0,
-         #75AAF0,
-         #A3E3FA,
-         #A3E3FA,
-         #A3E3FA,
-        #A3E3FA,
-        #75AAF0
-        
-
-     
-    );
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
-  
-  height: 200vh
-    
-}
-
-.floor-background{
-  position: relative;
-  background: linear-gradient(-45deg, #00A619
-, #008013
-, #09B051
-, #59A608
-
-);
-  background-size: 400% 400%;
-  animation: gradient 60s ease infinite;
-  height: 300vh;
-    
-}
 
 body {
   overflow: hidden;
+  
   background: linear-gradient(
-        -45deg,
+        90deg,
         
-        #75AAF0,
+        
         #A3E3FA,
         #A3E3FA,
         #A3E3FA,
         #A3E3FA,
-        #75AAF0,
-        #75AAF0,
+        #A3E3FA,
+        #A3E3FA,
         #75AAF0,
         /* sunset colors
         #B84E7B,
@@ -207,9 +146,14 @@ body {
         */
         #5F3A8A,
         #1C1F4A,
+        #1C1F4A,
         #0E122B,
         #0E122B,
         #0E122B,
+        #0E122B,
+        #0E122B,
+        #0E122B,
+        #1C1F4A,
         #1C1F4A, 
          #5F3A8A,
          /* sunset color
@@ -217,20 +161,21 @@ body {
          #B84E7B,
          #B84E7B,
          */
-         #75AAF0,
-         #75AAF0,
+        
          #75AAF0,
          #A3E3FA,
          #A3E3FA,
          #A3E3FA,
-        #A3E3FA,
-        #75AAF0
+         #A3E3FA,
+         #A3E3FA,
+        #A3E3FA
+        
         
 
      
     );
-  background-size: 400% 400%;
-  animation: gradient 240s ease-in-out infinite;
+  background-size: 500% 500%;
+  animation: gradient 30s ease-in-out infinite;
   
   height: 200vh
 }
@@ -240,6 +185,10 @@ body {
         background-position: 0% 0%;
 
           }
+    50%{
+      background-position: 50% 50%;
+    }
+
    
 
     100% {
@@ -254,10 +203,10 @@ body {
   position: absolute;
   height: 200px;
   width: 200px;
-  background-color: yellow;
+  background-color: grey;
   border-radius: 50%;
   display: inline-block;
-  animation: movedot 240s linear infinite;
+  animation: movedot 30s linear infinite;
 
 }
 
@@ -265,17 +214,82 @@ body {
 
   0% {
     
-    transform: translate(0vw, 100vh); 
+    transform: translate(100vw, 100vh); 
   }
-  50% {
+  25% {
     
     transform: translate(45vw, 0vh); 
   }
 
+  30%{
+    transform: translate(40vw, 0vh)
+  }
+
+  50% {
+    transform: translate(0vw, 100vh); 
+  }
+
+    55% {
+    
+    transform: translate(-100vw, -100vh); 
+  }
+  75% {
+    
+    transform: translate(-45vw, 0vh); 
+  }
+
   100% {
-    transform: translate(100vw, 100vh); 
+    transform: translate(0vw, -100vh); 
   }
 }
+
+
+.sun {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  animation: movesun 30s linear infinite;
+
+}
+
+@keyframes movesun {
+
+  0% {
+    
+    transform: translate(-100vw, -100vh); 
+  }
+  25% {
+    
+    transform: translate(-45vw, 0vh); 
+  }
+
+
+  50% {
+    transform: translate(0vw, 100vh); 
+  }
+
+    55% {
+    
+    transform: translate(100vw, 100vh); 
+  }
+  75% {
+    
+    transform: translate(45vw, 0vh); 
+
+  }
+
+   80%{
+    transform: translate(40vw, 0vh)
+  }
+
+  100% {
+    transform: translate(0vw, 100vh); 
+  }
+}
+
 .navbar-image-space{
   position: relative;
   left: 30%;
@@ -373,3 +387,16 @@ animation: fadeIn 5s;
 }
 
 
+.floor-background{
+  position: relative;
+  background: linear-gradient(-45deg, #00A619
+, #008013
+, #09B051
+, #59A608
+
+);
+  background-size: 400% 400%;
+  animation: gradient 120s ease infinite;
+  height: 300vh;
+    
+}
