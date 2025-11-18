@@ -186,7 +186,7 @@ body {
 
   animation: gradient 120s ease-in-out infinite;
   
-  height: 200vh
+  
 }
 
 @keyframes gradient {

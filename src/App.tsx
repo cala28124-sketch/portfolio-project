@@ -4,6 +4,7 @@ import Box from "./components/notes";
 import { useState } from "react";
 import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
+import MatterBox from "./components/matterbox.tsx";
 
 function App() {
   const [Videoshow, setStop] = useState(false);
@@ -34,6 +35,7 @@ function App() {
         setInteractiveText={setInteractiveText}
         setVideoshow={setStop}
       />
+      <MatterBox></MatterBox>
     </>
   );
 }
