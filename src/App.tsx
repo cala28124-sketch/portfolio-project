@@ -4,7 +4,7 @@ import Box from "./components/notes";
 import { useState } from "react";
 import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
-import MatterBox from "./components/matterbox.tsx";
+import MatterBox from "./components/MatterBox.tsx";
 
 function App() {
   const [Videoshow, setStop] = useState(false);

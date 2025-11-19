@@ -1,9 +1,16 @@
-import React from "react";
+import React, { type Ref } from "react";
 
-const card = () => {
+interface Props {
+  reference?: Ref<HTMLDivElement> | undefined;
+}
+
+const Card = ({ reference }: Props) => {
   return (
     <>
-      <div className="max-w-4xl mx-auto rounded-lg shadow-xl overflow-hidden bg-black text-white flex">
+      <div
+        ref={reference}
+        className="max-w-md rounded-lg shadow-xl overflow-hidden bg-black text-white flex absolute pointer-events-none	-top-0 -left-0"
+      >
         <div className="w-1/3 pb-10 flex items-center justify-center bg-red-950">
           <img
             className="w-full"
@@ -32,4 +39,4 @@ const card = () => {
   );
 };
 
-export default card;
+export default Card;
