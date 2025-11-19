@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import Matter from "matter-js";
 import Card from "./card";
+import TestComp from "./TestComp";
 
 const MatterBox: React.FC = () => {
   const [spawn, setspawn] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
+  const externalBoxRef2 = useRef<HTMLDivElement>(null);
+
   const engineRef = useRef<Matter.Engine | null>(null);
   const externalBodyRef = useRef<Matter.Body | null>(null);
+  const externalBodyRef2 = useRef<Matter.Body | null>(null);
 
   useEffect(() => {
     if (!boxRef.current) return;
@@ -165,6 +169,7 @@ const MatterBox: React.FC = () => {
         className="w-full h-screen absolute"
       >
         {spawn && <Card reference={externalBoxRef}></Card>}
+        <TestComp spawn={spawn} engineRef={engineRef}></TestComp>
       </div>
     </>
   );
