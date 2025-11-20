@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Matter from "matter-js";
 import Card from "./card";
 import TestComp from "./TestComp";
+import ProjectBox from "./projectbox";
 
 const MatterBox: React.FC = () => {
   const [spawn, setspawn] = useState(false);
@@ -168,7 +169,7 @@ const MatterBox: React.FC = () => {
         }}
         className="w-full h-screen absolute"
       >
-        {spawn && <Card reference={externalBoxRef}></Card>}
+        {spawn && <ProjectBox reference={externalBoxRef}></ProjectBox>}
         <TestComp spawn={spawn} engineRef={engineRef}></TestComp>
       </div>
     </>

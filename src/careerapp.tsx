@@ -4,6 +4,7 @@ import Box from "./components/notes";
 import { useState } from "react";
 import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
+import ProjectBox from "./components/projectbox.tsx";
 
 function careerApp() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
