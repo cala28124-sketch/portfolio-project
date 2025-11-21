@@ -2,9 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import Matter from "matter-js";
 import Card from "./card";
 import TestComp from "./TestComp";
-import ProjectBox from "./projectbox";
+import ProjectBox from "./ProjectBox";
+import PopUp from "./PopUp";
 
 const MatterBox: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isClosed, setIsClosed] = useState(true);
+
   const [spawn, setspawn] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
@@ -154,6 +158,14 @@ const MatterBox: React.FC = () => {
 
   return (
     <>
+      {isOpen && (
+        <PopUp
+          isClosed={isClosed}
+          setIsClosed={setIsClosed}
+          setIsOpen={setIsOpen}
+        ></PopUp>
+      )}
+
       <button
         onClick={() => {
           setspawn(true);
@@ -169,8 +181,21 @@ const MatterBox: React.FC = () => {
         }}
         className="w-full h-screen absolute"
       >
-        {spawn && <ProjectBox reference={externalBoxRef}></ProjectBox>}
-        <TestComp spawn={spawn} engineRef={engineRef}></TestComp>
+        {spawn && (
+          <ProjectBox
+            reference={externalBoxRef}
+            isClosed={isClosed}
+            setIsClosed={setIsClosed}
+            setIsOpen={setIsOpen}
+          ></ProjectBox>
+        )}
+        <TestComp
+          spawn={spawn}
+          engineRef={engineRef}
+          isClosed={isClosed}
+          setIsClosed={setIsClosed}
+          setIsOpen={setIsOpen}
+        ></TestComp>
       </div>
     </>
   );
