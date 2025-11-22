@@ -74,19 +74,26 @@ const MatterBox: React.FC = () => {
       render: { fillStyle: "#E91E63" },
     });
 
-    const ground = Bodies.rectangle(Width / 2, Height, Width, 500, {
+    const sky = Bodies.rectangle(Width / 2, 0, Width, 50, {
       isStatic: true,
-      render: { fillStyle: "#555" },
+      render: { fillStyle: "transparent" },
+    });
+
+    const ground = Bodies.rectangle(Width / 2, Height, Width, 300, {
+      isStatic: true,
+      render: { fillStyle: "green" },
     });
     const wallleft = Bodies.rectangle(0, Height / 2, 50, Height, {
       isStatic: true,
+      render: { fillStyle: "transparent" },
     });
 
     const wallright = Bodies.rectangle(Width, Height / 2, 50, Height, {
       isStatic: true,
+      render: { fillStyle: "transparent" },
     });
 
-    Composite.add(engine.world, [boxA, boxB, ground, wallleft, wallright]);
+    Composite.add(engine.world, [boxA, boxB, ground, wallleft, wallright, sky]);
 
     Render.run(render);
 
@@ -169,6 +176,9 @@ const MatterBox: React.FC = () => {
       <button
         onClick={() => {
           setspawn(true);
+          if (spawn) {
+            setspawn(false);
+          }
         }}
         className="absolute top-4 left-4 bg-red-500"
       >

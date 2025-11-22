@@ -24,65 +24,11 @@ const TestComp = ({
   setIsOpen,
 }: Props) => {
   const [readyToMeasure, setReadyToMeasure] = useState(0);
+  const [Test, setTest] = useState(false);
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    /*
-    if (!spawn || !engineRef.current || !externalBoxRef.current) {
-      if (engineRef.current && externalBodyRef.current) {
-        Matter.Composite.remove(
-          engineRef.current.world,
-          externalBodyRef.current
-        );
-        externalBodyRef.current = null;
-      }
-      return;
-    }
-
-    const engine = engineRef.current;
-    const { Bodies, Composite, Events } = Matter;
-
-    const boxElement = externalBoxRef.current;
-    const bodyWidth = boxElement.offsetWidth;
-    const bodyHeight = boxElement.offsetHeight;
-
-    const externalBoxBody = Bodies.rectangle(1000, 50, bodyWidth, bodyHeight, {
-      frictionAir: 0.05,
-      mass: 10,
-      render: { visible: false },
-    });
-
-    externalBodyRef.current = externalBoxBody;
-
-
-    const updateExternalDiv = () => {
-      if (!externalBoxRef.current) return;
-
-      const { x, y } = externalBoxBody.position;
-      const angle = externalBoxBody.angle;
-
-      const translateX = x - bodyWidth / 2;
-      const translateY = y - bodyHeight / 2;
-
-      externalBoxRef.current.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${angle}rad)`;
-    };
-
-
-    Composite.add(engine.world, externalBoxBody);
-    Events.on(engine, "afterUpdate", updateExternalDiv);
-
-    updateExternalDiv();
-
-    return () => {
-      Events.off(engine, "afterUpdate", updateExternalDiv);
-      if (externalBodyRef.current) {
-        Composite.remove(engine.world, externalBodyRef.current);
-        externalBodyRef.current = null;
-      }
-    };
-    */
-
     const MatterFunction = () => {
       if (!spawn || !engineRef.current || !externalBoxRef.current) {
         if (engineRef.current && externalBodyRef.current) {
@@ -152,7 +98,9 @@ const TestComp = ({
         setReadyToMeasure(+1);
       }, 50);
     } else {
-      MatterFunction();
+      setTimeout(() => {
+        MatterFunction();
+      }, 5);
     }
   }, [spawn, readyToMeasure]);
 
@@ -167,6 +115,7 @@ const TestComp = ({
           setIsOpen={setIsOpen}
         ></Card>
         */
+
         <div
           ref={externalBoxRef}
           className="max-w-md rounded-lg overflow-hidden bg-black text-white absolute pointer-events-none	-top-0 -left-0"
