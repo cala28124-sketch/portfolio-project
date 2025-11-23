@@ -10,10 +10,11 @@ interface Props {
   setnav: (arg0: boolean) => void;
   setInteractiveText: (arg0: boolean) => void;
   setVideoshow: (arg0: boolean) => void;
+  Start: boolean;
 }
 
 // eslint-disable-next-line no-empty-pattern
-const Navbar = ({}: Props) => {
+const Navbar = ({ Start }: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   return (
     <>

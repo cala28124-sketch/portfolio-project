@@ -11,6 +11,7 @@ function App() {
   const [Menushow, setMenu] = useState(true);
   const [navtoggle, setnav] = useState(true);
   const [interactiveText, setInteractiveText] = useState(false);
+  const [Start, setStart] = useState(false);
 
   const menuClick = () => {
     setStop(true);
@@ -34,8 +35,9 @@ function App() {
         setnav={setnav}
         setInteractiveText={setInteractiveText}
         setVideoshow={setStop}
+        Start={Start}
       />
-      <MatterBox></MatterBox>
+      <MatterBox Start={Start} setStart={setStart}></MatterBox>
     </>
   );
 }

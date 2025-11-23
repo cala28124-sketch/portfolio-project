@@ -10,27 +10,17 @@ import Card from "./card";
 
 interface Props {
   engineRef: MutableRefObject<Matter.Engine | null>;
-  spawn?: boolean;
-  isClosed: boolean;
-  setIsOpen: (arg0: boolean) => void;
-  setIsClosed: (arg0: boolean) => void;
+  Start: boolean;
+  setStart: (arg0: boolean) => void;
 }
 
-const TestComp = ({
-  engineRef,
-  spawn,
-  isClosed,
-  setIsClosed,
-  setIsOpen,
-}: Props) => {
-  const [readyToMeasure, setReadyToMeasure] = useState(0);
-  const [Test, setTest] = useState(false);
+const Title = ({ engineRef, Start, setStart }: Props) => {
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const MatterFunction = () => {
-      if (!spawn || !engineRef.current || !externalBoxRef.current) {
+      if (!Start || !engineRef.current || !externalBoxRef.current) {
         if (engineRef.current && externalBodyRef.current) {
           Matter.Composite.remove(
             engineRef.current.world,
@@ -40,6 +30,10 @@ const TestComp = ({
         }
         return;
       }
+
+      const boxid = document.getElementById("box1");
+      boxid?.classList.replace("top-1/3", "top-0");
+      boxid?.classList.replace("left-1/3", "top-0");
 
       const engine = engineRef.current;
 
@@ -51,7 +45,7 @@ const TestComp = ({
 
       const externalBoxBody = Bodies.rectangle(
         1000,
-        50,
+        500,
         bodyWidth,
         bodyHeight,
         {
@@ -91,54 +85,35 @@ const TestComp = ({
 
     setTimeout(() => {
       MatterFunction();
-      const boxid = document.getElementById("box1");
-      boxid?.classList.replace("-left-100", "-left-0");
     }, 50);
-  }, [spawn, readyToMeasure]);
+  }, [Start]);
 
   return (
     <>
-      {spawn && (
-        /*
-        <Card
-          reference={externalBoxRef}
-          isClosed={isClosed}
-          setIsClosed={setIsClosed}
-          setIsOpen={setIsOpen}
-        ></Card>
-        */
-
-        <div
-          id="box1"
-          ref={externalBoxRef}
-          className="max-w-md rounded-lg overflow-hidden bg-black text-white absolute pointer-events-none	-top-0 -left-100"
-        >
-          <div className="  flex items-center justify-center pointer-events-none  bg-red-950">
-            test
-          </div>
-          <div className="pointer-events-auto">
+      <div
+        id="box1"
+        ref={externalBoxRef}
+        className="item-center pointer-events-none absolute top-1/3 left-1/3 flex h-fit w-fit items-center justify-center rounded-md border-2 border-black bg-green-200 p-2"
+      >
+        <h1 className="text-center text-9xl font-extrabold text-blue-400">
+          {!Start && (
             <button
+              className="pointer-events-auto"
               onClick={() => {
-                if (isClosed) {
-                  setIsOpen(true);
-                  setIsClosed(false);
-                } else {
-                  setIsOpen(false);
-                  setIsClosed(true);
-                }
+                setStart(true);
               }}
             >
-              <img
-                className="p-10"
-                src="https://th.bing.com/th/id/OIP.cj6D2AUxR0niPuWGtKpPzAHaJ4?w=140&h=108&c=7&bgcl=bfa8bb&r=0&o=6&cb=ucfimg1&pid=13.1&ucfimg=1"
-                alt="source"
-              ></img>
+              Click me to start!
             </button>
-          </div>
-        </div>
-      )}
+          )}
+
+          {Start && "Drag me!"}
+        </h1>
+      </div>
     </>
   );
 };
 
-export default TestComp;
+export default Title;
+
+//Basic button that turns into draggable physics object on click. Start is connected to apptsx propped, passed to matterbox then passed to component

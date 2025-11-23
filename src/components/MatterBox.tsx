@@ -1,11 +1,16 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, type FC } from "react";
 import Matter from "matter-js";
 import Card from "./card";
 import TestComp from "./TestComp";
 import ProjectBox from "./ProjectBox";
 import PopUp from "./PopUp";
+import Title from "./Title";
+interface Props {
+  Start: boolean;
+  setStart: (arg0: boolean) => void;
+}
 
-const MatterBox: React.FC = () => {
+const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
 
@@ -167,6 +172,7 @@ const MatterBox: React.FC = () => {
     <>
       {isOpen && (
         <PopUp
+          //current placeholder, opened by testcomp/projectbox.
           isClosed={isClosed}
           setIsClosed={setIsClosed}
           setIsOpen={setIsOpen}
@@ -206,6 +212,7 @@ const MatterBox: React.FC = () => {
           setIsClosed={setIsClosed}
           setIsOpen={setIsOpen}
         ></TestComp>
+        <Title Start={Start} setStart={setStart} engineRef={engineRef}></Title>
       </div>
     </>
   );
