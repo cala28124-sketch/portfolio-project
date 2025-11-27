@@ -1,28 +1,52 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 
 interface Props {
   isClosed: boolean;
   setIsOpen: (arg0: boolean) => void;
   setIsClosed: (arg0: boolean) => void;
+  isOpen: boolean;
 }
 
-const PopUp = ({ isClosed, setIsClosed, setIsOpen }: Props) => {
+const PopUp = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
   return (
     <>
-      <button
-        className="overlay"
-        onClick={() => {
-          if (isClosed) {
-            setIsOpen(true);
-            setIsClosed(false);
-          } else {
-            setIsOpen(false);
-            setIsClosed(true);
-          }
-        }}
-      ></button>
+      {isOpen && (
+        <button
+          className={"overlay"}
+          onClick={() => {
+            if (isClosed) {
+              setIsOpen(true);
+              setIsClosed(false);
+            } else {
+              setIsOpen(false);
+              setIsClosed(true);
+            }
+          }}
+        ></button>
+      )}
       <div className="flex justify-center">
-        <div className="absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-violet-600 bg-violet-200 z-30 overflow-y-auto">
+        <div
+          className={
+            isOpen
+              ? "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-violet-600 bg-violet-200 z-30 overflow-y-auto fade-box visible"
+              : "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-violet-600 bg-violet-200 z-30 overflow-y-auto fade-box invisible"
+          }
+        >
+          <button
+            className="absolute top-2 right-2"
+            onClick={() => {
+              if (isClosed) {
+                setIsOpen(true);
+                setIsClosed(false);
+              } else {
+                setIsOpen(false);
+                setIsClosed(true);
+              }
+            }}
+          >
+            closeplaceholder
+          </button>
           <p className="text-xl font-extrabold text-blue-400 py-4">
             hi, my name is...
           </p>
@@ -36,7 +60,7 @@ const PopUp = ({ isClosed, setIsClosed, setIsOpen }: Props) => {
           <h1 className="font-extrabold text-blue-400 py-4">
             ANTHONY CALABRESE!
           </h1>
-          <p className="text-sm text-center px-12 md: px-24">
+          <p className="text-sm text-center px-24 max-md:px-100">
             I'm a Computer Science student at the University of Central Florida.
             Growing up, I was always fascinated on how video games were made.
             While right now I don't specifically make games, I want to use my

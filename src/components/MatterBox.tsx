@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useRef, useState, type FC } from "react";
 import Matter from "matter-js";
 import Card from "./card";
@@ -170,14 +171,13 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
 
   return (
     <>
-      {isOpen && (
-        <PopUp
-          //current placeholder, opened by testcomp/projectbox.
-          isClosed={isClosed}
-          setIsClosed={setIsClosed}
-          setIsOpen={setIsOpen}
-        ></PopUp>
-      )}
+      <PopUp
+        //current placeholder, opened by testcomp/projectbox.
+        isClosed={isClosed}
+        setIsClosed={setIsClosed}
+        setIsOpen={setIsOpen}
+        isOpen={isOpen}
+      ></PopUp>
 
       <button
         onClick={() => {

@@ -1,42 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+@import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
 @import "tailwindcss";
 
+.fade-box {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
 
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
 
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}
 
-
-.viewport-text{
+.viewport-text {
   position: relative;
   color: white;
   font-style: bold;
   text-align: left;
   font-size: clamp(26px, 1vw, 52px);
-  
 }
 
-
-
-.viewport-image{
+.viewport-image {
   position: relative;
   width: 30vw;
   height: 40vh;
   bottom: 20vh;
   float: right;
   right: 10vw;
-  
 }
 
 @media screen and (max-width: 1px) {
-  .viewport-image{
+  .viewport-image {
     position: relative;
-  width: 500px;
-  float: right;
-  margin-left: 40px;
-  margin-bottom: 20px;
+    width: 500px;
+    float: right;
+    margin-left: 40px;
+    margin-bottom: 20px;
   }
 }
 
-.testbox{
+.testbox {
   position: relative;
   width: 50vw;
   height: 50vh;
@@ -46,23 +52,21 @@
   left: 5vw;
   flex-direction: column;
   background-color: transparent;
- 
 }
 
-
-.openbox{
+.openbox {
   width: 50vw;
   height: 50vh;
   position: fixed;
-   top: 50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: block;
-  
+
   z-index: 1030;
 }
 
-.overlay{
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -76,42 +80,40 @@ body.no-scroll {
   overflow: hidden;
 }
 
-.overlay:hover{
+.overlay:hover {
   cursor: default;
 }
 
-.closebutton{
+.closebutton {
   cursor: pointer;
   z-index: 1030;
   margin-left: 95%;
 }
 
-.textbutton{
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    cursor: pointer;}
+.textbutton {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
 
-
-
-.boxbutton{
+.boxbutton {
   position: relative;
   width: 250px;
   height: 250px;
   display: block;
   transition: transform 0.3s ease;
   background-color: #373737;
-
 }
 
-.boxbutton:hover{
-   cursor: pointer;
+.boxbutton:hover {
+  cursor: pointer;
   background-color: #373737;
   transform: scale(1.5);
   transition: transform 0.3s ease;
 }
-.cloud{
+.cloud {
   position: absolute;
   top: 20%;
   left: 10%;
@@ -119,7 +121,8 @@ body.no-scroll {
   height: 100px;
   background: white;
   border-radius: 50%;
-  box-shadow: 60px 0 0 white, 120px 0 0 white, 30px -30px 0 white, 90px -30px 0 white;
+  box-shadow: 60px 0 0 white, 120px 0 0 white, 30px -30px 0 white,
+    90px -30px 0 white;
   opacity: 0.8;
   animation: moveClouds 60s linear infinite;
 }
@@ -128,84 +131,68 @@ body.no-scroll {
     transform: translateX(-100vw);
   }
   100% {
-    transform: translateX(100vw)
+    transform: translateX(100vw);
   }
 }
 
-
 body {
   overflow: hidden;
-  
+
   background: linear-gradient(
-        90deg,
-        
-        
-        #A3E3FA,
-        #A3E3FA,
-        #A3E3FA,
-        #A3E3FA,
-        #A3E3FA,
-        #A3E3FA,
-        #75AAF0,
-        /* sunset colors
+    90deg,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #75aaf0,
+    /* sunset colors
         #B84E7B,
         #B84E7B,
         #FF8A8A,
         */
-        #5F3A8A,
-        #1C1F4A,
-        #1C1F4A,
-        #0E122B,
-        #0E122B,
-        #0E122B,
-        #0E122B,
-        #0E122B,
-        #0E122B,
-        #1C1F4A,
-        #1C1F4A, 
-         #5F3A8A,
-         /* sunset color
+      #5f3a8a,
+    #1c1f4a,
+    #1c1f4a,
+    #0e122b,
+    #0e122b,
+    #0e122b,
+    #0e122b,
+    #0e122b,
+    #0e122b,
+    #1c1f4a,
+    #1c1f4a,
+    #5f3a8a,
+    /* sunset color
          #FF8A8A,
          #B84E7B,
          #B84E7B,
          */
-        
-         #75AAF0,
-         #A3E3FA,
-         #A3E3FA,
-         #A3E3FA,
-         #A3E3FA,
-         #A3E3FA,
-        #A3E3FA
-        
-        
-
-     
-    );
+      #75aaf0,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa
+  );
   background-size: 500% 500%;
 
   animation: gradient 120s ease-in-out infinite;
-  
-  
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 0%;
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
 
-          }
-    50%{
-      background-position: 50% 50%;
-    }
-
-   
-
-    100% {
-      background-position: 100% 100%;
-    }
-
-    
-    
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 .dot {
@@ -216,38 +203,33 @@ body {
   border-radius: 50%;
   display: inline-block;
   animation: movedot 120s linear infinite;
-
 }
 
 @keyframes movedot {
-
-  0%{
-    transform: translate(100vw,100vh)
+  0% {
+    transform: translate(100vw, 100vh);
   }
 
-  15%{
-    transform: translate(100vw, 100vh)
+  15% {
+    transform: translate(100vw, 100vh);
   }
 
-  40%{
-    transform: translate(49vw, 10vh)
+  40% {
+    transform: translate(49vw, 10vh);
   }
 
-  65%{
-    transform: translate(40vw, 10vh)
+  65% {
+    transform: translate(40vw, 10vh);
   }
 
-  85%{
-    transform: translate(0vw, 100vh)
+  85% {
+    transform: translate(0vw, 100vh);
   }
 
-  100%{
-    transform: translate(100vw,100vh)
+  100% {
+    transform: translate(100vw, 100vh);
   }
-
 }
-
-
 
 .sun {
   position: absolute;
@@ -257,51 +239,47 @@ body {
   border-radius: 50%;
   display: inline-block;
   animation: movesun 120s linear infinite;
-
 }
 
 @keyframes movesun {
-
-  0%{
-    transform: translate(49vw, 10vh)
+  0% {
+    transform: translate(49vw, 10vh);
   }
-  15%{
-    transform: translate(40vw, 10vh)
+  15% {
+    transform: translate(40vw, 10vh);
   }
-  30%{
-    transform: translate(0vw, 100vh)
-  }
-
-  65%{
-    transform: translate(100vw, 100vh)
+  30% {
+    transform: translate(0vw, 100vh);
   }
 
-  100%{
-    transform: translate(49vw,10vh)
+  65% {
+    transform: translate(100vw, 100vh);
   }
 
+  100% {
+    transform: translate(49vw, 10vh);
+  }
 }
 
-.navbar-image-space{
+.navbar-image-space {
   position: relative;
   left: 30%;
 }
 
-.navbar-image-initial{
+.navbar-image-initial {
   position: relative;
   left: 25%;
 }
 
-.navbar-space-initial{
+.navbar-space-initial {
   position: relative;
   margin-left: 5%;
 }
 
-.navbar-space{
+.navbar-space {
   position: relative;
-  margin-left:5%;
+  margin-left: 5%;
 }
-
 
 .box-text {
   margin-left: 50px;
@@ -312,84 +290,75 @@ body {
   margin-right: 5%;
   height: 75%;
   width: 15%;
-
 }
 
 .box-right {
   margin-left: 5%;
   height: 75%;
   width: 15%;
-
-
 }
 
-.color_box{
+.color_box {
   display: flex;
   align-items: flex-end;
   color: white;
 }
 
-.navbar-logo{
+.navbar-logo {
   width: 50px;
   height: 50px;
 }
 
-.box-image{
+.box-image {
   width: 1050px;
   justify-content: center;
   margin-left: 60px;
 }
 
-.box-full{
+.box-full {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.nav-text{
-  
+.nav-text {
   text-decoration: none;
-  color:white;
+  color: white;
   left: 25%;
 }
 
-.navbar-image{
+.navbar-image {
   position: relative;
   left: 31%;
-
 }
-.nav-image2{
+.nav-image2 {
   position: relative;
-  left: 32%
+  left: 32%;
 }
-.skip-button{
+.skip-button {
   width: 50px;
   height: 50px;
   margin-left: 92%;
 }
 
-
 .fade-in-image {
-animation: fadeIn 5s;
+  animation: fadeIn 5s;
 }
 
 @keyframes fadeIn {
-0% { opacity: 0; }
-100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-
-.floor-background{
+.floor-background {
   position: relative;
-  background: linear-gradient(-45deg, #00A619
-, #008013
-, #09B051
-, #59A608
-
-);
+  background: linear-gradient(-45deg, #00a619, #008013, #09b051, #59a608);
   background-size: 400% 400%;
   animation: gradient 120s ease infinite;
   height: 300vh;
-    
 }
