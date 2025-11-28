@@ -109,7 +109,6 @@ body.no-scroll {
 
 .boxbutton:hover {
   cursor: pointer;
-  background-color: #373737;
   transform: scale(1.5);
   transition: transform 0.3s ease;
 }
