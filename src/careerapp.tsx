@@ -4,7 +4,6 @@ import Box from "./components/notes";
 import { useState } from "react";
 import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
-import ProjectBox from "./components/projectbox.tsx";
 
 function careerApp() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -36,6 +35,7 @@ function careerApp() {
           setnav={setnav}
           setInteractiveText={setInteractiveText}
           setVideoshow={setStop}
+          Start={false}
         />
         <div className="cloud" />
         <div className="d-flex justify-content-center align-items-center vh-100">

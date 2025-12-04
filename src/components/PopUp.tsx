@@ -1,3 +1,5 @@
+// this is a component containing the pop up box for the about me section. It is to be called by the specific physics box that uses it.
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 
@@ -29,8 +31,8 @@ const PopUp = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
         <div
           className={
             isOpen
-              ? "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-violet-600 bg-violet-200 z-30 overflow-y-auto fade-box visible"
-              : "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-violet-600 bg-violet-200 z-30 overflow-y-auto fade-box invisible"
+              ? "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto fade-box visible"
+              : "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto fade-box invisible"
           }
         >
           <button
@@ -47,26 +49,69 @@ const PopUp = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
           >
             closeplaceholder
           </button>
-          <p className="text-xl font-extrabold text-blue-400 py-4">
-            hi, my name is...
+          <p className="text-xl font-bold text-green-800 py-4">
+            Hi, my name is...
           </p>
-          <div className="bg-white size-auto">
+          <div className="bg-green-800 size-auto">
             <img
-              className="block mx-auto p-3 w-64"
-              src="https://th.bing.com/th/id/OIP.cj6D2AUxR0niPuWGtKpPzAHaJ4?w=140&h=108&c=7&bgcl=bfa8bb&r=0&o=6&cb=ucfimg1&pid=13.1&ucfimg=1"
+              className="block mx-auto p-3 w-96"
+              src="/headshotme.jpg"
               alt="source"
             ></img>
           </div>
-          <h1 className="font-extrabold text-blue-400 py-4">
+          <h1 className="!font-extrabold !text-green-800 py-4">
             ANTHONY CALABRESE!
           </h1>
-          <p className="text-sm text-center px-24 max-md:px-100">
-            I'm a Computer Science student at the University of Central Florida.
-            Growing up, I was always fascinated on how video games were made.
-            While right now I don't specifically make games, I want to use my
-            Software Engineer skills to create projects others and I can love
-            and benefit from!
+          <p className="text-base font-bold text-green-800 text-center px-24 max-md:px-100">
+            I'm a computer science student here at the University of Central
+            Florida! Growing up, I've constantly held a fascination for
+            programming and the many things its used to make. Now, I work
+            towards improving and using my Software Engineering skills to not
+            only better myself, but create tools that I and others can benefit
+            from!
           </p>
+          <div className="grid grid-cols-4 gap-5 mt-2 mx-2">
+            <div className="flex flex-col items-center ">
+              test
+              <button>
+                <img
+                  className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+              </button>
+            </div>
+            <div className="flex flex-col items-center">
+              test
+              <button>
+                <img
+                  className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+              </button>
+            </div>
+            <div className="flex flex-col items-center">
+              test
+              <button>
+                <img
+                  className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+              </button>
+            </div>
+            <div className="flex flex-col items-center">
+              test
+              <button>
+                <img
+                  className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

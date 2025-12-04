@@ -73,13 +73,6 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
 
     render.mouse = mouse;
 
-    const boxA = Bodies.rectangle(400, 200, 80, 80, {
-      render: { fillStyle: "#007ACC" },
-    });
-    const boxB = Bodies.rectangle(450, 50, 80, 80, {
-      render: { fillStyle: "#E91E63" },
-    });
-
     const sky = Bodies.rectangle(Width / 2, 0, Width, 50, {
       isStatic: true,
       render: { fillStyle: "transparent" },
@@ -99,7 +92,7 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
       render: { fillStyle: "transparent" },
     });
 
-    Composite.add(engine.world, [boxA, boxB, ground, wallleft, wallright, sky]);
+    Composite.add(engine.world, [ground, wallleft, wallright, sky]);
 
     Render.run(render);
 
@@ -117,7 +110,52 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
     };
   }, []);
 
-  useEffect(() => {
+  return (
+    <>
+      <PopUp
+        //current placeholder, opened by testcomp/projectbox. able to do individual and separate pop ups here for easy use, may move to main app comp later.
+        isClosed={isClosed}
+        setIsClosed={setIsClosed}
+        setIsOpen={setIsOpen}
+        isOpen={isOpen}
+      ></PopUp>
+
+      <button
+        onClick={() => {
+          setspawn(true);
+          if (spawn) {
+            setspawn(false);
+          }
+        }}
+        className="absolute top-4 left-4 bg-red-500"
+      >
+        test
+      </button>
+      <div
+        ref={boxRef}
+        style={{
+          zIndex: "0",
+        }}
+        className="w-full h-screen absolute"
+      >
+        <TestComp
+          spawn={spawn}
+          engineRef={engineRef}
+          isClosed={isClosed}
+          setIsClosed={setIsClosed}
+          setIsOpen={setIsOpen}
+        ></TestComp>
+        <Title Start={Start} setStart={setStart} engineRef={engineRef}></Title>
+      </div>
+    </>
+  );
+};
+
+export default MatterBox;
+
+/*
+old used effect- moved to TestComp- no longer needed in  file
+useEffect(() => {
     if (!spawn || !engineRef.current || !externalBoxRef.current) {
       if (engineRef.current && externalBodyRef.current) {
         Matter.Composite.remove(
@@ -169,53 +207,4 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
     };
   }, [spawn]);
 
-  return (
-    <>
-      <PopUp
-        //current placeholder, opened by testcomp/projectbox.
-        isClosed={isClosed}
-        setIsClosed={setIsClosed}
-        setIsOpen={setIsOpen}
-        isOpen={isOpen}
-      ></PopUp>
-
-      <button
-        onClick={() => {
-          setspawn(true);
-          if (spawn) {
-            setspawn(false);
-          }
-        }}
-        className="absolute top-4 left-4 bg-red-500"
-      >
-        test
-      </button>
-      <div
-        ref={boxRef}
-        style={{
-          zIndex: "0",
-        }}
-        className="w-full h-screen absolute"
-      >
-        {spawn && (
-          <ProjectBox
-            reference={externalBoxRef}
-            isClosed={isClosed}
-            setIsClosed={setIsClosed}
-            setIsOpen={setIsOpen}
-          ></ProjectBox>
-        )}
-        <TestComp
-          spawn={spawn}
-          engineRef={engineRef}
-          isClosed={isClosed}
-          setIsClosed={setIsClosed}
-          setIsOpen={setIsOpen}
-        ></TestComp>
-        <Title Start={Start} setStart={setStart} engineRef={engineRef}></Title>
-      </div>
-    </>
-  );
-};
-
-export default MatterBox;
+  */

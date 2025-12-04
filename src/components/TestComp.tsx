@@ -1,3 +1,5 @@
+// this exists as a placeholder component to be copied for individual matterboxes. It currently has the bug fix for the delay to fix it, and the offset. copy this and call into matterbox for more.
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {
   useEffect,
@@ -112,13 +114,42 @@ const TestComp = ({
         <div
           id="box1"
           ref={externalBoxRef}
-          className="max-w-md rounded-lg overflow-hidden bg-black text-white absolute pointer-events-none	-top-0 -left-100"
+          className="w-48 rounded-lg overflow-hidden bg-black text-white absolute pointer-events-none	-top-0 -left-100"
         >
-          <div className="  flex items-center justify-center pointer-events-none  bg-red-950">
-            test
+          <button
+            className="absolute"
+            onClick={() => {
+              if (isClosed) {
+                setIsOpen(true);
+                setIsClosed(false);
+              } else {
+                setIsOpen(false);
+                setIsClosed(true);
+              }
+            }}
+          >
+            <div className="unfold pointer-events-auto flex items-center justify-center bg-red-950 absolute">
+              test
+            </div>
+          </button>
+          <div>
+            <img
+              className="p-10"
+              src="https://th.bing.com/th/id/OIP.cj6D2AUxR0niPuWGtKpPzAHaJ4?w=140&h=108&c=7&bgcl=bfa8bb&r=0&o=6&cb=ucfimg1&pid=13.1&ucfimg=1"
+              alt="source"
+            ></img>
           </div>
-          <div className="pointer-events-auto">
-            <button
+        </div>
+      )}
+    </>
+  );
+};
+
+export default TestComp;
+
+/*
+use state button
+<button
               onClick={() => {
                 if (isClosed) {
                   setIsOpen(true);
@@ -129,17 +160,5 @@ const TestComp = ({
                 }
               }}
             >
-              <img
-                className="p-10"
-                src="https://th.bing.com/th/id/OIP.cj6D2AUxR0niPuWGtKpPzAHaJ4?w=140&h=108&c=7&bgcl=bfa8bb&r=0&o=6&cb=ucfimg1&pid=13.1&ucfimg=1"
-                alt="source"
-              ></img>
-            </button>
-          </div>
-        </div>
-      )}
-    </>
-  );
-};
 
-export default TestComp;
+            */
