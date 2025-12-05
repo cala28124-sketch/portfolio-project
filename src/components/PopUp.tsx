@@ -8,9 +8,30 @@ interface Props {
   setIsOpen: (arg0: boolean) => void;
   setIsClosed: (arg0: boolean) => void;
   isOpen: boolean;
+  button1: boolean;
+  button1set: (arg0: boolean) => void;
+  button2: boolean;
+  button2set: (arg0: boolean) => void;
+  button3: boolean;
+  button3set: (arg0: boolean) => void;
+  button4: boolean;
+  button4set: (arg0: boolean) => void;
 }
 
-const PopUp = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
+const PopUp = ({
+  isClosed,
+  setIsClosed,
+  setIsOpen,
+  isOpen,
+  button1,
+  button1set,
+  button2,
+  button2set,
+  button3,
+  button3set,
+  button4,
+  button4set,
+}: Props) => {
   return (
     <>
       {isOpen && (
@@ -71,9 +92,19 @@ const PopUp = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
             from!
           </p>
           <div className="grid grid-cols-4 gap-5 mt-2 mx-2">
-            <div className="flex flex-col items-center ">
-              test
-              <button>
+            <div
+              className={
+                button1
+                  ? "flex flex-col items-center fade-box invisible"
+                  : "flex flex-col items-center fade-box visible"
+              }
+            >
+              Who am I?
+              <button
+                onClick={() => {
+                  button1set(true);
+                }}
+              >
                 <img
                   className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
@@ -81,9 +112,19 @@ const PopUp = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
                 ></img>
               </button>
             </div>
-            <div className="flex flex-col items-center">
-              test
-              <button>
+            <div
+              className={
+                button2
+                  ? "flex flex-col items-center fade-box invisible"
+                  : "flex flex-col items-center fade-box visible"
+              }
+            >
+              What do I do?
+              <button
+                onClick={() => {
+                  button2set(true);
+                }}
+              >
                 <img
                   className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
@@ -91,9 +132,19 @@ const PopUp = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
                 ></img>
               </button>
             </div>
-            <div className="flex flex-col items-center">
-              test
-              <button>
+            <div
+              className={
+                button3
+                  ? "flex flex-col items-center fade-box invisible"
+                  : "flex flex-col items-center fade-box visible"
+              }
+            >
+              What's my drive?
+              <button
+                onClick={() => {
+                  button3set(true);
+                }}
+              >
                 <img
                   className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
@@ -101,9 +152,19 @@ const PopUp = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
                 ></img>
               </button>
             </div>
-            <div className="flex flex-col items-center">
-              test
-              <button>
+            <div
+              className={
+                button4
+                  ? "flex flex-col items-center fade-box invisible"
+                  : "flex flex-col items-center fade-box visible"
+              }
+            >
+              What's past the surface?
+              <button
+                onClick={() => {
+                  button4set(true);
+                }}
+              >
                 <img
                   className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"

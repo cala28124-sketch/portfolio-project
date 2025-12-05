@@ -17,6 +17,9 @@ interface Props {
   isClosed: boolean;
   setIsOpen: (arg0: boolean) => void;
   setIsClosed: (arg0: boolean) => void;
+  text: string;
+  image: string;
+  ID: string;
 }
 
 const TestComp = ({
@@ -25,6 +28,9 @@ const TestComp = ({
   isClosed,
   setIsClosed,
   setIsOpen,
+  text,
+  image,
+  ID,
 }: Props) => {
   const [readyToMeasure, setReadyToMeasure] = useState(0);
   const [Test, setTest] = useState(false);
@@ -94,7 +100,7 @@ const TestComp = ({
 
     setTimeout(() => {
       MatterFunction();
-      const boxid = document.getElementById("box1");
+      const boxid = document.getElementById(ID);
       boxid?.classList.replace("-left-100", "-left-0");
     }, 50);
   }, [spawn, readyToMeasure]);
@@ -112,9 +118,9 @@ const TestComp = ({
         */
 
         <div
-          id="box1"
+          id={ID}
           ref={externalBoxRef}
-          className="w-48 rounded-lg overflow-hidden bg-black text-white absolute pointer-events-none	-top-0 -left-100"
+          className="w-48 rounded-lg overflow-hidden bg-green-300 text-white absolute pointer-events-none	-top-0 -left-100"
         >
           <button
             className="absolute"
@@ -128,16 +134,12 @@ const TestComp = ({
               }
             }}
           >
-            <div className="unfold pointer-events-auto flex items-center justify-center bg-red-950 absolute">
-              test
+            <div className="unfold pointer-events-auto flex items-center justify-center bg-green-800 absolute">
+              {text}
             </div>
           </button>
           <div>
-            <img
-              className="p-10"
-              src="https://th.bing.com/th/id/OIP.cj6D2AUxR0niPuWGtKpPzAHaJ4?w=140&h=108&c=7&bgcl=bfa8bb&r=0&o=6&cb=ucfimg1&pid=13.1&ucfimg=1"
-              alt="source"
-            ></img>
+            <img className="p-10" src={image} alt="source"></img>
           </div>
         </div>
       )}

@@ -11,9 +11,15 @@ interface Props {
   setStart: (arg0: boolean) => void;
 }
 
-const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
+const MatterBox: FC<Props> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
+  const [aboutme1, setaboutme1] = useState(false);
+  const [aboutme2, setaboutme2] = useState(false);
+  const [aboutme3, setaboutme3] = useState(false);
+  const [aboutme4, setaboutme4] = useState(false);
+  const [nullisOpen, nullsetIsOpen] = useState(false);
+  const [nullisClosed, nullsetIsClosed] = useState(false);
 
   const [spawn, setspawn] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
@@ -118,6 +124,14 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
         setIsClosed={setIsClosed}
         setIsOpen={setIsOpen}
         isOpen={isOpen}
+        button1={aboutme1}
+        button1set={setaboutme1}
+        button2={aboutme2}
+        button2set={setaboutme2}
+        button3={aboutme3}
+        button3set={setaboutme3}
+        button4={aboutme4}
+        button4set={setaboutme4}
       ></PopUp>
 
       <button
@@ -144,8 +158,50 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
           isClosed={isClosed}
           setIsClosed={setIsClosed}
           setIsOpen={setIsOpen}
+          text="test"
+          image="/headshotme.jpg"
+          ID="box1"
         ></TestComp>
-        <Title Start={Start} setStart={setStart} engineRef={engineRef}></Title>
+        <TestComp
+          spawn={aboutme1}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="about1"
+          image="/test_logo.webp"
+          ID="box2"
+        ></TestComp>
+        <TestComp
+          spawn={aboutme2}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="about2"
+          image="/test_logo.webp"
+          ID="box5"
+        ></TestComp>
+        <TestComp
+          spawn={aboutme3}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="about3"
+          image="/test_logo.webp"
+          ID="box3"
+        ></TestComp>
+        <TestComp
+          spawn={aboutme4}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="about4"
+          image="/test_logo.webp"
+          ID="box4"
+        ></TestComp>
       </div>
     </>
   );
@@ -206,5 +262,14 @@ useEffect(() => {
       }
     };
   }, [spawn]);
+
+  */
+
+/*
+
+  title spawn, removed for now
+  <Title Start={Start} setStart={setStart} engineRef={engineRef}></Title>
+  start up props
+  { Start, setStart  }: Props
 
   */
