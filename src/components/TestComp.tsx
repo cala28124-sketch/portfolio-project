@@ -20,6 +20,8 @@ interface Props {
   text: string;
   image: string;
   ID: string;
+  setMount: (arg0: boolean) => void;
+  Mount: boolean;
 }
 
 const TestComp = ({
@@ -31,8 +33,9 @@ const TestComp = ({
   text,
   image,
   ID,
+  setMount,
+  Mount,
 }: Props) => {
-  const [readyToMeasure, setReadyToMeasure] = useState(0);
   const [Test, setTest] = useState(false);
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
@@ -103,7 +106,7 @@ const TestComp = ({
       const boxid = document.getElementById(ID);
       boxid?.classList.replace("-left-100", "-left-0");
     }, 50);
-  }, [spawn, readyToMeasure]);
+  }, [spawn]);
 
   return (
     <>
@@ -125,12 +128,15 @@ const TestComp = ({
           <button
             className="absolute"
             onClick={() => {
-              if (isClosed) {
-                setIsOpen(true);
-                setIsClosed(false);
-              } else {
-                setIsOpen(false);
-                setIsClosed(true);
+              setMount(true);
+              if (Mount) {
+                if (isClosed) {
+                  setIsOpen(true);
+                  setIsClosed(false);
+                } else {
+                  setIsOpen(false);
+                  setIsClosed(true);
+                }
               }
             }}
           >

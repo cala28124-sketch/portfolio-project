@@ -22,6 +22,7 @@ const MatterBox: FC<Props> = () => {
   const [nullisClosed, nullsetIsClosed] = useState(false);
 
   const [spawn, setspawn] = useState(false);
+  const [Mount, setMount] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
   const externalBoxRef2 = useRef<HTMLDivElement>(null);
@@ -132,6 +133,7 @@ const MatterBox: FC<Props> = () => {
         button3set={setaboutme3}
         button4={aboutme4}
         button4set={setaboutme4}
+        Mount={Mount}
       ></PopUp>
 
       <button
@@ -161,6 +163,8 @@ const MatterBox: FC<Props> = () => {
           text="test"
           image="/headshotme.jpg"
           ID="box1"
+          setMount={setMount}
+          Mount={Mount}
         ></TestComp>
         <TestComp
           spawn={aboutme1}
@@ -171,6 +175,8 @@ const MatterBox: FC<Props> = () => {
           text="about1"
           image="/test_logo.webp"
           ID="box2"
+          setMount={setMount}
+          Mount={Mount}
         ></TestComp>
         <TestComp
           spawn={aboutme2}
@@ -181,6 +187,8 @@ const MatterBox: FC<Props> = () => {
           text="about2"
           image="/test_logo.webp"
           ID="box5"
+          setMount={setMount}
+          Mount={Mount}
         ></TestComp>
         <TestComp
           spawn={aboutme3}
@@ -191,6 +199,8 @@ const MatterBox: FC<Props> = () => {
           text="about3"
           image="/test_logo.webp"
           ID="box3"
+          setMount={setMount}
+          Mount={Mount}
         ></TestComp>
         <TestComp
           spawn={aboutme4}
@@ -201,6 +211,8 @@ const MatterBox: FC<Props> = () => {
           text="about4"
           image="/test_logo.webp"
           ID="box4"
+          setMount={setMount}
+          Mount={Mount}
         ></TestComp>
       </div>
     </>

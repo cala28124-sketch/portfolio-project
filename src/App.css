@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 .fade-box {
-  transition: opacity 0.3s linear, visibility 1s linear;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .visible {
