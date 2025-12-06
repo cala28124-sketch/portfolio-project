@@ -128,15 +128,12 @@ const TestComp = ({
           <button
             className="absolute"
             onClick={() => {
-              setMount(true);
-              if (Mount) {
-                if (isClosed) {
-                  setIsOpen(true);
-                  setIsClosed(false);
-                } else {
-                  setIsOpen(false);
-                  setIsClosed(true);
-                }
+              if (isClosed) {
+                setIsOpen(true);
+                setIsClosed(false);
+              } else {
+                setIsOpen(false);
+                setIsClosed(true);
               }
             }}
           >

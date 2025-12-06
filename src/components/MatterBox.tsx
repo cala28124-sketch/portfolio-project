@@ -139,6 +139,7 @@ const MatterBox: FC<Props> = () => {
       <button
         onClick={() => {
           setspawn(true);
+          setMount(true);
           if (spawn) {
             setspawn(false);
           }
