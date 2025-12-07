@@ -117,6 +117,7 @@ body.no-scroll {
   transform: scale(1.5);
   transition: transform 0.3s ease;
 }
+
 .cloud {
   position: absolute;
   top: 20%;

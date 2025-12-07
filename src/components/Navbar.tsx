@@ -18,81 +18,37 @@ const Navbar = ({ Start }: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   return (
     <>
-      <div className="color_box p-4">
-        <a
-          className="navbar-image-initial"
-          href="https://www.coolmathgames.com/"
-        >
-          <img
-            className="navbar-logo"
-            src="/test_logo.webp"
-            alt="shhhh silly"
-          />
-        </a>
-        <Dropbox
-          className=" nav-text active navbar-space-initial"
-          Textinside={"about me test"}
-          Textoutside="about"
-        ></Dropbox>
-        <a
-          className="nav-text active navbar-space"
-          aria-current="page"
-          href="/career.html"
-          target="_blank"
-        >
-          Career
-        </a>
-        <a
-          className="nav-text active navbar-space"
-          aria-current="page"
-          href="#"
-        >
-          Projects
-        </a>
-        <a
-          className="nav-text active navbar-space"
-          aria-current="page"
-          href="#"
-        >
-          Skill
-        </a>
-        <a
-          className="nav-text active navbar-space"
-          aria-current="page"
-          href="#"
-        >
-          featured
-        </a>
-        <a
-          className="navbar-brand navbar-image-space"
-          href="https://www.coolmathgames.com/"
-        >
-          <img
-            className="navbar-logo"
-            src="/test_logo.webp"
-            alt="shhhh silly"
-          />
-        </a>
-        <a
-          className="navbar-brand navbar-image"
-          href="https://www.coolmathgames.com/"
-        >
-          <img
-            className="navbar-logo"
-            src="/test_logo.webp"
-            alt="shhhh silly"
-          />
-        </a>
-        <a
-          className="navbar-brand nav-image2"
-          href="https://www.coolmathgames.com/"
-        >
-          <img
-            className="navbar-logo"
-            src="/test_logo.webp"
-            alt="shhhh silly"
-          />
-        </a>
+      <div className="flex justify-center mt-2">
+        <div className="flex text-red-500 gap-15 items-center justify-center h-20 w-5xl bg-white bg-opacity-50 rounded-full">
+          <img className="h-12" src="/test_logo.webp" alt="shhhh silly" />
+          <button>
+            <div>about</div>
+          </button>
+          <button>
+            <div>career</div>
+          </button>
+          <button>
+            <div>projects</div>
+          </button>
+          <button>
+            <div>skills</div>
+          </button>
+          <button>
+            <div>blah</div>
+          </button>
+
+          <div className="flex gap-2">
+            <a href="https://www.coolmathgames.com/">
+              <img className="h-12" src="/test_logo.webp" alt="shhhh silly" />
+            </a>
+            <a href="https://www.coolmathgames.com/">
+              <img className="h-12" src="/test_logo.webp" alt="shhhh silly" />
+            </a>
+            <a href="https://www.coolmathgames.com/">
+              <img className="h-12" src="/test_logo.webp" alt="shhhh silly" />
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );
