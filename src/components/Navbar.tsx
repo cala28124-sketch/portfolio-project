@@ -19,33 +19,49 @@ const Navbar = ({ Start }: Props) => {
   return (
     <>
       <div className="flex justify-center mt-2">
-        <div className="flex text-red-500 gap-15 items-center justify-center h-20 w-5xl bg-white bg-opacity-50 rounded-full">
-          <img className="h-12" src="/test_logo.webp" alt="shhhh silly" />
-          <button>
-            <div>about</div>
+        <div className="flex text-white font-bold items-center gap-3 justify-center h-20 w-5xl bg-white bg-opacity-50 rounded-full">
+          <img
+            className="h-12 z-10 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
+            src="/test_logo.webp"
+            alt="shhhh silly"
+          />
+          <button className=" py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+            About
           </button>
-          <button>
-            <div>career</div>
+          <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+            Career
           </button>
-          <button>
-            <div>projects</div>
+          <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+            Projects
           </button>
-          <button>
-            <div>skills</div>
+          <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+            Skills
           </button>
-          <button>
-            <div>blah</div>
+          <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+            Blah
           </button>
 
           <div className="flex gap-2">
             <a href="https://www.coolmathgames.com/">
-              <img className="h-12" src="/test_logo.webp" alt="shhhh silly" />
+              <img
+                className="h-12 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
+                src="/test_logo.webp"
+                alt="shhhh silly"
+              />
             </a>
             <a href="https://www.coolmathgames.com/">
-              <img className="h-12" src="/test_logo.webp" alt="shhhh silly" />
+              <img
+                className="h-12 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
+                src="/test_logo.webp"
+                alt="shhhh silly"
+              />
             </a>
             <a href="https://www.coolmathgames.com/">
-              <img className="h-12" src="/test_logo.webp" alt="shhhh silly" />
+              <img
+                className="h-12 !rounded-full scale-100 transform transition duration-150 hover:scale-120 "
+                src="/test_logo.webp"
+                alt="shhhh silly"
+              />
             </a>
           </div>
         </div>
@@ -55,3 +71,5 @@ const Navbar = ({ Start }: Props) => {
 };
 
 export default Navbar;
+
+// <div className="z-1 h-10 absolute bg-blue-500 rounded-full"></div>

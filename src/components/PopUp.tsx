@@ -35,15 +35,7 @@ const PopUp = ({
   Mount,
 }: Props) => {
   const [isMountedOpen, setIsMountedOpen] = useState(false);
-  useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => {
-        setIsMountedOpen(true);
-      }, 1);
-    } else {
-      setIsMountedOpen(false);
-    }
-  }, [isOpen]);
+
   return (
     <>
       {isOpen && (
@@ -64,10 +56,12 @@ const PopUp = ({
       <div className="flex justify-center">
         <div
           id="aboutme"
-          className={
-            "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto fade-box" +
-            (isMountedOpen ? " visible" : " invisible pointer-events-none")
-          }
+          className={`absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto transition-opacity duration-800 ease-out 
+    ${
+      isOpen
+        ? "opacity-100 pointer-events-auto"
+        : "opacity-0 pointer-events-none"
+    }`}
         >
           <button
             className="absolute top-2 right-2"
@@ -106,11 +100,11 @@ const PopUp = ({
           </p>
           <div className="grid grid-cols-4 gap-5 mt-2 mx-2">
             <div
-              className={
-                button1
-                  ? "flex flex-col items-center fade-box invisible"
-                  : "flex flex-col items-center fade-box visible"
-              }
+              className={`flex flex-col items-center transition-opacity duration-800
+                
+                ${button1 ? "opacity-0" : "opacity-100"}
+
+                `}
             >
               Who am I?
               <button
@@ -126,11 +120,11 @@ const PopUp = ({
               </button>
             </div>
             <div
-              className={
-                button2
-                  ? "flex flex-col items-center fade-box invisible"
-                  : "flex flex-col items-center fade-box visible"
-              }
+              className={`flex flex-col items-center transition-opacity duration-800
+                
+                ${button2 ? "opacity-0" : "opacity-100"}
+
+                `}
             >
               What do I do?
               <button
@@ -146,11 +140,11 @@ const PopUp = ({
               </button>
             </div>
             <div
-              className={
-                button3
-                  ? "flex flex-col items-center fade-box invisible"
-                  : "flex flex-col items-center fade-box visible"
-              }
+              className={`flex flex-col items-center transition-opacity duration-800
+                
+                ${button3 ? "opacity-0" : "opacity-100"}
+
+                `}
             >
               What's my drive?
               <button
@@ -166,11 +160,11 @@ const PopUp = ({
               </button>
             </div>
             <div
-              className={
-                button4
-                  ? "flex flex-col items-center fade-box invisible"
-                  : "flex flex-col items-center fade-box visible"
-              }
+              className={`flex flex-col items-center transition-opacity duration-800
+                
+                ${button4 ? "opacity-0" : "opacity-100"}
+
+                `}
             >
               What's past the surface?
               <button
@@ -254,6 +248,25 @@ export default PopUp;
       boxid?.classList.remove("visible");
       boxid?.classList.add("invisible");
       boxid?.classList.add("pointer-events-none");
+    }
+  }, [isOpen]);
+
+  */
+
+/* old use effect pairing with mount
+
+  {
+            "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto fade-box" +
+            (isMountedOpen ? " visible" : " invisible pointer-events-none")
+          }
+
+useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        setIsMountedOpen(true);
+      }, 1);
+    } else {
+      setIsMountedOpen(false);
     }
   }, [isOpen]);
 
