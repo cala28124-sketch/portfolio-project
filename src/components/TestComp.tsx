@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-wrapper-object-types */
 // this exists as a placeholder component to be copied for individual matterboxes. It currently has the bug fix for the delay to fix it, and the offset. copy this and call into matterbox for more.
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -22,6 +23,8 @@ interface Props {
   ID: string;
   setMount: (arg0: boolean) => void;
   Mount: boolean;
+  screenwidth?: Number;
+  screenheight?: Number;
 }
 
 const TestComp = ({
@@ -35,6 +38,8 @@ const TestComp = ({
   ID,
   setMount,
   Mount,
+  screenwidth,
+  screenheight,
 }: Props) => {
   const [Test, setTest] = useState(false);
   const externalBodyRef = useRef<Matter.Body | null>(null);
@@ -62,12 +67,12 @@ const TestComp = ({
       const bodyHeight = boxElement.offsetHeight;
 
       const externalBoxBody = Bodies.rectangle(
-        1000,
-        50,
+        screenwidth ? Number(screenwidth) / 2 : 400,
+        screenheight ? Number(-screenheight) / 2 : 300,
         bodyWidth,
         bodyHeight,
         {
-          frictionAir: 0.05,
+          frictionAir: 0.005,
           mass: 10,
           render: { visible: false },
         }

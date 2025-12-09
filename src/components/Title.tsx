@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-wrapper-object-types */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {
   useEffect,
@@ -13,9 +14,17 @@ interface Props {
   engineRef: MutableRefObject<Matter.Engine | null>;
   Start: boolean;
   setStart: (arg0: boolean) => void;
+  screenwidth?: Number;
+  screenheight?: Number;
 }
 
-const Title = ({ engineRef, Start, setStart }: Props) => {
+const Title = ({
+  engineRef,
+  Start,
+  setStart,
+  screenwidth,
+  screenheight,
+}: Props) => {
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
 
@@ -32,9 +41,13 @@ const Title = ({ engineRef, Start, setStart }: Props) => {
         return;
       }
 
-      const boxid = document.getElementById("box1");
-      boxid?.classList.replace("top-1/3", "top-0");
-      boxid?.classList.replace("left-1/3", "top-0");
+      const boxid = document.getElementById("title");
+      boxid?.classList.remove("flex");
+      boxid?.classList.remove("justify-center");
+      boxid?.classList.remove("items-center");
+      boxid?.classList.remove("absolute");
+      boxid?.classList.remove("w-full");
+      boxid?.classList.remove("h-full");
 
       const engine = engineRef.current;
 
@@ -45,8 +58,8 @@ const Title = ({ engineRef, Start, setStart }: Props) => {
       const bodyHeight = boxElement.offsetHeight;
 
       const externalBoxBody = Bodies.rectangle(
-        1000,
-        500,
+        screenwidth ? Number(screenwidth) / 2 : 400,
+        screenheight ? Number(screenheight) / 2 : 300,
         bodyWidth,
         bodyHeight,
         {
@@ -92,24 +105,28 @@ const Title = ({ engineRef, Start, setStart }: Props) => {
   return (
     <>
       <div
-        id="box1"
-        ref={externalBoxRef}
-        className="item-center pointer-events-none absolute top-1/3 left-1/3 flex h-fit w-fit items-center justify-center rounded-md border-2 border-black bg-green-200 p-2"
+        id="title"
+        className="flex justify-center items-center absolute w-full h-full "
       >
-        <h1 className="text-center text-9xl font-extrabold text-blue-400">
-          {!Start && (
-            <button
-              className="pointer-events-auto"
-              onClick={() => {
-                setStart(true);
-              }}
-            >
-              Click me to start!
-            </button>
-          )}
+        <div
+          ref={externalBoxRef}
+          className="pointer-events-none absolute flex items-center justify-center rounded-md border-2 border-black bg-green-200 p-2"
+        >
+          <h1 className="text-center text-9xl font-extrabold text-blue-400">
+            {!Start && (
+              <button
+                className="pointer-events-auto"
+                onClick={() => {
+                  setStart(true);
+                }}
+              >
+                Click me to start!
+              </button>
+            )}
 
-          {Start && "Drag me!"}
-        </h1>
+            {Start && "Drag me!"}
+          </h1>
+        </div>
       </div>
     </>
   );
@@ -118,3 +135,11 @@ const Title = ({ engineRef, Start, setStart }: Props) => {
 export default Title;
 
 //Basic button that turns into draggable physics object on click. Start is connected to apptsx propped, passed to matterbox then passed to component
+
+/*
+
+const boxid = document.getElementById("title");
+      boxid?.classList.replace("top-1/3", "top-0");
+      boxid?.classList.replace("left-1/3", "top-0");
+
+      */

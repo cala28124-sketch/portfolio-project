@@ -18,7 +18,15 @@ const Navbar = ({ Start }: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   return (
     <>
-      <div className="flex justify-center mt-2">
+      <div
+        className={`flex justify-center mt-2 transition-opacity duration-1600 ease-out
+      
+      ${Start ? "opacity-100" : "opacity-0 pointer-events-none"}
+      
+      
+      
+      `}
+      >
         <div className="flex text-white font-bold items-center gap-3 justify-center h-20 w-5xl bg-white bg-opacity-50 rounded-full">
           <img
             className="h-12 z-10 !rounded-full scale-100 transform transition duration-150 hover:scale-120"

@@ -11,7 +11,7 @@ interface Props {
   setStart: (arg0: boolean) => void;
 }
 
-const MatterBox: FC<Props> = () => {
+const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
   const [aboutme1, setaboutme1] = useState(false);
@@ -30,6 +30,9 @@ const MatterBox: FC<Props> = () => {
   const engineRef = useRef<Matter.Engine | null>(null);
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBodyRef2 = useRef<Matter.Body | null>(null);
+
+  const Width = boxRef.current?.offsetWidth || 0;
+  const Height = boxRef.current?.offsetHeight || 0;
 
   useEffect(() => {
     if (!boxRef.current) return;
@@ -80,9 +83,9 @@ const MatterBox: FC<Props> = () => {
 
     render.mouse = mouse;
 
-    const sky = Bodies.rectangle(Width / 2, 0, Width, 50, {
+    const sky = Bodies.rectangle(Width / 2, -(Height / 2), Width, 50, {
       isStatic: true,
-      render: { fillStyle: "transparent" },
+      render: { fillStyle: "black" },
     });
 
     const ground = Bodies.rectangle(Width / 2, Height, Width, 300, {
@@ -148,13 +151,14 @@ const MatterBox: FC<Props> = () => {
       >
         test
       </button>
-      <div
-        ref={boxRef}
-        style={{
-          zIndex: "0",
-        }}
-        className="w-full h-screen absolute"
-      >
+      <div ref={boxRef} className="w-full h-screen absolute z-0">
+        <Title
+          Start={Start}
+          setStart={setStart}
+          engineRef={engineRef}
+          screenwidth={Width}
+          screenheight={Height}
+        ></Title>
         <TestComp
           spawn={spawn}
           engineRef={engineRef}
@@ -166,6 +170,8 @@ const MatterBox: FC<Props> = () => {
           ID="box1"
           setMount={setMount}
           Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
         ></TestComp>
         <TestComp
           spawn={aboutme1}
@@ -178,6 +184,8 @@ const MatterBox: FC<Props> = () => {
           ID="box2"
           setMount={setMount}
           Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
         ></TestComp>
         <TestComp
           spawn={aboutme2}
@@ -190,6 +198,8 @@ const MatterBox: FC<Props> = () => {
           ID="box5"
           setMount={setMount}
           Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
         ></TestComp>
         <TestComp
           spawn={aboutme3}
@@ -202,6 +212,8 @@ const MatterBox: FC<Props> = () => {
           ID="box3"
           setMount={setMount}
           Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
         ></TestComp>
         <TestComp
           spawn={aboutme4}
@@ -214,6 +226,8 @@ const MatterBox: FC<Props> = () => {
           ID="box4"
           setMount={setMount}
           Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
         ></TestComp>
       </div>
     </>
