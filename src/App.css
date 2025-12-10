@@ -71,7 +71,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 20;
+  z-index: 30;
 }
 
 body.no-scroll {
@@ -138,6 +138,11 @@ body.no-scroll {
   100% {
     transform: translateX(100vw);
   }
+}
+.stars {
+  background-image: url(https://th.bing.com/th/id/R.1ac993017c55863b122b7dac8467d622?rik=frJJa28vdtCS1Q&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f272-2720406_free-png-stars-transparent-background-stars-cartoon.png&ehk=7vDvZ0GY0QKJ5tEuhZKFcVoyEJ9M9krdOfcesDUR%2fl0%3d&risl=&pid=ImgRaw&r=0);
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 body {

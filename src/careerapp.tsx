@@ -4,6 +4,7 @@ import Box from "./components/notes";
 import { useState } from "react";
 import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
+import { StarsBackground } from "./components/animate-ui/components/backgrounds/stars.tsx";
 
 function careerApp() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -26,6 +27,13 @@ function careerApp() {
 
   return (
     <>
+      <div className="relative w-full h-screen bg-transparent overflow-hidden">
+        <StarsBackground className="absolute inset-0" starColor="red" />
+        <h1 className="relative z-10 text-4xl font-bold text-white p-8">
+          Career Page
+        </h1>
+      </div>
+
       <div className="sky-background">
         <Navbar
           menuclick={menuClick}

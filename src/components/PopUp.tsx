@@ -56,7 +56,7 @@ const PopUp = ({
       <div className="flex justify-center">
         <div
           id="aboutme"
-          className={`absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto transition-opacity duration-800 ease-out 
+          className={`absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-40 overflow-y-auto transition-opacity duration-800 ease-out 
     ${
       isOpen
         ? "opacity-100 pointer-events-auto"

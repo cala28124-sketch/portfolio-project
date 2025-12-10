@@ -6,6 +6,8 @@ import TestComp from "./TestComp";
 import ProjectBox from "./ProjectBox";
 import PopUp from "./PopUp";
 import Title from "./Title";
+import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
+
 interface Props {
   Start: boolean;
   setStart: (arg0: boolean) => void;
@@ -151,7 +153,10 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
       >
         test
       </button>
-      <div ref={boxRef} className="w-full h-screen absolute z-0">
+      <div
+        ref={boxRef}
+        className="w-full h-screen absolute z-20 bg-gradient-to-r"
+      >
         <Title
           Start={Start}
           setStart={setStart}
