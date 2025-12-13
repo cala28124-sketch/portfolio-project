@@ -1,6 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
 @import "tailwindcss";
 
+.movecloud {
+  animation-name: moveside;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  left: -10vw;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+@keyframes moveside {
+  0% {
+    transform: translateX(-10vw);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
+}
+
 .fade-box {
   transition: opacity 0.8s ease;
 }
@@ -71,7 +89,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 30;
+  z-index: 40;
 }
 
 body.no-scroll {

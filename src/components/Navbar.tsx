@@ -19,7 +19,7 @@ const Navbar = ({ Start }: Props) => {
   return (
     <>
       <div
-        className={`flex justify-center mt-2 transition-opacity duration-1600 ease-out
+        className={`flex justify-center mt-2 transition-opacity duration-1600 ease-out z-10
       
       ${Start ? "opacity-100" : "opacity-0 pointer-events-none"}
       
@@ -29,7 +29,7 @@ const Navbar = ({ Start }: Props) => {
       >
         <div className="flex text-white font-bold items-center gap-3 justify-center h-20 w-5xl bg-white bg-opacity-50 rounded-full">
           <img
-            className="h-12 z-10 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
+            className="h-12 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
             src="/test_logo.webp"
             alt="shhhh silly"
           />

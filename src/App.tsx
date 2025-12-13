@@ -6,6 +6,7 @@ import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
 import MatterBox from "./components/MatterBox.tsx";
 import { StarsBackground } from "./components/animate-ui/components/backgrounds/stars.tsx";
+import Cloud from "./components/clouds";
 
 function App() {
   const [Videoshow, setStop] = useState(false);
@@ -22,15 +23,15 @@ function App() {
     setStop(false);
     setInteractiveText(true);
   };
-
   return (
     <>
+      <Cloud></Cloud>
       <StarsBackground
         className="absolute pointer-event-none inset-0"
         starColor="#a3e3fa"
         pointerEvents={false}
       />
-      <div className="cloud" />
+
       <div className="dot"></div>
       <div className="sun"></div>
       <Navbar
