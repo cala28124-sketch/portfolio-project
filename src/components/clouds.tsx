@@ -2,8 +2,31 @@
 import React, { use, useEffect, useState } from "react";
 
 const Clouds = () => {
-  const [Cloud, addCloud] = useState(0);
-  const CloudNum = 25;
+  return (
+    <>
+      <div className="cloud top-[20%] w-[100px] h-[50px] cloudanimate1"></div>
+      <div className="cloud top-[20%] w-[100px] h-[50px] cloudanimate2"></div>
+      <div className="cloud top-[40%] left-[160%] w-[100px] h-[50px] cloudanimate1"></div>
+      <div className="cloud top-[40%] left-[160%] w-[100px] h-[50px] cloudanimate2"></div>
+      <div className="cloud top-[45%] right-[40%] w-[100px] h-[50px] cloudanimate1"></div>
+      <div className="cloud top-[45%] right-[40%] w-[100px] h-[50px] cloudanimate2"></div>
+      <div className="cloud top-[75%] right-[60%] w-[100px] h-[50px] cloudanimate1"></div>
+      <div className="cloud top-[75%] right-[60%] w-[100px] h-[50px] cloudanimate2"></div>
+      <div className="cloud top-[12%] left-[130%] w-[100px] h-[50px] cloudanimate1"></div>
+      <div className="cloud top-[12%] left-[130%] w-[100px] h-[50px] cloudanimate2"></div>
+      <div className="cloud top-[34%] right-[80%] w-[100px] h-[50px] cloudanimate1"></div>
+      <div className="cloud top-[34%] right-[80%] w-[100px] h-[50px] cloudanimate2"></div>
+      <div className="cloud top-[34%] right-[150%] w-[100px] h-[50px] cloudanimate1"></div>
+      <div className="cloud top-[34%] right-[150%] w-[100px] h-[50px] cloudanimate2"></div>
+    </>
+  );
+};
+
+export default Clouds;
+
+/*
+const [Cloud, addCloud] = useState(0);
+  const CloudNum = 15;
 
   useEffect(() => {
     const cloudspawn = setInterval(() => {
@@ -15,7 +38,7 @@ const Clouds = () => {
         }
         return Newcount;
       });
-    }, 15000);
+    }, 5000);
 
     return () => clearInterval(cloudspawn);
   }, []);
@@ -23,12 +46,13 @@ const Clouds = () => {
   useEffect(() => {
     if (Cloud > 0) {
       const cloud = document.createElement("img");
-      const randomSize = Math.random() * 100 + 200;
+      const randomSize = Math.random() * 300 + 300;
       const duration = Math.random() * 80 + 40;
       cloud.src = "/cloudssky.png";
       cloud.className = "movecloud";
       cloud.style.position = "absolute";
       cloud.style.top = Math.random() * 70 + 10 + "%";
+
       cloud.style.width = randomSize + "px";
       cloud.style.animationDuration = duration + "s";
 
@@ -36,7 +60,4 @@ const Clouds = () => {
     }
   }, [Cloud]);
 
-  return <></>;
-};
-
-export default Clouds;
+*/

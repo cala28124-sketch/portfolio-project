@@ -138,25 +138,40 @@ body.no-scroll {
 
 .cloud {
   position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 200px;
-  height: 100px;
   background: white;
   border-radius: 50%;
   box-shadow: 60px 0 0 white, 120px 0 0 white, 30px -30px 0 white,
     90px -30px 0 white;
-  opacity: 0.8;
-  animation: moveClouds 60s linear infinite;
+  opacity: 0.4;
+  z-index: 10;
 }
-@keyframes moveClouds {
+
+.cloudanimate1 {
+  animation: moveClouds1 60s linear infinite;
+}
+
+.cloudanimate2 {
+  animation: moveClouds2 60s linear infinite;
+}
+
+@keyframes moveClouds1 {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(-10vw);
   }
   100% {
     transform: translateX(100vw);
   }
 }
+
+@keyframes moveClouds2 {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-10vw);
+  }
+}
+
 .stars {
   background-image: url(https://th.bing.com/th/id/R.1ac993017c55863b122b7dac8467d622?rik=frJJa28vdtCS1Q&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f272-2720406_free-png-stars-transparent-background-stars-cartoon.png&ehk=7vDvZ0GY0QKJ5tEuhZKFcVoyEJ9M9krdOfcesDUR%2fl0%3d&risl=&pid=ImgRaw&r=0);
   background-repeat: repeat;
