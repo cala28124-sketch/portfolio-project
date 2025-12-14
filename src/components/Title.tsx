@@ -27,6 +27,8 @@ const Title = ({
 }: Props) => {
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isClosed, setIsClosed] = useState(true);
 
   useEffect(() => {
     const MatterFunction = () => {
@@ -104,15 +106,83 @@ const Title = ({
 
   return (
     <>
+      {isOpen && (
+        <button
+          className={"overlay"}
+          onClick={() => {
+            if (isClosed) {
+              setIsOpen(true);
+              setIsClosed(false);
+            } else {
+              setIsOpen(false);
+              setIsClosed(true);
+            }
+          }}
+        ></button>
+      )}
+      <div className="flex justify-center item-center absolute w-full h-full pointer-events-none">
+        <div
+          className={`absolute my-4 flex flex-col min-h-2/5 w-xl items-center rounded-md border-5 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
+    ${
+      isOpen
+        ? "opacity-100 pointer-events-auto"
+        : "opacity-0 pointer-events-none"
+    }`}
+        >
+          <button
+            className="absolute top-2 right-2"
+            onClick={() => {
+              if (isClosed) {
+                setIsOpen(true);
+                setIsClosed(false);
+              } else {
+                setIsOpen(false);
+                setIsClosed(true);
+              }
+            }}
+          >
+            closeplaceholder
+          </button>
+          <p className="text-3xl font-extrabold text-blue-400 p-5">
+            Here's a Info Box!
+          </p>
+          <img className="h-98 p-5" src="\thumbsup.png"></img>
+          <p className="text-base p-5 font-bold text-blue-400 text-center px-24 max-md:px-100">
+            These Contain info relating to the box they're on! Spawn in more
+            Boxes by Clicking on subjects on the screen!
+          </p>
+        </div>
+      </div>
+
       <div
         id="title"
         className="flex justify-center items-center absolute w-full h-full "
       >
         <div
           ref={externalBoxRef}
-          className="pointer-events-none absolute flex items-center justify-center rounded-md border-2 border-black bg-green-200 p-2"
+          className="h-[100px] pointer-events-none absolute flex items-center justify-center rounded-lg border-2 border-black bg-green-200 p-2 overflow-hidden"
         >
-          <h1 className="text-center text-9xl font-extrabold text-blue-400">
+          <button
+            className={`absolute top-0 w-full transition-opacity duration-500 ease-out pointer-events-auto ${
+              Start
+                ? "opacity-100 pointer-events-auto"
+                : "opacity-0 pointer-events-none"
+            }`}
+            onClick={() => {
+              if (isClosed) {
+                setIsOpen(true);
+                setIsClosed(false);
+              } else {
+                setIsOpen(false);
+                setIsClosed(true);
+              }
+            }}
+          >
+            <div className="unfoldtitle flex items-center justify-center bg-green-800 font-extrabold text-blue-400">
+              Click here to open!
+            </div>
+          </button>
+          <p className="text-center text-3xl font-extrabold text-blue-400 pointer-events-none">
             {!Start && (
               <button
                 className="pointer-events-auto"
@@ -120,12 +190,12 @@ const Title = ({
                   setStart(true);
                 }}
               >
-                Click me to start!
+                Welcome to my Portfolio! Click me to start!
               </button>
             )}
 
-            {Start && "Drag me!"}
-          </h1>
+            {Start && "Drag Here!"}
+          </p>
         </div>
       </div>
     </>

@@ -114,6 +114,17 @@ body.no-scroll {
   cursor: pointer;
 }
 
+.unfoldtitle {
+  transition: height 0.5s ease;
+  height: 25px;
+}
+
+.unfoldtitle:hover {
+  cursor: pointer;
+  height: 100px;
+  transition: height 0.5s ease;
+}
+
 .unfold {
   transition: height 0.5s ease;
   height: 25px;
