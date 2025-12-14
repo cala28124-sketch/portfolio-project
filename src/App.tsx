@@ -32,7 +32,7 @@ function App() {
         pointerEvents={false}
       />
 
-      <div className="dot"></div>
+      <div className="moon"></div>
       <div className="sun"></div>
       <Navbar
         menuclick={menuClick}
