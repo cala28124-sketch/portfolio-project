@@ -11,10 +11,12 @@ interface Props {
   setInteractiveText: (arg0: boolean) => void;
   setVideoshow: (arg0: boolean) => void;
   Start: boolean;
+  setspawnabout: (arg0: boolean) => void;
+  spawnabout: boolean;
 }
 
 // eslint-disable-next-line no-empty-pattern
-const Navbar = ({ Start }: Props) => {
+const Navbar = ({ Start, setspawnabout, spawnabout }: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   const [Mount, setMount] = useState(false);
 
@@ -44,7 +46,12 @@ const Navbar = ({ Start }: Props) => {
             src="/test_logo.webp"
             alt="shhhh silly"
           />
-          <button className=" py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+          <button
+            onClick={() => {
+              setspawnabout(true);
+            }}
+            className=" py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+          >
             About
           </button>
           <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">

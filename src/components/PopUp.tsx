@@ -88,7 +88,11 @@ const PopUp = ({
               }
             }}
           >
-            closeplaceholder
+            <img
+              className="h-[30px]"
+              src="\closebutton6.png"
+              alt="close button"
+            />
           </button>
           <p className="text-xl font-bold text-green-800 py-4">
             Hi, my name is...

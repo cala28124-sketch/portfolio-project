@@ -11,9 +11,16 @@ import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
 interface Props {
   Start: boolean;
   setStart: (arg0: boolean) => void;
+  Spawnabout: boolean;
+  setspawnabout: (arg0: boolean) => void;
 }
 
-const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
+const MatterBox: FC<Props> = ({
+  Start,
+  setStart,
+  Spawnabout,
+  setspawnabout,
+}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
   const [aboutme1, setaboutme1] = useState(false);
@@ -143,15 +150,11 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
 
       <button
         onClick={() => {
-          setspawn(true);
-          setMount(true);
-          if (spawn) {
-            setspawn(false);
-          }
+          setspawnabout(false);
         }}
         className="absolute top-4 left-4 bg-red-500"
       >
-        test
+        clear
       </button>
       <div
         ref={boxRef}
@@ -165,7 +168,7 @@ const MatterBox: FC<Props> = ({ Start, setStart }: Props) => {
           screenheight={Height}
         ></Title>
         <TestComp
-          spawn={spawn}
+          spawn={Spawnabout}
           engineRef={engineRef}
           isClosed={isClosed}
           setIsClosed={setIsClosed}

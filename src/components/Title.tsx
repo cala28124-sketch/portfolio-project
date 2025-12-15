@@ -157,12 +157,16 @@ const Title = ({
               }
             }}
           >
-            closeplaceholder
+            <img
+              className="h-[30px]"
+              src="\closebutton6.png"
+              alt="close button"
+            />
           </button>
           <p className="text-3xl font-extrabold text-blue-400 p-5">
             Here's a Info Box!
           </p>
-          <img className="h-98 p-5" src="\thumbsup.png"></img>
+          <img className="h-98 p-5" src="thumbsup.png" alt="thumbs up"></img>
           <p className="text-base p-5 font-bold text-blue-400 text-center px-24 max-md:px-100">
             These Contain info relating to the box they're on! Spawn in more
             Boxes by Clicking on subjects on the screen!
@@ -175,10 +179,10 @@ const Title = ({
       >
         <div
           ref={externalBoxRef}
-          className=" h-[100px] pointer-events-none absolute flex items-center justify-center rounded-lg border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition"
+          className={`h-[100px] pointer-events-none absolute flex items-center justify-center rounded-lg border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition`}
         >
           <button
-            className={`absolute top-0 w-full transition-opacity duration-500 ease-out pointer-events-auto ${
+            className={`absolute top-0 w-full transition-opacity duration-500 ease-out pointer-events-auto ease-out ${
               Start
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none"

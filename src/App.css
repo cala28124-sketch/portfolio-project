@@ -2,13 +2,13 @@
 @import "tailwindcss";
 
 .startslow {
-  animation: titlebegin2 2s ease-out forwards;
+  animation: titlebegin2 2s ease-in-out forwards;
 }
 
 @keyframes titlebegin2 {
   0% {
     opacity: 0;
-    transform: scale(0);
+    transform: scale(0.2);
   }
   100% {
     opacity: 1;
@@ -199,7 +199,7 @@ body.no-scroll {
   border-radius: 50%;
   box-shadow: 60px 0 0 white, 120px 0 0 white, 30px -30px 0 white,
     90px -30px 0 white;
-  opacity: 0.25;
+  opacity: 0.4;
   z-index: 10;
 }
 

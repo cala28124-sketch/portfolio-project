@@ -14,6 +14,7 @@ function App() {
   const [navtoggle, setnav] = useState(true);
   const [interactiveText, setInteractiveText] = useState(false);
   const [Start, setStart] = useState(false);
+  const [spawnabout, setspawnabout] = useState(false);
 
   const menuClick = () => {
     setStop(true);
@@ -25,15 +26,17 @@ function App() {
   };
   return (
     <>
-      <Cloud></Cloud>
+      <div className="moon"></div>
+
       <StarsBackground
         className="absolute pointer-event-none inset-0"
         starColor="#a3e3fa"
         pointerEvents={false}
       />
-
-      <div className="moon"></div>
-      <div className="sun"></div>
+      <div className="pointer-events-none absolute inset-0 startslow">
+        <Cloud></Cloud>
+        <div className="sun"></div>
+      </div>
       <Navbar
         menuclick={menuClick}
         menuSkip={menuSkip}
@@ -43,8 +46,15 @@ function App() {
         setInteractiveText={setInteractiveText}
         setVideoshow={setStop}
         Start={Start}
+        setspawnabout={setspawnabout}
+        spawnabout={spawnabout}
       />
-      <MatterBox Start={Start} setStart={setStart}></MatterBox>
+      <MatterBox
+        Start={Start}
+        setStart={setStart}
+        Spawnabout={spawnabout}
+        setspawnabout={setspawnabout}
+      ></MatterBox>
     </>
   );
 }
