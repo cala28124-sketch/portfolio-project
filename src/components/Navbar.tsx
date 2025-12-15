@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Dropbox from "./dropbox";
 interface Props {
@@ -16,12 +16,23 @@ interface Props {
 // eslint-disable-next-line no-empty-pattern
 const Navbar = ({ Start }: Props) => {
   const [firstclick, setfirstclick] = useState(true);
+  const [Mount, setMount] = useState(false);
+
+  useEffect(() => {
+    if (Mount) {
+      const element = document.getElementById("navbar");
+      element?.classList.remove("opacity-0");
+    } else {
+      setMount(true);
+    }
+  }, [Start]);
   return (
     <>
       <div
-        className={`flex justify-center mt-2 transition-opacity duration-1600 ease-out z-10
+        id="navbar"
+        className={`flex justify-center mt-2 transition-opacity duration-1600 ease-out z-10 opacity-0
       
-      ${Start ? "opacity-100" : "opacity-0 pointer-events-none"}
+      ${Start ? "startslow" : "pointer-events-none"}
       
       
       

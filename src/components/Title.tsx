@@ -171,7 +171,7 @@ const Title = ({
       </div>
       <div
         id="title"
-        className="flex justify-center items-center absolute w-full h-full start pointer-events-none"
+        className="flex justify-center items-center absolute w-full h-full startslow pointer-events-none"
       >
         <div
           ref={externalBoxRef}
