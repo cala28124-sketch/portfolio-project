@@ -7,7 +7,7 @@
 
 @keyframes titlebegin2 {
   0% {
-    opacity: 0.5;
+    opacity: 0;
     transform: translateY(-100%);
   }
   100% {
@@ -16,18 +16,33 @@
   }
 }
 
-.titlestart {
-  animation: titlebegin 1s ease-in-out forwards;
+.start {
+  animation: begin 0.5s ease-in-out forwards;
 }
 
-@keyframes titlebegin {
+@keyframes begin {
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: scale(0);
   }
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+.exit {
+  animation: exit 0.5s ease-in-out forwards;
+}
+
+@keyframes exit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
   }
 }
 

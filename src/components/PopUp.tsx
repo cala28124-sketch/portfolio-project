@@ -34,34 +34,47 @@ const PopUp = ({
   button4set,
   Mount,
 }: Props) => {
-  const [isMountedOpen, setIsMountedOpen] = useState(false);
+  const [Mount1, setMount] = useState(false);
+
+  useEffect(() => {
+    if (Mount1) {
+      if (isClosed) {
+        const element = document.getElementById("aboutme");
+        element?.classList.remove("opacity-0");
+        element?.classList.add("exit");
+      } else {
+        const element = document.getElementById("aboutme");
+        element?.classList.remove("opacity-0");
+      }
+    } else {
+      setMount(true);
+    }
+  }, [isClosed]);
 
   return (
     <>
-      {isOpen && (
-        <button
-          className={"overlay"}
-          onClick={() => {
-            if (isClosed) {
-              setIsOpen(true);
-              setIsClosed(false);
-            } else {
-              setIsOpen(false);
-              setIsClosed(true);
-            }
-          }}
-        ></button>
-      )}
+      <button
+        className={`overlay transition-opacity duration-800 ${
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => {
+          if (isClosed) {
+            setIsOpen(true);
+            setIsClosed(false);
+          } else {
+            setIsOpen(false);
+            setIsClosed(true);
+          }
+        }}
+      ></button>
 
       <div className="flex justify-center">
         <div
           id="aboutme"
-          className={`absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
-    ${
-      isOpen
-        ? "opacity-100 pointer-events-auto"
-        : "opacity-0 pointer-events-none"
-    }`}
+          className={`opacity-0 absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
+    ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
             className="absolute top-2 right-2"

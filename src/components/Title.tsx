@@ -29,6 +29,22 @@ const Title = ({
   const externalBoxRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
+  const [Mount, setMount] = useState(false);
+
+  useEffect(() => {
+    if (Mount) {
+      if (isClosed) {
+        const element = document.getElementById("tutorialpopup");
+        element?.classList.remove("opacity-0");
+        element?.classList.add("exit");
+      } else {
+        const element = document.getElementById("tutorialpopup");
+        element?.classList.remove("opacity-0");
+      }
+    } else {
+      setMount(true);
+    }
+  }, [isClosed]);
 
   useEffect(() => {
     const MatterFunction = () => {
@@ -106,28 +122,28 @@ const Title = ({
 
   return (
     <>
-      {isOpen && (
-        <button
-          className={"overlay"}
-          onClick={() => {
-            if (isClosed) {
-              setIsOpen(true);
-              setIsClosed(false);
-            } else {
-              setIsOpen(false);
-              setIsClosed(true);
-            }
-          }}
-        ></button>
-      )}
+      <button
+        className={`overlay transition-opacity duration-800 ${
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => {
+          if (isClosed) {
+            setIsOpen(true);
+            setIsClosed(false);
+          } else {
+            setIsOpen(false);
+            setIsClosed(true);
+          }
+        }}
+      ></button>
+
       <div className="flex justify-center item-center absolute w-full h-full pointer-events-none">
         <div
-          className={`absolute my-4 flex flex-col min-h-2/5 w-xl items-center rounded-md border-10 border-grey-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
-    ${
-      isOpen
-        ? "opacity-100 pointer-events-auto"
-        : "opacity-0 pointer-events-none"
-    }`}
+          id="tutorialpopup"
+          className={`absolute my-4 flex flex-col min-h-2/5 w-xl items-center rounded-md border-10 border-grey-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out opacity-0
+    ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
             className="absolute top-2 right-2"
@@ -153,10 +169,9 @@ const Title = ({
           </p>
         </div>
       </div>
-
       <div
         id="title"
-        className="flex justify-center items-center absolute w-full h-full titlestart pointer-events-none"
+        className="flex justify-center items-center absolute w-full h-full start pointer-events-none"
       >
         <div
           ref={externalBoxRef}
