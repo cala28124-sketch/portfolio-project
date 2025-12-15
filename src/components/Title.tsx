@@ -122,7 +122,7 @@ const Title = ({
       )}
       <div className="flex justify-center item-center absolute w-full h-full pointer-events-none">
         <div
-          className={`absolute my-4 flex flex-col min-h-2/5 w-xl items-center rounded-md border-5 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
+          className={`absolute my-4 flex flex-col min-h-2/5 w-xl items-center rounded-md border-10 border-grey-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
     ${
       isOpen
         ? "opacity-100 pointer-events-auto"
@@ -156,11 +156,11 @@ const Title = ({
 
       <div
         id="title"
-        className="flex justify-center items-center absolute w-full h-full "
+        className="flex justify-center items-center absolute w-full h-full titlestart pointer-events-none"
       >
         <div
           ref={externalBoxRef}
-          className="h-[100px] pointer-events-none absolute flex items-center justify-center rounded-lg border-2 border-black bg-green-200 p-2 overflow-hidden"
+          className=" h-[100px] pointer-events-none absolute flex items-center justify-center rounded-lg border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition"
         >
           <button
             className={`absolute top-0 w-full transition-opacity duration-500 ease-out pointer-events-auto ${

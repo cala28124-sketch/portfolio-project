@@ -128,7 +128,7 @@ const TestComp = ({
         <div
           id={ID}
           ref={externalBoxRef}
-          className="w-48 rounded-lg overflow-hidden bg-green-300 text-white absolute pointer-events-none	-top-0 -left-100"
+          className="w-48 rounded-lg overflow-hidden bg-green-200 text-white absolute pointer-events-none	-top-0 -left-100 border-5 border-green-800"
         >
           <button
             className="absolute"
@@ -142,7 +142,7 @@ const TestComp = ({
               }
             }}
           >
-            <div className="unfold pointer-events-auto flex items-center justify-center bg-green-800 absolute">
+            <div className="unfold pointer-events-auto flex items-center justify-center items-center bg-green-800 absolute">
               {text}
             </div>
           </button>
