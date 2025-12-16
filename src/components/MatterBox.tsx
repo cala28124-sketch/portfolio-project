@@ -191,6 +191,13 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
         ></Title>
+        <Title
+          Start={Start}
+          setStart={setStart}
+          engineRef={engineRef}
+          screenwidth={Width}
+          screenheight={Height}
+        ></Title>
         <TestComp
           spawn={Spawnabout}
           engineRef={engineRef}
@@ -346,3 +353,5 @@ useEffect(() => {
   { Start, setStart  }: Props
 
   */
+
+/* */
