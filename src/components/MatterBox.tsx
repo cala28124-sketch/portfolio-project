@@ -34,6 +34,9 @@ const MatterBox: FC<Props> = ({
   const [aboutme2, setaboutme2] = useState(false);
   const [aboutme3, setaboutme3] = useState(false);
   const [aboutme4, setaboutme4] = useState(false);
+  const [project1, setproject1] = useState(false);
+  const [project2, setproject2] = useState(false);
+  const [project3, setproject3] = useState(false);
   const [nullisOpen, nullsetIsOpen] = useState(false);
   const [nullisClosed, nullsetIsClosed] = useState(false);
 
@@ -160,15 +163,13 @@ const MatterBox: FC<Props> = ({
         setIsClosed={setIsClosedproject}
         setIsOpen={setIsOpenproject}
         isOpen={isOpenproject}
-        button1={aboutme1}
-        button1set={setaboutme1}
-        button2={aboutme2}
-        button2set={setaboutme2}
-        button3={aboutme3}
-        button3set={setaboutme3}
-        button4={aboutme4}
-        button4set={setaboutme4}
         Mount={Mount}
+        button1={project1}
+        button1set={setproject1}
+        button2={project2}
+        button2set={setproject2}
+        button3={project3}
+        button3set={setproject3}
       ></PopUpProject>
 
       <button
@@ -270,6 +271,48 @@ const MatterBox: FC<Props> = ({
           text="about4"
           image="/test_logo.webp"
           ID="box4"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+        ></TestComp>
+        <TestComp
+          spawn={project1}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="truthmeter"
+          image="/test_logo.webp"
+          ID="project1"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+        ></TestComp>
+        <TestComp
+          spawn={project2}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="pngPal"
+          image="/test_logo.webp"
+          ID="project2"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+        ></TestComp>
+        <TestComp
+          spawn={project3}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="portfolio"
+          image="/test_logo.webp"
+          ID="project3"
           setMount={setMount}
           Mount={Mount}
           screenwidth={Width}

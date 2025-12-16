@@ -192,6 +192,16 @@ body.no-scroll {
   transition: transform 0.3s ease;
 }
 
+.enlargen2 {
+  transition: transform 0.3s ease;
+}
+
+.enlargen2:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
 .cloud {
   -webkit-filter: blur(6px);
   position: absolute;
