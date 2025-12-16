@@ -13,10 +13,18 @@ interface Props {
   Start: boolean;
   setspawnabout: (arg0: boolean) => void;
   spawnabout: boolean;
+  spawnproject: boolean;
+  setspawnproject: (arg0: boolean) => void;
 }
 
 // eslint-disable-next-line no-empty-pattern
-const Navbar = ({ Start, setspawnabout, spawnabout }: Props) => {
+const Navbar = ({
+  Start,
+  setspawnabout,
+  spawnabout,
+  spawnproject,
+  setspawnproject,
+}: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   const [Mount, setMount] = useState(false);
 
@@ -57,7 +65,12 @@ const Navbar = ({ Start, setspawnabout, spawnabout }: Props) => {
           <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
             Career
           </button>
-          <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+          <button
+            onClick={() => {
+              setspawnproject(true);
+            }}
+            className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+          >
             Projects
           </button>
           <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">

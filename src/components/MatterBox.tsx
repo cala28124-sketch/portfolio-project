@@ -5,6 +5,7 @@ import Card from "./card";
 import TestComp from "./TestComp";
 import ProjectBox from "./ProjectBox";
 import PopUp from "./PopUp";
+import PopUpProject from "./PopUpProject";
 import Title from "./Title";
 import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
 
@@ -13,6 +14,8 @@ interface Props {
   setStart: (arg0: boolean) => void;
   Spawnabout: boolean;
   setspawnabout: (arg0: boolean) => void;
+  spawnproject: boolean;
+  setspawnproject: (arg0: boolean) => void;
 }
 
 const MatterBox: FC<Props> = ({
@@ -20,9 +23,13 @@ const MatterBox: FC<Props> = ({
   setStart,
   Spawnabout,
   setspawnabout,
+  spawnproject,
+  setspawnproject,
 }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isClosed, setIsClosed] = useState(true);
+  const [isOpenabout, setIsOpenabout] = useState(false);
+  const [isClosedabout, setIsClosedabout] = useState(true);
+  const [isOpenproject, setIsOpenproject] = useState(false);
+  const [isClosedproject, setIsClosedproject] = useState(true);
   const [aboutme1, setaboutme1] = useState(false);
   const [aboutme2, setaboutme2] = useState(false);
   const [aboutme3, setaboutme3] = useState(false);
@@ -133,10 +140,10 @@ const MatterBox: FC<Props> = ({
     <>
       <PopUp
         //current placeholder, opened by testcomp/projectbox. able to do individual and separate pop ups here for easy use, may move to main app comp later.
-        isClosed={isClosed}
-        setIsClosed={setIsClosed}
-        setIsOpen={setIsOpen}
-        isOpen={isOpen}
+        isClosed={isClosedabout}
+        setIsClosed={setIsClosedabout}
+        setIsOpen={setIsOpenabout}
+        isOpen={isOpenabout}
         button1={aboutme1}
         button1set={setaboutme1}
         button2={aboutme2}
@@ -147,10 +154,27 @@ const MatterBox: FC<Props> = ({
         button4set={setaboutme4}
         Mount={Mount}
       ></PopUp>
+      <PopUpProject
+        //current placeholder, opened by testcomp/projectbox. able to do individual and separate pop ups here for easy use, may move to main app comp later.
+        isClosed={isClosedproject}
+        setIsClosed={setIsClosedproject}
+        setIsOpen={setIsOpenproject}
+        isOpen={isOpenproject}
+        button1={aboutme1}
+        button1set={setaboutme1}
+        button2={aboutme2}
+        button2set={setaboutme2}
+        button3={aboutme3}
+        button3set={setaboutme3}
+        button4={aboutme4}
+        button4set={setaboutme4}
+        Mount={Mount}
+      ></PopUpProject>
 
       <button
         onClick={() => {
           setspawnabout(false);
+          setspawnproject(false);
         }}
         className="absolute top-4 left-4 bg-red-500"
       >
@@ -170,12 +194,26 @@ const MatterBox: FC<Props> = ({
         <TestComp
           spawn={Spawnabout}
           engineRef={engineRef}
-          isClosed={isClosed}
-          setIsClosed={setIsClosed}
-          setIsOpen={setIsOpen}
-          text="test"
+          isClosed={isClosedabout}
+          setIsClosed={setIsClosedabout}
+          setIsOpen={setIsOpenabout}
+          text="open about"
           image="/headshotme.jpg"
           ID="box1"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+        ></TestComp>
+        <TestComp
+          spawn={spawnproject}
+          engineRef={engineRef}
+          isClosed={isClosedproject}
+          setIsClosed={setIsClosedproject}
+          setIsOpen={setIsOpenproject}
+          text="open projects"
+          image="/headshotme.jpg"
+          ID="boxproject"
           setMount={setMount}
           Mount={Mount}
           screenwidth={Width}

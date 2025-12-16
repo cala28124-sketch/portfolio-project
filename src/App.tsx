@@ -15,6 +15,7 @@ function App() {
   const [interactiveText, setInteractiveText] = useState(false);
   const [Start, setStart] = useState(false);
   const [spawnabout, setspawnabout] = useState(false);
+  const [spawnproject, setspawnproject] = useState(false);
 
   const menuClick = () => {
     setStop(true);
@@ -48,12 +49,16 @@ function App() {
         Start={Start}
         setspawnabout={setspawnabout}
         spawnabout={spawnabout}
+        setspawnproject={setspawnproject}
+        spawnproject={spawnproject}
       />
       <MatterBox
         Start={Start}
         setStart={setStart}
         Spawnabout={spawnabout}
         setspawnabout={setspawnabout}
+        setspawnproject={setspawnproject}
+        spawnproject={spawnproject}
       ></MatterBox>
     </>
   );
