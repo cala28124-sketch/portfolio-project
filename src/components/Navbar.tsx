@@ -15,6 +15,12 @@ interface Props {
   spawnabout: boolean;
   spawnproject: boolean;
   setspawnproject: (arg0: boolean) => void;
+  spawncareer: boolean;
+  setspawncareer: (arg0: boolean) => void;
+  spawnskills: boolean;
+  setspawnskills: (arg0: boolean) => void;
+  spawnmisc: boolean;
+  setspawnmisc: (arg0: boolean) => void;
 }
 
 // eslint-disable-next-line no-empty-pattern
@@ -24,6 +30,12 @@ const Navbar = ({
   spawnabout,
   spawnproject,
   setspawnproject,
+  spawncareer,
+  setspawncareer,
+  spawnskills,
+  setspawnskills,
+  spawnmisc,
+  setspawnmisc,
 }: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   const [Mount, setMount] = useState(false);
@@ -62,7 +74,12 @@ const Navbar = ({
           >
             About
           </button>
-          <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+          <button
+            onClick={() => {
+              setspawncareer(true);
+            }}
+            className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+          >
             Career
           </button>
           <button
@@ -73,33 +90,46 @@ const Navbar = ({
           >
             Projects
           </button>
-          <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
+          <button
+            onClick={() => {
+              setspawnskills(true);
+            }}
+            className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+          >
             Skills
           </button>
-          <button className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 ">
-            Blah
+          <button
+            onClick={() => {
+              setspawnmisc(true);
+            }}
+            className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+          >
+            Features
           </button>
 
           <div className="flex gap-2">
-            <a href="https://www.coolmathgames.com/">
+            <a href="https://github.com/cala28124-sketch" target="_blank">
               <img
                 className="h-12 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
-                src="/test_logo.webp"
-                alt="shhhh silly"
+                src="/github.png"
+                alt="github"
               />
             </a>
-            <a href="https://www.coolmathgames.com/">
+            <a
+              href="https://www.linkedin.com/in/anthony-calabrese-b4453930b/"
+              target="_blank"
+            >
               <img
-                className="h-12 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
-                src="/test_logo.webp"
-                alt="shhhh silly"
+                className="h-12 scale-100 transform transition duration-150 hover:scale-120"
+                src="/linkedin.png"
+                alt="linkedin"
               />
             </a>
-            <a href="https://www.coolmathgames.com/">
+            <a href="https://www.coolmathgames.com/" target="_blank">
               <img
-                className="h-12 !rounded-full scale-100 transform transition duration-150 hover:scale-120 "
-                src="/test_logo.webp"
-                alt="shhhh silly"
+                className="h-12 scale-100 transform transition duration-150 hover:scale-120 "
+                src="/resume.png"
+                alt="resume"
               />
             </a>
           </div>

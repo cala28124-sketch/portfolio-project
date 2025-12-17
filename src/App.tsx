@@ -16,6 +16,9 @@ function App() {
   const [Start, setStart] = useState(false);
   const [spawnabout, setspawnabout] = useState(false);
   const [spawnproject, setspawnproject] = useState(false);
+  const [spawncareer, setspawncareer] = useState(false);
+  const [spawnskills, setspawnskills] = useState(false);
+  const [spawnmisc, setspawnmisc] = useState(false);
 
   const menuClick = () => {
     setStop(true);
@@ -51,6 +54,12 @@ function App() {
         spawnabout={spawnabout}
         setspawnproject={setspawnproject}
         spawnproject={spawnproject}
+        spawncareer={spawncareer}
+        setspawncareer={setspawncareer}
+        spawnskills={spawnskills}
+        setspawnskills={setspawnskills}
+        spawnmisc={spawnmisc}
+        setspawnmisc={setspawnmisc}
       />
       <MatterBox
         Start={Start}
@@ -59,6 +68,12 @@ function App() {
         setspawnabout={setspawnabout}
         setspawnproject={setspawnproject}
         spawnproject={spawnproject}
+        spawncareer={spawncareer}
+        setspawncareer={setspawncareer}
+        spawnskills={spawnskills}
+        setspawnskills={setspawnskills}
+        spawnmisc={spawnmisc}
+        setspawnmisc={setspawnmisc}
       ></MatterBox>
     </>
   );

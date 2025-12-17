@@ -93,22 +93,34 @@ const PopUpProject = ({
           <p className="font-bold text-blue-400 text-5xl p-2">My Projects</p>
           <p className="font-bold text-blue-400 text-md p-2">
             I always want to put my skills to the test- and here are the cases
-            where I've done exactly that! Click to add them to the page.
+            where I've done exactly that! Click the image to add them to the
+            page.
           </p>
           <div className="grid grid-cols-4 gap-5 w-full h-full p-2">
             {" "}
-            <button
-              onClick={() => {
-                button1set(true);
-              }}
-              className="h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center enlargen2"
-            >
+            <div className="h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
               <p className="font-bold text-blue-400 text-xl py-2">TruthMeter</p>
-              <img
-                className="h-[150px]"
-                src="\truthmeter.png"
-                alt="truth_meter"
-              />
+
+              <div
+                className={`transition-opacity duration-800
+                
+                ${button1 ? "opacity-0" : "opacity-100"}
+
+                `}
+              >
+                <button
+                  onClick={() => {
+                    button1set(true);
+                  }}
+                >
+                  <img
+                    className="block h-[150px] enlargen2 size-auto"
+                    src="\truthmeter.png"
+                    alt="truth_meter"
+                  ></img>
+                </button>
+              </div>
+
               <div className="w-64 mx-auto border-4 border-transparent">
                 <p className="text-center text-sm text-blue-400 font-bold">
                   An accesible browser extension that allows one to check the
@@ -118,26 +130,52 @@ const PopUpProject = ({
                 </p>
               </div>
               <div className="flex space-x-5 justify-center">
-                <img className="h-[40px]" src="\test_logo.webp" alt="react" />
-                <img className="h-[40px]" src="\test_logo.webp" alt="fastapi" />
+                <img
+                  className="h-[40px] enlargen2"
+                  src="\reactlogo.png"
+                  alt="react"
+                />
+                <img
+                  className="h-[40px] enlargen2"
+                  src="\fastapi.png"
+                  alt="fastapi"
+                />
 
-                <img className="h-[40px]" src="\test_logo.webp" alt="python" />
+                <img
+                  className="h-[40px] enlargen2"
+                  src="\python.png"
+                  alt="python"
+                />
 
-                <img className="h-[40px]" src="\test_logo.webp" alt="gemini" />
+                <img
+                  className="h-[40px] enlargen2"
+                  src="\googleadk.png"
+                  alt="gemini"
+                />
               </div>
-            </button>
-            <button
-              onClick={() => {
-                button2set(true);
-              }}
-              className="h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center enlargen2"
-            >
+            </div>
+            <div className="h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
               <p className="font-bold text-blue-400 text-xl p-2">PNGpal</p>
-              <img
-                className="h-[150px] border-5 border-green-800"
-                src="\pngpalimage.png"
-                alt="pngpal"
-              />
+              <div
+                className={`transition-opacity duration-800
+                
+                ${button2 ? "opacity-0" : "opacity-100"}
+
+                `}
+              >
+                <button
+                  onClick={() => {
+                    button2set(true);
+                  }}
+                >
+                  <img
+                    className="h-[150px] border-5 border-green-800 block enlargen2"
+                    src="\pngpalimage.png"
+                    alt="pngpal"
+                  />
+                </button>
+              </div>
+
               <div className="w-64 mx-auto border-4 border-transparent">
                 <p className="text-center text-sm text-blue-400 font-bold">
                   A chatbot that overlays itself on the users screen, allowing
@@ -147,22 +185,30 @@ const PopUpProject = ({
                 </p>
               </div>
               <div className="flex space-x-5 justify-center">
-                <img className="h-[40px]" src="\test_logo.webp" alt="python" />
+                <img
+                  className="h-[40px] enlargen2"
+                  src="\python.png"
+                  alt="python"
+                />
 
                 <img
-                  className="h-[40px]"
-                  src="\test_logo.webp"
+                  className="h-[40px] enlargen2"
+                  src="\reactlogo.png"
                   alt="electron"
                 />
 
-                <img className="h-[40px]" src="\test_logo.webp" alt="react" />
+                <img
+                  className="h-[40px] enlargen2"
+                  src="\reactlogo.png"
+                  alt="flask"
+                />
                 <img
                   className="h-[40px]"
                   src="\test_logo.webp"
                   alt="elevenlabs"
                 />
               </div>
-            </button>
+            </div>
             <button
               onClick={() => {
                 button3set(true);
@@ -181,3 +227,23 @@ const PopUpProject = ({
 };
 
 export default PopUpProject;
+
+/* 
+
+<button
+                onClick={() => {
+                  button1set(true);
+                }}
+              >
+                <img
+                  className={`h-[150px] enlargen2
+                
+                ${button1 ? "opacity-0" : "opacity-100"}
+
+                `}
+                  src="\truthmeter.png"
+                  alt="truth_meter"
+                />
+              </button>
+
+              */

@@ -44,6 +44,8 @@ const TestComp = ({
   const [Test, setTest] = useState(false);
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
+  const randomSpawn =
+    Math.random() * (Number(screenwidth) / 2) + Number(screenwidth) / 4;
 
   useEffect(() => {
     const MatterFunction = () => {
@@ -67,7 +69,7 @@ const TestComp = ({
       const bodyHeight = boxElement.offsetHeight;
 
       const externalBoxBody = Bodies.rectangle(
-        screenwidth ? Number(screenwidth) / 2 : 400,
+        screenwidth ? randomSpawn : 400,
         screenheight ? Number(-screenheight) / 2 : 300,
         bodyWidth,
         bodyHeight,
