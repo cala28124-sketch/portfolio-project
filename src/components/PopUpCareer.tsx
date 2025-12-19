@@ -69,7 +69,7 @@ const PopUpCareer = ({
       <div className="flex justify-center">
         <div
           id="career"
-          className={`opacity-0 absolute my-4 flex flex-col h-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
+          className={`font opacity-0 absolute my-4 flex flex-col h-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -90,7 +90,7 @@ const PopUpCareer = ({
               alt="close button"
             />
           </button>
-          <p className="font-bold text-blue-400 text-5xl p-2">My Career</p>
+          <p className="font-bold text-green-800 text-5xl p-2">My Career</p>
           <p className="font-bold text-blue-400 text-md p-2"></p>
         </div>
       </div>

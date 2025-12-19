@@ -139,7 +139,7 @@ const Title = ({
         }}
       ></button>
 
-      <div className="flex justify-center item-center absolute w-full h-full pointer-events-none">
+      <div className="flex justify-center item-center absolute w-full h-full pointer-events-none font">
         <div
           id="tutorialpopup"
           className={`absolute my-4 flex flex-col min-h-2/5 w-xl items-center border-10 border-grey-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out opacity-0
@@ -163,11 +163,11 @@ const Title = ({
               alt="close button"
             />
           </button>
-          <p className="text-3xl font-extrabold text-blue-400 p-5">
+          <p className="text-3xl font-extrabold text-green-800 p-5">
             Here's a Info Box!
           </p>
           <img className="h-98 p-5" src="thumbsup.png" alt="thumbs up"></img>
-          <p className="text-base p-5 font-bold text-blue-400 text-center px-24 max-md:px-100">
+          <p className="text-base p-5 font-bold text-green-800 text-center px-24 max-md:px-100">
             These Contain info relating to the box they're on! Spawn in more
             Boxes by Clicking on subjects on the screen!
           </p>
@@ -197,11 +197,11 @@ const Title = ({
               }
             }}
           >
-            <div className="unfoldtitle flex items-center justify-center bg-green-800 font-extrabold text-blue-400">
+            <div className="unfoldtitle flex items-center justify-center bg-green-800 font-extrabold text-green-200 font">
               Click here to open!
             </div>
           </button>
-          <p className="text-center text-3xl font-extrabold text-blue-400 pointer-events-none">
+          <p className="text-center text-3xl font-extrabold text-green-800 pointer-events-none font">
             {!Start && (
               <button
                 className="pointer-events-auto"

@@ -69,7 +69,7 @@ const PopUpProject = ({
       <div className="flex justify-center">
         <div
           id="project"
-          className={`opacity-0 absolute my-4 flex flex-col h-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
+          className={`font opacity-0 absolute my-4 flex flex-col h-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -90,8 +90,8 @@ const PopUpProject = ({
               alt="close button"
             />
           </button>
-          <p className="font-bold text-blue-400 text-5xl p-2">My Projects</p>
-          <p className="font-bold text-blue-400 text-md p-2">
+          <p className="font-bold text-green-800 text-5xl p-2">My Projects</p>
+          <p className="font-bold text-green-800 text-md p-2">
             I always want to put my skills to the test- and here are the cases
             where I've done exactly that! Click the image to add them to the
             page.
@@ -99,7 +99,9 @@ const PopUpProject = ({
           <div className="grid grid-cols-4 gap-5 w-full h-full p-2">
             {" "}
             <div className="h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-bold text-blue-400 text-xl py-2">TruthMeter</p>
+              <p className="font-bold text-green-800 text-xl py-2">
+                TruthMeter
+              </p>
 
               <div
                 className={`transition-opacity duration-800
@@ -122,7 +124,7 @@ const PopUpProject = ({
               </div>
 
               <div className="w-64 mx-auto border-4 border-transparent">
-                <p className="text-center text-sm text-blue-400 font-bold">
+                <p className="text-center text-sm text-green-800 font-bold">
                   An accesible browser extension that allows one to check the
                   credibility, and accuracy of a webpage, providing a summary of
                   the page and what it contains, and how credible/accurate each
@@ -155,7 +157,7 @@ const PopUpProject = ({
               </div>
             </div>
             <div className="h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-bold text-blue-400 text-xl p-2">PNGpal</p>
+              <p className="font-bold text-green-800 text-xl p-2">PNGpal</p>
               <div
                 className={`transition-opacity duration-800
                 
@@ -177,7 +179,7 @@ const PopUpProject = ({
               </div>
 
               <div className="w-64 mx-auto border-4 border-transparent">
-                <p className="text-center text-sm text-blue-400 font-bold">
+                <p className="text-center text-sm text-green-800 font-bold">
                   A chatbot that overlays itself on the users screen, allowing
                   them to freely ask financial advice, giving back a response
                   when doing so, and recording the transcript of the
@@ -215,7 +217,7 @@ const PopUpProject = ({
               }}
               className="h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center enlargen2"
             >
-              <p className="font-bold text-blue-400 text-xl p-2">
+              <p className="font-bold text-green-800 text-xl p-2">
                 Portfolio Project
               </p>
             </button>

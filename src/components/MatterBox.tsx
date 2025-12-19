@@ -128,16 +128,16 @@ const MatterBox: FC<Props> = ({
       render: { fillStyle: "black" },
     });
 
-    const ground = Bodies.rectangle(Width / 2, Height, Width, 300, {
+    const ground = Bodies.rectangle(Width / 2, Height, Width, 250, {
       isStatic: true,
       render: { fillStyle: "green" },
     });
-    const wallleft = Bodies.rectangle(0, Height / 2, 50, Height, {
+    const wallleft = Bodies.rectangle(0, Height / 2, 50, Height * 2, {
       isStatic: true,
       render: { fillStyle: "transparent" },
     });
 
-    const wallright = Bodies.rectangle(Width, Height / 2, 50, Height, {
+    const wallright = Bodies.rectangle(Width, Height / 2, 50, Height * 2, {
       isStatic: true,
       render: { fillStyle: "transparent" },
     });

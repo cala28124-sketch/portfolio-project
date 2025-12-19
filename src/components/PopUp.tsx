@@ -73,7 +73,7 @@ const PopUp = ({
       <div className="flex justify-center">
         <div
           id="aboutme"
-          className={`opacity-0 absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
+          className={`font opacity-0 absolute z-50 flex h-[90%] w-[95%] flex-col items-center overflow-y-auto rounded-md border-4 border-4 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 md:border-8 lg:w-4/5 lg:border-10 transition-opacity duration-800 ease-out 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -89,7 +89,7 @@ const PopUp = ({
             }}
           >
             <img
-              className="h-[30px]"
+              className="h-1/10"
               src="\closebutton6.png"
               alt="close button"
             />
@@ -97,17 +97,17 @@ const PopUp = ({
           <p className="text-xl font-bold text-green-800 py-4">
             Hi, my name is...
           </p>
-          <div className="bg-green-800 size-auto">
-            <img
-              className="block mx-auto p-3 w-96"
-              src="/headshotme.jpg"
-              alt="source"
-            ></img>
-          </div>
+
+          <img
+            className="block mx-auto p-3 w-98 bg-green-800"
+            src="/headshotme.jpg"
+            alt="source"
+          ></img>
+
           <h1 className="!font-extrabold !text-green-800 py-4">
             ANTHONY CALABRESE!
           </h1>
-          <p className="text-base font-bold text-green-800 text-center px-24 max-md:px-100">
+          <p className="text-base font-bold text-green-800 text-center px-6 md: px-12 lg:px-24">
             I'm a computer science student here at the University of Central
             Florida! Growing up, I've constantly held a fascination for
             programming and the many things its used to make. Now, I work
@@ -115,7 +115,7 @@ const PopUp = ({
             only better myself, but create tools that I and others can benefit
             from!
           </p>
-          <div className="grid grid-cols-4 gap-5 mt-2 mx-2">
+          <div className="grid grid-cols-4 gap-2 mt-2 mx-2 w-4/5">
             <div
               className={`flex flex-col items-center transition-opacity duration-800
                 
@@ -123,14 +123,14 @@ const PopUp = ({
 
                 `}
             >
-              Who am I?
+              More Me
               <button
                 onClick={() => {
                   button1set(true);
                 }}
               >
                 <img
-                  className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
+                  className="block mx-auto p-2 w-1/2 enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>
@@ -143,54 +143,54 @@ const PopUp = ({
 
                 `}
             >
-              What do I do?
+              My Life
               <button
                 onClick={() => {
                   button2set(true);
                 }}
               >
                 <img
-                  className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
+                  className="block mx-auto p-2 w-1/2 enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>
               </button>
             </div>
             <div
-              className={`flex flex-col items-center transition-opacity duration-800
+              className={` flex flex-col items-center transition-opacity duration-800
                 
                 ${button3 ? "opacity-0" : "opacity-100"}
 
                 `}
             >
-              What's my drive?
+              My Drive
               <button
                 onClick={() => {
                   button3set(true);
                 }}
               >
                 <img
-                  className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
+                  className="enlargen block mx-auto p-2 w-1/2 bg-green-800 size-auto"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>
               </button>
             </div>
             <div
-              className={`flex flex-col items-center transition-opacity duration-800
+              className={`text-base flex flex-col items-center transition-opacity duration-800
                 
                 ${button4 ? "opacity-0" : "opacity-100"}
 
                 `}
             >
-              What's past the surface?
+              My Interests
               <button
                 onClick={() => {
                   button4set(true);
                 }}
               >
                 <img
-                  className="block mx-auto p-3 w-28 enlargen bg-green-800 size-auto"
+                  className="block mx-auto p-2 w-1/2 enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>

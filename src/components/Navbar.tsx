@@ -52,7 +52,7 @@ const Navbar = ({
     <>
       <div
         id="navbar"
-        className={`flex justify-center mt-2 transition-opacity duration-1600 ease-out z-10 opacity-0
+        className={`flex justify-center mt-2 transition-opacity duration-1600 ease-out z-10 opacity-0 font
       
       ${Start ? "startslow" : "pointer-events-none"}
       
