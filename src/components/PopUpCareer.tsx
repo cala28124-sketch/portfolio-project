@@ -91,7 +91,42 @@ const PopUpCareer = ({
             />
           </button>
           <p className="font-bold text-green-800 text-5xl p-2">My Career</p>
-          <p className="font-bold text-blue-400 text-md p-2"></p>
+          <p className="font-bold text-green-800 text-md p-2">
+            blah blah blah placeholder text placeholder text im talking here to
+            take up space
+          </p>
+          <div className="flex flex-col gap-5 w-full h-full p-2">
+            <div className="min-h-2/5 border-green-800 border-5 bg-green-400 flex">
+              <div className="flex flex-col p-3 w-4/5">
+                <p className="font-bold text-green-800 text-xl m-0">
+                  Pinch a Penny Pool Supply Store
+                </p>
+                <p className="font-bold text-green-800 text-sm">
+                  Sales Associate
+                </p>
+
+                <ul className="list-disc list-inside p-0">
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                </ul>
+              </div>
+              <div className="flex flex-col p-3 w-1/5 items-center">
+                <img
+                  className="block mx-auto p-2 h-3/5 bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <p className="text-center text-sm text-green-800 m-0 p-0">
+                  fake date
+                </p>
+                <p className="text-center text-sm text-green-800 font-bold">
+                  location location, state
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

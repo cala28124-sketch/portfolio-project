@@ -98,14 +98,6 @@ const Navbar = ({
           >
             Skills
           </button>
-          <button
-            onClick={() => {
-              setspawnmisc(true);
-            }}
-            className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
-          >
-            Features
-          </button>
 
           <div className="flex gap-2">
             <a href="https://github.com/cala28124-sketch" target="_blank">
@@ -142,3 +134,19 @@ const Navbar = ({
 export default Navbar;
 
 // <div className="z-1 h-10 absolute bg-blue-500 rounded-full"></div>
+
+/*
+
+old nav button
+
+<button
+            onClick={() => {
+              setspawnmisc(true);
+            }}
+            className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+          >
+            Features
+          </button>
+
+
+          */
