@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
 @import "tailwindcss";
 
+.custom-scrollbar {
+  /* Options: auto, thin, or none */
+  scrollbar-width: thin;
+
+  /* Syntax: [Thumb Color] [Track Color] */
+  scrollbar-color: #016630 transparent;
+}
+
 .font {
   font-family: "Courier New", Monospace;
 }

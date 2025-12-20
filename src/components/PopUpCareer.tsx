@@ -69,7 +69,7 @@ const PopUpCareer = ({
       <div className="flex justify-center">
         <div
           id="career"
-          className={`font opacity-0 absolute my-4 flex flex-col h-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
+          className={`font opacity-0 absolute z-50 flex h-[90%] w-[95%] flex-col items-center overflow-y-auto rounded-md border-4 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 md:border-8 lg:w-4/5 lg:border-10 transition-opacity duration-800 ease-out 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -95,26 +95,11 @@ const PopUpCareer = ({
             blah blah blah placeholder text placeholder text im talking here to
             take up space
           </p>
-          <div className="flex flex-col gap-5 w-full h-full p-2">
-            <div className="min-h-2/5 border-green-800 border-5 bg-green-400 flex">
-              <div className="flex flex-col p-3 w-4/5">
-                <p className="font-bold text-green-800 text-xl m-0">
-                  Pinch a Penny Pool Supply Store
-                </p>
-                <p className="font-bold text-green-800 text-sm">
-                  Sales Associate
-                </p>
-
-                <ul className="list-disc list-inside p-0">
-                  <li>5 cups chopped Porcini mushrooms</li>
-                  <li>5 cups chopped Porcini mushrooms</li>
-                  <li>5 cups chopped Porcini mushrooms</li>
-                  <li>5 cups chopped Porcini mushrooms</li>
-                </ul>
-              </div>
-              <div className="flex flex-col p-3 w-1/5 items-center">
+          <div className="flex flex-col items-center gap-5 w-full h-full p-2">
+            <div className="min-h-2/5 w-[90%] border-green-800 border-5 bg-green-400 flex flex-col md:flex-row-reverse ">
+              <div className="flex flex-col items-center justify-center p-3">
                 <img
-                  className="block mx-auto p-2 h-3/5 bg-green-800"
+                  className="block mx-auto p-2 h-[150px] bg-green-800"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>
@@ -124,6 +109,28 @@ const PopUpCareer = ({
                 <p className="text-center text-sm text-green-800 font-bold">
                   location location, state
                 </p>
+              </div>
+              <div className="flex flex-col p-3 w-full md:w-4/5">
+                <p className="font-bold text-green-800 text-l md:text-xl m-0">
+                  Pinch a Penny Pool Supply Store
+                </p>
+                <p className="font-bold text-green-800 text-sm">
+                  Sales Associate
+                </p>
+
+                <ul className="list-disc list-inside p-0">
+                  <li>
+                    Incoming Software Engineer Intern for the GET
+                    SS-W-Attractions Systems Team at Disney Experiences.
+                  </li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                  <li>5 cups chopped Porcini mushrooms</li>
+                </ul>
               </div>
             </div>
           </div>

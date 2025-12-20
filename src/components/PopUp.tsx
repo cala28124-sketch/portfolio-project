@@ -73,7 +73,7 @@ const PopUp = ({
       <div className="flex justify-center">
         <div
           id="aboutme"
-          className={`font opacity-0 absolute z-50 flex h-[90%] w-[95%] flex-col items-center overflow-y-auto rounded-md border-4 border-4 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 md:border-8 lg:w-4/5 lg:border-10 transition-opacity duration-800 ease-out 
+          className={`custom-scrollbar font opacity-0 absolute z-50 flex max-h-[90%] max-w-[95%] flex-col items-center overflow-y-auto rounded-md border-10 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 lg:w-4/5 transition-opacity duration-800 ease-out 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -99,7 +99,7 @@ const PopUp = ({
           </p>
 
           <img
-            className="block mx-auto p-3 w-98 bg-green-800"
+            className="block mx-auto p-3 w-[300px] bg-green-800"
             src="/headshotme.jpg"
             alt="source"
           ></img>
@@ -115,9 +115,9 @@ const PopUp = ({
             only better myself, but create tools that I and others can benefit
             from!
           </p>
-          <div className="grid grid-cols-4 gap-2 mt-2 mx-2 w-4/5">
+          <div className="grid grid-cols-4 gap-5 p-2 w-4/5 whitespace-nowrap">
             <div
-              className={`flex flex-col items-center transition-opacity duration-800
+              className={` flex flex-col items-center transition-opacity duration-800
                 
                 ${button1 ? "opacity-0" : "opacity-100"}
 
@@ -130,7 +130,7 @@ const PopUp = ({
                 }}
               >
                 <img
-                  className="block mx-auto p-2 w-1/2 enlargen bg-green-800 size-auto"
+                  className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>
@@ -143,14 +143,14 @@ const PopUp = ({
 
                 `}
             >
-              My Life
+              Life
               <button
                 onClick={() => {
                   button2set(true);
                 }}
               >
                 <img
-                  className="block mx-auto p-2 w-1/2 enlargen bg-green-800 size-auto"
+                  className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>
@@ -163,14 +163,14 @@ const PopUp = ({
 
                 `}
             >
-              My Drive
+              Drive
               <button
                 onClick={() => {
                   button3set(true);
                 }}
               >
                 <img
-                  className="enlargen block mx-auto p-2 w-1/2 bg-green-800 size-auto"
+                  className="enlargen block mx-auto p-2 w-[150px] bg-green-800 size-auto"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>
@@ -183,14 +183,14 @@ const PopUp = ({
 
                 `}
             >
-              My Interests
+              Interests
               <button
                 onClick={() => {
                   button4set(true);
                 }}
               >
                 <img
-                  className="block mx-auto p-2 w-1/2 enlargen bg-green-800 size-auto"
+                  className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
                   src="/test_logo.webp"
                   alt="source"
                 ></img>
