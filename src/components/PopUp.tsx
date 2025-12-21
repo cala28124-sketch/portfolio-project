@@ -115,7 +115,7 @@ const PopUp = ({
             only better myself, but create tools that I and others can benefit
             from!
           </p>
-          <div className="grid grid-cols-4 gap-5 p-2 w-4/5 whitespace-nowrap">
+          <div className="flex p-2 w-4/5 justify-center">
             <div
               className={` flex flex-col items-center transition-opacity duration-800
                 
@@ -125,6 +125,7 @@ const PopUp = ({
             >
               More Me
               <button
+                className="p-2"
                 onClick={() => {
                   button1set(true);
                 }}
@@ -145,6 +146,7 @@ const PopUp = ({
             >
               Life
               <button
+                className="p-2"
                 onClick={() => {
                   button2set(true);
                 }}
@@ -165,6 +167,7 @@ const PopUp = ({
             >
               Drive
               <button
+                className="p-2"
                 onClick={() => {
                   button3set(true);
                 }}
@@ -177,7 +180,7 @@ const PopUp = ({
               </button>
             </div>
             <div
-              className={`text-base flex flex-col items-center transition-opacity duration-800
+              className={`flex flex-col items-center transition-opacity duration-800
                 
                 ${button4 ? "opacity-0" : "opacity-100"}
 
@@ -185,6 +188,7 @@ const PopUp = ({
             >
               Interests
               <button
+                className="p-2"
                 onClick={() => {
                   button4set(true);
                 }}

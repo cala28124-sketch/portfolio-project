@@ -58,6 +58,8 @@ const MatterBox: FC<Props> = ({
   const [project1, setproject1] = useState(false);
   const [project2, setproject2] = useState(false);
   const [project3, setproject3] = useState(false);
+  const [career1, setcareer1] = useState(false);
+  const [career2, setcareer2] = useState(false);
   const [nullisOpen, nullsetIsOpen] = useState(false);
   const [nullisClosed, nullsetIsClosed] = useState(false);
 
@@ -198,10 +200,10 @@ const MatterBox: FC<Props> = ({
         setIsOpen={setIsOpencareer}
         isOpen={isOpencareer}
         Mount={Mount}
-        button1={project1}
-        button1set={setproject1}
-        button2={project2}
-        button2set={setproject2}
+        button1={career1}
+        button1set={setcareer1}
+        button2={career2}
+        button2set={setcareer2}
         button3={project3}
         button3set={setproject3}
       ></PopUpCareer>
@@ -417,6 +419,34 @@ const MatterBox: FC<Props> = ({
           text="portfolio"
           image="/test_logo.webp"
           ID="project3"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+        ></TestComp>
+        <TestComp
+          spawn={career1}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="pinch a penny"
+          image="/test_logo.webp"
+          ID="career1"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+        ></TestComp>
+        <TestComp
+          spawn={career2}
+          engineRef={engineRef}
+          isClosed={nullisClosed}
+          setIsClosed={nullsetIsClosed}
+          setIsOpen={nullsetIsOpen}
+          text="ucf"
+          image="/test_logo.webp"
+          ID="career2"
           setMount={setMount}
           Mount={Mount}
           screenwidth={Width}
