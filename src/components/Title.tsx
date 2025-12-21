@@ -142,7 +142,7 @@ const Title = ({
       <div className="flex justify-center item-center absolute w-full h-full pointer-events-none font">
         <div
           id="tutorialpopup"
-          className={`absolute my-4 flex flex-col min-h-2/5 w-xl items-center border-10 border-grey-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out opacity-0
+          className={`custom-scrollbar absolute flex flex-col max-h-[90%] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-4/5 w-xl items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
