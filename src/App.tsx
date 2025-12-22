@@ -41,6 +41,20 @@ function App() {
         <Cloud></Cloud>
         <div className="sun w-[100px] h-[100px] md:w-[200px] md:h-[200px]"></div>
       </div>
+      <MatterBox
+        Start={Start}
+        setStart={setStart}
+        Spawnabout={spawnabout}
+        setspawnabout={setspawnabout}
+        setspawnproject={setspawnproject}
+        spawnproject={spawnproject}
+        spawncareer={spawncareer}
+        setspawncareer={setspawncareer}
+        spawnskills={spawnskills}
+        setspawnskills={setspawnskills}
+        spawnmisc={spawnmisc}
+        setspawnmisc={setspawnmisc}
+      ></MatterBox>
       <Navbar
         menuclick={menuClick}
         menuSkip={menuSkip}
@@ -61,20 +75,6 @@ function App() {
         spawnmisc={spawnmisc}
         setspawnmisc={setspawnmisc}
       />
-      <MatterBox
-        Start={Start}
-        setStart={setStart}
-        Spawnabout={spawnabout}
-        setspawnabout={setspawnabout}
-        setspawnproject={setspawnproject}
-        spawnproject={spawnproject}
-        spawncareer={spawncareer}
-        setspawncareer={setspawncareer}
-        spawnskills={spawnskills}
-        setspawnskills={setspawnskills}
-        spawnmisc={spawnmisc}
-        setspawnmisc={setspawnmisc}
-      ></MatterBox>
     </>
   );
 }

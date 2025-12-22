@@ -179,7 +179,7 @@ const Title = ({
       >
         <div
           ref={externalBoxRef}
-          className={`h-[100px] w-[150px] lg:h-[100px] lg:w-[250px] pointer-events-none absolute flex items-center justify-center rounded-md border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition`}
+          className={`h-[100px] w-[150px] lg:h-[100px] lg:w-fit pointer-events-none absolute flex items-center justify-center rounded-md border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition`}
         >
           <button
             className={`absolute top-0 w-full transition-opacity duration-500 ease-out pointer-events-auto ease-out ${
@@ -202,7 +202,7 @@ const Title = ({
             </div>
           </button>
 
-          <p className="text-center text-sm lg:text-xl font-extrabold text-green-800 pointer-events-none font">
+          <p className="text-center text-sm lg:text-3xl font-extrabold text-green-800 pointer-events-none font">
             {!Start && (
               <button
                 className="pointer-events-auto"

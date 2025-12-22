@@ -50,10 +50,10 @@ const Navbar = ({
   }, [Start]);
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center pointer-events-auto">
         <div
           id="navbar"
-          className={`w-[90%] lg:w-[900px] absolute flex justify-center mt-2 transition-opacity duration-1600 ease-out z-10 opacity-0 font
+          className={`w-[90%] lg:w-[900px] pointer-events-auto flex justify-center mt-2 transition-opacity duration-1600 ease-out z-20 opacity-0 font
       
       ${Start ? "startslow" : "pointer-events-none"}
       

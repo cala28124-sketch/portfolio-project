@@ -245,10 +245,7 @@ const MatterBox: FC<Props> = ({
       >
         clear
       </button>
-      <div
-        ref={boxRef}
-        className="w-full h-[100dvh] absolute z-20 bg-gradient-to-r"
-      >
+      <div ref={boxRef} className="w-full absolute h-[100dvh] z-10">
         <Title
           Start={Start}
           setStart={setStart}
