@@ -10,6 +10,7 @@ import PopUpCareer from "./PopUpCareer";
 import PopUpSkills from "./PopUpSkills";
 import PopUpMisc from "./PopUpMisc";
 import Title from "./Title";
+import PopUpTitle from "./PopUpTItle";
 import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
 
 interface Props {
@@ -41,6 +42,8 @@ const MatterBox: FC<Props> = ({
   spawnmisc,
   setspawnmisc,
 }: Props) => {
+  const [isOpentitle, setIsOpentitle] = useState(false);
+  const [isClosedtitle, setIsClosedtitle] = useState(true);
   const [isOpenabout, setIsOpenabout] = useState(false);
   const [isClosedabout, setIsClosedabout] = useState(true);
   const [isOpenproject, setIsOpenproject] = useState(false);
@@ -164,6 +167,12 @@ const MatterBox: FC<Props> = ({
 
   return (
     <>
+      <PopUpTitle
+        isOpen={isOpentitle}
+        setIsOpen={setIsOpentitle}
+        isClosed={isClosedtitle}
+        setIsClosed={setIsClosedtitle}
+      ></PopUpTitle>
       <PopUp
         //current placeholder, opened by testcomp/projectbox. able to do individual and separate pop ups here for easy use, may move to main app comp later.
         isClosed={isClosedabout}
@@ -252,6 +261,10 @@ const MatterBox: FC<Props> = ({
           engineRef={engineRef}
           screenwidth={Width}
           screenheight={Height}
+          isOpen={isOpentitle}
+          setIsOpen={setIsOpentitle}
+          isClosed={isClosedtitle}
+          setIsClosed={setIsClosedtitle}
         ></Title>
         <TestComp
           spawn={Spawnabout}
