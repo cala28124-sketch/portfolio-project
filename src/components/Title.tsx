@@ -142,7 +142,7 @@ const Title = ({
       <div className="flex justify-center item-center absolute w-full h-full pointer-events-none font">
         <div
           id="tutorialpopup"
-          className={`custom-scrollbar absolute flex flex-col max-h-[90%] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-4/5 w-xl items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out opacity-0
+          className={`mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-4/5 w-xl items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -179,7 +179,7 @@ const Title = ({
       >
         <div
           ref={externalBoxRef}
-          className={`h-[100px] pointer-events-none absolute flex items-center justify-center rounded-md border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition`}
+          className={`h-[100px] w-[150px] lg:h-[100px] lg:w-[250px] pointer-events-none absolute flex items-center justify-center rounded-md border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition`}
         >
           <button
             className={`absolute top-0 w-full transition-opacity duration-500 ease-out pointer-events-auto ease-out ${
@@ -197,11 +197,12 @@ const Title = ({
               }
             }}
           >
-            <div className="unfoldtitle flex items-center justify-center bg-green-800 font-extrabold text-green-200 font">
+            <div className="unfoldtitle text-xs lg:text-base flex items-center justify-center bg-green-800 font-extrabold text-green-200 font">
               Click here to open!
             </div>
           </button>
-          <p className="text-center text-3xl font-extrabold text-green-800 pointer-events-none font">
+
+          <p className="text-center text-sm lg:text-xl font-extrabold text-green-800 pointer-events-none font">
             {!Start && (
               <button
                 className="pointer-events-auto"

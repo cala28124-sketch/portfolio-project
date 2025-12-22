@@ -130,7 +130,7 @@ const MatterBox: FC<Props> = ({
       render: { fillStyle: "black" },
     });
 
-    const ground = Bodies.rectangle(Width / 2, Height, Width, 250, {
+    const ground = Bodies.rectangle(Width / 2, Height, Width, 100, {
       isStatic: true,
       render: { fillStyle: "green" },
     });
@@ -247,7 +247,7 @@ const MatterBox: FC<Props> = ({
       </button>
       <div
         ref={boxRef}
-        className="w-full h-screen absolute z-20 bg-gradient-to-r"
+        className="w-full h-[100dvh] absolute z-20 bg-gradient-to-r"
       >
         <Title
           Start={Start}

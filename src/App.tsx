@@ -39,7 +39,7 @@ function App() {
       />
       <div className="pointer-events-none absolute inset-0 startslow">
         <Cloud></Cloud>
-        <div className="sun"></div>
+        <div className="sun w-[100px] h-[100px] md:w-[200px] md:h-[200px]"></div>
       </div>
       <Navbar
         menuclick={menuClick}

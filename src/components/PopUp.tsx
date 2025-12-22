@@ -73,11 +73,11 @@ const PopUp = ({
       <div className="flex justify-center">
         <div
           id="aboutme"
-          className={`custom-scrollbar font opacity-0 absolute z-50 flex max-h-[90%] max-w-[95%] flex-col items-center overflow-y-auto rounded-md border-10 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 lg:w-4/5 transition-opacity duration-800 ease-out 
+          className={`custom-scrollbar font opacity-0 absolute z-50 flex max-h-[80dvh] max-w-[95%] flex-col items-center overflow-y-auto rounded-md border-10 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 lg:w-4/5 transition-opacity duration-800 ease-out 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
-            className="absolute top-2 right-2"
+            className="absolute top-2 right-0 md:top-2 md:right-2"
             onClick={() => {
               if (isClosed) {
                 setIsOpen(true);
@@ -89,116 +89,119 @@ const PopUp = ({
             }}
           >
             <img
-              className="h-1/10"
+              className="w-[80%] lg:w-full"
               src="\closebutton6.png"
               alt="close button"
             />
           </button>
-          <p className="text-xl font-bold text-green-800 py-4">
+          <p className="text-xl mt-4 font-bold text-green-800 py-4 mb-0">
             Hi, my name is...
           </p>
+          <div className="p-3 mb-0">
+            <img
+              className="block mx-auto p-3 w-[300px] bg-green-800"
+              src="/headshotme.jpg"
+              alt="source"
+            ></img>
+          </div>
 
-          <img
-            className="block mx-auto p-3 w-[300px] bg-green-800"
-            src="/headshotme.jpg"
-            alt="source"
-          ></img>
-
-          <h1 className="!font-extrabold !text-green-800 py-4">
+          <p className="!font-extrabold !text-green-800 text-center py-4 text-4xl md:text-4xl mb-0">
             ANTHONY CALABRESE!
-          </h1>
-          <p className="text-base font-bold text-green-800 text-center px-6 md: px-12 lg:px-24">
-            I'm a computer science student here at the University of Central
-            Florida! Growing up, I've constantly held a fascination for
-            programming and the many things its used to make. Now, I work
-            towards improving and using my Software Engineering skills to not
-            only better myself, but create tools that I and others can benefit
-            from!
           </p>
-          <div className="flex p-2 w-4/5 justify-center">
-            <div
-              className={` flex flex-col items-center transition-opacity duration-800
+          <div className="flex flex-col items-center w-[90%]">
+            <p className="text-base text-green-800 mx-auto text-center mx-auto">
+              I'm a computer science student here at the University of Central
+              Florida! Growing up, I've constantly held a fascination for
+              programming and the many things its used to make. Now, I work
+              towards improving and using my Software Engineering skills to not
+              only better myself, but create tools that I and others can benefit
+              from! Click on the boxes below to find more out about me!
+            </p>
+            <div className="flex p-2 w-full justify-center text-sm">
+              <div
+                className={`flex flex-col items-center transition-opacity duration-800
                 
                 ${button1 ? "opacity-0" : "opacity-100"}
 
                 `}
-            >
-              More Me
-              <button
-                className="p-2"
-                onClick={() => {
-                  button1set(true);
-                }}
               >
-                <img
-                  className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
-                  src="/test_logo.webp"
-                  alt="source"
-                ></img>
-              </button>
-            </div>
-            <div
-              className={`flex flex-col items-center transition-opacity duration-800
+                More Me
+                <button
+                  className="p-2"
+                  onClick={() => {
+                    button1set(true);
+                  }}
+                >
+                  <img
+                    className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
+                    src="/test_logo.webp"
+                    alt="source"
+                  ></img>
+                </button>
+              </div>
+              <div
+                className={`flex flex-col items-center transition-opacity duration-800
                 
                 ${button2 ? "opacity-0" : "opacity-100"}
 
                 `}
-            >
-              Life
-              <button
-                className="p-2"
-                onClick={() => {
-                  button2set(true);
-                }}
               >
-                <img
-                  className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
-                  src="/test_logo.webp"
-                  alt="source"
-                ></img>
-              </button>
-            </div>
-            <div
-              className={` flex flex-col items-center transition-opacity duration-800
+                Life
+                <button
+                  className="p-2"
+                  onClick={() => {
+                    button2set(true);
+                  }}
+                >
+                  <img
+                    className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
+                    src="/test_logo.webp"
+                    alt="source"
+                  ></img>
+                </button>
+              </div>
+              <div
+                className={` flex flex-col items-center transition-opacity duration-800
                 
                 ${button3 ? "opacity-0" : "opacity-100"}
 
                 `}
-            >
-              Drive
-              <button
-                className="p-2"
-                onClick={() => {
-                  button3set(true);
-                }}
               >
-                <img
-                  className="enlargen block mx-auto p-2 w-[150px] bg-green-800 size-auto"
-                  src="/test_logo.webp"
-                  alt="source"
-                ></img>
-              </button>
-            </div>
-            <div
-              className={`flex flex-col items-center transition-opacity duration-800
+                Drive
+                <button
+                  className="p-2"
+                  onClick={() => {
+                    button3set(true);
+                  }}
+                >
+                  <img
+                    className="enlargen block mx-auto p-2 w-[150px] bg-green-800 size-auto"
+                    src="/test_logo.webp"
+                    alt="source"
+                  ></img>
+                </button>
+              </div>
+              <div
+                className={`flex flex-col items-center transition-opacity duration-800
                 
                 ${button4 ? "opacity-0" : "opacity-100"}
 
                 `}
-            >
-              Interests
-              <button
-                className="p-2"
-                onClick={() => {
-                  button4set(true);
-                }}
               >
-                <img
-                  className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
-                  src="/test_logo.webp"
-                  alt="source"
-                ></img>
-              </button>
+                Hobbies
+                <button
+                  className="p-2"
+                  onClick={() => {
+                    button4set(true);
+                  }}
+                >
+                  <img
+                    className="mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
+                    src="/test_logo.webp"
+                    alt="source"
+                  ></img>
+                </button>
+              </div>
             </div>
           </div>
         </div>

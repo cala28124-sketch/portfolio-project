@@ -4,20 +4,20 @@ import React, { use, useEffect, useState } from "react";
 const Clouds = () => {
   return (
     <>
-      <div className=" cloud top-[20%] w-[100px] h-[50px] cloudanimate1"></div>
-      <div className="cloud top-[20%] w-[100px] h-[50px] cloudanimate2"></div>
-      <div className="cloud top-[30%] left-[-50%] w-[100px] h-[50px] cloudanimate1"></div>
-      <div className="cloud top-[30%] left-[-50%] w-[100px] h-[50px] cloudanimate2"></div>
-      <div className=" cloud top-[55%] left-[70%] w-[100px] h-[50px] cloudanimate1"></div>
-      <div className=" cloud top-[55%] left-[70%] w-[100px] h-[50px] cloudanimate2"></div>
-      <div className=" cloud top-[45%] left-[30%] w-[100px] h-[50px] cloudanimate1"></div>
-      <div className=" cloud top-[45%] left-[30%] w-[100px] h-[50px] cloudanimate2"></div>
-      <div className=" cloud top-[60%] left-[-30%] w-[100px] h-[50px] cloudanimate1"></div>
-      <div className=" cloud top-[60%] left-[-30%] w-[100px] h-[50px] cloudanimate2"></div>
-      <div className=" cloud top-[73%] left-[-60%] w-[100px] h-[50px] cloudanimate1"></div>
-      <div className=" cloud top-[73%] left-[-60%] w-[100px] h-[50px] cloudanimate2"></div>
-      <div className=" cloud top-[73%] left-[60%] w-[100px] h-[50px] cloudanimate1"></div>
-      <div className=" cloud top-[73%] left-[60%] w-[100px] h-[50px] cloudanimate2"></div>
+      <div className=" cloud top-[20%]  cloudanimate1"></div>
+      <div className="cloud top-[20%]  cloudanimate2"></div>
+      <div className="cloud top-[30%] left-[-50%]  cloudanimate1"></div>
+      <div className="cloud top-[30%] left-[-50%]  cloudanimate2"></div>
+      <div className=" cloud top-[55%] left-[70%] cloudanimate1"></div>
+      <div className=" cloud top-[55%] left-[70%]  cloudanimate2"></div>
+      <div className=" cloud top-[45%] left-[30%]  cloudanimate1"></div>
+      <div className=" cloud top-[45%] left-[30%]  cloudanimate2"></div>
+      <div className=" cloud top-[60%] left-[-30%]  cloudanimate1"></div>
+      <div className=" cloud top-[60%] left-[-30%] cloudanimate2"></div>
+      <div className=" cloud top-[73%] left-[-60%]  cloudanimate1"></div>
+      <div className=" cloud top-[73%] left-[-60%]  cloudanimate2"></div>
+      <div className=" cloud top-[73%] left-[60%]  cloudanimate1"></div>
+      <div className=" cloud top-[73%] left-[60%]  cloudanimate2"></div>
     </>
   );
 };
