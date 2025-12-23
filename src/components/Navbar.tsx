@@ -39,21 +39,76 @@ const Navbar = ({
 }: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   const [Mount, setMount] = useState(false);
+  const [dropdownopen, setdropdownopen] = useState(false);
+  const [dropdownclose, setdropdownclose] = useState(true);
 
   useEffect(() => {
     if (Mount) {
       const element = document.getElementById("navbar");
+      const element2 = document.getElementById("mobiledrop");
       element?.classList.remove("opacity-0");
+      element2?.classList.remove("opacity-0");
     } else {
       setMount(true);
     }
   }, [Start]);
+
+  useEffect(() => {
+    if (Mount) {
+      if (dropdownclose) {
+        const element = document.getElementById("dropdownbox");
+        element?.classList.remove("opacity-0");
+        element?.classList.add("exit");
+      } else {
+        const element = document.getElementById("dropdownbox");
+        element?.classList.remove("opacity-0");
+      }
+    } else {
+      setMount(true);
+    }
+  }, [dropdownclose]);
+
   return (
     <>
-      <div className="flex justify-center pointer-events-auto">
+      <button
+        id="mobiledrop"
+        onClick={() => {
+          if (dropdownclose) {
+            setdropdownopen(true);
+            setdropdownclose(false);
+          } else {
+            setdropdownopen(false);
+            setdropdownclose(true);
+          }
+        }}
+        className={`lg:hidden absolute top-2 right-2 w-[12%] !rounded-lg !bg-red-500 z-20 opacity-0 ${
+          Start ? "startslow" : "pointer-events-none"
+        }`}
+      >
+        <img className="p-2" src="/test_logo.webp" alt="shhhh silly" />
+      </button>
+      <div className=" flex justify-center pointer-events-auto">
+        <div
+          id="dropdownbox"
+          className={`z-20 flex flex-col rounded-lg lg:hidden absolute top-15 h-[40%] w-[75%] bg-white bg-opacity-50 opacity-0 transition-opacity duration-1600 ease-out ${
+            dropdownopen ? "start pointer-events-auto" : "pointer-events-none"
+          }`}
+        >
+          <button
+            onClick={() => {
+              setspawnabout(true);
+            }}
+            className=" py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+          >
+            About
+          </button>
+        </div>
+      </div>
+
+      <div className=" flex justify-center pointer-events-auto">
         <div
           id="navbar"
-          className={`w-[90%] lg:w-[900px] pointer-events-auto flex justify-center mt-2 transition-opacity duration-1600 ease-out z-20 opacity-0 font
+          className={`max-lg:hidden w-[90%] lg:w-[900px] pointer-events-auto flex justify-center mt-2 transition-opacity duration-1600 ease-out z-20 opacity-0 font
       
       ${Start ? "startslow" : "pointer-events-none"}
       
