@@ -69,7 +69,7 @@ const PopUpCareer = ({
       <div className="flex justify-center">
         <div
           id="career"
-          className={`custom-scrollbar font opacity-0 absolute z-50 flex h-[80dvh] w-[95%] flex-col items-center overflow-y-auto rounded-md border-4 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 md:border-8 lg:w-4/5 lg:border-10 transition-opacity duration-800 ease-out 
+          className={`my-4 custom-scrollbar font opacity-0 absolute z-50 flex h-[80dvh] w-[95%] flex-col items-center overflow-y-auto rounded-md border-4 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 md:border-8 lg:w-4/5 lg:border-10 transition-opacity duration-800 ease-out 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button

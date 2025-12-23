@@ -69,7 +69,7 @@ const PopUpProject = ({
       <div className="flex justify-center">
         <div
           id="project"
-          className={`custom-scrollbar font opacity-0 absolute flex flex-col max-h-[90%] w-[95%] md:h-4/5 md:w-5/6 lg:max-w-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
+          className={`my-4 custom-scrollbar font opacity-0 absolute flex flex-col max-h-[90%] w-[95%] md:h-4/5 md:w-5/6 lg:max-w-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto transition-opacity duration-800 ease-out 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button

@@ -81,7 +81,7 @@ const Navbar = ({
             setdropdownclose(true);
           }
         }}
-        className={`lg:hidden absolute top-2 right-2 w-[12%] !rounded-lg !bg-red-500 z-20 opacity-0 ${
+        className={`lg:hidden absolute top-2 right-2 w-[12%] !rounded-lg !bg-red-500 z-20 opacity-0 transform transition duration-300 scale-100 active:scale-110 ${
           Start ? "startslow" : "pointer-events-none"
         }`}
       >
@@ -90,7 +90,7 @@ const Navbar = ({
       <div className=" flex justify-center pointer-events-auto">
         <div
           id="dropdownbox"
-          className={`z-20 flex flex-col rounded-lg lg:hidden absolute top-15 h-[40%] w-[75%] bg-white bg-opacity-50 opacity-0 transition-opacity duration-1600 ease-out ${
+          className={`!text-grey-300 font z-20 flex flex-col items-center rounded-lg lg:hidden absolute top-15 h-[40%] w-[75%] bg-white bg-opacity-50 opacity-0 transition-opacity duration-1600 ease-out ${
             dropdownopen ? "start pointer-events-auto" : "pointer-events-none"
           }`}
         >
@@ -98,10 +98,66 @@ const Navbar = ({
             onClick={() => {
               setspawnabout(true);
             }}
-            className=" py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+            className=" w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110 "
           >
             About
           </button>
+          <button
+            onClick={() => {
+              setspawncareer(true);
+            }}
+            className="w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110  "
+          >
+            Career
+          </button>
+          <button
+            onClick={() => {
+              setspawnproject(true);
+            }}
+            className="w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110 "
+          >
+            Projects
+          </button>
+          <button
+            onClick={() => {
+              setspawnskills(true);
+            }}
+            className="w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110  "
+          >
+            Skills
+          </button>
+
+          <div className="flex justify-center gap-2">
+            <img
+              className="h-10 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
+              src="/test_logo.webp"
+              alt="shhhh silly"
+            />
+            <a href="https://github.com/cala28124-sketch" target="_blank">
+              <img
+                className="h-10 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
+                src="/github.png"
+                alt="github"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/anthony-calabrese-b4453930b/"
+              target="_blank"
+            >
+              <img
+                className="h-10 scale-100 transform transition duration-150 hover:scale-120"
+                src="/linkedin.png"
+                alt="linkedin"
+              />
+            </a>
+            <a href="https://www.coolmathgames.com/" target="_blank">
+              <img
+                className="h-10 scale-100 transform transition duration-150 hover:scale-120 "
+                src="/resume.png"
+                alt="resume"
+              />
+            </a>
+          </div>
         </div>
       </div>
 

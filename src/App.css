@@ -10,10 +10,8 @@ body {
 }
 
 .custom-scrollbar {
-  /* Options: auto, thin, or none */
   scrollbar-width: thin;
 
-  /* Syntax: [Thumb Color] [Track Color] */
   scrollbar-color: #016630 transparent;
 }
 
