@@ -90,7 +90,7 @@ const Navbar = ({
       <div className=" flex justify-center pointer-events-auto">
         <div
           id="dropdownbox"
-          className={`!text-grey-300 font z-20 flex flex-col items-center rounded-lg lg:hidden absolute top-15 h-[40%] w-[75%] bg-white bg-opacity-50 opacity-0 transition-opacity duration-1600 ease-out ${
+          className={`!text-grey-300 font z-20 flex flex-col items-center rounded-lg lg:hidden absolute top-15 h-[40%] w-[75%] bg-white bg-opacity-50 opacity-0 ${
             dropdownopen ? "start pointer-events-auto" : "pointer-events-none"
           }`}
         >
@@ -164,7 +164,7 @@ const Navbar = ({
       <div className=" flex justify-center pointer-events-auto">
         <div
           id="navbar"
-          className={`max-lg:hidden w-[90%] lg:w-[900px] pointer-events-auto flex justify-center mt-2 transition-opacity duration-1600 ease-out z-20 opacity-0 font
+          className={`max-lg:hidden w-[90%] lg:w-[900px] pointer-events-auto flex justify-center mt-2 z-20 opacity-0 font
       
       ${Start ? "startslow" : "pointer-events-none"}
       
