@@ -90,7 +90,7 @@ const Navbar = ({
       <div className=" flex justify-center pointer-events-auto">
         <div
           id="dropdownbox"
-          className={`!text-grey-300 font z-20 flex flex-col items-center rounded-lg lg:hidden absolute top-15 h-[40%] w-[75%] bg-white bg-opacity-50 opacity-0 ${
+          className={`!text-grey-300 font z-20 flex flex-col items-center justify-center rounded-lg lg:hidden absolute top-15 h-[40%] w-[75%] bg-white bg-opacity-50 opacity-0 ${
             dropdownopen ? "start pointer-events-auto" : "pointer-events-none"
           }`}
         >
@@ -117,14 +117,6 @@ const Navbar = ({
             className="w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110 "
           >
             Projects
-          </button>
-          <button
-            onClick={() => {
-              setspawnskills(true);
-            }}
-            className="w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110  "
-          >
-            Skills
           </button>
 
           <div className="flex justify-center gap-2">
@@ -202,14 +194,6 @@ const Navbar = ({
             >
               Projects
             </button>
-            <button
-              onClick={() => {
-                setspawnskills(true);
-              }}
-              className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
-            >
-              Skills
-            </button>
 
             <div className="flex gap-2">
               <a href="https://github.com/cala28124-sketch" target="_blank">
@@ -250,7 +234,7 @@ export default Navbar;
 
 /*
 
-old nav button
+old nav buttons
 
 <button
             onClick={() => {
@@ -261,5 +245,27 @@ old nav button
             Features
           </button>
 
+
+
+
+
+          <button
+            onClick={() => {
+              setspawnskills(true);
+            }}
+            className="w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110  "
+          >
+            Skills
+          </button>
+
+
+          <button
+              onClick={() => {
+                setspawnskills(true);
+              }}
+              className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+            >
+              Skills
+            </button>
 
           */

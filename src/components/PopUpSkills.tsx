@@ -96,74 +96,62 @@ const PopUpSkills = ({
           <p className="font-bold text-green-800 text-md p-2 text-center">
             A small overview of my skills and technical expertise.
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-fit h-fit">
-            <div className="min-h-4/5 border-green-800 border-5 bg-green-400 flex flex-col">
-              <p className="font-extrabold text-xl text-green-800 px-5">test</p>
-
-              <div className="flex justify-start">
-                <ul className="list-disc list-inside p-0 text-green-800 grid grid-cols-3 gap-x-5 gap-y-2">
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                </ul>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full h-full border-5">
+            <div className="m-2 border-10 border-green-800 bg-green-400 max-h-full lg:max-h-1/4 min-w-1/2">
+              <p>test</p>
+              <ul className="border-10 lg:h-full list-disc list-inside p-0 text-green-800 grid grid-cols-3 gap-x-2 gap-y-5 lg:gap-y-0">
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+              </ul>
             </div>
-            <div className="min-h-4/5 w-fit border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-extrabold text-xl text-green-800">test</p>
-
-              <div className="flex justify-center">
-                <ul className="list-disc list-inside p-0 text-green-800 grid grid-cols-3 gap-x-6 gap-y-2">
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                </ul>
-              </div>
+            <div className="m-2 border-10 border-green-800 bg-green-400 max-h-full lg:max-h-1/4 min-w-1/2">
+              <p>test</p>
+              <ul className="border-10 lg:h-full list-disc list-inside p-0 text-green-800 grid grid-cols-3 gap-x-2 gap-y-5 lg:gap-y-0">
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+              </ul>
             </div>
-            <div className="min-h-4/5 w-fit border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-extrabold text-xl text-green-800">test</p>
-
-              <div className="flex justify-center">
-                <ul className="list-disc list-inside p-0 text-green-800 grid grid-cols-3 gap-x-6 gap-y-2">
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                </ul>
-              </div>
+            <div className="m-2 border-10 border-green-800 bg-green-400 max-h-full lg:max-h-1/4 min-w-1/2">
+              <p>test</p>
+              <ul className="border-10 lg:h-full list-disc list-inside p-0 text-green-800 grid grid-cols-3 gap-x-2 gap-y-5 lg:gap-y-0">
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+              </ul>
             </div>
-            <div className="min-h-4/5 w-fit border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-extrabold text-xl text-green-800">test</p>
-
-              <div className="flex justify-center">
-                <ul className="list-disc list-inside p-0 text-green-800 grid grid-cols-3 gap-x-6 gap-y-2">
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                  <li className="px-4">react</li>
-                </ul>
-              </div>
+            <div className="m-2 border-10 border-green-800 bg-green-400 max-h-full lg:max-h-1/4 min-w-1/2">
+              <p>test</p>
+              <ul className="border-10 lg:h-full list-disc list-inside p-0 text-green-800 grid grid-cols-3 gap-x-2 gap-y-5 lg:gap-y-0">
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+                <li className="px-1">react</li>
+              </ul>
             </div>
           </div>
         </div>

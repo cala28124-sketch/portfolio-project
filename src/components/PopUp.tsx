@@ -115,9 +115,66 @@ const PopUp = ({
               programming and the many things its used to make. Now, I work
               towards improving and using my Software Engineering skills to not
               only better myself, but create tools that I and others can benefit
-              from! Click on the boxes below to find more out about me!
+              from!
             </p>
-            <div className="flex p-2 w-full justify-center text-sm">
+            <div>
+              <p className="font-extrabold text-green-800 text-center text-2xl">
+                What I build with
+              </p>
+              <div className="flex flex-wrap w-full justify-center">
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+              </div>
+            </div>
+            <div>
+              <p className="font-extrabold text-green-800 text-center text-2xl">
+                What I'm learning
+              </p>
+              <div className="flex flex-wrap w-full justify-center">
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+              </div>
+            </div>
+            <p className="text-center pt-5">
+              cick on these boxes to find out more!
+            </p>
+            <div className="flex flex-wrap p-2 w-full justify-center text-sm">
               <div
                 className={`flex flex-col items-center transition-opacity duration-800
                 
