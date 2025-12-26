@@ -166,11 +166,24 @@ const MatterBox: FC<Props> = ({
       const Widthchange = boxRef.current?.offsetWidth || 0;
       const HeightChange = boxRef.current?.offsetHeight || 0;
 
+      if (render) {
+        render.canvas.width = Widthchange;
+        render.canvas.height = HeightChange;
+        render.options.width = Widthchange;
+        render.options.height = HeightChange;
+      }
+
       if (groundRef.current) {
         Matter.Body.setPosition(groundRef.current, {
           x: Widthchange / 2,
           y: HeightChange,
         });
+        Matter.Body.scale(
+          groundRef.current,
+          Widthchange /
+            (groundRef.current.bounds.max.x - groundRef.current.bounds.min.x),
+          1
+        );
       }
 
       if (skyRef.current) {
@@ -178,6 +191,12 @@ const MatterBox: FC<Props> = ({
           x: Widthchange / 2,
           y: -(HeightChange / 2),
         });
+        Matter.Body.scale(
+          skyRef.current,
+          Widthchange /
+            (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
+          1
+        );
       }
 
       if (leftwallRef.current) {
@@ -185,6 +204,13 @@ const MatterBox: FC<Props> = ({
           x: 0,
           y: HeightChange / 2,
         });
+        Matter.Body.scale(
+          leftwallRef.current,
+          Widthchange /
+            (leftwallRef.current.bounds.max.x -
+              leftwallRef.current.bounds.min.x),
+          1
+        );
       }
 
       if (rightwallRef.current) {
@@ -192,6 +218,13 @@ const MatterBox: FC<Props> = ({
           x: Widthchange,
           y: HeightChange / 2,
         });
+        Matter.Body.scale(
+          rightwallRef.current,
+          Widthchange /
+            (rightwallRef.current.bounds.max.x -
+              rightwallRef.current.bounds.min.x),
+          1
+        );
       }
     };
 
@@ -202,10 +235,10 @@ const MatterBox: FC<Props> = ({
     window.addEventListener("resize", Resize);
 
     return () => {
+      window.removeEventListener("resize", Resize);
       Render.stop(render);
       Runner.stop(runner);
       Engine.clear(engine);
-      window.removeEventListener("resize", Resize);
 
       if (render.canvas) {
         render.canvas.remove();
