@@ -304,6 +304,7 @@ const MatterBox: FC<Props> = ({
       </button>
       <div ref={boxRef} className="w-full absolute h-[100dvh] z-10">
         <Title
+          boxRef={boxRef}
           Start={Start}
           setStart={setStart}
           engineRef={engineRef}
@@ -315,6 +316,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedtitle}
         ></Title>
         <TestComp
+          boxRef={boxRef}
           spawn={Spawnabout}
           engineRef={engineRef}
           isClosed={isClosedabout}
@@ -329,6 +331,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={spawnproject}
           engineRef={engineRef}
           isClosed={isClosedproject}
@@ -343,6 +346,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={spawncareer}
           engineRef={engineRef}
           isClosed={isClosedcareer}
@@ -357,6 +361,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={spawnskills}
           engineRef={engineRef}
           isClosed={isClosedskills}
@@ -371,6 +376,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={spawnmisc}
           engineRef={engineRef}
           isClosed={isClosedmisc}
@@ -385,6 +391,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={aboutme1}
           engineRef={engineRef}
           isClosed={nullisClosed}
@@ -399,6 +406,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={aboutme2}
           engineRef={engineRef}
           isClosed={nullisClosed}
@@ -413,6 +421,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={aboutme3}
           engineRef={engineRef}
           isClosed={nullisClosed}
@@ -427,6 +436,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={aboutme4}
           engineRef={engineRef}
           isClosed={nullisClosed}
@@ -441,6 +451,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={project1}
           engineRef={engineRef}
           isClosed={nullisClosed}
@@ -455,6 +466,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={project2}
           engineRef={engineRef}
           isClosed={nullisClosed}
@@ -469,6 +481,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={project3}
           engineRef={engineRef}
           isClosed={nullisClosed}
@@ -483,6 +496,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={career1}
           engineRef={engineRef}
           isClosed={nullisClosed}
@@ -497,6 +511,7 @@ const MatterBox: FC<Props> = ({
           screenheight={Height}
         ></TestComp>
         <TestComp
+          boxRef={boxRef}
           spawn={career2}
           engineRef={engineRef}
           isClosed={nullisClosed}

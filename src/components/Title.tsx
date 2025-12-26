@@ -6,6 +6,7 @@ import React, {
   useState,
   type Ref,
   type MutableRefObject,
+  type RefObject,
 } from "react";
 import Matter from "matter-js";
 import Card from "./card";
@@ -20,6 +21,7 @@ interface Props {
   setIsOpen: (arg0: boolean) => void;
   isClosed: boolean;
   setIsClosed: (arg0: boolean) => void;
+  boxRef: RefObject<HTMLDivElement | null>;
 }
 
 const Title = ({
@@ -32,6 +34,7 @@ const Title = ({
   setIsOpen,
   isClosed,
   setIsClosed,
+  boxRef,
 }: Props) => {
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
@@ -91,12 +94,26 @@ const Title = ({
         externalBoxRef.current.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${angle}rad)`;
       };
 
+      const Resize = () => {
+        const Widthchange = boxRef.current?.offsetWidth || 0;
+        const HeightChange = boxRef.current?.offsetHeight || 0;
+
+        if (externalBodyRef.current) {
+          Matter.Body.setPosition(externalBodyRef.current, {
+            x: Widthchange / 2,
+            y: HeightChange / 2,
+          });
+        }
+      };
+
       Composite.add(engine.world, externalBoxBody);
       Events.on(engine, "afterUpdate", updateExternalDiv);
+      window.addEventListener("resize", Resize);
 
       updateExternalDiv();
 
       return () => {
+        window.removeEventListener("resize", Resize);
         Events.off(engine, "afterUpdate", updateExternalDiv);
         if (externalBodyRef.current) {
           Composite.remove(engine.world, externalBodyRef.current);

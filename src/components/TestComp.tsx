@@ -8,12 +8,14 @@ import React, {
   useState,
   type Ref,
   type MutableRefObject,
+  type RefObject,
 } from "react";
 import Matter from "matter-js";
 import Card from "./card";
 
 interface Props {
   engineRef: MutableRefObject<Matter.Engine | null>;
+  boxRef: RefObject<HTMLDivElement | null>;
   spawn?: boolean;
   isClosed: boolean;
   setIsOpen: (arg0: boolean) => void;
@@ -40,6 +42,7 @@ const TestComp = ({
   Mount,
   screenwidth,
   screenheight,
+  boxRef,
 }: Props) => {
   const [Test, setTest] = useState(false);
   const externalBodyRef = useRef<Matter.Body | null>(null);
@@ -94,12 +97,28 @@ const TestComp = ({
         externalBoxRef.current.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${angle}rad)`;
       };
 
+      const Resize = () => {
+        const Widthchange = boxRef.current?.offsetWidth || 0;
+        const HeightChange = boxRef.current?.offsetHeight || 0;
+
+        if (externalBodyRef.current) {
+          Matter.Body.setPosition(externalBodyRef.current, {
+            x:
+              Math.random() * (Number(Widthchange) / 2) +
+              Number(Widthchange) / 4,
+            y: HeightChange / 2,
+          });
+        }
+      };
+
       Composite.add(engine.world, externalBoxBody);
       Events.on(engine, "afterUpdate", updateExternalDiv);
+      window.addEventListener("resize", Resize);
 
       updateExternalDiv();
 
       return () => {
+        window.removeEventListener("resize", Resize);
         Events.off(engine, "afterUpdate", updateExternalDiv);
         if (externalBodyRef.current) {
           Composite.remove(engine.world, externalBodyRef.current);
