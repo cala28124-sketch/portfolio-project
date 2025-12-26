@@ -190,7 +190,7 @@ const PopUp = ({
                   }}
                 >
                   <img
-                    className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
+                    className="block mx-auto p-2 w-[100px] enlargen bg-green-800 size-auto"
                     src="/test_logo.webp"
                     alt="source"
                   ></img>
@@ -211,7 +211,7 @@ const PopUp = ({
                   }}
                 >
                   <img
-                    className="block mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
+                    className="block mx-auto p-2 w-[100px] enlargen bg-green-800 size-auto"
                     src="/test_logo.webp"
                     alt="source"
                   ></img>
@@ -232,7 +232,7 @@ const PopUp = ({
                   }}
                 >
                   <img
-                    className="enlargen block mx-auto p-2 w-[150px] bg-green-800 size-auto"
+                    className="enlargen block mx-auto p-2 w-[100px] bg-green-800 size-auto"
                     src="/test_logo.webp"
                     alt="source"
                   ></img>
@@ -253,7 +253,7 @@ const PopUp = ({
                   }}
                 >
                   <img
-                    className="mx-auto p-2 w-[150px] enlargen bg-green-800 size-auto"
+                    className="mx-auto p-2 w-[100px] enlargen bg-green-800 size-auto"
                     src="/test_logo.webp"
                     alt="source"
                   ></img>

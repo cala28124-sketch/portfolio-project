@@ -142,7 +142,7 @@ const Navbar = ({
                 alt="linkedin"
               />
             </a>
-            <a href="https://www.coolmathgames.com/" target="_blank">
+            <a href="/resume.pdf" target="_blank">
               <img
                 className="h-10 scale-100 transform transition duration-150 hover:scale-120 "
                 src="/resume.png"
@@ -213,7 +213,7 @@ const Navbar = ({
                   alt="linkedin"
                 />
               </a>
-              <a href="https://www.coolmathgames.com/" target="_blank">
+              <a href="/resume.pdf" target="_blank">
                 <img
                   className="h-12 scale-100 transform transition duration-150 hover:scale-120 "
                   src="/resume.png"

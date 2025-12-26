@@ -75,6 +75,10 @@ const MatterBox: FC<Props> = ({
   const engineRef = useRef<Matter.Engine | null>(null);
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBodyRef2 = useRef<Matter.Body | null>(null);
+  const groundRef = useRef<Matter.Body | null>(null);
+  const skyRef = useRef<Matter.Body | null>(null);
+  const leftwallRef = useRef<Matter.Body | null>(null);
+  const rightwallRef = useRef<Matter.Body | null>(null);
 
   const Width = boxRef.current?.offsetWidth || 0;
   const Height = boxRef.current?.offsetHeight || 0;
@@ -130,34 +134,78 @@ const MatterBox: FC<Props> = ({
 
     const sky = Bodies.rectangle(Width / 2, -(Height / 2), Width, 50, {
       isStatic: true,
-      render: { fillStyle: "black" },
+      render: { fillStyle: "transparent" },
     });
+
+    skyRef.current = sky;
 
     const ground = Bodies.rectangle(Width / 2, Height, Width, 100, {
       isStatic: true,
       render: { fillStyle: "green" },
     });
+
+    groundRef.current = ground;
+
     const wallleft = Bodies.rectangle(0, Height / 2, 50, Height * 2, {
       isStatic: true,
       render: { fillStyle: "transparent" },
     });
 
+    leftwallRef.current = wallleft;
+
     const wallright = Bodies.rectangle(Width, Height / 2, 50, Height * 2, {
       isStatic: true,
-      render: { fillStyle: "transparent" },
+      render: { fillStyle: "transprent" },
     });
 
+    rightwallRef.current = wallright;
+
     Composite.add(engine.world, [ground, wallleft, wallright, sky]);
+
+    const Resize = () => {
+      const Widthchange = boxRef.current?.offsetWidth || 0;
+      const HeightChange = boxRef.current?.offsetHeight || 0;
+
+      if (groundRef.current) {
+        Matter.Body.setPosition(groundRef.current, {
+          x: Widthchange / 2,
+          y: HeightChange,
+        });
+      }
+
+      if (skyRef.current) {
+        Matter.Body.setPosition(skyRef.current, {
+          x: Widthchange / 2,
+          y: -(HeightChange / 2),
+        });
+      }
+
+      if (leftwallRef.current) {
+        Matter.Body.setPosition(leftwallRef.current, {
+          x: 0,
+          y: HeightChange / 2,
+        });
+      }
+
+      if (rightwallRef.current) {
+        Matter.Body.setPosition(rightwallRef.current, {
+          x: Widthchange,
+          y: HeightChange / 2,
+        });
+      }
+    };
 
     Render.run(render);
 
     const runner = Runner.create();
     Runner.run(runner, engine);
+    window.addEventListener("resize", Resize);
 
     return () => {
       Render.stop(render);
       Runner.stop(runner);
       Engine.clear(engine);
+      window.removeEventListener("resize", Resize);
 
       if (render.canvas) {
         render.canvas.remove();
@@ -250,7 +298,7 @@ const MatterBox: FC<Props> = ({
           setspawnabout(false);
           setspawnproject(false);
         }}
-        className="absolute top-4 left-4 bg-red-500"
+        className="absolute top-4 left-4 bg-red-500 z-20"
       >
         clear
       </button>

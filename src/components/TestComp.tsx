@@ -111,7 +111,7 @@ const TestComp = ({
     setTimeout(() => {
       MatterFunction();
       const boxid = document.getElementById(ID);
-      boxid?.classList.replace("-left-100", "-left-0");
+      boxid?.classList.replace("opacity-0", "opacity-100");
     }, 50);
   }, [spawn]);
 
@@ -130,7 +130,7 @@ const TestComp = ({
         <div
           id={ID}
           ref={externalBoxRef}
-          className="w-22 md:w-48 rounded-md overflow-hidden bg-green-200 text-white absolute pointer-events-none	-top-0 -left-100 border-5 border-green-800"
+          className="w-22 md:w-48 rounded-md overflow-hidden bg-green-200 text-white absolute pointer-events-none top-0 opacity-0 border-5 border-green-800"
         >
           <button
             className="absolute"
