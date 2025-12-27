@@ -21,6 +21,15 @@ interface Props {
   setspawnskills: (arg0: boolean) => void;
   spawnmisc: boolean;
   setspawnmisc: (arg0: boolean) => void;
+  setaboutme1: (arg0: boolean) => void;
+  setaboutme2: (arg0: boolean) => void;
+  setaboutme3: (arg0: boolean) => void;
+  setaboutme4: (arg0: boolean) => void;
+  setproject1: (arg0: boolean) => void;
+  setproject2: (arg0: boolean) => void;
+  setproject3: (arg0: boolean) => void;
+  setcareer1: (arg0: boolean) => void;
+  setcareer2: (arg0: boolean) => void;
 }
 
 // eslint-disable-next-line no-empty-pattern
@@ -36,6 +45,15 @@ const Navbar = ({
   setspawnskills,
   spawnmisc,
   setspawnmisc,
+  setaboutme1,
+  setaboutme2,
+  setaboutme3,
+  setaboutme4,
+  setproject1,
+  setproject2,
+  setproject3,
+  setcareer1,
+  setcareer2,
 }: Props) => {
   const [firstclick, setfirstclick] = useState(true);
   const [Mount, setMount] = useState(false);
@@ -81,7 +99,7 @@ const Navbar = ({
             setdropdownclose(true);
           }
         }}
-        className={`lg:hidden absolute top-2 right-2 w-[12%] !rounded-lg !bg-red-500 z-20 opacity-0 transform transition duration-300 scale-100 active:scale-110 ${
+        className={`md:hidden absolute top-2 right-2 w-[12%] !rounded-lg !bg-red-500 z-20 opacity-0 transform transition duration-300 scale-100 active:scale-110 ${
           Start ? "startslow" : "pointer-events-none"
         }`}
       >
@@ -120,11 +138,27 @@ const Navbar = ({
           </button>
 
           <div className="flex justify-center gap-2">
-            <img
-              className="h-10 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
-              src="/test_logo.webp"
-              alt="shhhh silly"
-            />
+            <button
+              onClick={() => {
+                setspawnabout(false);
+                setspawnproject(false);
+                setspawncareer(false);
+                setaboutme1(false);
+                setaboutme2(false);
+                setaboutme3(false);
+                setaboutme4(false);
+                setproject1(false);
+                setproject2(false);
+                setcareer1(false);
+                setcareer2(false);
+              }}
+            >
+              <img
+                className="h-10 scale-100 transform transition duration-150 hover:scale-120"
+                src="/logo.png"
+                alt="logo"
+              />
+            </button>
             <a href="https://github.com/cala28124-sketch" target="_blank">
               <img
                 className="h-10 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
@@ -156,7 +190,7 @@ const Navbar = ({
       <div className=" flex justify-center pointer-events-auto">
         <div
           id="navbar"
-          className={`max-lg:hidden w-[90%] lg:w-[900px] pointer-events-auto flex justify-center mt-2 z-20 opacity-0 font
+          className={`max-md:hidden w-[90%] lg:w-[900px] pointer-events-auto flex justify-center mt-2 z-20 opacity-0 font
       
       ${Start ? "startslow" : "pointer-events-none"}
       
@@ -165,11 +199,27 @@ const Navbar = ({
       `}
         >
           <div className="flex text-white font-bold items-center gap-3 justify-center h-20 w-full bg-white bg-opacity-50 rounded-full">
-            <img
-              className="h-12 !rounded-full scale-100 transform transition duration-150 hover:scale-120"
-              src="/test_logo.webp"
-              alt="shhhh silly"
-            />
+            <button
+              onClick={() => {
+                setspawnabout(false);
+                setspawnproject(false);
+                setspawncareer(false);
+                setaboutme1(false);
+                setaboutme2(false);
+                setaboutme3(false);
+                setaboutme4(false);
+                setproject1(false);
+                setproject2(false);
+                setcareer1(false);
+                setcareer2(false);
+              }}
+            >
+              <img
+                className="h-12 scale-100 transform transition duration-150 hover:scale-120"
+                src="/logo.png"
+                alt="logo"
+              />
+            </button>
             <button
               onClick={() => {
                 setspawnabout(true);

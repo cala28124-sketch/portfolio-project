@@ -97,28 +97,12 @@ const TestComp = ({
         externalBoxRef.current.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${angle}rad)`;
       };
 
-      const Resize = () => {
-        const Widthchange = boxRef.current?.offsetWidth || 0;
-        const HeightChange = boxRef.current?.offsetHeight || 0;
-
-        if (externalBodyRef.current) {
-          Matter.Body.setPosition(externalBodyRef.current, {
-            x:
-              Math.random() * (Number(Widthchange) / 2) +
-              Number(Widthchange) / 4,
-            y: HeightChange / 2,
-          });
-        }
-      };
-
       Composite.add(engine.world, externalBoxBody);
       Events.on(engine, "afterUpdate", updateExternalDiv);
-      window.addEventListener("resize", Resize);
 
       updateExternalDiv();
 
       return () => {
-        window.removeEventListener("resize", Resize);
         Events.off(engine, "afterUpdate", updateExternalDiv);
         if (externalBodyRef.current) {
           Composite.remove(engine.world, externalBodyRef.current);
@@ -149,7 +133,7 @@ const TestComp = ({
         <div
           id={ID}
           ref={externalBoxRef}
-          className="w-22 md:w-48 rounded-md overflow-hidden bg-green-200 text-white absolute pointer-events-none top-0 opacity-0 border-5 border-green-800"
+          className="w-[100px] md:w-[200px] rounded-md overflow-hidden bg-green-200 text-white absolute pointer-events-none top-0 opacity-0 border-5 border-green-800"
         >
           <button
             className="absolute"
@@ -193,3 +177,31 @@ use state button
             >
 
             */
+
+/*
+
+            old resize content
+
+            const Resize = () => {const Widthchange = boxRef.current?.offsetWidth || 0;
+        const HeightChange = boxRef.current?.offsetHeight || 0;
+
+        if (externalBodyRef.current) {
+          Matter.Body.setPosition(externalBodyRef.current, {
+            x:
+              Math.random() * (Number(Widthchange) / 2) +
+              Number(Widthchange) / 4,
+            y: HeightChange / 2,
+          });
+        }};
+
+            
+
+        */
+
+/*
+      window.addEventListener("resize", Resize);
+      */
+
+/*
+        window.removeEventListener("resize", Resize);
+        */

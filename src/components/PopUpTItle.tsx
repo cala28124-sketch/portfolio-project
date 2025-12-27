@@ -85,7 +85,9 @@ const PopUpTitle = ({ isOpen, setIsOpen, isClosed, setIsClosed }: Props) => {
           <img className="h-98 p-5" src="thumbsup.png" alt="thumbs up"></img>
           <p className="text-base p-5 font-bold text-green-800 text-center px-24 max-md:px-100">
             These Contain info relating to the box they're on! Spawn in more
-            Boxes by Clicking on subjects on the screen!
+            Boxes by Clicking on subjects on the screen! To reset boxes spawned,
+            you can either click my initials, change the size of the screen, or
+            refresh the page!
           </p>
         </div>
       </div>

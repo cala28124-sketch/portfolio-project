@@ -1,0 +1,103 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { use, useEffect, useState } from "react";
+
+const Grass = () => {
+  return (
+    <>
+      <div className="absolute bottom-[20px] lg:bottom-[-5px] w-[110%] pointer-events-none flex justify-center">
+        <div className="blade1"></div>
+        <div className="blade2"></div>
+        <div className="blade3"></div>
+        <div className="blade4"></div>
+        <div className="blade5"></div>
+        <div className="blade6"></div>
+        <div className="blade7"></div>
+        <div className="blade8"></div>
+        <div className="blade9"></div>
+        <div className="blade10"></div>
+        <div className="blade11"></div>
+        <div className="blade12"></div>
+        <div className="blade13"></div>
+        <div className="blade14"></div>
+        <div className="blade15"></div>
+        <div className="blade16"></div>
+        <div className="blade17"></div>
+        <div className="blade18"></div>
+        <div className="blade19"></div>
+        <div className="blade20"></div>
+        <div className="blade21"></div>
+        <div className="blade22"></div>
+        <div className="blade23"></div>
+        <div className="blade24"></div>
+        <div className="blade25"></div>
+        <div className="blade26"></div>
+        <div className="blade27"></div>
+        <div className="blade28"></div>
+        <div className="blade29"></div>
+        <div className="blade30"></div>
+        <div className="blade31"></div>
+        <div className="blade32"></div>
+        <div className="blade33"></div>
+        <div className="blade34"></div>
+        <div className="blade35"></div>
+        <div className="blade36"></div>
+        <div className="blade37"></div>
+        <div className="blade38"></div>
+        <div className="blade39"></div>
+        <div className="blade40"></div>
+        <div className="blade41"></div>
+        <div className="blade42"></div>
+        <div className="blade43"></div>
+        <div className="blade44"></div>
+        <div className="blade45"></div>
+        <div className="blade1b"></div>
+        <div className="blade2b"></div>
+        <div className="blade3b"></div>
+        <div className="blade4b"></div>
+        <div className="blade5b"></div>
+        <div className="blade6b"></div>
+        <div className="blade7b"></div>
+        <div className="blade8b"></div>
+        <div className="blade9b"></div>
+        <div className="blade10b"></div>
+        <div className="blade11b"></div>
+        <div className="blade12b"></div>
+        <div className="blade13b"></div>
+        <div className="blade14b"></div>
+        <div className="blade15b"></div>
+        <div className="blade16b"></div>
+        <div className="blade17b"></div>
+        <div className="blade18b"></div>
+        <div className="blade19b"></div>
+        <div className="blade20b"></div>
+        <div className="blade21b"></div>
+        <div className="blade22b"></div>
+        <div className="blade23b"></div>
+        <div className="blade24b"></div>
+        <div className="blade25b"></div>
+        <div className="blade26b"></div>
+        <div className="blade27b"></div>
+        <div className="blade28b"></div>
+        <div className="blade29b"></div>
+        <div className="blade30b"></div>
+        <div className="blade31b"></div>
+        <div className="blade32b"></div>
+        <div className="blade33b"></div>
+        <div className="blade34b"></div>
+        <div className="blade35b"></div>
+        <div className="blade36b"></div>
+        <div className="blade37b"></div>
+        <div className="blade38b"></div>
+        <div className="blade39b"></div>
+        <div className="blade40b"></div>
+        <div className="blade41b"></div>
+        <div className="blade42b"></div>
+        <div className="blade43b"></div>
+        <div className="blade44b"></div>
+        <div className="blade45b"></div>
+      </div>
+    </>
+  );
+};
+
+export default Grass;

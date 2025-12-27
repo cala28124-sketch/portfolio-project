@@ -26,6 +26,24 @@ interface Props {
   setspawnskills: (arg0: boolean) => void;
   spawnmisc: boolean;
   setspawnmisc: (arg0: boolean) => void;
+  aboutme1: boolean;
+  setaboutme1: (arg0: boolean) => void;
+  aboutme2: boolean;
+  setaboutme2: (arg0: boolean) => void;
+  aboutme3: boolean;
+  setaboutme3: (arg0: boolean) => void;
+  aboutme4: boolean;
+  setaboutme4: (arg0: boolean) => void;
+  project1: boolean;
+  setproject1: (arg0: boolean) => void;
+  project2: boolean;
+  setproject2: (arg0: boolean) => void;
+  project3: boolean;
+  setproject3: (arg0: boolean) => void;
+  career1: boolean;
+  setcareer1: (arg0: boolean) => void;
+  career2: boolean;
+  setcareer2: (arg0: boolean) => void;
 }
 
 const MatterBox: FC<Props> = ({
@@ -41,6 +59,24 @@ const MatterBox: FC<Props> = ({
   setspawnskills,
   spawnmisc,
   setspawnmisc,
+  aboutme1,
+  setaboutme1,
+  aboutme2,
+  setaboutme2,
+  aboutme3,
+  setaboutme3,
+  aboutme4,
+  setaboutme4,
+  project1,
+  setproject1,
+  project2,
+  setproject2,
+  project3,
+  setproject3,
+  career1,
+  setcareer1,
+  career2,
+  setcareer2,
 }: Props) => {
   const [isOpentitle, setIsOpentitle] = useState(false);
   const [isClosedtitle, setIsClosedtitle] = useState(true);
@@ -54,15 +90,6 @@ const MatterBox: FC<Props> = ({
   const [isClosedskills, setIsClosedskills] = useState(true);
   const [isOpenmisc, setIsOpenmisc] = useState(false);
   const [isClosedmisc, setIsClosedmisc] = useState(true);
-  const [aboutme1, setaboutme1] = useState(false);
-  const [aboutme2, setaboutme2] = useState(false);
-  const [aboutme3, setaboutme3] = useState(false);
-  const [aboutme4, setaboutme4] = useState(false);
-  const [project1, setproject1] = useState(false);
-  const [project2, setproject2] = useState(false);
-  const [project3, setproject3] = useState(false);
-  const [career1, setcareer1] = useState(false);
-  const [career2, setcareer2] = useState(false);
   const [nullisOpen, nullsetIsOpen] = useState(false);
   const [nullisClosed, nullsetIsClosed] = useState(false);
 
@@ -139,7 +166,7 @@ const MatterBox: FC<Props> = ({
 
     skyRef.current = sky;
 
-    const ground = Bodies.rectangle(Width / 2, Height, Width, 100, {
+    const ground = Bodies.rectangle(Width / 2, Height, Width, 50, {
       isStatic: true,
       render: { fillStyle: "green" },
     });
@@ -163,6 +190,17 @@ const MatterBox: FC<Props> = ({
     Composite.add(engine.world, [ground, wallleft, wallright, sky]);
 
     const Resize = () => {
+      setspawnabout(false);
+      setspawnproject(false);
+      setspawncareer(false);
+      setaboutme1(false);
+      setaboutme2(false);
+      setaboutme3(false);
+      setaboutme4(false);
+      setproject1(false);
+      setproject2(false);
+      setcareer1(false);
+      setcareer2(false);
       const Widthchange = boxRef.current?.offsetWidth || 0;
       const HeightChange = boxRef.current?.offsetHeight || 0;
 
@@ -206,10 +244,10 @@ const MatterBox: FC<Props> = ({
         });
         Matter.Body.scale(
           leftwallRef.current,
-          Widthchange /
-            (leftwallRef.current.bounds.max.x -
-              leftwallRef.current.bounds.min.x),
-          1
+          1,
+          HeightChange /
+            (leftwallRef.current.bounds.max.y -
+              leftwallRef.current.bounds.min.y)
         );
       }
 
@@ -220,10 +258,10 @@ const MatterBox: FC<Props> = ({
         });
         Matter.Body.scale(
           rightwallRef.current,
-          Widthchange /
-            (rightwallRef.current.bounds.max.x -
-              rightwallRef.current.bounds.min.x),
-          1
+          1,
+          HeightChange /
+            (rightwallRef.current.bounds.max.y -
+              rightwallRef.current.bounds.min.y)
         );
       }
     };
@@ -326,15 +364,6 @@ const MatterBox: FC<Props> = ({
         button3set={setproject3}
       ></PopUpMisc>
 
-      <button
-        onClick={() => {
-          setspawnabout(false);
-          setspawnproject(false);
-        }}
-        className="absolute top-4 left-4 bg-red-500 z-20"
-      >
-        clear
-      </button>
       <div ref={boxRef} className="w-full absolute h-[100dvh] z-10">
         <Title
           boxRef={boxRef}
@@ -630,4 +659,21 @@ useEffect(() => {
 
   */
 
-/* */
+/* <button
+        onClick={() => {
+          setspawnabout(false);
+          setspawnproject(false);
+          setspawncareer(false);
+          setaboutme1(false);
+          setaboutme2(false);
+          setaboutme3(false);
+          setaboutme4(false);
+          setproject1(false);
+          setproject2(false);
+          setcareer1(false);
+          setcareer2(false);
+        }}
+        className="absolute top-4 left-4 bg-red-500 z-20"
+      >
+        clear
+      </button> */

@@ -1,6 +1,454 @@
 @import url("https://fonts.googleapis.com/css?family=Bowlby+One+SC");
 @import "tailwindcss";
 
+.blade1,
+.blade2,
+.blade3,
+.blade4,
+.blade5,
+.blade6,
+.blade7,
+.blade8,
+.blade9,
+.blade10,
+.blade11,
+.blade12,
+.blade13,
+.blade14,
+.blade15,
+.blade16,
+.blade17,
+.blade18,
+.blade19,
+.blade20,
+.blade21,
+.blade22,
+.blade23,
+.blade24,
+.blade25,
+.blade26,
+.blade27,
+.blade28,
+.blade29,
+.blade30,
+.blade31,
+.blade32,
+.blade33,
+.blade34,
+.blade35,
+.blade36,
+.blade37,
+.blade38,
+.blade39,
+.blade40,
+.blade41,
+.blade42,
+.blade43,
+.blade44,
+.blade45,
+.blade46,
+.blade47,
+.blade48,
+.blade49,
+.blade50 {
+  border-left: 0.8vw solid transparent;
+  border-right: 0.8vw solid transparent;
+  border-bottom: 5vw solid green;
+  position: absolute;
+  animation: mymove 5s infinite ease-in-out;
+  z-index: 20;
+  bottom: 0px;
+}
+
+.blade1 {
+  left: 0%;
+}
+.blade2 {
+  left: 2%;
+}
+.blade3 {
+  left: 4%;
+}
+.blade4 {
+  left: 6%;
+}
+.blade5 {
+  left: 8%;
+}
+.blade6 {
+  left: 10%;
+}
+.blade7 {
+  left: 12%;
+}
+.blade8 {
+  left: 14%;
+}
+.blade9 {
+  left: 16%;
+}
+.blade10 {
+  left: 18%;
+}
+.blade11 {
+  left: 20%;
+}
+.blade12 {
+  left: 22%;
+}
+.blade13 {
+  left: 24%;
+}
+.blade14 {
+  left: 26%;
+}
+.blade15 {
+  left: 28%;
+}
+.blade16 {
+  left: 30%;
+}
+.blade17 {
+  left: 32%;
+}
+.blade18 {
+  left: 34%;
+}
+.blade19 {
+  left: 36%;
+}
+.blade20 {
+  left: 38%;
+}
+.blade21 {
+  left: 40%;
+}
+.blade22 {
+  left: 42%;
+}
+.blade23 {
+  left: 44%;
+}
+.blade24 {
+  left: 46%;
+}
+.blade25 {
+  left: 48%;
+}
+.blade26 {
+  left: 50%;
+}
+.blade27 {
+  left: 52%;
+}
+.blade28 {
+  left: 54%;
+}
+.blade29 {
+  left: 56%;
+}
+.blade30 {
+  left: 58%;
+}
+.blade31 {
+  left: 60%;
+}
+.blade32 {
+  left: 62%;
+}
+.blade33 {
+  left: 64%;
+}
+.blade34 {
+  left: 66%;
+}
+.blade35 {
+  left: 68%;
+}
+.blade36 {
+  left: 70%;
+}
+.blade37 {
+  left: 72%;
+}
+.blade38 {
+  left: 74%;
+}
+.blade39 {
+  left: 76%;
+}
+.blade40 {
+  left: 78%;
+}
+.blade41 {
+  left: 80%;
+}
+.blade42 {
+  left: 82%;
+}
+.blade43 {
+  left: 84%;
+}
+.blade44 {
+  left: 86%;
+}
+.blade45 {
+  left: 88%;
+}
+.blade46 {
+  left: 90%;
+}
+.blade47 {
+  left: 92%;
+}
+.blade48 {
+  left: 94%;
+}
+.blade49 {
+  left: 96%;
+}
+.blade50 {
+  left: 98%;
+}
+
+@keyframes mymove {
+  0%,
+  50%,
+  100% {
+    border-left: 0.8vw solid transparent;
+    border-right: 2vw solid transparent;
+  }
+  25%,
+  75% {
+    border-left: 2vw solid transparent;
+    border-right: 0.8vw solid transparent;
+  }
+}
+
+.blade1b,
+.blade2b,
+.blade3b,
+.blade4b,
+.blade5b,
+.blade6b,
+.blade7b,
+.blade8b,
+.blade9b,
+.blade10b,
+.blade11b,
+.blade12b,
+.blade13b,
+.blade14b,
+.blade15b,
+.blade16b,
+.blade17b,
+.blade18b,
+.blade19b,
+.blade20b,
+.blade21b,
+.blade22b,
+.blade23b,
+.blade24b,
+.blade25b,
+.blade26b,
+.blade27b,
+.blade28b,
+.blade29b,
+.blade30b,
+.blade31b,
+.blade32b,
+.blade33b,
+.blade34b,
+.blade35b,
+.blade36b,
+.blade37b,
+.blade38b,
+.blade39b,
+.blade40b,
+.blade41b,
+.blade42b,
+.blade43b,
+.blade44b,
+.blade45b,
+.blade46b,
+.blade47b,
+.blade48b,
+.blade49b,
+.blade50b {
+  border-left: 0.8vw solid transparent;
+  border-right: 0.8vw solid transparent;
+  border-bottom: 5vw solid #1e4018;
+  position: absolute;
+  animation: mymoveb 5s infinite ease-in-out;
+  z-index: 5;
+  bottom: 0px;
+}
+
+.blade1b {
+  left: 1%;
+}
+.blade2b {
+  left: 3%;
+}
+.blade3b {
+  left: 5%;
+}
+.blade4b {
+  left: 7%;
+}
+.blade5b {
+  left: 9%;
+}
+.blade6b {
+  left: 11%;
+}
+.blade7b {
+  left: 13%;
+}
+.blade8b {
+  left: 15%;
+}
+.blade9b {
+  left: 17%;
+}
+.blade10b {
+  left: 19%;
+}
+.blade11b {
+  left: 21%;
+}
+.blade12b {
+  left: 23%;
+}
+.blade13b {
+  left: 25%;
+}
+.blade14b {
+  left: 27%;
+}
+.blade15b {
+  left: 29%;
+}
+.blade16b {
+  left: 31%;
+}
+.blade17b {
+  left: 33%;
+}
+.blade18b {
+  left: 35%;
+}
+.blade19b {
+  left: 37%;
+}
+.blade20b {
+  left: 39%;
+}
+.blade21b {
+  left: 41%;
+}
+.blade22b {
+  left: 43%;
+}
+.blade23b {
+  left: 45%;
+}
+.blade24b {
+  left: 47%;
+}
+.blade25b {
+  left: 49%;
+}
+.blade26b {
+  left: 51%;
+}
+.blade27b {
+  left: 53%;
+}
+.blade28b {
+  left: 55%;
+}
+.blade29b {
+  left: 57%;
+}
+.blade30b {
+  left: 59%;
+}
+.blade31b {
+  left: 61%;
+}
+.blade32b {
+  left: 63%;
+}
+.blade33b {
+  left: 65%;
+}
+.blade34b {
+  left: 67%;
+}
+.blade35b {
+  left: 69%;
+}
+.blade36b {
+  left: 71%;
+}
+.blade37b {
+  left: 73%;
+}
+.blade38b {
+  left: 75%;
+}
+.blade39b {
+  left: 77%;
+}
+.blade40b {
+  left: 79%;
+}
+.blade41b {
+  left: 81%;
+}
+.blade42b {
+  left: 83%;
+}
+.blade43b {
+  left: 85%;
+}
+.blade44b {
+  left: 87%;
+}
+.blade45b {
+  left: 89%;
+}
+.blade46b {
+  left: 91%;
+}
+.blade47b {
+  left: 93%;
+}
+.blade48b {
+  left: 95%;
+}
+.blade49b {
+  left: 97%;
+}
+.blade50b {
+  left: 99%;
+}
+
+@keyframes mymoveb {
+  0%,
+  50%,
+  100% {
+    border-left: 0.8vw solid transparent;
+    border-right: 2vw solid transparent;
+  }
+  25%,
+  75% {
+    border-left: 2vw solid transparent;
+    border-right: 0.8vw solid transparent;
+  }
+}
+
 html,
 body {
   width: 100%;
@@ -17,6 +465,19 @@ body {
 
 .font {
   font-family: "Courier New", Monospace;
+}
+
+.grassgrow {
+  animation: grow 2s ease-in-out forwards;
+}
+
+@keyframes grow {
+  0% {
+    top: 120%;
+  }
+  100% {
+    top: 100%;
+  }
 }
 
 .startslow {

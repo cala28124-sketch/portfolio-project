@@ -7,6 +7,7 @@ import Dropbox from "./components/dropbox.tsx";
 import MatterBox from "./components/MatterBox.tsx";
 import { StarsBackground } from "./components/animate-ui/components/backgrounds/stars.tsx";
 import Cloud from "./components/clouds";
+import Grass from "./components/grass.tsx";
 
 function App() {
   const [Videoshow, setStop] = useState(false);
@@ -19,6 +20,15 @@ function App() {
   const [spawncareer, setspawncareer] = useState(false);
   const [spawnskills, setspawnskills] = useState(false);
   const [spawnmisc, setspawnmisc] = useState(false);
+  const [aboutme1, setaboutme1] = useState(false);
+  const [aboutme2, setaboutme2] = useState(false);
+  const [aboutme3, setaboutme3] = useState(false);
+  const [aboutme4, setaboutme4] = useState(false);
+  const [project1, setproject1] = useState(false);
+  const [project2, setproject2] = useState(false);
+  const [project3, setproject3] = useState(false);
+  const [career1, setcareer1] = useState(false);
+  const [career2, setcareer2] = useState(false);
 
   const menuClick = () => {
     setStop(true);
@@ -37,6 +47,9 @@ function App() {
         starColor="#a3e3fa"
         pointerEvents={false}
       />
+      <div className="pointer-events-none absolute inset-0 grassgrow">
+        <Grass></Grass>
+      </div>
       <div className="pointer-events-none absolute inset-0 startslow">
         <Cloud></Cloud>
         <div className="sun w-[100px] h-[100px] md:w-[200px] md:h-[200px]"></div>
@@ -54,6 +67,24 @@ function App() {
         setspawnskills={setspawnskills}
         spawnmisc={spawnmisc}
         setspawnmisc={setspawnmisc}
+        aboutme1={aboutme1}
+        setaboutme1={setaboutme1}
+        aboutme2={aboutme2}
+        setaboutme2={setaboutme2}
+        aboutme3={aboutme3}
+        setaboutme3={setaboutme3}
+        aboutme4={aboutme4}
+        setaboutme4={setaboutme4}
+        project1={project1}
+        setproject1={setproject1}
+        project2={project2}
+        setproject2={setproject2}
+        project3={project3}
+        setproject3={setproject3}
+        career1={career1}
+        setcareer1={setcareer1}
+        career2={career2}
+        setcareer2={setcareer2}
       ></MatterBox>
       <Navbar
         menuclick={menuClick}
@@ -74,6 +105,15 @@ function App() {
         setspawnskills={setspawnskills}
         spawnmisc={spawnmisc}
         setspawnmisc={setspawnmisc}
+        setaboutme1={setaboutme1}
+        setaboutme2={setaboutme2}
+        setaboutme3={setaboutme3}
+        setaboutme4={setaboutme4}
+        setproject1={setproject1}
+        setproject2={setproject2}
+        setproject3={setproject3}
+        setcareer1={setcareer1}
+        setcareer2={setcareer2}
       />
     </>
   );
