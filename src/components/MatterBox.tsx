@@ -12,6 +12,7 @@ import PopUpMisc from "./PopUpMisc";
 import Title from "./Title";
 import PopUpTitle from "./PopUpTItle";
 import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
+import { s } from "motion/react-client";
 
 interface Props {
   Start: boolean;
@@ -391,6 +392,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setspawnabout}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -406,6 +408,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setspawnproject}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -421,6 +424,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setspawncareer}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -436,6 +440,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setspawnskills}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -451,6 +456,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setspawnmisc}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -466,6 +472,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setaboutme1}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -481,6 +488,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setaboutme2}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -496,6 +504,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setaboutme3}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -511,6 +520,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setaboutme4}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -526,6 +536,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setproject1}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -541,6 +552,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setproject2}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -556,6 +568,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setproject3}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -571,6 +584,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setcareer1}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
@@ -586,6 +600,7 @@ const MatterBox: FC<Props> = ({
           Mount={Mount}
           screenwidth={Width}
           screenheight={Height}
+          setspawn={setcareer2}
         ></TestComp>
       </div>
     </>

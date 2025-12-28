@@ -20,6 +20,7 @@ interface Props {
   isClosed: boolean;
   setIsOpen: (arg0: boolean) => void;
   setIsClosed: (arg0: boolean) => void;
+  setspawn: (arg0: boolean) => void;
   text: string;
   image: string;
   ID: string;
@@ -32,6 +33,7 @@ interface Props {
 const TestComp = ({
   engineRef,
   spawn,
+  setspawn,
   isClosed,
   setIsClosed,
   setIsOpen,
@@ -133,7 +135,7 @@ const TestComp = ({
         <div
           id={ID}
           ref={externalBoxRef}
-          className="w-[100px] md:w-[200px] rounded-md overflow-hidden bg-green-200 text-white absolute pointer-events-none top-0 opacity-0 border-5 border-green-800"
+          className={`w-[100px] h-[100px] md:w-[200px] md:h-[200px] rounded-md overflow-hidden bg-green-200 text-white absolute pointer-events-none top-0 opacity-0 border-5 border-green-800`}
         >
           <button
             className="absolute"
@@ -147,13 +149,26 @@ const TestComp = ({
               }
             }}
           >
-            <div className="unfold pointer-events-auto flex items-center justify-center items-center bg-green-800 absolute">
+            <div className="text-green-200 font text-xs md:text-base unfold pointer-events-auto flex items-center justify-center items-center bg-green-800 absolute z-10">
               {text}
             </div>
           </button>
-          <div>
-            <img className="p-10" src={image} alt="source"></img>
+          <div className="flex justify-center items-center">
+            <img
+              className="h-[100px] pt-4 pl-2 pr-2 pb-4 md:h-[200px] object-contain"
+              src={image}
+              alt="source"
+            ></img>
           </div>
+          <button
+            onClick={() => {
+              setspawn(false);
+            }}
+          >
+            <div className="font text-green-200 z-5 text-xs md:text-base bottom-0 w-full pointer-events-auto flex items-center justify-center items-center bg-green-800 absolute hover:bg-red-800 transition-colors duration-300">
+              despawn
+            </div>
+          </button>
         </div>
       )}
     </>
