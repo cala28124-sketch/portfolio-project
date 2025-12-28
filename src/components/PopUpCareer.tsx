@@ -69,7 +69,7 @@ const PopUpCareer = ({
       <div className="flex justify-center">
         <div
           id="career"
-          className={`my-4 custom-scrollbar font opacity-0 absolute z-50 flex h-[80dvh] w-[95%] flex-col items-center overflow-y-auto rounded-md border-4 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 md:border-8 lg:w-4/5 lg:border-10 
+          className={`my-[5%] custom-scrollbar font opacity-0 absolute z-50 flex h-[80dvh] w-[95%] flex-col items-center overflow-y-auto rounded-md border-4 border-green-800 bg-green-300 md:h-4/5 md:w-5/6 md:border-8 lg:w-4/5 lg:border-10 
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -94,8 +94,8 @@ const PopUpCareer = ({
             My Career
           </p>
           <p className="font-bold text-green-800 text-md p-2 text-center">
-            blah blah blah placeholder text placeholder text im talking here to
-            take up space
+            Here is a brief overview of my career journey, highlighting my past
+            and current experiences. Click on the images to spawn info boxes!
           </p>
           <div className="flex flex-col items-center w-full p-2">
             <div className="h-fit w-[90%] border-green-800 border-5 bg-green-400 flex flex-col md:flex-row-reverse ">

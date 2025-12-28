@@ -58,7 +58,7 @@ const PopUpTitle = ({ isOpen, setIsOpen, isClosed, setIsClosed }: Props) => {
       <div className="flex justify-center item-center absolute w-full h-full pointer-events-none font">
         <div
           id="tutorialpopup"
-          className={`my-4 mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-4/5 w-xl items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
+          className={`my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-4/5 w-xl items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button

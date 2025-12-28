@@ -99,11 +99,11 @@ const Navbar = ({
             setdropdownclose(true);
           }
         }}
-        className={`md:hidden absolute top-2 right-2 w-[12%] !rounded-lg !bg-red-500 z-20 opacity-0 transform transition duration-300 scale-100 active:scale-110 ${
+        className={`md:hidden absolute top-2 right-2 w-[12%] !rounded-lg bg-white bg-opacity-50 z-20 opacity-0 transform transition duration-300 scale-100 active:scale-110 ${
           Start ? "startslow" : "pointer-events-none"
         }`}
       >
-        <img className="p-2" src="/test_logo.webp" alt="shhhh silly" />
+        <img className="p-2" src="/menulines.png" alt="menubutton" />
       </button>
       <div className=" flex justify-center pointer-events-auto">
         <div
