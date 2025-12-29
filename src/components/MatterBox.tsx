@@ -13,6 +13,15 @@ import Title from "./Title";
 import PopUpTitle from "./PopUpTItle";
 import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
 import { s } from "motion/react-client";
+import PopUpTM from "./PopUpTM";
+import PopUpPNGP from "./PopUpPNGP";
+import PopUpPortP from "./PopUpPortP";
+import PopUpUCF from "./PopUpUCF";
+import PopUpPenny from "./PopUpPenny";
+import PopUpMore from "./PopUpMore";
+import PopUpDrive from "./PopUpDrive";
+import PopUpLife from "./PopUpLife";
+import PopUpHobbies from "./PopUpHobbie";
 
 interface Props {
   Start: boolean;
@@ -93,6 +102,24 @@ const MatterBox: FC<Props> = ({
   const [isClosedmisc, setIsClosedmisc] = useState(true);
   const [nullisOpen, nullsetIsOpen] = useState(false);
   const [nullisClosed, nullsetIsClosed] = useState(false);
+  const [isClosedTM, setIsClosedTM] = useState(true);
+  const [isOpenTM, setIsOpenTM] = useState(false);
+  const [isClosedPNG, setIsClosedPNG] = useState(true);
+  const [isOpenPNG, setIsOpenPNG] = useState(false);
+  const [isClosedPort, setIsClosedPort] = useState(true);
+  const [isOpenPort, setIsOpenPort] = useState(false);
+  const [isClosedPinch, setIsClosedPinch] = useState(true);
+  const [isOpenPinch, setIsOpenPinch] = useState(false);
+  const [isClosedUCF, setIsClosedUCF] = useState(true);
+  const [isOpenUCF, setIsOpenUCF] = useState(false);
+  const [isClosedMore, setIsClosedMore] = useState(true);
+  const [isOpenMore, setIsOpenMore] = useState(false);
+  const [isClosedDrive, setIsClosedDrive] = useState(true);
+  const [isOpenDrive, setIsOpenDrive] = useState(false);
+  const [isClosedLife, setIsClosedLife] = useState(true);
+  const [isOpenLife, setIsOpenLife] = useState(false);
+  const [isClosedHobbie, setIsClosedHobbie] = useState(true);
+  const [isOpenHobbie, setIsOpenHobbie] = useState(false);
 
   const [spawn, setspawn] = useState(false);
   const [Mount, setMount] = useState(false);
@@ -365,6 +392,70 @@ const MatterBox: FC<Props> = ({
         button3set={setproject3}
       ></PopUpMisc>
 
+      <PopUpTM
+        isClosed={isClosedTM}
+        setIsClosed={setIsClosedTM}
+        setIsOpen={setIsOpenTM}
+        isOpen={isOpenTM}
+        Mount={Mount}
+      ></PopUpTM>
+      <PopUpPNGP
+        isClosed={isClosedPNG}
+        setIsClosed={setIsClosedPNG}
+        setIsOpen={setIsOpenPNG}
+        isOpen={isOpenPNG}
+        Mount={Mount}
+      ></PopUpPNGP>
+      <PopUpPortP
+        isClosed={isClosedPort}
+        setIsClosed={setIsClosedPort}
+        setIsOpen={setIsOpenPort}
+        isOpen={isOpenPort}
+        Mount={Mount}
+      ></PopUpPortP>
+      <PopUpUCF
+        isClosed={isClosedUCF}
+        setIsClosed={setIsClosedUCF}
+        setIsOpen={setIsOpenUCF}
+        isOpen={isOpenUCF}
+        Mount={Mount}
+      ></PopUpUCF>
+      <PopUpPenny
+        isClosed={isClosedPinch}
+        setIsClosed={setIsClosedPinch}
+        setIsOpen={setIsOpenPinch}
+        isOpen={isOpenPinch}
+        Mount={Mount}
+      ></PopUpPenny>
+      <PopUpMore
+        isClosed={isClosedMore}
+        setIsClosed={setIsClosedMore}
+        setIsOpen={setIsOpenMore}
+        isOpen={isOpenMore}
+        Mount={Mount}
+      ></PopUpMore>
+      <PopUpDrive
+        isClosed={isClosedDrive}
+        setIsClosed={setIsClosedDrive}
+        setIsOpen={setIsOpenDrive}
+        isOpen={isOpenDrive}
+        Mount={Mount}
+      ></PopUpDrive>
+      <PopUpLife
+        isClosed={isClosedLife}
+        setIsClosed={setIsClosedLife}
+        setIsOpen={setIsOpenLife}
+        isOpen={isOpenLife}
+        Mount={Mount}
+      ></PopUpLife>
+      <PopUpHobbies
+        isClosed={isClosedHobbie}
+        setIsClosed={setIsClosedHobbie}
+        setIsOpen={setIsOpenHobbie}
+        isOpen={isOpenHobbie}
+        Mount={Mount}
+      ></PopUpHobbies>
+
       <div ref={boxRef} className="w-full absolute h-[100dvh] z-10">
         <Title
           boxRef={boxRef}
@@ -402,7 +493,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedproject}
           setIsOpen={setIsOpenproject}
           text="open projects"
-          image="/headshotme.jpg"
+          image="/pngpalimage.png"
           ID="boxproject"
           setMount={setMount}
           Mount={Mount}
@@ -418,7 +509,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedcareer}
           setIsOpen={setIsOpencareer}
           text="open career"
-          image="/headshotme.jpg"
+          image="/ucflogo.png"
           ID="boxcareer"
           setMount={setMount}
           Mount={Mount}
@@ -462,11 +553,11 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={aboutme1}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
-          text="about1"
-          image="/test_logo.webp"
+          isClosed={isClosedMore}
+          setIsClosed={setIsClosedMore}
+          setIsOpen={setIsOpenMore}
+          text="More Me"
+          image="/headshotme.jpg"
           ID="box2"
           setMount={setMount}
           Mount={Mount}
@@ -478,10 +569,10 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={aboutme2}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
-          text="about2"
+          isClosed={isClosedLife}
+          setIsClosed={setIsClosedLife}
+          setIsOpen={setIsOpenLife}
+          text="Life"
           image="/test_logo.webp"
           ID="box5"
           setMount={setMount}
@@ -494,10 +585,10 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={aboutme3}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
-          text="about3"
+          isClosed={isClosedDrive}
+          setIsClosed={setIsClosedDrive}
+          setIsOpen={setIsOpenDrive}
+          text="Drive"
           image="/test_logo.webp"
           ID="box3"
           setMount={setMount}
@@ -510,11 +601,11 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={aboutme4}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
-          text="about4"
-          image="/test_logo.webp"
+          isClosed={isClosedHobbie}
+          setIsClosed={setIsClosedHobbie}
+          setIsOpen={setIsOpenHobbie}
+          text="Hobbies"
+          image="/dice.png"
           ID="box4"
           setMount={setMount}
           Mount={Mount}
@@ -526,11 +617,11 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={project1}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
+          isClosed={isClosedTM}
+          setIsClosed={setIsClosedTM}
+          setIsOpen={setIsOpenTM}
           text="truthmeter"
-          image="/test_logo.webp"
+          image="/truthmeter.png"
           ID="project1"
           setMount={setMount}
           Mount={Mount}
@@ -542,11 +633,11 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={project2}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
+          isClosed={isClosedPNG}
+          setIsClosed={setIsClosedPNG}
+          setIsOpen={setIsOpenPNG}
           text="pngPal"
-          image="/test_logo.webp"
+          image="/pngpalimage.png"
           ID="project2"
           setMount={setMount}
           Mount={Mount}
@@ -558,9 +649,9 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={project3}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
+          isClosed={isClosedPort}
+          setIsClosed={setIsClosedPort}
+          setIsOpen={setIsOpenPort}
           text="portfolio"
           image="/test_logo.webp"
           ID="project3"
@@ -574,11 +665,11 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={career1}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
+          isClosed={isClosedPinch}
+          setIsClosed={setIsClosedPinch}
+          setIsOpen={setIsOpenPinch}
           text="pinch a penny"
-          image="/test_logo.webp"
+          image="/Pinchlogo.png"
           ID="career1"
           setMount={setMount}
           Mount={Mount}
@@ -590,11 +681,11 @@ const MatterBox: FC<Props> = ({
           boxRef={boxRef}
           spawn={career2}
           engineRef={engineRef}
-          isClosed={nullisClosed}
-          setIsClosed={nullsetIsClosed}
-          setIsOpen={nullsetIsOpen}
+          isClosed={isClosedUCF}
+          setIsClosed={setIsClosedUCF}
+          setIsOpen={setIsOpenUCF}
           text="ucf"
-          image="/test_logo.webp"
+          image="/ucflogo.png"
           ID="career2"
           setMount={setMount}
           Mount={Mount}
