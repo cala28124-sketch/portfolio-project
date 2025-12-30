@@ -14,14 +14,13 @@ import PopUpTitle from "./PopUpTItle";
 import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
 import { s } from "motion/react-client";
 import PopUpTM from "./PopUpTM";
-import PopUpPNGP from "./PopUpPNGP";
-import PopUpPortP from "./PopUpPortP";
 import PopUpUCF from "./PopUpUCF";
 import PopUpPenny from "./PopUpPenny";
 import PopUpMore from "./PopUpMore";
 import PopUpDrive from "./PopUpDrive";
 import PopUpLife from "./PopUpLife";
 import PopUpHobbies from "./PopUpHobbie";
+import PopUpCompP from "./PopUpProjectComp";
 
 interface Props {
   Start: boolean;
@@ -392,27 +391,100 @@ const MatterBox: FC<Props> = ({
         button3set={setproject3}
       ></PopUpMisc>
 
-      <PopUpTM
+      <PopUpCompP
         isClosed={isClosedTM}
         setIsClosed={setIsClosedTM}
         setIsOpen={setIsOpenTM}
         isOpen={isOpenTM}
         Mount={Mount}
-      ></PopUpTM>
-      <PopUpPNGP
+        name="Truth Meter"
+        img="/truthmeter.png"
+        git="https://github.com/JustinTeape/factCheck"
+        ID="truthmeter"
+        overview="Made at shellhacks 2025 as my first ever project, truth meter
+              exists an accesible browser extension that allows one to check the
+              credibility, and accuracy of a webpage, providing a summary of the
+              page and what it contains, and how credible/accurate each point
+              is."
+        experience="Due to being one of my first ever projects with a team of three
+              others, truth meter was a huge learning experience for me.
+              Introducing me to the general flow of making projects, it was the
+              first time I had really started to use software like VScode, and
+              began to be introduced to general concepts. It was also my first
+              introduction to html/css along with react, and my first time using
+              python in a actual project rather than just on one off
+              assignments. Truth meter itself uses several factors to run,
+              having both a front end and back end- the front end using react to
+              display all the info, while being sent the info to display from
+              the back end using fastapi. The back end uses python to strip the
+              webpage link of wherever the user is using the browser extension,
+              and plugs it into a google agent. The agent then creates the info
+              and text, and sends it to the front end as mentioned earlier. The
+              whole thing was inputted into a google chrome extension by simply
+              unpacking the folder into the manager for it, which was much
+              easier than our group expected. Overall it was a very fun
+              introduction into programming projects for me, and I learned a lot
+              from it involving connecting the front end and the back end, which
+              was my main role in the team project."
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">FastAPI</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Python</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">GoogleADK</div>
+          </>
+        }
+      ></PopUpCompP>
+      <PopUpCompP
         isClosed={isClosedPNG}
         setIsClosed={setIsClosedPNG}
         setIsOpen={setIsOpenPNG}
         isOpen={isOpenPNG}
         Mount={Mount}
-      ></PopUpPNGP>
-      <PopUpPortP
+        name="PNGPAL"
+        img="/pngpalimage.png"
+        git="https://github.com/cala28124-sketch/pngPalme"
+        ID="pngpal"
+        overview="Made at
+            KnightHacks 2025, PNGpal was the first project I took a leading role
+            in. PNGpal A chatbot that overlays itself on the users screen,
+            allowing them to freely ask financial advice, giving back a response
+            when doing so, and recording the transcript of the conversation for
+            the user to read"
+        experience="PngPal was the first project I had took a leading role in- mainly due to my coming up with the idea for our project at KnightHacks 2025, and doing the major tasks of styling how it looked on screen, along with connecting the front end to the agent in the back end, to make voice chat work. This was mainly done using a mix of the python my teammate had done with the elevenlabs agent in the back end, along with a flask server connecting both the front and back end. Taking on this role for the first time was challenging in the way that it was the first time a team project like this had relied on me so much, though in the end I was able to figure out the usage of the connection, and successfully finish the project with my team. Along with this, I learned a good bit more on agents and styling as a whole, and it was a experience I’m glad I had."
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              ElevenLabs
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Python</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Electron</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Flask</div>
+          </>
+        }
+      ></PopUpCompP>
+      <PopUpCompP
         isClosed={isClosedPort}
         setIsClosed={setIsClosedPort}
         setIsOpen={setIsOpenPort}
         isOpen={isOpenPort}
         Mount={Mount}
-      ></PopUpPortP>
+        name="Portfolio"
+        img="/test_logo.webp"
+        git="https://github.com/cala28124-sketch/portfolio"
+        ID="portfolio"
+        overview="placeholder"
+        experience="placeholder"
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Matter.JS</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">HTML</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Css</div>
+          </>
+        }
+      ></PopUpCompP>
       <PopUpUCF
         isClosed={isClosedUCF}
         setIsClosed={setIsClosedUCF}

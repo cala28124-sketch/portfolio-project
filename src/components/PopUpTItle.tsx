@@ -58,7 +58,7 @@ const PopUpTitle = ({ isOpen, setIsOpen, isClosed, setIsClosed }: Props) => {
       <div className="flex justify-center item-center absolute w-full h-full pointer-events-none font">
         <div
           id="tutorialpopup"
-          className={`my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-4/5 w-xl items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
+          className={`my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-4/6 lg:max-w-3/5 items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -83,7 +83,7 @@ const PopUpTitle = ({ isOpen, setIsOpen, isClosed, setIsClosed }: Props) => {
             Here's a Info Box!
           </p>
           <img className="h-98 p-5" src="thumbsup.png" alt="thumbs up"></img>
-          <p className="text-base pl-5 pb-2 pt-1 pr-5 font-bold text-green-800 text-center px-24 max-md:px-100">
+          <p className="text-base p-5 font-bold text-green-800 px-24 max-md:px-100">
             These Contain info relating to the box they're on! Spawn in more
             Boxes by Clicking on subjects on the screen! To reset boxes spawned,
             you can either click my initials, change the size of the screen, or
