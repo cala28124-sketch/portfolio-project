@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Navbar from "./components/Navbar";
-import Box from "./components/notes";
+import Box from "./components/oldcomp/notes.tsx";
 import { useState } from "react";
-import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
 import MatterBox from "./components/MatterBox.tsx";
 import { StarsBackground } from "./components/animate-ui/components/backgrounds/stars.tsx";

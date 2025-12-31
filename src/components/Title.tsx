@@ -9,7 +9,7 @@ import React, {
   type RefObject,
 } from "react";
 import Matter from "matter-js";
-import Card from "./card";
+import Card from "./oldcomp/card";
 
 interface Props {
   engineRef: MutableRefObject<Matter.Engine | null>;

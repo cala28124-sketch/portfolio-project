@@ -9,7 +9,6 @@ import React, {
   type MutableRefObject,
 } from "react";
 import Matter from "matter-js";
-import Card from "./card";
 
 interface Props {
   isOpen: boolean;
@@ -79,7 +78,7 @@ const PopUpTitle = ({ isOpen, setIsOpen, isClosed, setIsClosed }: Props) => {
               alt="close button"
             />
           </button>
-          <p className="text-3xl font-extrabold text-green-800 p-2">
+          <p className="text-3xl font-extrabold text-green-800 p-2 my-5">
             Here's a Info Box!
           </p>
           <img className="h-98 p-5" src="thumbsup.png" alt="thumbs up"></img>

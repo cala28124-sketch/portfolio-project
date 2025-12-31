@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Navbar from "./components/Navbar";
-import Box from "./components/notes";
+import Box from "./components/oldcomp/notes.tsx";
 import { useState } from "react";
-import Paragraph from "./components/oldnavbar.tsx";
 import Dropbox from "./components/dropbox.tsx";
 import { StarsBackground } from "./components/animate-ui/components/backgrounds/stars.tsx";
 
@@ -35,16 +34,6 @@ function careerApp() {
       </div>
 
       <div className="sky-background">
-        <Navbar
-          menuclick={menuClick}
-          menuSkip={menuSkip}
-          Videoshow={Videoshow}
-          navtoggle={navtoggle}
-          setnav={setnav}
-          setInteractiveText={setInteractiveText}
-          setVideoshow={setStop}
-          Start={false}
-        />
         <div className="cloud" />
         <div className="d-flex justify-content-center align-items-center vh-100">
           <div className="color_box rounded-3 box-left shadow "></div>

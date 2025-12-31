@@ -11,14 +11,15 @@ interface Props {
   Mount: boolean;
   name: string;
   img: string;
-  git: string;
   ID: string;
   overview: string;
-  experience: string;
+  Key: React.ReactNode;
   techStack: React.ReactNode;
+  date: string;
+  jobTitle: string;
 }
 
-const PopUpCompP = ({
+const PopUpCompC = ({
   isClosed,
   setIsClosed,
   setIsOpen,
@@ -26,11 +27,12 @@ const PopUpCompP = ({
   Mount,
   name,
   img,
-  git,
   ID,
   overview,
-  experience,
   techStack,
+  Key,
+  date,
+  jobTitle,
 }: Props) => {
   const [Mount1, setMount] = useState(false);
 
@@ -92,39 +94,36 @@ const PopUpCompP = ({
               alt="close button"
             />
           </button>
-          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] bg-green-400 m-5 border-5 border-green-800">
+          <div className="flex flex-col justify-center items-center rounded-lg w-[250px] h-fit bg-green-400 m-5 mb-5 border-5 border-green-800">
             <img className="h-[200px] w-[200px] p-3" src={img} alt={name}></img>
+            <div className="text-base font font-bold p-1">{date}</div>
           </div>
+
           <div className="self-start flex flex-col w-[90%] pl-5">
-            <p className="text-2xl pl-3 font-bold text-green-800">{name}</p>
+            <p className="text-2xl pl-3 font-bold text-green-800 mb-0">
+              {name}
+            </p>
+            <p className="text-xl pl-3 font-bold text-green-800 ml-2 mt-0">
+              {jobTitle}
+            </p>
             <p className="text-xl pl-3 font-bold text-green-800">Overview</p>
             <p className="text-sm md:text-base p-3 font-bold font text-green-800 px-24 max-md:px-100">
               {overview}
             </p>
             <p className="text-xl pl-3 font-bold text-green-800">
-              My Experience
+              Key Achievements
             </p>
-            <p className="text-sm md:text-base p-3 font-bold font text-green-800 px-24 max-md:px-100">
-              {experience}
-            </p>
+            <ul className="text-sm md:text-base list-disc text-green-800 font font-bold">
+              {Key}
+            </ul>
             <div className="flex flex-col">
-              <p className="text-xl pl-3 font-bold text-green-800">Tech</p>
-              <div className="flex gap-2 mt-2 ml-2 font text-green-800 flex-wrap">
+              <p className="text-xl pl-3 font-bold text-green-800">
+                Technologies and Skills
+              </p>
+              <div className="flex gap-2 mt-1 mb-3 ml-2 font text-green-800 flex-wrap">
                 {techStack}
               </div>
             </div>
-            <a className="!no-underline" href={git} target="_blank">
-              <div className="bg-green-400 rounded-md w-[200px] h-[50px] mt-5 mb-5 flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">
-                <img
-                  src="hyperlink.png"
-                  alt="hyperlink"
-                  className="h-[40px] p-2 "
-                />
-                <p className="font font-bold text-green-800 text-base my-2">
-                  View Project
-                </p>
-              </div>
-            </a>
           </div>
         </div>
       </div>
@@ -132,4 +131,4 @@ const PopUpCompP = ({
   );
 };
 
-export default PopUpCompP;
+export default PopUpCompC;

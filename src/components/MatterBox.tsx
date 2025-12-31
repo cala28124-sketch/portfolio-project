@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useRef, useState, type FC } from "react";
 import Matter from "matter-js";
-import Card from "./card";
+import Card from "./oldcomp/card";
 import TestComp from "./TestComp";
 import ProjectBox from "./ProjectBox";
 import PopUp from "./PopUp";
@@ -13,14 +13,12 @@ import Title from "./Title";
 import PopUpTitle from "./PopUpTItle";
 import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
 import { s } from "motion/react-client";
-import PopUpTM from "./PopUpTM";
-import PopUpUCF from "./PopUpUCF";
-import PopUpPenny from "./PopUpPenny";
 import PopUpMore from "./PopUpMore";
 import PopUpDrive from "./PopUpDrive";
 import PopUpLife from "./PopUpLife";
 import PopUpHobbies from "./PopUpHobbie";
 import PopUpCompP from "./PopUpProjectComp";
+import PopUpCompC from "./PopUpCareerComp";
 
 interface Props {
   Start: boolean;
@@ -485,20 +483,102 @@ const MatterBox: FC<Props> = ({
           </>
         }
       ></PopUpCompP>
-      <PopUpUCF
-        isClosed={isClosedUCF}
-        setIsClosed={setIsClosedUCF}
-        setIsOpen={setIsOpenUCF}
-        isOpen={isOpenUCF}
-        Mount={Mount}
-      ></PopUpUCF>
-      <PopUpPenny
+      <PopUpCompC
         isClosed={isClosedPinch}
         setIsClosed={setIsClosedPinch}
         setIsOpen={setIsOpenPinch}
         isOpen={isOpenPinch}
         Mount={Mount}
-      ></PopUpPenny>
+        name="Pinch A Penny"
+        img="/Pinchlogo.png"
+        ID="pinch"
+        overview="At Pinch a Penny, I worked hard to ensure customer satisifcation,
+              providing comprehensive support in pool maintenance, products, and
+              services. I worked with my coworkers to ensure the store was
+              organized and clean, while also managing inventory and restocking
+              shelves. Additionally, I handled cash register operations,
+              processed transactions accurately, and maintained detailed records
+              of sales and customer interactions. Through these
+              responsibilities, I developed strong communication and teamwork
+              skills, contributing to a positive shopping experience for our
+              customers."
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Customer Service
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Communication
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Teamwork</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Pool Chemicals
+            </div>
+          </>
+        }
+        Key={
+          <>
+            <li>
+              Sold and marketted several expensive products to customers,
+              increasing store revenue
+            </li>
+            <li>
+              Maintained high customer satisfaction through attentive service
+            </li>
+            <li>
+              Developed strong teamwork skills by collaborating with coworkers
+              to ensure smooth store operations
+            </li>
+            <li>Developed Strong customer service and communication skills</li>
+          </>
+        }
+        date="June 2023 - August 2025"
+        jobTitle="Sales Associate"
+      ></PopUpCompC>
+      <PopUpCompC
+        isClosed={isClosedUCF}
+        setIsClosed={setIsClosedUCF}
+        setIsOpen={setIsOpenUCF}
+        isOpen={isOpenUCF}
+        Mount={Mount}
+        name="University of Central Florida"
+        img="/ucflogo.png"
+        ID="ucf"
+        overview="Currently pursuing a Bachelor of Science in computer science, at the University of Central Florida. My academic journey at the school has been a rollercoaster so far- and though I have yet to fully delve into my major as a freshman student, I have already begun taking Computer Science courses, while completing coursework related to C, Python, and Java. The courses I’ve taken have provided me with fundamental knowledge that has served as a basis for my practical skills and theoretical knowledge that I apply in my programming projects."
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Computer Science
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              C programming
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Object Oriented Programming
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Data Structures
+            </div>
+          </>
+        }
+        Key={
+          <>
+            <li>
+              Pariticpated in several clubs, including Knight Hacks and HackUCF
+            </li>
+            <li>
+              Participated in several extra curricular events, including
+              hackathons and horse plinko cyber challenge
+            </li>
+            <li>
+              Maintained a strong GPA while balancing coursework and
+              extracurriculars
+            </li>
+          </>
+        }
+        date="August 2025 - Present"
+        jobTitle="B.S in computer science"
+      ></PopUpCompC>
       <PopUpMore
         isClosed={isClosedMore}
         setIsClosed={setIsClosedMore}
