@@ -109,7 +109,7 @@ const PopUp = ({
             ANTHONY CALABRESE!
           </p>
           <div className="flex flex-col items-center w-[90%]">
-            <p className="text-base text-green-800 mx-auto text-center mx-auto">
+            <p className="font-bold text-base text-green-800 mx-auto text-center mx-auto">
               I'm a computer science student here at the University of Central
               Florida! Growing up, I've constantly held a fascination for
               programming and the many things its used to make. Now, I work
@@ -121,60 +121,50 @@ const PopUp = ({
               <p className="font-extrabold text-green-800 text-center text-2xl">
                 What I build with
               </p>
-              <div className="flex flex-wrap w-full justify-center">
+              <div className="flex gap-1 md:gap-3 flex-wrap w-full justify-center">
                 <img
-                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
-                  src="/test_logo.webp"
-                  alt="source"
+                  className="block mx-auto w-[50px] md:w-[75px] enlargen"
+                  src="/python.png"
+                  alt="python"
+                ></img>
+
+                <img
+                  className="block mx-auto w-[50px] md:w-[75px] enlargen"
+                  src="/cprogramming.png"
+                  alt="c programming"
                 ></img>
                 <img
-                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
-                  src="/test_logo.webp"
-                  alt="source"
+                  className="block mx-auto w-[50px] md:w-[75px] enlargen"
+                  src="/java.png"
+                  alt="java"
                 ></img>
                 <img
-                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
-                  src="/test_logo.webp"
-                  alt="source"
+                  className="block mx-auto w-[50px] md:w-[75px] enlargen"
+                  src="/reactlogo.png"
+                  alt="react"
                 ></img>
                 <img
-                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
-                  src="/test_logo.webp"
-                  alt="source"
-                ></img>
-              </div>
-            </div>
-            <div>
-              <p className="font-extrabold text-green-800 text-center text-2xl">
-                What I'm learning
-              </p>
-              <div className="flex flex-wrap w-full justify-center">
-                <img
-                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
-                  src="/test_logo.webp"
-                  alt="source"
+                  className="block mx-auto w-[50px] md:w-[75px] enlargen"
+                  src="/javascript.png"
+                  alt="javascript"
                 ></img>
                 <img
-                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
-                  src="/test_logo.webp"
-                  alt="source"
+                  className="block mx-auto w-[50px] md:w-[75px] enlargen"
+                  src="/typescript.png"
+                  alt="typescript"
                 ></img>
                 <img
-                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
-                  src="/test_logo.webp"
-                  alt="source"
-                ></img>
-                <img
-                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
-                  src="/test_logo.webp"
-                  alt="source"
+                  className="block mx-auto w-[50px] md:w-[75px] enlargen"
+                  src="/tailwind.png"
+                  alt="tailwind"
                 ></img>
               </div>
             </div>
+
             <p className="text-center pt-5">
               cick on these boxes to find out more!
             </p>
-            <div className="flex flex-wrap p-2 w-full justify-center text-sm">
+            <div className="flex flex-wrap md:gap-10 p-2 w-full justify-center text-sm">
               <div
                 className={`flex flex-col items-center transition-opacity duration-800
                 
@@ -191,7 +181,7 @@ const PopUp = ({
                 >
                   <img
                     className="block mx-auto p-2 w-[100px] h-[100px] enlargen bg-green-800 size-auto"
-                    src="/headshotme.jpg"
+                    src="/medog.jpg"
                     alt="moreme"
                   ></img>
                 </button>
@@ -212,8 +202,8 @@ const PopUp = ({
                 >
                   <img
                     className="block mx-auto p-2 w-[100px] h-[100px] enlargen bg-green-800 size-auto"
-                    src="/test_logo.webp"
-                    alt="source"
+                    src="/legome.jpg"
+                    alt="lego"
                   ></img>
                 </button>
               </div>
@@ -233,8 +223,8 @@ const PopUp = ({
                 >
                   <img
                     className="enlargen block mx-auto p-2 w-[100px] h-[100px] bg-green-800 size-auto"
-                    src="/test_logo.webp"
-                    alt="source"
+                    src="/familyme.jpg"
+                    alt="family"
                   ></img>
                 </button>
               </div>
@@ -271,84 +261,34 @@ export default PopUp;
 
 /*
 
-<div className=" openbox color_box shadow">
-        {" "}
-        <button
-          className="closebutton"
-          onClick={() => {
-            if (isClosed) {
-              setIsOpen(true);
-              setIsClosed(false);
-            } else {
-              setIsOpen(false);
-              setIsClosed(true);
-            }
-          }}
-        >
-          button
-        </button>
-        <div className="testchange">test</div>
-      </div>
+add this later
 
-      */
-
-/* old initial box css
-
-      className={
-              isOpen
-                ? "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto fade-box visible"
-                : "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto fade-box invisible pointer-events-none"
-            }
+           <div>
+              <p className="font-extrabold text-green-800 text-center text-2xl">
+                What I'm learning
+              </p>
+              <div className="flex flex-wrap w-full justify-center">
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+                <img
+                  className="block mx-auto p-2 w-[50px] enlargen bg-green-800"
+                  src="/test_logo.webp"
+                  alt="source"
+                ></img>
+              </div>
+            </div>
 
             */
-
-/*
-
-            old use effect logic
-
-            useEffect(() => {
-    const boxid = document.getElementById("aboutme");
-    boxid?.classList.remove("invisible");
-    boxid?.classList.add("visible");
-
-    setTimeout(() => {
-      boxid?.classList.remove("visible");
-      boxid?.classList.add("invisible");
-      boxid?.classList.remove("top-100");
-    }, 50);
-  }, [Mount]);
-
-  useEffect(() => {
-    const boxid = document.getElementById("aboutme");
-
-    if (isOpen) {
-      boxid?.classList.remove("invisible");
-      boxid?.classList.add("visible");
-      boxid?.classList.remove("pointer-events-none");
-    } else {
-      boxid?.classList.remove("visible");
-      boxid?.classList.add("invisible");
-      boxid?.classList.add("pointer-events-none");
-    }
-  }, [isOpen]);
-
-  */
-
-/* old use effect pairing with mount
-
-  {
-            "absolute my-4 flex flex-col min-h-4/5 w-7xl items-center rounded-md border-5 border-green-800 bg-green-300 z-30 overflow-y-auto fade-box" +
-            (isMountedOpen ? " visible" : " invisible pointer-events-none")
-          }
-
-useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => {
-        setIsMountedOpen(true);
-      }, 1);
-    } else {
-      setIsMountedOpen(false);
-    }
-  }, [isOpen]);
-
-  */

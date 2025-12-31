@@ -11,13 +11,7 @@ interface Props {
   Mount: boolean;
 }
 
-const PopUpMore = ({
-  isClosed,
-  setIsClosed,
-  setIsOpen,
-  isOpen,
-  Mount,
-}: Props) => {
+const PopUpMore = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
   const [Mount1, setMount] = useState(false);
 
   useEffect(() => {
@@ -57,7 +51,7 @@ const PopUpMore = ({
       <div className="flex justify-center">
         <div
           id="More"
-          className={`my-[5%] custom-scrollbar font opacity-0 absolute flex flex-col max-h-[90%] w-[95%] md:h-4/5 md:w-5/6 lg:max-w-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto 
+          className={`bg-opacity-20 my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-3/5 items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -78,9 +72,38 @@ const PopUpMore = ({
               alt="close button"
             />
           </button>
-          <p className="font-bold text-green-800 text-5xl p-2">Placeholder</p>
-          <p className="font-bold text-green-800 text-md p-2">Placeholder</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4"></div>
+          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-green-400 m-5 border-5 border-green-800">
+            <img
+              className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] p-3"
+              src="/medog.jpg"
+              alt="dogme"
+            ></img>
+          </div>
+          <div className="self-start flex flex-col w-[90%] pl-5">
+            <p className="text-3xl text-center font-bold text-green-800">
+              Who am I?
+            </p>
+            <p className="font text-xs text-center font-bold text-green-1000">
+              this is the part where I yap about myself alot...
+            </p>
+            <p className="text-sm md:text-base p-3 pt-0 text-center font-bold font text-green-800 px-24 max-md:px-100">
+              I'm someone who always treasures those close to me. As you can see
+              above, thats obviously me... with my dog! First things off I love
+              animals, and currently have two dogs, and a cat. In the picture
+              above is Jack, while my other dog is named mackenzie. My cat of
+              course is named Stanley, and I love all of them to death. I have a
+              little brother as well but... the animals behave a bit better than
+              he does most of the time, but I still love him to death. Past the
+              immediate elephant, or I should say dog in the room, I am a huge
+              fan of video games, and have been since I was a kid. I appreciate
+              anybody and everybody I've met in my lifetime and made memories
+              with... and to you reading this, I hope i can meet you too soon in
+              the future! I think of everyday as a new oppurtunity to not only
+              learn and better myself, but to also make more memories and
+              connections with those close to me- and those who I'll be able to
+              think of friends in the future.
+            </p>
+          </div>
         </div>
       </div>
     </>

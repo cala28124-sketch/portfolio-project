@@ -11,23 +11,17 @@ interface Props {
   Mount: boolean;
 }
 
-const PopUpDrive = ({
-  isClosed,
-  setIsClosed,
-  setIsOpen,
-  isOpen,
-  Mount,
-}: Props) => {
+const PopUpDrive = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
   const [Mount1, setMount] = useState(false);
 
   useEffect(() => {
     if (Mount1) {
       if (isClosed) {
-        const element = document.getElementById("Drive");
+        const element = document.getElementById("drive");
         element?.classList.remove("opacity-0");
         element?.classList.add("exit");
       } else {
-        const element = document.getElementById("Drive");
+        const element = document.getElementById("drive");
         element?.classList.remove("opacity-0");
       }
     } else {
@@ -56,8 +50,8 @@ const PopUpDrive = ({
 
       <div className="flex justify-center">
         <div
-          id="Drive"
-          className={`my-[5%] custom-scrollbar font opacity-0 absolute flex flex-col max-h-[90%] w-[95%] md:h-4/5 md:w-5/6 lg:max-w-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto 
+          id="drive"
+          className={`bg-opacity-20 my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-3/5 items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -78,9 +72,36 @@ const PopUpDrive = ({
               alt="close button"
             />
           </button>
-          <p className="font-bold text-green-800 text-5xl p-2">Placeholder</p>
-          <p className="font-bold text-green-800 text-md p-2">Placeholder</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4"></div>
+          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-green-400 m-5 border-5 border-green-800">
+            <img
+              className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] p-3"
+              src="/familyme.jpg"
+              alt="familyme"
+            ></img>
+          </div>
+          <div className="self-start flex flex-col w-[90%] pl-5">
+            <p className="text-3xl text-center font-bold text-green-800">
+              What pushes me forward?
+            </p>
+            <p className="font text-xs text-center font-bold text-green-1000">
+              I want to get a j*b!
+            </p>
+            <p className="text-sm md:text-base p-3 pt-0 text-center font-bold font text-green-800 px-24 max-md:px-100">
+              Really though, my drive to push forwards in life comes from alot
+              of things. One of those things, specifically in the picture above,
+              is my family. On the left is my dad, Anthony, (Yeah we have the
+              same name, yes its as "fun" as you would think), on the right is
+              my mom, Elizabeth, and in the middle with me is my little brother,
+              Jacob (Though, might like him a tiny bit less with how annoying he
+              can be.) For me, my family is the backboard I'm always able to
+              rely on- may it be for pushing forwards towards my future, or
+              simply people to spend my time with. Family is super important to
+              me, and they are a huge part of my drive to keep moving forward in
+              life. Along with this, I wish to be able to push myself to my
+              limits, and learn everything I can- to hopefully show my worth to
+              the world.
+            </p>
+          </div>
         </div>
       </div>
     </>

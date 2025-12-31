@@ -11,13 +11,7 @@ interface Props {
   Mount: boolean;
 }
 
-const PopUpHobbies = ({
-  isClosed,
-  setIsClosed,
-  setIsOpen,
-  isOpen,
-  Mount,
-}: Props) => {
+const PopUpHobbies = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
   const [Mount1, setMount] = useState(false);
 
   useEffect(() => {
@@ -57,7 +51,7 @@ const PopUpHobbies = ({
       <div className="flex justify-center">
         <div
           id="hobbies"
-          className={`my-[5%] custom-scrollbar font opacity-0 absolute flex flex-col max-h-[90%] w-[95%] md:h-4/5 md:w-5/6 lg:max-w-4/5 w-7xl items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto 
+          className={`bg-opacity-20 my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-3/5 items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -78,9 +72,89 @@ const PopUpHobbies = ({
               alt="close button"
             />
           </button>
-          <p className="font-bold text-green-800 text-5xl p-2">Placeholder</p>
-          <p className="font-bold text-green-800 text-md p-2">Placeholder</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4"></div>
+          <div className="self-start flex flex-col w-[90%] pl-5">
+            <p className="text-3xl text-center font-bold text-green-800">
+              What do I do to relax?
+            </p>
+            <p className="font text-xs text-center font-bold text-green-1000">
+              ...Or when I'm procrastinating on homework?
+            </p>
+            <p className="text-sm md:text-base p-3 pt-0 text-center font-bold font text-green-800 px-24 max-md:px-100">
+              For me, theres plenty of things I enjoy to do in my free time. I
+              heavily enjoy reading and consuming many forms of media, may it be
+              books, manga, webtoons, or anime I enjoy all of it. I also love
+              video games, and play a lot with my friends. Past that though, I'm
+              a avid roleplayer, and love ttrpgs like DnD. below are a display
+              of some of my favorite forms of media!
+            </p>
+          </div>
+          <div className="flex flex-wrap w-full h-full justify-center">
+            <div className="flex flex-col justify-center items-center rounded-lg w-[350px] h-fit bg-green-400 m-5 mb-5 border-5 border-green-800">
+              <p className="text-base font font-bold p-1 pb-0">Favorite Game</p>
+              <img
+                className=" border-5 border-green-800 h-[250px] w-[250px] m-3 mt-0"
+                src="/e33real.png"
+                alt="e33"
+              ></img>
+              <p className="text-base font font-bold">
+                Clair Obscur: Expedition 33
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-center items-center rounded-lg w-[350px] h-fit bg-green-400 m-5 mb-5 border-5 border-green-800">
+              <p className="text-base font font-bold p-1 pb-0">Favorite Show</p>
+              <img
+                className=" border-5 border-green-800 h-[250px] w-[250px] m-3 mt-0"
+                src="/fmab.png"
+                alt="fmab"
+              ></img>
+              <p className="text-base font font-bold">
+                Full Metal Alchemist: Brotherhood
+              </p>
+            </div>
+            <div className="flex flex-col justify-center items-center rounded-lg w-[350px] h-fit bg-green-400 m-5 mb-5 border-5 border-green-800">
+              <p className="text-base font font-bold p-1 pb-0">Favorite Song</p>
+              <img
+                className=" border-5 border-green-800 h-[250px] w-[250px] m-3 mt-0"
+                src="/visong.png"
+                alt="virtual_insanity"
+              ></img>
+              <p className="text-base font font-bold">Virtual Insanity</p>
+            </div>
+            <div className="flex flex-col justify-center items-center rounded-lg w-[350px] h-fit bg-green-400 m-5 mb-5 border-5 border-green-800">
+              <p className="text-base font font-bold p-1 pb-0">
+                Favorite Comic
+              </p>
+              <img
+                className=" border-5 border-green-800 h-[250px] w-[250px] m-3 mt-0"
+                src="/hclw.png"
+                alt="hardcore_leveling_warrior"
+              ></img>
+              <p className="text-base font font-bold">
+                Hardcore Leveling Warrior
+              </p>
+            </div>
+            <div className="flex flex-col justify-center items-center rounded-lg w-[350px] h-fit bg-green-400 m-5 mb-5 border-5 border-green-800">
+              <p className="text-base font font-bold p-1 pb-0">Favorite Book</p>
+              <img
+                className=" border-5 border-green-800 h-[250px] w-[250px] m-3 mt-0"
+                src="/rpo.png"
+                alt="ready_player_one"
+              ></img>
+              <p className="text-base font font-bold">Ready Player One</p>
+            </div>
+            <div className="flex flex-col justify-center items-center rounded-lg w-[350px] h-fit bg-green-400 m-5 mb-5 border-5 border-green-800">
+              <p className="text-base font font-bold p-1 pb-0">
+                Favorite TTRPG Campaign
+              </p>
+              <img
+                className=" border-5 border-green-800 h-[250px] w-[250px] m-3 mt-0"
+                src="/drak.png"
+                alt="dungeons_of_drakenheim"
+              ></img>
+              <p className="text-base font font-bold">Dungeons of Drakenheim</p>
+            </div>
+          </div>
         </div>
       </div>
     </>

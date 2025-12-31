@@ -216,15 +216,9 @@ const PopUpProject = ({
                   src="\reactlogo.png"
                   alt="electron"
                 />
-
                 <img
                   className="h-[50px] enlargen2 p-2"
-                  src="\reactlogo.png"
-                  alt="flask"
-                />
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\test_logo.webp"
+                  src="\elevenlabs.png"
                   alt="elevenlabs"
                 />
               </div>
