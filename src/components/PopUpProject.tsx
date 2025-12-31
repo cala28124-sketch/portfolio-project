@@ -239,16 +239,74 @@ const PopUpProject = ({
                 </div>
               </a>
             </div>
-            <button
-              onClick={() => {
-                button3set(true);
-              }}
-              className="w-fit min-h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center enlargen2"
-            >
+            <div className="w-fit min-h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
               <p className="font-bold text-green-800 text-xl p-2">
-                Portfolio Project
+                Personal Portfolio
               </p>
-            </button>
+              <div
+                className={`transition-opacity duration-800
+                
+                ${button3 ? "opacity-0" : "opacity-100"}
+
+                `}
+              >
+                <button
+                  onClick={() => {
+                    button3set(true);
+                  }}
+                >
+                  <img
+                    className="h-[150px] border-5 border-green-800 block enlargen2"
+                    src="\personalport.png"
+                    alt="pngpal"
+                  />
+                </button>
+              </div>
+
+              <div className=" mx-auto border-4 border-transparent">
+                <p className="text-center text-sm text-green-800 font-bold">
+                  My personal portfolio website, built to showcase my skills,
+                  projects, and experience. Built using React and Tailwind CSS,
+                  this website is designed to be responsive and user-friendly,
+                  providing visitors with an easy way to learn more about me and
+                  my work. Made as my first personal project.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  className="h-[50px] enlargen2 p-2"
+                  src="\tailwind.png"
+                  alt="tailwind"
+                />
+
+                <img
+                  className="h-[50px] enlargen2 p-2"
+                  src="\reactlogo.png"
+                  alt="electron"
+                />
+                <img
+                  className="h-[50px] enlargen2 p-2"
+                  src="\typescript.png"
+                  alt="typescript"
+                />
+              </div>
+              <a
+                className="!no-underline"
+                href="https://github.com/cala28124-sketch/portfolio-project"
+                target="_blank"
+              >
+                <div className="my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">
+                  <img
+                    src="hyperlink.png"
+                    alt="hyperlink"
+                    className="h-[40px] p-2 "
+                  />
+                  <p className="font font-bold text-green-800 text-base my-2">
+                    View Project
+                  </p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>

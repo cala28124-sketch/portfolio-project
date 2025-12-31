@@ -468,18 +468,23 @@ const MatterBox: FC<Props> = ({
         setIsOpen={setIsOpenPort}
         isOpen={isOpenPort}
         Mount={Mount}
-        name="Portfolio"
-        img="/test_logo.webp"
-        git="https://github.com/cala28124-sketch/portfolio"
+        name="Personal Portfolio"
+        img="/personalport.png"
+        git="https://github.com/cala28124-sketch/portfolio-project"
         ID="portfolio"
-        overview="placeholder"
-        experience="placeholder"
+        overview="My portfolio website, being the first indepedent project I started and finished. Built to showcase my skills, projects, and experience. Built using React and Tailwind CSS, this website is designed to be responsive and user-friendly, providing visitors with an easy way to learn more about me and my work. Made as my first personal project."
+        experience="Really, out of all my projects up to this point, this one was the most challenging. Mostly for the fact that I had stuck with it for so long as a personal project, for around two months for the current iteration and a month previously on a iteration I threw out due to not liking it, this project taught me a lot of things. One, it helped me to learn HTML, CSS, Javascript, Typescript, React, and things like Tailwind CSS and matter.js. Though really, past the programming side of what I learned, this whole thing taught me a very important value- consistency. My biggest struggle with this project was making sure to stay on task and stay consistent, as that has always been a trouble of mine before this. This project taught me the value of hard and constant work, and the rewards it brings to stay true to a task you put your mind to. "
         techStack={
           <>
             <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
             <div className="text-sm bg-green-400 rounded-lg p-1">Matter.JS</div>
             <div className="text-sm bg-green-400 rounded-lg p-1">HTML</div>
-            <div className="text-sm bg-green-400 rounded-lg p-1">Css</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Tailwind Css
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Typescript
+            </div>
           </>
         }
       ></PopUpCompP>
@@ -805,7 +810,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedPort}
           setIsOpen={setIsOpenPort}
           text="portfolio"
-          image="/test_logo.webp"
+          image="/personalport.png"
           ID="project3"
           setMount={setMount}
           Mount={Mount}
