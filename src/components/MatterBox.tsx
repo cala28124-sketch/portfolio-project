@@ -1,18 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useRef, useState, type FC } from "react";
+import { useEffect, useRef, useState, type FC } from "react";
 import Matter from "matter-js";
-import Card from "./oldcomp/card";
 import TestComp from "./TestComp";
-import ProjectBox from "./ProjectBox";
 import PopUp from "./PopUp";
 import PopUpProject from "./PopUpProject";
 import PopUpCareer from "./PopUpCareer";
-import PopUpSkills from "./PopUpSkills";
-import PopUpMisc from "./PopUpMisc";
 import Title from "./Title";
 import PopUpTitle from "./PopUpTItle";
-import { StarsBackground } from "./animate-ui/components/backgrounds/stars";
-import { s } from "motion/react-client";
 import PopUpMore from "./PopUpMore";
 import PopUpDrive from "./PopUpDrive";
 import PopUpLife from "./PopUpLife";
@@ -62,10 +55,6 @@ const MatterBox: FC<Props> = ({
   setspawnproject,
   spawncareer,
   setspawncareer,
-  spawnskills,
-  setspawnskills,
-  spawnmisc,
-  setspawnmisc,
   aboutme1,
   setaboutme1,
   aboutme2,
@@ -93,12 +82,6 @@ const MatterBox: FC<Props> = ({
   const [isClosedproject, setIsClosedproject] = useState(true);
   const [isOpencareer, setIsOpencareer] = useState(false);
   const [isClosedcareer, setIsClosedcareer] = useState(true);
-  const [isOpenskills, setIsOpenskills] = useState(false);
-  const [isClosedskills, setIsClosedskills] = useState(true);
-  const [isOpenmisc, setIsOpenmisc] = useState(false);
-  const [isClosedmisc, setIsClosedmisc] = useState(true);
-  const [nullisOpen, nullsetIsOpen] = useState(false);
-  const [nullisClosed, nullsetIsClosed] = useState(false);
   const [isClosedTM, setIsClosedTM] = useState(true);
   const [isOpenTM, setIsOpenTM] = useState(false);
   const [isClosedPNG, setIsClosedPNG] = useState(true);
@@ -117,16 +100,10 @@ const MatterBox: FC<Props> = ({
   const [isOpenLife, setIsOpenLife] = useState(false);
   const [isClosedHobbie, setIsClosedHobbie] = useState(true);
   const [isOpenHobbie, setIsOpenHobbie] = useState(false);
-
-  const [spawn, setspawn] = useState(false);
   const [Mount, setMount] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
-  const externalBoxRef = useRef<HTMLDivElement>(null);
-  const externalBoxRef2 = useRef<HTMLDivElement>(null);
 
   const engineRef = useRef<Matter.Engine | null>(null);
-  const externalBodyRef = useRef<Matter.Body | null>(null);
-  const externalBodyRef2 = useRef<Matter.Body | null>(null);
   const groundRef = useRef<Matter.Body | null>(null);
   const skyRef = useRef<Matter.Body | null>(null);
   const leftwallRef = useRef<Matter.Body | null>(null);
@@ -307,7 +284,19 @@ const MatterBox: FC<Props> = ({
         render.canvas.remove();
       }
     };
-  }, []);
+  }, [
+    setaboutme1,
+    setaboutme2,
+    setaboutme3,
+    setaboutme4,
+    setcareer1,
+    setcareer2,
+    setproject1,
+    setproject2,
+    setspawnabout,
+    setspawncareer,
+    setspawnproject,
+  ]);
 
   return (
     <>
@@ -360,34 +349,6 @@ const MatterBox: FC<Props> = ({
         button3={project3}
         button3set={setproject3}
       ></PopUpCareer>
-
-      <PopUpSkills
-        isClosed={isClosedskills}
-        setIsClosed={setIsClosedskills}
-        setIsOpen={setIsOpenskills}
-        isOpen={isOpenskills}
-        Mount={Mount}
-        button1={project1}
-        button1set={setproject1}
-        button2={project2}
-        button2set={setproject2}
-        button3={project3}
-        button3set={setproject3}
-      ></PopUpSkills>
-
-      <PopUpMisc
-        isClosed={isClosedmisc}
-        setIsClosed={setIsClosedmisc}
-        setIsOpen={setIsOpenmisc}
-        isOpen={isOpenmisc}
-        Mount={Mount}
-        button1={project1}
-        button1set={setproject1}
-        button2={project2}
-        button2set={setproject2}
-        button3={project3}
-        button3set={setproject3}
-      ></PopUpMisc>
 
       <PopUpCompP
         isClosed={isClosedTM}
@@ -673,38 +634,6 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
           setspawn={setspawncareer}
-        ></TestComp>
-        <TestComp
-          boxRef={boxRef}
-          spawn={spawnskills}
-          engineRef={engineRef}
-          isClosed={isClosedskills}
-          setIsClosed={setIsClosedskills}
-          setIsOpen={setIsOpenskills}
-          text="open skills"
-          image="/headshotme.jpg"
-          ID="boxskill"
-          setMount={setMount}
-          Mount={Mount}
-          screenwidth={Width}
-          screenheight={Height}
-          setspawn={setspawnskills}
-        ></TestComp>
-        <TestComp
-          boxRef={boxRef}
-          spawn={spawnmisc}
-          engineRef={engineRef}
-          isClosed={isClosedmisc}
-          setIsClosed={setIsClosedmisc}
-          setIsOpen={setIsOpenmisc}
-          text="open feature"
-          image="/headshotme.jpg"
-          ID="boxmisc"
-          setMount={setMount}
-          Mount={Mount}
-          screenwidth={Width}
-          screenheight={Height}
-          setspawn={setspawnmisc}
         ></TestComp>
         <TestComp
           boxRef={boxRef}

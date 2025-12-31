@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 interface Props {
   Textinside: string;

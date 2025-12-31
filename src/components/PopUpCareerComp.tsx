@@ -1,6 +1,5 @@
 // this is a component containing the pop up box for the about me section. It is to be called by the specific physics box that uses it.
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect, useState } from "react";
 
 interface Props {
@@ -24,7 +23,6 @@ const PopUpCompC = ({
   setIsClosed,
   setIsOpen,
   isOpen,
-  Mount,
   name,
   img,
   ID,
@@ -49,6 +47,7 @@ const PopUpCompC = ({
     } else {
       setMount(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isClosed]);
 
   return (

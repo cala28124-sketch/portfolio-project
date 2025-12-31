@@ -1,6 +1,4 @@
-import React, { type Ref } from "react";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Dropbox from "./dropbox";
+import { type Ref } from "react";
 
 interface Props {
   reference?: Ref<HTMLDivElement> | undefined;

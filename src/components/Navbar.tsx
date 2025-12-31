@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
-import Dropbox from "./dropbox";
 interface Props {
   menuclick: () => void;
   menuSkip: () => void;
@@ -32,30 +30,20 @@ interface Props {
   setcareer2: (arg0: boolean) => void;
 }
 
-// eslint-disable-next-line no-empty-pattern
 const Navbar = ({
   Start,
   setspawnabout,
-  spawnabout,
-  spawnproject,
   setspawnproject,
-  spawncareer,
   setspawncareer,
-  spawnskills,
-  setspawnskills,
-  spawnmisc,
-  setspawnmisc,
   setaboutme1,
   setaboutme2,
   setaboutme3,
   setaboutme4,
   setproject1,
   setproject2,
-  setproject3,
   setcareer1,
   setcareer2,
 }: Props) => {
-  const [firstclick, setfirstclick] = useState(true);
   const [Mount, setMount] = useState(false);
   const [dropdownopen, setdropdownopen] = useState(false);
   const [dropdownclose, setdropdownclose] = useState(true);
@@ -69,6 +57,7 @@ const Navbar = ({
     } else {
       setMount(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Start]);
 
   useEffect(() => {
@@ -84,6 +73,7 @@ const Navbar = ({
     } else {
       setMount(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dropdownclose]);
 
   return (

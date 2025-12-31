@@ -1,14 +1,4 @@
-/* eslint-disable no-empty-pattern */
-/* eslint-disable @typescript-eslint/no-wrapper-object-types */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  type Ref,
-  type MutableRefObject,
-} from "react";
-import Matter from "matter-js";
+import { useEffect, useState } from "react";
 
 interface Props {
   isOpen: boolean;
@@ -33,6 +23,7 @@ const PopUpTitle = ({ isOpen, setIsOpen, isClosed, setIsClosed }: Props) => {
     } else {
       setMount(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isClosed]);
 
   return (

@@ -1,15 +1,12 @@
 /* eslint-disable @typescript-eslint/no-wrapper-object-types */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, {
+
+import {
   useEffect,
   useRef,
-  useState,
-  type Ref,
   type MutableRefObject,
   type RefObject,
 } from "react";
 import Matter from "matter-js";
-import Card from "./oldcomp/card";
 
 interface Props {
   engineRef: MutableRefObject<Matter.Engine | null>;
@@ -30,7 +27,6 @@ const Title = ({
   setStart,
   screenwidth,
   screenheight,
-  isOpen,
   setIsOpen,
   isClosed,
   setIsClosed,
@@ -125,6 +121,7 @@ const Title = ({
     setTimeout(() => {
       MatterFunction();
     }, 50);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Start]);
 
   return (

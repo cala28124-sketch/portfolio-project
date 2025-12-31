@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import Navbar from "./components/Navbar";
-import Box from "./components/oldcomp/notes.tsx";
 import { useState } from "react";
-import Dropbox from "./components/dropbox.tsx";
 import MatterBox from "./components/MatterBox.tsx";
 import { StarsBackground } from "./components/animate-ui/components/backgrounds/stars.tsx";
 import Cloud from "./components/clouds";
@@ -10,9 +7,9 @@ import Grass from "./components/grass.tsx";
 
 function App() {
   const [Videoshow, setStop] = useState(false);
-  const [Menushow, setMenu] = useState(true);
+  const [, setMenu] = useState(true);
   const [navtoggle, setnav] = useState(true);
-  const [interactiveText, setInteractiveText] = useState(false);
+  const [, setInteractiveText] = useState(false);
   const [Start, setStart] = useState(false);
   const [spawnabout, setspawnabout] = useState(false);
   const [spawnproject, setspawnproject] = useState(false);

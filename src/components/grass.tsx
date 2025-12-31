@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { use, useEffect, useState } from "react";
-
 const Grass = () => {
   return (
     <>

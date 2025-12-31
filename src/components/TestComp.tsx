@@ -1,17 +1,13 @@
 /* eslint-disable @typescript-eslint/no-wrapper-object-types */
 // this exists as a placeholder component to be copied for individual matterboxes. It currently has the bug fix for the delay to fix it, and the offset. copy this and call into matterbox for more.
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, {
+import {
   useEffect,
   useRef,
-  useState,
-  type Ref,
   type MutableRefObject,
   type RefObject,
 } from "react";
 import Matter from "matter-js";
-import Card from "./oldcomp/card";
 
 interface Props {
   engineRef: MutableRefObject<Matter.Engine | null>;
@@ -40,13 +36,9 @@ const TestComp = ({
   text,
   image,
   ID,
-  setMount,
-  Mount,
   screenwidth,
   screenheight,
-  boxRef,
 }: Props) => {
-  const [Test, setTest] = useState(false);
   const externalBodyRef = useRef<Matter.Body | null>(null);
   const externalBoxRef = useRef<HTMLDivElement>(null);
   const randomSpawn =
@@ -118,6 +110,7 @@ const TestComp = ({
       const boxid = document.getElementById(ID);
       boxid?.classList.replace("opacity-0", "opacity-100");
     }, 50);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [spawn]);
 
   return (
