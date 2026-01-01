@@ -113,178 +113,180 @@ const MatterBox: FC<Props> = ({
   const Height = boxRef.current?.offsetHeight || 0;
 
   useEffect(() => {
-    if (!boxRef.current) return;
-    const container = boxRef.current;
+    setTimeout(() => {
+      if (!boxRef.current) return;
+      const container = boxRef.current;
 
-    const {
-      Engine,
-      Render,
-      Runner,
-      Bodies,
-      Composite,
-      Mouse,
-      MouseConstraint,
-    } = Matter;
+      const {
+        Engine,
+        Render,
+        Runner,
+        Bodies,
+        Composite,
+        Mouse,
+        MouseConstraint,
+      } = Matter;
 
-    const engine = Engine.create();
-    engineRef.current = engine;
+      const engine = Engine.create();
+      engineRef.current = engine;
 
-    const Width = container.offsetWidth;
-    const Height = container.offsetHeight;
+      const Width = container.offsetWidth;
+      const Height = container.offsetHeight;
 
-    const render = Render.create({
-      element: boxRef.current,
-      engine: engine,
-      options: {
-        width: Width,
-        height: Height,
-        wireframes: false,
-        background: "transparent",
-        showInternalEdges: false,
-        wireframeStrokeStyle: "red",
-      },
-    });
-
-    const mouse = Mouse.create(render.canvas);
-
-    const mouseConstraint = MouseConstraint.create(engine, {
-      mouse: mouse,
-      constraint: {
-        stiffness: 0.2,
-        render: {
-          visible: false,
+      const render = Render.create({
+        element: boxRef.current,
+        engine: engine,
+        options: {
+          width: Width,
+          height: Height,
+          wireframes: false,
+          background: "transparent",
+          showInternalEdges: false,
+          wireframeStrokeStyle: "red",
         },
-      },
-    });
+      });
 
-    Composite.add(engine.world, mouseConstraint);
+      const mouse = Mouse.create(render.canvas);
 
-    render.mouse = mouse;
+      const mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+          stiffness: 0.2,
+          render: {
+            visible: false,
+          },
+        },
+      });
 
-    const sky = Bodies.rectangle(Width / 2, -(Height / 2), Width, 50, {
-      isStatic: true,
-      render: { fillStyle: "transparent" },
-    });
+      Composite.add(engine.world, mouseConstraint);
 
-    skyRef.current = sky;
+      render.mouse = mouse;
 
-    const ground = Bodies.rectangle(Width / 2, Height, Width, 50, {
-      isStatic: true,
-      render: { fillStyle: "green" },
-    });
+      const sky = Bodies.rectangle(Width / 2, -(Height / 2), Width, 50, {
+        isStatic: true,
+        render: { fillStyle: "transparent" },
+      });
 
-    groundRef.current = ground;
+      skyRef.current = sky;
 
-    const wallleft = Bodies.rectangle(0, Height / 2, 50, Height * 2, {
-      isStatic: true,
-      render: { fillStyle: "transparent" },
-    });
+      const ground = Bodies.rectangle(Width / 2, Height, Width, 50, {
+        isStatic: true,
+        render: { fillStyle: "green" },
+      });
 
-    leftwallRef.current = wallleft;
+      groundRef.current = ground;
 
-    const wallright = Bodies.rectangle(Width, Height / 2, 50, Height * 2, {
-      isStatic: true,
-      render: { fillStyle: "transprent" },
-    });
+      const wallleft = Bodies.rectangle(0, Height / 2, 50, Height * 2, {
+        isStatic: true,
+        render: { fillStyle: "transparent" },
+      });
 
-    rightwallRef.current = wallright;
+      leftwallRef.current = wallleft;
 
-    Composite.add(engine.world, [ground, wallleft, wallright, sky]);
+      const wallright = Bodies.rectangle(Width, Height / 2, 50, Height * 2, {
+        isStatic: true,
+        render: { fillStyle: "transprent" },
+      });
 
-    const Resize = () => {
-      setspawnabout(false);
-      setspawnproject(false);
-      setspawncareer(false);
-      setaboutme1(false);
-      setaboutme2(false);
-      setaboutme3(false);
-      setaboutme4(false);
-      setproject1(false);
-      setproject2(false);
-      setproject3(false);
-      setcareer1(false);
-      setcareer2(false);
-      const Widthchange = boxRef.current?.offsetWidth || 0;
-      const HeightChange = boxRef.current?.offsetHeight || 0;
+      rightwallRef.current = wallright;
 
-      if (render) {
-        render.canvas.width = Widthchange;
-        render.canvas.height = HeightChange;
-        render.options.width = Widthchange;
-        render.options.height = HeightChange;
-      }
+      Composite.add(engine.world, [ground, wallleft, wallright, sky]);
 
-      if (groundRef.current) {
-        Matter.Body.setPosition(groundRef.current, {
-          x: Widthchange / 2,
-          y: HeightChange,
-        });
-        Matter.Body.scale(
-          groundRef.current,
-          Widthchange /
-            (groundRef.current.bounds.max.x - groundRef.current.bounds.min.x),
-          1
-        );
-      }
+      const Resize = () => {
+        setspawnabout(false);
+        setspawnproject(false);
+        setspawncareer(false);
+        setaboutme1(false);
+        setaboutme2(false);
+        setaboutme3(false);
+        setaboutme4(false);
+        setproject1(false);
+        setproject2(false);
+        setproject3(false);
+        setcareer1(false);
+        setcareer2(false);
+        const Widthchange = boxRef.current?.offsetWidth || 0;
+        const HeightChange = boxRef.current?.offsetHeight || 0;
 
-      if (skyRef.current) {
-        Matter.Body.setPosition(skyRef.current, {
-          x: Widthchange / 2,
-          y: -(HeightChange / 2),
-        });
-        Matter.Body.scale(
-          skyRef.current,
-          Widthchange /
-            (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
-          1
-        );
-      }
+        if (render) {
+          render.canvas.width = Widthchange;
+          render.canvas.height = HeightChange;
+          render.options.width = Widthchange;
+          render.options.height = HeightChange;
+        }
 
-      if (leftwallRef.current) {
-        Matter.Body.setPosition(leftwallRef.current, {
-          x: 0,
-          y: HeightChange / 2,
-        });
-        Matter.Body.scale(
-          leftwallRef.current,
-          1,
-          HeightChange /
-            (leftwallRef.current.bounds.max.y -
-              leftwallRef.current.bounds.min.y)
-        );
-      }
+        if (groundRef.current) {
+          Matter.Body.setPosition(groundRef.current, {
+            x: Widthchange / 2,
+            y: HeightChange,
+          });
+          Matter.Body.scale(
+            groundRef.current,
+            Widthchange /
+              (groundRef.current.bounds.max.x - groundRef.current.bounds.min.x),
+            1
+          );
+        }
 
-      if (rightwallRef.current) {
-        Matter.Body.setPosition(rightwallRef.current, {
-          x: Widthchange,
-          y: HeightChange / 2,
-        });
-        Matter.Body.scale(
-          rightwallRef.current,
-          1,
-          HeightChange /
-            (rightwallRef.current.bounds.max.y -
-              rightwallRef.current.bounds.min.y)
-        );
-      }
-    };
+        if (skyRef.current) {
+          Matter.Body.setPosition(skyRef.current, {
+            x: Widthchange / 2,
+            y: -(HeightChange / 2),
+          });
+          Matter.Body.scale(
+            skyRef.current,
+            Widthchange /
+              (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
+            1
+          );
+        }
 
-    Render.run(render);
+        if (leftwallRef.current) {
+          Matter.Body.setPosition(leftwallRef.current, {
+            x: 0,
+            y: HeightChange / 2,
+          });
+          Matter.Body.scale(
+            leftwallRef.current,
+            1,
+            HeightChange /
+              (leftwallRef.current.bounds.max.y -
+                leftwallRef.current.bounds.min.y)
+          );
+        }
 
-    const runner = Runner.create();
-    Runner.run(runner, engine);
-    window.addEventListener("resize", Resize);
+        if (rightwallRef.current) {
+          Matter.Body.setPosition(rightwallRef.current, {
+            x: Widthchange,
+            y: HeightChange / 2,
+          });
+          Matter.Body.scale(
+            rightwallRef.current,
+            1,
+            HeightChange /
+              (rightwallRef.current.bounds.max.y -
+                rightwallRef.current.bounds.min.y)
+          );
+        }
+      };
 
-    return () => {
-      window.removeEventListener("resize", Resize);
-      Render.stop(render);
-      Runner.stop(runner);
-      Engine.clear(engine);
+      Render.run(render);
 
-      if (render.canvas) {
-        render.canvas.remove();
-      }
-    };
+      const runner = Runner.create();
+      Runner.run(runner, engine);
+      window.addEventListener("resize", Resize);
+
+      return () => {
+        window.removeEventListener("resize", Resize);
+        Render.stop(render);
+        Runner.stop(runner);
+        Engine.clear(engine);
+
+        if (render.canvas) {
+          render.canvas.remove();
+        }
+      };
+    }, 50);
   }, [
     setaboutme1,
     setaboutme2,
@@ -309,7 +311,6 @@ const MatterBox: FC<Props> = ({
         setIsClosed={setIsClosedtitle}
       ></PopUpTitle>
       <PopUp
-        //current placeholder, opened by testcomp/projectbox. able to do individual and separate pop ups here for easy use, may move to main app comp later.
         isClosed={isClosedabout}
         setIsClosed={setIsClosedabout}
         setIsOpen={setIsOpenabout}
