@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState, type FC } from "react";
 import Matter from "matter-js";
 import TestComp from "./TestComp";
@@ -12,6 +13,9 @@ import PopUpLife from "./PopUpLife";
 import PopUpHobbies from "./PopUpHobbie";
 import PopUpCompP from "./PopUpProjectComp";
 import PopUpCompC from "./PopUpCareerComp";
+/*
+import { resize } from "motion";
+*/
 
 interface Props {
   Start: boolean;
@@ -113,116 +117,183 @@ const MatterBox: FC<Props> = ({
   const Height = boxRef.current?.offsetHeight || 0;
 
   useEffect(() => {
+    /*
     setTimeout(() => {
-      if (!boxRef.current) return;
-      const container = boxRef.current;
+    */
+    if (!boxRef.current) return;
+    const container = boxRef.current;
 
-      const {
-        Engine,
-        Render,
-        Runner,
-        Bodies,
-        Composite,
-        Mouse,
-        MouseConstraint,
-      } = Matter;
+    const {
+      Engine,
+      Render,
+      Runner,
+      Bodies,
+      Composite,
+      Mouse,
+      MouseConstraint,
+    } = Matter;
 
-      const engine = Engine.create();
-      engineRef.current = engine;
+    const engine = Engine.create();
+    engineRef.current = engine;
 
-      const Width = container.offsetWidth;
-      const Height = container.offsetHeight;
+    const Width = container.offsetWidth;
+    const Height = container.offsetHeight;
 
-      const render = Render.create({
-        element: boxRef.current,
-        engine: engine,
-        options: {
-          width: Width,
-          height: Height,
-          wireframes: false,
-          background: "transparent",
-          showInternalEdges: false,
-          wireframeStrokeStyle: "red",
+    const render = Render.create({
+      element: boxRef.current,
+      engine: engine,
+      options: {
+        width: Width,
+        height: Height,
+        wireframes: false,
+        background: "transparent",
+        showInternalEdges: false,
+        wireframeStrokeStyle: "red",
+      },
+    });
+
+    const mouse = Mouse.create(render.canvas);
+
+    const mouseConstraint = MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.2,
+        render: {
+          visible: false,
         },
-      });
+      },
+    });
 
-      const mouse = Mouse.create(render.canvas);
+    Composite.add(engine.world, mouseConstraint);
 
-      const mouseConstraint = MouseConstraint.create(engine, {
-        mouse: mouse,
-        constraint: {
-          stiffness: 0.2,
-          render: {
-            visible: false,
-          },
-        },
-      });
+    render.mouse = mouse;
 
-      Composite.add(engine.world, mouseConstraint);
+    const sky = Bodies.rectangle(Width / 2, -(Height / 2), Width, 50, {
+      isStatic: true,
+      render: { fillStyle: "transparent" },
+    });
 
-      render.mouse = mouse;
+    skyRef.current = sky;
 
-      const sky = Bodies.rectangle(Width / 2, -(Height / 2), Width, 50, {
-        isStatic: true,
-        render: { fillStyle: "transparent" },
-      });
+    const ground = Bodies.rectangle(Width / 2, Height, Width, 50, {
+      isStatic: true,
+      render: { fillStyle: "green" },
+    });
 
-      skyRef.current = sky;
+    groundRef.current = ground;
 
-      const ground = Bodies.rectangle(Width / 2, Height, Width, 50, {
-        isStatic: true,
-        render: { fillStyle: "green" },
-      });
+    const wallleft = Bodies.rectangle(0, Height / 2, 50, Height * 2, {
+      isStatic: true,
+      render: { fillStyle: "transparent" },
+    });
 
-      groundRef.current = ground;
+    leftwallRef.current = wallleft;
 
-      const wallleft = Bodies.rectangle(0, Height / 2, 50, Height * 2, {
-        isStatic: true,
-        render: { fillStyle: "transparent" },
-      });
+    const wallright = Bodies.rectangle(Width, Height / 2, 50, Height * 2, {
+      isStatic: true,
+      render: { fillStyle: "transprent" },
+    });
 
-      leftwallRef.current = wallleft;
+    rightwallRef.current = wallright;
 
-      const wallright = Bodies.rectangle(Width, Height / 2, 50, Height * 2, {
-        isStatic: true,
-        render: { fillStyle: "transprent" },
-      });
+    Composite.add(engine.world, [ground, wallleft, wallright, sky]);
+    /*
+    const Resize = () => {
+      setspawnabout(false);
+      setspawnproject(false);
+      setspawncareer(false);
+      setaboutme1(false);
+      setaboutme2(false);
+      setaboutme3(false);
+      setaboutme4(false);
+      setproject1(false);
+      setproject2(false);
+      setproject3(false);
+      setcareer1(false);
+      setcareer2(false);
+      const Widthchange = boxRef.current?.offsetWidth || 0;
+      const HeightChange = boxRef.current?.offsetHeight || 0;
 
-      rightwallRef.current = wallright;
+      if (render) {
+        render.canvas.width = Widthchange;
+        render.canvas.height = HeightChange;
+        render.options.width = Widthchange;
+        render.options.height = HeightChange;
+      }
 
-      Composite.add(engine.world, [ground, wallleft, wallright, sky]);
+      if (groundRef.current) {
+        Matter.Body.setPosition(groundRef.current, {
+          x: Widthchange / 2,
+          y: HeightChange,
+        });
+        Matter.Body.scale(
+          groundRef.current,
+          Widthchange /
+            (groundRef.current.bounds.max.x - groundRef.current.bounds.min.x),
+          1
+        );
+      }
 
-      const Resize = () => {
-        setspawnabout(false);
-        setspawnproject(false);
-        setspawncareer(false);
-        setaboutme1(false);
-        setaboutme2(false);
-        setaboutme3(false);
-        setaboutme4(false);
-        setproject1(false);
-        setproject2(false);
-        setproject3(false);
-        setcareer1(false);
-        setcareer2(false);
-        const Widthchange = boxRef.current?.offsetWidth || 0;
-        const HeightChange = boxRef.current?.offsetHeight || 0;
+      if (skyRef.current) {
+        Matter.Body.setPosition(skyRef.current, {
+          x: Widthchange / 2,
+          y: -(HeightChange / 2),
+        });
+        Matter.Body.scale(
+          skyRef.current,
+          Widthchange /
+            (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
+          1
+        );
+      }
 
-        if (render) {
-          render.canvas.width = Widthchange;
-          render.canvas.height = HeightChange;
-          render.options.width = Widthchange;
-          render.options.height = HeightChange;
-        }
+      if (leftwallRef.current) {
+        Matter.Body.setPosition(leftwallRef.current, {
+          x: 0,
+          y: HeightChange / 2,
+        });
+        Matter.Body.scale(
+          leftwallRef.current,
+          1,
+          HeightChange /
+            (leftwallRef.current.bounds.max.y -
+              leftwallRef.current.bounds.min.y)
+        );
+      }
+
+      if (rightwallRef.current) {
+        Matter.Body.setPosition(rightwallRef.current, {
+          x: Widthchange,
+          y: HeightChange / 2,
+        });
+        Matter.Body.scale(
+          rightwallRef.current,
+          1,
+          HeightChange /
+            (rightwallRef.current.bounds.max.y -
+              rightwallRef.current.bounds.min.y)
+        );
+      }
+    };
+    */
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+
+        render.canvas.width = width;
+        render.canvas.height = height;
+        render.options.width = width;
+        render.options.height = height;
 
         if (groundRef.current) {
           Matter.Body.setPosition(groundRef.current, {
-            x: Widthchange / 2,
-            y: HeightChange,
+            x: width / 2,
+            y: height,
           });
           Matter.Body.scale(
             groundRef.current,
-            Widthchange /
+            width /
               (groundRef.current.bounds.max.x - groundRef.current.bounds.min.x),
             1
           );
@@ -230,13 +301,12 @@ const MatterBox: FC<Props> = ({
 
         if (skyRef.current) {
           Matter.Body.setPosition(skyRef.current, {
-            x: Widthchange / 2,
-            y: -(HeightChange / 2),
+            x: width / 2,
+            y: -(height / 2),
           });
           Matter.Body.scale(
             skyRef.current,
-            Widthchange /
-              (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
+            width / (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
             1
           );
         }
@@ -244,12 +314,12 @@ const MatterBox: FC<Props> = ({
         if (leftwallRef.current) {
           Matter.Body.setPosition(leftwallRef.current, {
             x: 0,
-            y: HeightChange / 2,
+            y: height / 2,
           });
           Matter.Body.scale(
             leftwallRef.current,
             1,
-            HeightChange /
+            height /
               (leftwallRef.current.bounds.max.y -
                 leftwallRef.current.bounds.min.y)
           );
@@ -257,36 +327,46 @@ const MatterBox: FC<Props> = ({
 
         if (rightwallRef.current) {
           Matter.Body.setPosition(rightwallRef.current, {
-            x: Widthchange,
-            y: HeightChange / 2,
+            x: width,
+            y: height / 2,
           });
           Matter.Body.scale(
             rightwallRef.current,
             1,
-            HeightChange /
+            height /
               (rightwallRef.current.bounds.max.y -
                 rightwallRef.current.bounds.min.y)
           );
         }
-      };
+      }
+    });
 
-      Render.run(render);
+    Render.run(render);
 
-      const runner = Runner.create();
-      Runner.run(runner, engine);
-      window.addEventListener("resize", Resize);
+    const runner = Runner.create();
+    Runner.run(runner, engine);
+    resizeObserver.observe(boxRef.current);
+    /*
+    window.addEventListener("resize", Resize);
+    */
 
-      return () => {
-        window.removeEventListener("resize", Resize);
-        Render.stop(render);
-        Runner.stop(runner);
-        Engine.clear(engine);
+    return () => {
+      /*
+      window.removeEventListener("resize", Resize);
+      */
+      resizeObserver.disconnect();
 
-        if (render.canvas) {
-          render.canvas.remove();
-        }
-      };
+      Render.stop(render);
+      Runner.stop(runner);
+      Engine.clear(engine);
+
+      if (render.canvas) {
+        render.canvas.remove();
+      }
+    };
+    /*
     }, 50);
+    */
   }, [
     setaboutme1,
     setaboutme2,
