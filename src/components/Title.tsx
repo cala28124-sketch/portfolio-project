@@ -163,7 +163,7 @@ const Title = ({
                   setStart(true);
                 }}
               >
-                Welcome to my Portfolio! Click me to start!
+                Welcome to my portfolio! Click me to start!
               </button>
             )}
 

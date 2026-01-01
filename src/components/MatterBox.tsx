@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState, type FC } from "react";
 import Matter from "matter-js";
 import TestComp from "./TestComp";
