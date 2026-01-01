@@ -79,7 +79,7 @@ const PopUpDrive = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               alt="familyme"
             ></img>
           </div>
-          <div className="self-start flex flex-col w-[90%] pl-5">
+          <div className="flex flex-col items-center justify-center w-[90%] pl-5">
             <p className="text-3xl text-center font-bold text-green-800">
               What pushes me forward?
             </p>

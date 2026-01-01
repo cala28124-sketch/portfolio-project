@@ -202,6 +202,7 @@ const Navbar = ({
                 setaboutme4(false);
                 setproject1(false);
                 setproject2(false);
+                setproject3(false);
                 setcareer1(false);
                 setcareer2(false);
               }}
