@@ -277,6 +277,19 @@ const MatterBox: FC<Props> = ({
     */
 
     const resizeObserver = new ResizeObserver((entries) => {
+      setspawnabout(false);
+      setspawnproject(false);
+      setspawncareer(false);
+      setaboutme1(false);
+      setaboutme2(false);
+      setaboutme3(false);
+      setaboutme4(false);
+      setproject1(false);
+      setproject2(false);
+      setproject3(false);
+      setcareer1(false);
+      setcareer2(false);
+
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
 
