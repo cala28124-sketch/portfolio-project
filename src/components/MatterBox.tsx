@@ -116,9 +116,6 @@ const MatterBox: FC<Props> = ({
   const Height = boxRef.current?.offsetHeight || 0;
 
   useEffect(() => {
-    /*
-    setTimeout(() => {
-    */
     if (!boxRef.current) return;
     const container = boxRef.current;
 
@@ -196,85 +193,6 @@ const MatterBox: FC<Props> = ({
     rightwallRef.current = wallright;
 
     Composite.add(engine.world, [ground, wallleft, wallright, sky]);
-    /*
-    const Resize = () => {
-      setspawnabout(false);
-      setspawnproject(false);
-      setspawncareer(false);
-      setaboutme1(false);
-      setaboutme2(false);
-      setaboutme3(false);
-      setaboutme4(false);
-      setproject1(false);
-      setproject2(false);
-      setproject3(false);
-      setcareer1(false);
-      setcareer2(false);
-      const Widthchange = boxRef.current?.offsetWidth || 0;
-      const HeightChange = boxRef.current?.offsetHeight || 0;
-
-      if (render) {
-        render.canvas.width = Widthchange;
-        render.canvas.height = HeightChange;
-        render.options.width = Widthchange;
-        render.options.height = HeightChange;
-      }
-
-      if (groundRef.current) {
-        Matter.Body.setPosition(groundRef.current, {
-          x: Widthchange / 2,
-          y: HeightChange,
-        });
-        Matter.Body.scale(
-          groundRef.current,
-          Widthchange /
-            (groundRef.current.bounds.max.x - groundRef.current.bounds.min.x),
-          1
-        );
-      }
-
-      if (skyRef.current) {
-        Matter.Body.setPosition(skyRef.current, {
-          x: Widthchange / 2,
-          y: -(HeightChange / 2),
-        });
-        Matter.Body.scale(
-          skyRef.current,
-          Widthchange /
-            (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
-          1
-        );
-      }
-
-      if (leftwallRef.current) {
-        Matter.Body.setPosition(leftwallRef.current, {
-          x: 0,
-          y: HeightChange / 2,
-        });
-        Matter.Body.scale(
-          leftwallRef.current,
-          1,
-          HeightChange /
-            (leftwallRef.current.bounds.max.y -
-              leftwallRef.current.bounds.min.y)
-        );
-      }
-
-      if (rightwallRef.current) {
-        Matter.Body.setPosition(rightwallRef.current, {
-          x: Widthchange,
-          y: HeightChange / 2,
-        });
-        Matter.Body.scale(
-          rightwallRef.current,
-          1,
-          HeightChange /
-            (rightwallRef.current.bounds.max.y -
-              rightwallRef.current.bounds.min.y)
-        );
-      }
-    };
-    */
 
     const resizeObserver = new ResizeObserver((entries) => {
       setspawnabout(false);
@@ -358,14 +276,8 @@ const MatterBox: FC<Props> = ({
     const runner = Runner.create();
     Runner.run(runner, engine);
     resizeObserver.observe(boxRef.current);
-    /*
-    window.addEventListener("resize", Resize);
-    */
 
     return () => {
-      /*
-      window.removeEventListener("resize", Resize);
-      */
       resizeObserver.disconnect();
 
       Render.stop(render);
@@ -376,9 +288,6 @@ const MatterBox: FC<Props> = ({
         render.canvas.remove();
       }
     };
-    /*
-    }, 50);
-    */
   }, [
     setaboutme1,
     setaboutme2,
@@ -964,3 +873,91 @@ useEffect(() => {
       >
         clear
       </button> */
+
+/*
+    const Resize = () => {
+      setspawnabout(false);
+      setspawnproject(false);
+      setspawncareer(false);
+      setaboutme1(false);
+      setaboutme2(false);
+      setaboutme3(false);
+      setaboutme4(false);
+      setproject1(false);
+      setproject2(false);
+      setproject3(false);
+      setcareer1(false);
+      setcareer2(false);
+      const Widthchange = boxRef.current?.offsetWidth || 0;
+      const HeightChange = boxRef.current?.offsetHeight || 0;
+
+      if (render) {
+        render.canvas.width = Widthchange;
+        render.canvas.height = HeightChange;
+        render.options.width = Widthchange;
+        render.options.height = HeightChange;
+      }
+
+      if (groundRef.current) {
+        Matter.Body.setPosition(groundRef.current, {
+          x: Widthchange / 2,
+          y: HeightChange,
+        });
+        Matter.Body.scale(
+          groundRef.current,
+          Widthchange /
+            (groundRef.current.bounds.max.x - groundRef.current.bounds.min.x),
+          1
+        );
+      }
+
+      if (skyRef.current) {
+        Matter.Body.setPosition(skyRef.current, {
+          x: Widthchange / 2,
+          y: -(HeightChange / 2),
+        });
+        Matter.Body.scale(
+          skyRef.current,
+          Widthchange /
+            (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
+          1
+        );
+      }
+
+      if (leftwallRef.current) {
+        Matter.Body.setPosition(leftwallRef.current, {
+          x: 0,
+          y: HeightChange / 2,
+        });
+        Matter.Body.scale(
+          leftwallRef.current,
+          1,
+          HeightChange /
+            (leftwallRef.current.bounds.max.y -
+              leftwallRef.current.bounds.min.y)
+        );
+      }
+
+      if (rightwallRef.current) {
+        Matter.Body.setPosition(rightwallRef.current, {
+          x: Widthchange,
+          y: HeightChange / 2,
+        });
+        Matter.Body.scale(
+          rightwallRef.current,
+          1,
+          HeightChange /
+            (rightwallRef.current.bounds.max.y -
+              rightwallRef.current.bounds.min.y)
+        );
+      }
+    };
+    */
+
+/*
+    window.addEventListener("resize", Resize);
+    */
+
+/*
+      window.removeEventListener("resize", Resize);
+      */
