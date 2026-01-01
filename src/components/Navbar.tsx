@@ -41,6 +41,7 @@ const Navbar = ({
   setaboutme4,
   setproject1,
   setproject2,
+  setproject3,
   setcareer1,
   setcareer2,
 }: Props) => {
@@ -139,6 +140,7 @@ const Navbar = ({
                 setaboutme4(false);
                 setproject1(false);
                 setproject2(false);
+                setproject3(false);
                 setcareer1(false);
                 setcareer2(false);
               }}

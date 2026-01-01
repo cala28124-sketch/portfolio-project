@@ -201,6 +201,7 @@ const MatterBox: FC<Props> = ({
       setaboutme4(false);
       setproject1(false);
       setproject2(false);
+      setproject3(false);
       setcareer1(false);
       setcareer2(false);
       const Widthchange = boxRef.current?.offsetWidth || 0;
@@ -293,6 +294,7 @@ const MatterBox: FC<Props> = ({
     setcareer2,
     setproject1,
     setproject2,
+    setproject3,
     setspawnabout,
     setspawncareer,
     setspawnproject,
