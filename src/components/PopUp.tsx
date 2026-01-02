@@ -111,7 +111,7 @@ const PopUp = ({
             <p className="font-bold text-base text-green-800 mx-auto text-center mx-auto">
               I'm a computer science student here at the University of Central
               Florida! Growing up, I've constantly held a fascination for
-              programming and the many things its used to make. Now, I work
+              programming and the many things it's used to make. Now, I work
               towards improving and using my Software Engineering skills to not
               only better myself, but create tools that I and others can benefit
               from!

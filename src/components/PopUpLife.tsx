@@ -93,10 +93,10 @@ const PopUpLife = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               with my aunt when I was around ten- one of my fondest memories.
               Past that, for as long as I can remeber, I've always enjoyed
               spending my time with others while working towards my goal.
-              Whether it be in the past or now, I dont think that will ever
+              Whether it be in the past or now, I don't think that will ever
               change. Talking about me as a kid, that was the time I decided I
-              would become a programmer as well- and that goal hasnt changed one
-              bit.
+              would become a programmer as well- and that goal hasn't changed
+              one bit.
             </p>
           </div>
         </div>

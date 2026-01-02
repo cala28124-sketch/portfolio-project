@@ -89,7 +89,9 @@ const PopUpProject = ({
               alt="close button"
             />
           </button>
-          <p className="font-bold text-green-800 text-5xl p-2">My Projects</p>
+          <p className="font-bold text-green-800 text-5xl p-2 mt-5">
+            My Projects
+          </p>
           <p className="font-bold text-green-800 text-md p-2">
             I always want to put my skills to the test- and here are the cases
             where I've done exactly that! Click the image to add them to the
@@ -127,7 +129,7 @@ const PopUpProject = ({
                   credibility, and accuracy of a webpage, providing a summary of
                   the page and what it contains, and how credible/accurate each
                   point is. This project was made by me and three others at
-                  shellhacks 2025.
+                  Shellhacks 2025.
                 </p>
               </div>
 

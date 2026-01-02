@@ -84,13 +84,13 @@ const PopUpMore = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               Who am I?
             </p>
             <p className="font text-xs text-center font-bold text-green-1000">
-              this is the part where I yap about myself alot...
+              This is the part where I yap about myself alot...
             </p>
             <p className="text-sm md:text-base p-3 pt-0 text-center font-bold font text-green-800 px-24 max-md:px-100">
               I'm someone who always treasures those close to me. As you can see
               above, thats obviously me... with my dog! First things off I love
               animals, and currently have two dogs, and a cat. In the picture
-              above is Jack, while my other dog is named mackenzie. My cat of
+              above is Jack, while my other dog is named Mackenzie. My cat of
               course is named Stanley, and I love all of them to death. I have a
               little brother as well but... the animals behave a bit better than
               he does most of the time, but I still love him to death. Past the

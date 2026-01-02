@@ -80,12 +80,12 @@ const PopUpHobbies = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               ...Or when I'm procrastinating on homework?
             </p>
             <p className="text-sm md:text-base p-3 pt-0 text-center font-bold font text-green-800 px-24 max-md:px-100">
-              For me, theres plenty of things I enjoy to do in my free time. I
+              For me, there's plenty of things I enjoy to do in my free time. I
               heavily enjoy reading and consuming many forms of media, may it be
               books, manga, webtoons, or anime I enjoy all of it. I also love
               video games, and play a lot with my friends. Past that though, I'm
-              a avid roleplayer, and love ttrpgs like DnD. below are a display
-              of some of my favorite forms of media!
+              a avid roleplayer, and love ttrpgs like DnD. below is a display of
+              some of my favorite forms of media!
             </p>
           </div>
           <div className="flex flex-wrap w-full h-full justify-center">

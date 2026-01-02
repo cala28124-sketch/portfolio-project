@@ -249,7 +249,7 @@ const MatterBox: FC<Props> = ({
           Matter.Body.scale(
             leftwallRef.current,
             1,
-            height /
+            (height * 2) /
               (leftwallRef.current.bounds.max.y -
                 leftwallRef.current.bounds.min.y)
           );
@@ -263,7 +263,7 @@ const MatterBox: FC<Props> = ({
           Matter.Body.scale(
             rightwallRef.current,
             1,
-            height /
+            (height * 2) /
               (rightwallRef.current.bounds.max.y -
                 rightwallRef.current.bounds.min.y)
           );

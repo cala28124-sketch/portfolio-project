@@ -90,7 +90,7 @@ const PopUpDrive = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               Really though, my drive to push forwards in life comes from alot
               of things. One of those things, specifically in the picture above,
               is my family. On the left is my dad, Anthony, (Yeah we have the
-              same name, yes its as "fun" as you would think), on the right is
+              same name, yes it's as "fun" as you would think), on the right is
               my mom, Elizabeth, and in the middle with me is my little brother,
               Jacob (Though, might like him a tiny bit less with how annoying he
               can be.) For me, my family is the backboard I'm always able to
