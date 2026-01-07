@@ -90,7 +90,7 @@ const PopUpCareer = ({
           <p className="font-bold text-green-800 text-5xl p-2 mt-5">
             My Career
           </p>
-          <p className="font-bold text-green-800 text-md p-2 text-center">
+          <p className="font font-bold text-green-800 text-md p-2 text-center">
             Here is a brief overview of my career journey, highlighting my past
             and current experiences. Click on the images to spawn info boxes!
           </p>

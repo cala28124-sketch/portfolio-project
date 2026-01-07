@@ -91,7 +91,7 @@ const PopUpLife = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               had ups and downs, but overall, I'm grateful for the experiences
               I've had. One of those, pictured above, is me at a lego convention
               with my aunt when I was around ten- one of my fondest memories.
-              Past that, for as long as I can remeber, I've always enjoyed
+              Past that, for as long as I can remember, I've always enjoyed
               spending my time with others while working towards my goal.
               Whether it be in the past or now, I don't think that will ever
               change. Talking about me as a kid, that was the time I decided I

@@ -468,7 +468,7 @@ const MatterBox: FC<Props> = ({
               organized and clean, while also managing inventory and restocking
               shelves. Additionally, I handled cash register operations,
               processed transactions accurately, and maintained detailed records
-              of sales and customer interactions. Through these
+              of sales and pool maintenance tests. Through these
               responsibilities, I developed strong communication and teamwork
               skills, contributing to a positive shopping experience for our
               customers."
@@ -514,7 +514,7 @@ const MatterBox: FC<Props> = ({
         name="University of Central Florida"
         img="/ucflogo.png"
         ID="ucf"
-        overview="Currently pursuing a Bachelor of Science in computer science, at the University of Central Florida. My academic journey at the school has been a rollercoaster so far- and though I have yet to fully delve into my major as a freshman student, I have already begun taking Computer Science courses, while completing coursework related to C, Python, and Java. The courses I’ve taken have provided me with fundamental knowledge that has served as a basis for my practical skills and theoretical knowledge that I apply in my programming projects."
+        overview="I am currently pursuing a Bachelor of Science in computer science, at the University of Central Florida. My academic journey at the school has been a rollercoaster so far- and though I have yet to fully delve into my major as a freshman student, I have already begun taking Computer Science courses, while completing coursework related to C, Python, and Java. The courses I’ve taken have provided me with fundamental knowledge that has served as a basis for my practical skills and theoretical knowledge that I apply in my programming projects."
         techStack={
           <>
             <div className="text-sm bg-green-400 rounded-lg p-1">
@@ -615,7 +615,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedproject}
           setIsOpen={setIsOpenproject}
           text="open projects"
-          image="/pngpalimage.png"
+          image="/personalport.png"
           ID="boxproject"
           setMount={setMount}
           Mount={Mount}
