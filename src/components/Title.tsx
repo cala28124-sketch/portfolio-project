@@ -70,8 +70,8 @@ const Title = ({
         bodyWidth,
         bodyHeight,
         {
-          frictionAir: 0.05,
-          mass: 10,
+          frictionAir: 0.005,
+          mass: 20,
           render: { visible: false },
         }
       );

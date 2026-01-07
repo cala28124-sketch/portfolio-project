@@ -171,7 +171,7 @@ const MatterBox: FC<Props> = ({
 
     skyRef.current = sky;
 
-    const ground = Bodies.rectangle(Width / 2, Height, Width, 50, {
+    const ground = Bodies.rectangle(Width / 2 + 100, Height, Width, 50, {
       isStatic: true,
       render: { fillStyle: "green" },
     });

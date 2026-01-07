@@ -72,7 +72,7 @@ const TestComp = ({
         bodyHeight,
         {
           frictionAir: 0.005,
-          mass: 10,
+          mass: 20,
           render: { visible: false },
         }
       );
