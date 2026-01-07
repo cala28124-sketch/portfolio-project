@@ -1,7 +1,7 @@
 const Grass = () => {
   return (
     <>
-      <div className="absolute bottom-[20px] left-0 lg:bottom-[-5px] w-[120%] pointer-events-none flex justify-center">
+      <div className="absolute bottom-[20px] left-[-1%] lg:bottom-[-5px] w-[120%] pointer-events-none flex justify-center">
         <div className="blade1"></div>
         <div className="blade2"></div>
         <div className="blade3"></div>
