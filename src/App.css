@@ -783,6 +783,50 @@ body.no-scroll {
   background-attachment: fixed;
 }
 
+.gradient-text {
+  /* 1. Define the gradient */
+  background: linear-gradient(
+    90deg,
+    #5f3a8a,
+    #1c1f4a,
+    #0e122b,
+    #0e122b,
+    #0e122b,
+    #1c1f4a,
+    #5f3a8a,
+    #75aaf0,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #a3e3fa,
+    #75aaf0,
+    #5f3a8a,
+    #1c1f4a,
+    #0e122b,
+    #0e122b,
+    #0e122b,
+    #1c1f4a,
+    #5f3a8a
+  );
+  background-size: 500% 500%;
+
+  animation: gradient 120s ease-in-out infinite;
+
+  /* 2. Clip the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 3. Make the actual text color transparent so the background shows through */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 body {
   overflow: hidden;
 

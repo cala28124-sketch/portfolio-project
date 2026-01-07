@@ -91,9 +91,7 @@ const PopUpMore = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               above, thats obviously me... with my dog! First things off I love
               animals, and currently have two dogs, and a cat. In the picture
               above is Jack, while my other dog is named Mackenzie. My cat of
-              course is named Stanley, and I love all of them to death. I have a
-              little brother as well but... the animals behave a bit better than
-              he does most of the time, but I still love him to death. Past the
+              course is named Stanley, and I love all of them to death. Past the
               immediate elephant, or I should say dog in the room, I am a huge
               fan of video games, and have been since I was a kid. I appreciate
               anybody and everybody I've met in my lifetime and made memories

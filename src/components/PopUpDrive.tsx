@@ -92,14 +92,13 @@ const PopUpDrive = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               is my family. On the left is my dad, Anthony, (Yeah we have the
               same name, yes it's as "fun" as you would think), on the right is
               my mom, Elizabeth, and in the middle with me is my little brother,
-              Jacob (Though, might like him a tiny bit less with how annoying he
-              can be.) For me, my family is the backboard I'm always able to
-              rely on- may it be for pushing forwards towards my future, or
-              simply people to spend my time with. Family is super important to
-              me, and they are a huge part of my drive to keep moving forward in
-              life. Along with this, I wish to be able to push myself to my
-              limits, and learn everything I can- to hopefully show my worth to
-              the world.
+              Jacob. For me, my family is the backboard I'm always able to rely
+              on- may it be for pushing forwards towards my future, or simply
+              people to spend my time with. Family is super important to me, and
+              they are a huge part of my drive to keep moving forward in life.
+              Along with this, I wish to be able to push myself to my limits,
+              and learn everything I can- to hopefully show my worth to the
+              world.
             </p>
           </div>
         </div>

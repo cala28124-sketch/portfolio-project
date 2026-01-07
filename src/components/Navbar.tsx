@@ -115,7 +115,7 @@ const Navbar = ({
             onClick={() => {
               setspawncareer(true);
             }}
-            className="w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110  "
+            className=" w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110  "
           >
             Career
           </button>
@@ -123,7 +123,7 @@ const Navbar = ({
             onClick={() => {
               setspawnproject(true);
             }}
-            className="w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110 "
+            className=" w-fit py-2 px-4 !rounded-full scale-100 transform transition duration-300 active:!bg-white active:text-gray-400 active:scale-110 "
           >
             Projects
           </button>
@@ -217,7 +217,7 @@ const Navbar = ({
               onClick={() => {
                 setspawnabout(true);
               }}
-              className=" py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+              className="!text-lg gradient-text py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:scale-125 "
             >
               About
             </button>
@@ -225,7 +225,7 @@ const Navbar = ({
               onClick={() => {
                 setspawncareer(true);
               }}
-              className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+              className="!text-lg gradient-text py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:scale-125 "
             >
               Career
             </button>
@@ -233,7 +233,7 @@ const Navbar = ({
               onClick={() => {
                 setspawnproject(true);
               }}
-              className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:text-gray-400 hover:scale-110 "
+              className="!text-lg gradient-text py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:scale-125 "
             >
               Projects
             </button>
