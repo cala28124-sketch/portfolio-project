@@ -217,25 +217,25 @@ const Navbar = ({
               onClick={() => {
                 setspawnabout(true);
               }}
-              className="!text-lg gradient-text py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:scale-125 "
+              className="py-2 px-8 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:scale-125 "
             >
-              About
+              <div className="!text-lg gradient-text">About</div>
             </button>
             <button
               onClick={() => {
                 setspawncareer(true);
               }}
-              className="!text-lg gradient-text py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:scale-125 "
+              className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:scale-125 "
             >
-              Career
+              <div className="!text-lg gradient-text">Career</div>
             </button>
             <button
               onClick={() => {
                 setspawnproject(true);
               }}
-              className="!text-lg gradient-text py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:scale-125 "
+              className="py-2 px-4 !rounded-full scale-100 transform transition duration-150 hover:!bg-white hover:scale-125 "
             >
-              Projects
+              <div className="!text-lg gradient-text">Projects</div>
             </button>
 
             <div className="flex gap-2">

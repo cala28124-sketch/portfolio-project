@@ -51,7 +51,7 @@ const PopUpLife = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
       <div className="flex justify-center">
         <div
           id="life"
-          className={`bg-opacity-20 my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-3/5 items-center border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
+          className={`bg-opacity-20 my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-3/5 items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
