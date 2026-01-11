@@ -88,7 +88,7 @@ const PopUp = ({
             }}
           >
             <img
-              className="w-[80%] lg:w-full"
+              className="w-[30px]"
               src="\closebutton6.png"
               alt="close button"
             />

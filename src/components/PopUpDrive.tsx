@@ -67,19 +67,20 @@ const PopUpDrive = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
             }}
           >
             <img
-              className="h-[30px]"
+              className="w-[30px]"
               src="\closebutton6.png"
               alt="close button"
             />
           </button>
-          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] md:w-[300px] md:h-[300px] xl:h-[400px] xl:w-[400px] bg-green-400 m-5 border-5 border-green-800">
+          <div className="mt-5"></div>
+          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] md:w-[300px] md:h-[300px] xl:h-[400px] xl:w-[400px] bg-green-400 my-auto border-5 border-green-800">
             <img
               className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] xl:h-[400px] xl:w-[400px] p-3"
               src="/familyme.jpg"
               alt="familyme"
             ></img>
           </div>
-          <div className="flex flex-col items-center justify-center w-[90%] pl-5">
+          <div className="mb-auto flex flex-col items-center justify-center w-[90%] pl-5">
             <p className="text-3xl text-center font-bold text-green-800">
               What pushes me forward?
             </p>
