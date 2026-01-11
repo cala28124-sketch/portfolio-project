@@ -77,7 +77,7 @@ const PopUpHobbies = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               What do I do to relax?
             </p>
             <p className="font text-xs text-center font-bold text-green-1000">
-              ...Or when I'm procrastinating on homework?
+              ...Or when I just feel like having fun?
             </p>
             <p className="text-sm md:text-base p-3 pt-0 text-center font-bold font text-green-800 px-24 max-md:px-100">
               For me, there's plenty of things I enjoy to do in my free time. I

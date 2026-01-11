@@ -70,7 +70,7 @@ const PopUpCompP = ({
       <div className="flex justify-center">
         <div
           id={ID}
-          className={`bg-opacity-20 my-[5%] mx-4 custom-scrollbar absolute flex flex-col max-h-[80dvh] max-w-[95%] md:max-h-4/5 md:max-w-5/6 lg:max-w-3/5 items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
+          className={`bg-opacity-20 my-[5%] mx-4 custom-scrollbar absolute flex flex-col h-[80dvh] w-[95%] md:h-4/5 md:w-5/6 lg:w-3/5 items-center rounded-md border-10 border-green-800 bg-green-300 z-50 overflow-y-auto opacity-0
     ${isOpen ? "start pointer-events-auto" : "pointer-events-none"}`}
         >
           <button
@@ -91,8 +91,12 @@ const PopUpCompP = ({
               alt="close button"
             />
           </button>
-          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] bg-green-400 m-5 border-5 border-green-800">
-            <img className="h-[200px] w-[200px] p-3" src={img} alt={name}></img>
+          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] md:w-[300px] md:h-[300px] bg-green-400 m-5 border-5 border-green-800">
+            <img
+              className="h-[200px] w-[200px] md:w-[300px] md:h-[300px] p-3"
+              src={img}
+              alt={name}
+            ></img>
           </div>
           <div className="self-start flex flex-col w-[90%] pl-5">
             <p className="text-2xl pl-3 font-bold text-green-800">{name}</p>
