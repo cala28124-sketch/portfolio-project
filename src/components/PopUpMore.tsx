@@ -72,9 +72,9 @@ const PopUpMore = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               alt="close button"
             />
           </button>
-          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] md:w-[300px] md:h-[300px] xl:h-[400px] xl:w-[400px] 2xl:h-[500px] 2xl:w-[500px] bg-green-400 m-5 border-5 border-green-800">
+          <div className="flex justify-center items-center rounded-lg w-[200px] h-[200px] md:w-[300px] md:h-[300px] xl:h-[400px] xl:w-[400px] bg-green-400 m-5 border-5 border-green-800">
             <img
-              className="w-200px h-[200px] md:w-[300px} md:h-[300px] xl:h-[400px] xl:w-[400px] 2xl:h-[500px] 2xl:w-[500px] p-3"
+              className="w-200px h-[200px] md:w-[300px} md:h-[300px] xl:h-[400px] xl:w-[400px] p-3"
               src="/medog.jpg"
               alt="dogme"
             ></img>

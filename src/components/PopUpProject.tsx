@@ -133,7 +133,7 @@ const PopUpProject = ({
                 </p>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
                 <img
                   className="h-[50px] enlargen2 p-2"
                   src="\reactlogo.png"
@@ -205,7 +205,7 @@ const PopUpProject = ({
                   me and three others at KnightHacks 2025.
                 </p>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
                 <img
                   className="h-[50px] enlargen2 p-2"
                   src="\python.png"
@@ -273,7 +273,7 @@ const PopUpProject = ({
                   my work. Made as my first personal project.
                 </p>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
                 <img
                   className="h-[50px] enlargen2 p-2"
                   src="\tailwind.png"

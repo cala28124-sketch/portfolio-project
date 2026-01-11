@@ -72,7 +72,11 @@ const PopUpTitle = ({ isOpen, setIsOpen, isClosed, setIsClosed }: Props) => {
           <p className="text-3xl font-extrabold text-green-800 p-2 my-5">
             Here's a Info Box!
           </p>
-          <img className="h-[50%] p-5" src="thumbsup.png" alt="thumbs up"></img>
+          <img
+            className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] xl:h-[350px] xl:w-[350px] 2xl:h-[450px] 2xl:w-[450px] p-5"
+            src="thumbsup.png"
+            alt="thumbs up"
+          ></img>
           <p className="text-base p-5 font-bold text-green-800 px-24 text-center max-md:px-100">
             These Contain info relating to the box they're on! Spawn in more
             Boxes by Clicking on subjects on the screen, and drag them around to
