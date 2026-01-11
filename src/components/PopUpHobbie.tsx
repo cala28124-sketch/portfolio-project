@@ -73,7 +73,7 @@ const PopUpHobbies = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
             />
           </button>
           <div className="self-start flex flex-col w-[90%] pl-5">
-            <p className="text-3xl text-center font-bold text-green-800">
+            <p className="text-3xl text-center font-bold text-green-800 mt-5">
               What do I do to relax?
             </p>
             <p className="font text-xs text-center font-bold text-green-1000">
