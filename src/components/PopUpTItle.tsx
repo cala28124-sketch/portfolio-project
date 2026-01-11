@@ -73,7 +73,7 @@ const PopUpTitle = ({ isOpen, setIsOpen, isClosed, setIsClosed }: Props) => {
             Here's a Info Box!
           </p>
           <img
-            className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] xl:h-[350px] xl:w-[350px] 2xl:h-[450px] 2xl:w-[450px] p-5"
+            className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] xl:h-[350px] xl:w-[350px] 2xl:h-[450px] 2xl:w-[450px] md:p-5"
             src="thumbsup.png"
             alt="thumbs up"
           ></img>
