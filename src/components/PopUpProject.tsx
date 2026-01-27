@@ -14,6 +14,8 @@ interface Props {
   button2set: (arg0: boolean) => void;
   button3: boolean;
   button3set: (arg0: boolean) => void;
+  button4: boolean;
+  button4set: (arg0: boolean) => void;
 }
 
 const PopUpProject = ({
@@ -27,6 +29,8 @@ const PopUpProject = ({
   button2set,
   button3,
   button3set,
+  button4,
+  button4set,
 }: Props) => {
   const [Mount1, setMount] = useState(false);
 
@@ -294,6 +298,79 @@ const PopUpProject = ({
               <a
                 className="!no-underline"
                 href="https://github.com/cala28124-sketch/portfolio-project"
+                target="_blank"
+              >
+                <div className="my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">
+                  <img
+                    src="hyperlink.png"
+                    alt="hyperlink"
+                    className="h-[40px] p-2 "
+                  />
+                  <p className="font font-bold text-green-800 text-base my-2">
+                    View Project
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div className="w-fit min-h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
+              <p className="font-bold text-green-800 text-xl p-2">
+                Flaming Notes
+              </p>
+              <div
+                className={`transition-opacity duration-800
+                
+                ${button4 ? "opacity-0" : "opacity-100"}
+
+                `}
+              >
+                <button
+                  onClick={() => {
+                    button4set(true);
+                  }}
+                >
+                  <img
+                    className="h-[150px] border-5 border-green-800 block enlargen2"
+                    src="\flamingnotes.jpg"
+                    alt="pngpal"
+                  />
+                </button>
+              </div>
+
+              <div className=" mx-auto border-4 border-transparent">
+                <p className="text-center text-sm text-green-800 font-bold">
+                  Built at SwampHacks 2025, Flaming Notes was built to allow
+                  students an accesible way to freely share notes related to a
+                  specific class. It uses uploaded student notes to generate a
+                  compliation of them using gemini in the back end, and allows
+                  anyone to freely see it.
+                </p>
+              </div>
+              <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
+                <img
+                  className="h-[50px] enlargen2 p-2"
+                  src="\reactlogo.png"
+                  alt="React"
+                />
+
+                <img
+                  className="h-[50px] enlargen2 p-2"
+                  src="\MongoDB.png"
+                  alt="MongoDB"
+                />
+                <img
+                  className="h-[50px] enlargen2 p-2"
+                  src="\Go.png"
+                  alt="Go"
+                />
+                <img
+                  className="h-[50px] enlargen2 p-2"
+                  src="\googleadk.png"
+                  alt="gemini"
+                />
+              </div>
+              <a
+                className="!no-underline"
+                href="https://github.com/cala28124-sketch/Flaming-Notes"
                 target="_blank"
               >
                 <div className="my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">

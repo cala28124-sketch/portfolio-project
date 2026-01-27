@@ -80,14 +80,14 @@ const PopUpDrive = ({ isClosed, setIsClosed, setIsOpen, isOpen }: Props) => {
               alt="familyme"
             ></img>
           </div>
-          <div className="mb-auto flex flex-col items-center justify-center w-[90%] pl-5">
+          <div className="mb-auto px-3 flex flex-col item-center justify-center w-[90%] pl-5">
             <p className="text-3xl text-center font-bold text-green-800">
               What pushes me forward?
             </p>
             <p className="font text-xs text-center font-bold text-green-1000">
               I want to get a j*b!
             </p>
-            <p className="text-sm md:text-base p-3 pt-0 text-center font-bold font text-green-800 px-24 max-md:px-100">
+            <p className="text-sm md:text-base pt-0 text-center font-bold font text-green-800 px-24 max-md:px-100">
               Really though, my drive to push forwards in life comes from alot
               of things. One of those things, specifically in the picture above,
               is my family. On the left is my dad, Anthony, (Yeah we have the

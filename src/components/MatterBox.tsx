@@ -43,6 +43,8 @@ interface Props {
   setproject2: (arg0: boolean) => void;
   project3: boolean;
   setproject3: (arg0: boolean) => void;
+  project4: boolean;
+  setproject4: (arg0: boolean) => void;
   career1: boolean;
   setcareer1: (arg0: boolean) => void;
   career2: boolean;
@@ -72,6 +74,8 @@ const MatterBox: FC<Props> = ({
   setproject2,
   project3,
   setproject3,
+  project4,
+  setproject4,
   career1,
   setcareer1,
   career2,
@@ -91,6 +95,8 @@ const MatterBox: FC<Props> = ({
   const [isOpenPNG, setIsOpenPNG] = useState(false);
   const [isClosedPort, setIsClosedPort] = useState(true);
   const [isOpenPort, setIsOpenPort] = useState(false);
+  const [isClosedFlaming, setIsClosedFlaming] = useState(true);
+  const [IsOpenFlaming, setIsOpenFlaming] = useState(false);
   const [isClosedPinch, setIsClosedPinch] = useState(true);
   const [isOpenPinch, setIsOpenPinch] = useState(false);
   const [isClosedUCF, setIsClosedUCF] = useState(true);
@@ -205,6 +211,7 @@ const MatterBox: FC<Props> = ({
       setproject1(false);
       setproject2(false);
       setproject3(false);
+      setproject4(false);
       setcareer1(false);
       setcareer2(false);
 
@@ -225,7 +232,7 @@ const MatterBox: FC<Props> = ({
             groundRef.current,
             width /
               (groundRef.current.bounds.max.x - groundRef.current.bounds.min.x),
-            1
+            1,
           );
         }
 
@@ -237,7 +244,7 @@ const MatterBox: FC<Props> = ({
           Matter.Body.scale(
             skyRef.current,
             width / (skyRef.current.bounds.max.x - skyRef.current.bounds.min.x),
-            1
+            1,
           );
         }
 
@@ -251,7 +258,7 @@ const MatterBox: FC<Props> = ({
             1,
             (height * 2) /
               (leftwallRef.current.bounds.max.y -
-                leftwallRef.current.bounds.min.y)
+                leftwallRef.current.bounds.min.y),
           );
         }
 
@@ -265,7 +272,7 @@ const MatterBox: FC<Props> = ({
             1,
             (height * 2) /
               (rightwallRef.current.bounds.max.y -
-                rightwallRef.current.bounds.min.y)
+                rightwallRef.current.bounds.min.y),
           );
         }
       }
@@ -298,6 +305,7 @@ const MatterBox: FC<Props> = ({
     setproject1,
     setproject2,
     setproject3,
+    setproject4,
     setspawnabout,
     setspawncareer,
     setspawnproject,
@@ -338,6 +346,8 @@ const MatterBox: FC<Props> = ({
         button2set={setproject2}
         button3={project3}
         button3set={setproject3}
+        button4={project4}
+        button4set={setproject4}
       ></PopUpProject>
 
       <PopUpCareer
@@ -450,6 +460,34 @@ const MatterBox: FC<Props> = ({
             <div className="text-sm bg-green-400 rounded-lg p-1">
               Typescript
             </div>
+          </>
+        }
+      ></PopUpCompP>
+      <PopUpCompP
+        isClosed={isClosedFlaming}
+        setIsClosed={setIsClosedFlaming}
+        setIsOpen={setIsOpenFlaming}
+        isOpen={IsOpenFlaming}
+        Mount={Mount}
+        name="Flaming Notes"
+        img="/flamingnotes.jpg"
+        git="https://github.com/cala28124-sketch/Flaming-Notes"
+        ID="Flaming"
+        overview="My third hackathon project, built at swamphacks 2025. The main idea behind the project was to give a way for students to upload and compare there notes with others, while giving them the ability to see the most important aspects that most students notes had. Additonally, it includes a quiz feature to allow for students to test there knowledge."
+        experience="In a short overview, the project exists within a docker run on the select computer, and has a front end involving React, and back end ivnolving Go. The front end says files to the back end, which are stored using mongoDB, which then send its to a gemini agent to compile and return the notes to the front end to be displayed. Being my third hackathon project, at this point in my time coding, this was probally my favorite hackathon project yet. This was for a few reasons- one being the fact that for this project, it was the least I had to use outside help or look things up, while at the same time teaching me the most out of any hackathon experience I had went through previously. Mainly it was with the connection of the back end and front end involving databases, but overall due to my higher knowledge of front end, I was able to take in and understand a lot more. Really, this project for me was not only fun, but one of the first times where I was able to look back on what I have learned, and be truly proud that I mysef had learned it. Things like this are what make me want to learn more, and is apart of the reason I was able to learn more when it came to this project. "
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">MongoDB</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Go</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Gemini Flash
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Typescript
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Tailwind</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Docker</div>
           </>
         }
       ></PopUpCompP>
@@ -615,7 +653,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedproject}
           setIsOpen={setIsOpenproject}
           text="open projects"
-          image="/personalport.png"
+          image="/flamingnotes.jpg"
           ID="boxproject"
           setMount={setMount}
           Mount={Mount}
@@ -750,6 +788,22 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
           setspawn={setproject3}
+        ></TestComp>
+        <TestComp
+          boxRef={boxRef}
+          spawn={project4}
+          engineRef={engineRef}
+          isClosed={isClosedFlaming}
+          setIsClosed={setIsClosedFlaming}
+          setIsOpen={setIsOpenFlaming}
+          text="Flaming Notes"
+          image="/flamingnotes.jpg"
+          ID="project4"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+          setspawn={setproject4}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
