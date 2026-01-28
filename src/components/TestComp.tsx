@@ -50,7 +50,7 @@ const TestComp = ({
         if (engineRef.current && externalBodyRef.current) {
           Matter.Composite.remove(
             engineRef.current.world,
-            externalBodyRef.current
+            externalBodyRef.current,
           );
           externalBodyRef.current = null;
         }
@@ -74,7 +74,7 @@ const TestComp = ({
           frictionAir: 0.005,
           mass: 20,
           render: { visible: false },
-        }
+        },
       );
 
       externalBodyRef.current = externalBoxBody;
@@ -91,13 +91,28 @@ const TestComp = ({
         externalBoxRef.current.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${angle}rad)`;
       };
 
+      const positioncheck = () => {
+        const { x, y } = externalBoxBody.position;
+        const sw = screenwidth ? Number(screenwidth) : window.innerWidth;
+        const sh = screenheight ? Number(screenheight) : window.innerHeight;
+
+        if (x > sw || y > sh || x < 0 || y < -(sh / 2)) {
+          Matter.Body.setPosition(externalBoxBody, {
+            x: screenwidth ? Number(screenwidth) / 2 : 400,
+            y: screenheight ? Number(screenheight) / 2 : 300,
+          });
+        }
+      };
+
       Composite.add(engine.world, externalBoxBody);
       Events.on(engine, "afterUpdate", updateExternalDiv);
+      Events.on(engine, "afterUpdate", positioncheck);
 
       updateExternalDiv();
 
       return () => {
         Events.off(engine, "afterUpdate", updateExternalDiv);
+        Events.off(engine, "afterUpdate", positioncheck);
         if (externalBodyRef.current) {
           Composite.remove(engine.world, externalBodyRef.current);
           externalBodyRef.current = null;

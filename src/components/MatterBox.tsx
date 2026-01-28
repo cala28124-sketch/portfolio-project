@@ -169,7 +169,7 @@ const MatterBox: FC<Props> = ({
     Composite.add(engine.world, mouseConstraint);
 
     render.mouse = mouse;
-
+    // x, y, width, height
     const sky = Bodies.rectangle(Width / 2, -(Height / 2), Width, 50, {
       isStatic: true,
       render: { fillStyle: "transparent" },
@@ -177,7 +177,7 @@ const MatterBox: FC<Props> = ({
 
     skyRef.current = sky;
 
-    const ground = Bodies.rectangle(Width / 2 + 100, Height, Width, 50, {
+    const ground = Bodies.rectangle(Width / 2 + 100, Height, Width, 75, {
       isStatic: true,
       render: { fillStyle: "green" },
     });

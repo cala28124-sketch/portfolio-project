@@ -41,7 +41,7 @@ const Title = ({
         if (engineRef.current && externalBodyRef.current) {
           Matter.Composite.remove(
             engineRef.current.world,
-            externalBodyRef.current
+            externalBodyRef.current,
           );
           externalBodyRef.current = null;
         }
@@ -73,7 +73,7 @@ const Title = ({
           frictionAir: 0.005,
           mass: 20,
           render: { visible: false },
-        }
+        },
       );
 
       externalBodyRef.current = externalBoxBody;
@@ -90,6 +90,19 @@ const Title = ({
         externalBoxRef.current.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${angle}rad)`;
       };
 
+      const positioncheck = () => {
+        const { x, y } = externalBoxBody.position;
+        const sw = screenwidth ? Number(screenwidth) : window.innerWidth;
+        const sh = screenheight ? Number(screenheight) : window.innerHeight;
+
+        if (x > sw || y > sh || x < 0 || y < -(sh / 2)) {
+          Matter.Body.setPosition(externalBoxBody, {
+            x: screenwidth ? Number(screenwidth) / 2 : 400,
+            y: screenheight ? Number(screenheight) / 2 : 300,
+          });
+        }
+      };
+
       const Resize = () => {
         const Widthchange = boxRef.current?.offsetWidth || 0;
         const HeightChange = boxRef.current?.offsetHeight || 0;
@@ -104,6 +117,7 @@ const Title = ({
 
       Composite.add(engine.world, externalBoxBody);
       Events.on(engine, "afterUpdate", updateExternalDiv);
+      Events.on(engine, "afterUpdate", positioncheck);
       window.addEventListener("resize", Resize);
 
       updateExternalDiv();
@@ -111,6 +125,7 @@ const Title = ({
       return () => {
         window.removeEventListener("resize", Resize);
         Events.off(engine, "afterUpdate", updateExternalDiv);
+        Events.off(engine, "afterUpdate", positioncheck);
         if (externalBodyRef.current) {
           Composite.remove(engine.world, externalBodyRef.current);
           externalBodyRef.current = null;
@@ -132,7 +147,7 @@ const Title = ({
       >
         <div
           ref={externalBoxRef}
-          className={`h-[100px] w-[150px] lg:h-[100px] lg:w-fit pointer-events-none absolute flex items-center justify-center rounded-md border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition`}
+          className={`w-[150px] h-[100px] lg:w-fit md:h-[100px] pointer-events-none absolute flex items-center justify-center rounded-md border-5 border-green-800 bg-green-200 p-2 overflow-hidden titletransition`}
         >
           <button
             className={`absolute top-0 w-full transition-opacity duration-500 ease-out pointer-events-auto ease-out ${
