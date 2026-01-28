@@ -171,7 +171,7 @@ const Navbar = ({
                 alt="linkedin"
               />
             </a>
-            <a href="/resume.pdf" target="_blank">
+            <a href="/rsm.pdf" target="_blank">
               <img
                 className="h-10 scale-100 transform transition duration-150 hover:scale-120 "
                 src="/resume.png"
@@ -260,10 +260,7 @@ const Navbar = ({
                   alt="linkedin"
                 />
               </a>
-              <a
-                href="https://drive.google.com/file/d/1NQiqqWVcHOiXOU9n7NK9oy1_4K2w8mQC/view?usp=sharing"
-                target="_blank"
-              >
+              <a href="/rsm.pdf" target="_blank">
                 <img
                   className="h-12 scale-100 transform transition duration-150 hover:scale-120 "
                   src="/resume.png"
