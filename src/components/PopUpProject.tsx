@@ -50,6 +50,64 @@ const PopUpProject = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isClosed]);
 
+  interface Project {
+    name: string;
+    button: boolean;
+    buttonset: (arg0: boolean) => void;
+    link: string;
+    image: string;
+    techlist: string[];
+    description: string;
+  }
+
+  const ProjectList: Project[] = [
+    {
+      name: "TruthMeter",
+      button: button1,
+      buttonset: button1set,
+      link: "https://github.com/JustinTeape/factCheck",
+      image: "/truthmeter.png",
+      techlist: [
+        "/reactlogo.png",
+        "/fastapi.png",
+        "/python.png",
+        "/googleadk.png",
+      ],
+      description:
+        "An accesible browser extension that allows one to check the credibility, and accuracy of a webpage, providing a summary of the page and what it contains, and how credible/accurate each point is. This project was made by me and three others at Shellhacks 2025.",
+    },
+    {
+      name: "PNGpal",
+      button: button2,
+      buttonset: button2set,
+      link: "https://github.com/cala28124-sketch/pngPalme",
+      image: "/pngpalimage.png",
+      techlist: ["/python.png", "/reactlogo.png", "/elevenlabs.png"],
+      description:
+        "A chatbot that overlays itself on the users screen, allowing them to freely ask financial advice, giving back a response when doing so, and recording the transcript of the conversation for the user to read. This was a project made by me and three others at KnightHacks 2025.",
+    },
+    {
+      name: "Personal Portfolio",
+      button: button3,
+      buttonset: button3set,
+      link: "https://github.com/cala28124-sketch/portfolio-project",
+      image: "/personalport.png",
+      techlist: ["/tailwind.png", "/reactlogo.png", "/typescript.png"],
+      description:
+        "My personal portfolio website, built to showcase my skills, projects, and experience. Built using React and Tailwind CSS, this website is designed to be responsive and user-friendly, providing visitors with an easy way to learn more about me and my work. Made as my first personal project.",
+    },
+    {
+      name: "Flaming Notes",
+      button: button4,
+      buttonset: button4set,
+      link: "https://github.com/cala28124-sketch/Flaming-Notes",
+      image: "/flamingnotes.jpg",
+      techlist: ["/reactlogo.png", "/MongoDB.png", "/Go.png", "/googleadk.png"],
+      description:
+        "Built at SwampHacks 2025, Flaming Notes was built to allow students an accesible way to freely share notes related to a specific class. It uses uploaded student notes to generate a compliation of them using gemini in the back end, and allows anyone to freely see it.",
+    },
+  ];
+
   return (
     <>
       <button
@@ -102,289 +160,61 @@ const PopUpProject = ({
             page.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-fit h-fit p-2">
-            <div className="min-h-4/5 w-fit border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-bold text-green-800 text-xl py-2">
-                TruthMeter
-              </p>
+            {ProjectList.map((item) => (
+              <div className="min-h-4/5 w-fit border-green-800 border-5 bg-green-400 flex flex-col items-center">
+                <p className="font-bold text-green-800 text-xl py-2">
+                  {item.name}
+                </p>
 
-              <div
-                className={`transition-opacity duration-800
+                <div
+                  className={`transition-opacity duration-800
                 
-                ${button1 ? "opacity-0" : "opacity-100"}
+                ${item.button ? "opacity-0" : "opacity-100"}
 
                 `}
-              >
-                <button
-                  onClick={() => {
-                    button1set(true);
-                  }}
                 >
-                  <img
-                    className="block h-[150px] enlargen2 size-auto"
-                    src="\truthmeter.png"
-                    alt="truth_meter"
-                  ></img>
-                </button>
-              </div>
+                  <button
+                    onClick={() => {
+                      item.buttonset(true);
+                    }}
+                  >
+                    <img
+                      className="h-[150px] border-5 border-green-800 block enlargen2"
+                      src={item.image}
+                      alt={item.name}
+                    ></img>
+                  </button>
+                </div>
 
-              <div className="mx-auto border-4 border-transparent">
-                <p className="text-center text-sm text-green-800 font-bold">
-                  An accesible browser extension that allows one to check the
-                  credibility, and accuracy of a webpage, providing a summary of
-                  the page and what it contains, and how credible/accurate each
-                  point is. This project was made by me and three others at
-                  Shellhacks 2025.
-                </p>
-              </div>
-
-              <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\reactlogo.png"
-                  alt="react"
-                />
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\fastapi.png"
-                  alt="fastapi"
-                />
-
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\python.png"
-                  alt="python"
-                />
-
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\googleadk.png"
-                  alt="gemini"
-                />
-              </div>
-              <a
-                className="!no-underline"
-                href="https://github.com/JustinTeape/factCheck"
-                target="_blank"
-              >
-                <div className="my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">
-                  <img
-                    src="hyperlink.png"
-                    alt="hyperlink"
-                    className="h-[40px] p-2 "
-                  />
-                  <p className="font font-bold text-green-800 text-base my-2">
-                    View Project
+                <div className="mx-auto border-4 border-transparent">
+                  <p className="text-center text-sm text-green-800 font-bold">
+                    {item.description}
                   </p>
                 </div>
-              </a>
-            </div>
-            <div className="w-fit min-h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-bold text-green-800 text-xl p-2">PNGpal</p>
-              <div
-                className={`transition-opacity duration-800
-                
-                ${button2 ? "opacity-0" : "opacity-100"}
 
-                `}
-              >
-                <button
-                  onClick={() => {
-                    button2set(true);
-                  }}
-                >
-                  <img
-                    className="h-[150px] border-5 border-green-800 block enlargen2"
-                    src="\pngpalimage.png"
-                    alt="pngpal"
-                  />
-                </button>
-              </div>
-
-              <div className=" mx-auto border-4 border-transparent">
-                <p className="text-center text-sm text-green-800 font-bold">
-                  A chatbot that overlays itself on the users screen, allowing
-                  them to freely ask financial advice, giving back a response
-                  when doing so, and recording the transcript of the
-                  conversation for the user to read. This was a project made by
-                  me and three others at KnightHacks 2025.
-                </p>
-              </div>
-              <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\python.png"
-                  alt="python"
-                />
-
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\reactlogo.png"
-                  alt="electron"
-                />
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\elevenlabs.png"
-                  alt="elevenlabs"
-                />
-              </div>
-              <a
-                className="!no-underline"
-                href="https://github.com/cala28124-sketch/pngPalme"
-                target="_blank"
-              >
-                <div className="my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">
-                  <img
-                    src="hyperlink.png"
-                    alt="hyperlink"
-                    className="h-[40px] p-2 "
-                  />
-                  <p className="font font-bold text-green-800 text-base my-2">
-                    View Project
-                  </p>
+                <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
+                  {item.techlist.map((item, index) => (
+                    <img
+                      className="h-[50px] enlargen2 p-2"
+                      src={item}
+                      alt={index.toString()}
+                    />
+                  ))}
                 </div>
-              </a>
-            </div>
-            <div className="w-fit min-h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-bold text-green-800 text-xl p-2">
-                Personal Portfolio
-              </p>
-              <div
-                className={`transition-opacity duration-800
-                
-                ${button3 ? "opacity-0" : "opacity-100"}
-
-                `}
-              >
-                <button
-                  onClick={() => {
-                    button3set(true);
-                  }}
-                >
-                  <img
-                    className="h-[150px] border-5 border-green-800 block enlargen2"
-                    src="\personalport.png"
-                    alt="pngpal"
-                  />
-                </button>
+                <a className="!no-underline" href={item.link} target="_blank">
+                  <div className="my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">
+                    <img
+                      src="hyperlink.png"
+                      alt="hyperlink"
+                      className="h-[40px] p-2 "
+                    />
+                    <p className="font font-bold text-green-800 text-base my-2">
+                      View Project
+                    </p>
+                  </div>
+                </a>
               </div>
-
-              <div className=" mx-auto border-4 border-transparent">
-                <p className="text-center text-sm text-green-800 font-bold">
-                  My personal portfolio website, built to showcase my skills,
-                  projects, and experience. Built using React and Tailwind CSS,
-                  this website is designed to be responsive and user-friendly,
-                  providing visitors with an easy way to learn more about me and
-                  my work. Made as my first personal project.
-                </p>
-              </div>
-              <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\tailwind.png"
-                  alt="tailwind"
-                />
-
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\reactlogo.png"
-                  alt="electron"
-                />
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\typescript.png"
-                  alt="typescript"
-                />
-              </div>
-              <a
-                className="!no-underline"
-                href="https://github.com/cala28124-sketch/portfolio-project"
-                target="_blank"
-              >
-                <div className="my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">
-                  <img
-                    src="hyperlink.png"
-                    alt="hyperlink"
-                    className="h-[40px] p-2 "
-                  />
-                  <p className="font font-bold text-green-800 text-base my-2">
-                    View Project
-                  </p>
-                </div>
-              </a>
-            </div>
-            <div className="w-fit min-h-4/5 border-green-800 border-5 bg-green-400 flex flex-col items-center">
-              <p className="font-bold text-green-800 text-xl p-2">
-                Flaming Notes
-              </p>
-              <div
-                className={`transition-opacity duration-800
-                
-                ${button4 ? "opacity-0" : "opacity-100"}
-
-                `}
-              >
-                <button
-                  onClick={() => {
-                    button4set(true);
-                  }}
-                >
-                  <img
-                    className="h-[150px] border-5 border-green-800 block enlargen2"
-                    src="\flamingnotes.jpg"
-                    alt="pngpal"
-                  />
-                </button>
-              </div>
-
-              <div className=" mx-auto border-4 border-transparent">
-                <p className="text-center text-sm text-green-800 font-bold">
-                  Built at SwampHacks 2025, Flaming Notes was built to allow
-                  students an accesible way to freely share notes related to a
-                  specific class. It uses uploaded student notes to generate a
-                  compliation of them using gemini in the back end, and allows
-                  anyone to freely see it.
-                </p>
-              </div>
-              <div className="flex justify-center rounded-md border-5 border-green-800 bg-green-300">
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\reactlogo.png"
-                  alt="React"
-                />
-
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\MongoDB.png"
-                  alt="MongoDB"
-                />
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\Go.png"
-                  alt="Go"
-                />
-                <img
-                  className="h-[50px] enlargen2 p-2"
-                  src="\googleadk.png"
-                  alt="gemini"
-                />
-              </div>
-              <a
-                className="!no-underline"
-                href="https://github.com/cala28124-sketch/Flaming-Notes"
-                target="_blank"
-              >
-                <div className="my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 hover:bg-green-500 transition-colors duration-300">
-                  <img
-                    src="hyperlink.png"
-                    alt="hyperlink"
-                    className="h-[40px] p-2 "
-                  />
-                  <p className="font font-bold text-green-800 text-base my-2">
-                    View Project
-                  </p>
-                </div>
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </div>
