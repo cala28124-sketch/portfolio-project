@@ -16,6 +16,8 @@ interface Props {
   button3set: (arg0: boolean) => void;
   button4: boolean;
   button4set: (arg0: boolean) => void;
+  button5: boolean;
+  button5set: (arg0: boolean) => void;
 }
 
 const PopUpProject = ({
@@ -31,6 +33,8 @@ const PopUpProject = ({
   button3set,
   button4,
   button4set,
+  button5,
+  button5set,
 }: Props) => {
   const [Mount1, setMount] = useState(false);
 
@@ -105,6 +109,21 @@ const PopUpProject = ({
       techlist: ["/reactlogo.png", "/MongoDB.png", "/Go.png", "/googleadk.png"],
       description:
         "Built at SwampHacks 2025, Flaming Notes was built to allow students an accesible way to freely share notes related to a specific class. It uses uploaded student notes to generate a compliation of them using gemini in the back end, and allows anyone to freely see it.",
+    },
+    {
+      name: "ElderWatch",
+      button: button5,
+      buttonset: button5set,
+      link: "https://github.com/Humbertxx/hack_usf",
+      image: "/Elder.jpg",
+      techlist: [
+        "/reactlogo.png",
+        "/yolo.png",
+        "/snowflake.png",
+        "/fastapi.png",
+      ],
+      description:
+        "Built at HackUSF 2026, ElderWatch was built with the motivation of being able to more easily monitor and keep in touches with one’s Elders. It uses Computer Vision and Snowflake to get data from live images, and give live updates to a website dashboard.",
     },
   ];
 

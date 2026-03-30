@@ -24,6 +24,7 @@ function App() {
   const [project2, setproject2] = useState(false);
   const [project3, setproject3] = useState(false);
   const [project4, setproject4] = useState(false);
+  const [project5, setproject5] = useState(false);
   const [career1, setcareer1] = useState(false);
   const [career2, setcareer2] = useState(false);
 
@@ -80,6 +81,8 @@ function App() {
         setproject3={setproject3}
         project4={project4}
         setproject4={setproject4}
+        project5={project5}
+        setproject5={setproject5}
         career1={career1}
         setcareer1={setcareer1}
         career2={career2}
@@ -112,6 +115,7 @@ function App() {
         setproject2={setproject2}
         setproject3={setproject3}
         setproject4={setproject4}
+        setproject5={setproject5}
         setcareer1={setcareer1}
         setcareer2={setcareer2}
       />

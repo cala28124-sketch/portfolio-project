@@ -45,6 +45,8 @@ interface Props {
   setproject3: (arg0: boolean) => void;
   project4: boolean;
   setproject4: (arg0: boolean) => void;
+  project5: boolean;
+  setproject5: (arg0: boolean) => void;
   career1: boolean;
   setcareer1: (arg0: boolean) => void;
   career2: boolean;
@@ -76,6 +78,8 @@ const MatterBox: FC<Props> = ({
   setproject3,
   project4,
   setproject4,
+  project5,
+  setproject5,
   career1,
   setcareer1,
   career2,
@@ -97,6 +101,8 @@ const MatterBox: FC<Props> = ({
   const [isOpenPort, setIsOpenPort] = useState(false);
   const [isClosedFlaming, setIsClosedFlaming] = useState(true);
   const [IsOpenFlaming, setIsOpenFlaming] = useState(false);
+  const [isClosedElder, setIsClosedElder] = useState(true);
+  const [IsOpenElder, setIsOpenElder] = useState(false);
   const [isClosedPinch, setIsClosedPinch] = useState(true);
   const [isOpenPinch, setIsOpenPinch] = useState(false);
   const [isClosedUCF, setIsClosedUCF] = useState(true);
@@ -212,6 +218,7 @@ const MatterBox: FC<Props> = ({
       setproject2(false);
       setproject3(false);
       setproject4(false);
+      setproject5(false);
       setcareer1(false);
       setcareer2(false);
 
@@ -306,6 +313,7 @@ const MatterBox: FC<Props> = ({
     setproject2,
     setproject3,
     setproject4,
+    setproject5,
     setspawnabout,
     setspawncareer,
     setspawnproject,
@@ -348,6 +356,8 @@ const MatterBox: FC<Props> = ({
         button3set={setproject3}
         button4={project4}
         button4set={setproject4}
+        button5={project5}
+        button5set={setproject5}
       ></PopUpProject>
 
       <PopUpCareer
@@ -488,6 +498,29 @@ const MatterBox: FC<Props> = ({
             </div>
             <div className="text-sm bg-green-400 rounded-lg p-1">Tailwind</div>
             <div className="text-sm bg-green-400 rounded-lg p-1">Docker</div>
+          </>
+        }
+      ></PopUpCompP>
+      <PopUpCompP
+        isClosed={isClosedElder}
+        setIsClosed={setIsClosedElder}
+        setIsOpen={setIsOpenElder}
+        isOpen={IsOpenElder}
+        Mount={Mount}
+        name="ElderWatch"
+        img="/Elder.jpg"
+        git="https://github.com/Humbertxx/hack_usf"
+        ID="Elder"
+        overview="Built at HackUSF 2026, ElderWatch was built with the motivation of being able to more easily monitor and keep in touches with one’s Elders. It uses Computer Vision and Snowflake to get data from live images, and give live updates to a website dashboard. It had won best use of snowflake API at the end of the competition."
+        experience="For a short overview, the project used a distributed camera-to-cloud architecture  designed for speed and observability to work. It mainly used a CV service utilizing  YOLO8x.pt(w/Ultralytics) + OSNet_ain_x1_0 + MediaPipe (BlazePose heavy), which extracted pose, activity, and identity signals. Snowflake had stored the raw observations, and SNowflake Cortex had helped to contextualize the data for the transference to the frontend. For transfering and utilizing the data on our frontend dashboard, we had used FastAPI. My responbilities for the project where mainly based on the frontend- where I had made most of the frontend dashboard, and implemented most of the connections to the backend, making sure the dashboard would be able to utilize the data.  For me, I am proud of this project, as it was not only a marker for how far I had come in utilization of UI/UX along with making/coding frontend, it represented my first win at a hackathon, which is something I'm highly proud of. To me, it shows that I'm able to go into these type of events, and not only just help my team to make a project, but the fact that I'm able to help my team make a winning project- which is something that will push me to continue further in my journey as a software engineer."
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">SQL</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Snowflake</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">FastAPI</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">YOLO8</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">MediaPipe</div>
           </>
         }
       ></PopUpCompP>
@@ -653,7 +686,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedproject}
           setIsOpen={setIsOpenproject}
           text="open projects"
-          image="/flamingnotes.jpg"
+          image="/Elder.jpg"
           ID="boxproject"
           setMount={setMount}
           Mount={Mount}
@@ -804,6 +837,22 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
           setspawn={setproject4}
+        ></TestComp>
+        <TestComp
+          boxRef={boxRef}
+          spawn={project5}
+          engineRef={engineRef}
+          isClosed={isClosedElder}
+          setIsClosed={setIsClosedElder}
+          setIsOpen={setIsOpenElder}
+          text="ElderWatch"
+          image="/Elder.jpg"
+          ID="project5"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+          setspawn={setproject5}
         ></TestComp>
         <TestComp
           boxRef={boxRef}
