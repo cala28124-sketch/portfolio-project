@@ -18,6 +18,8 @@ interface Props {
   button4set: (arg0: boolean) => void;
   button5: boolean;
   button5set: (arg0: boolean) => void;
+  button6: boolean;
+  button6set: (arg0: boolean) => void;
 }
 
 const PopUpProject = ({
@@ -35,6 +37,8 @@ const PopUpProject = ({
   button4set,
   button5,
   button5set,
+  button6,
+  button6set,
 }: Props) => {
   const [Mount1, setMount] = useState(false);
 
@@ -63,62 +67,23 @@ const PopUpProject = ({
     techlist: string[];
     winner: boolean;
     winnerlink: string;
+    WIP: boolean;
     description: string;
   }
 
   const ProjectList: Project[] = [
     {
-      name: "TruthMeter",
-      button: button1,
-      buttonset: button1set,
-      link: "https://github.com/JustinTeape/factCheck",
-      image: "/truthmeter.png",
-      techlist: [
-        "/reactlogo.png",
-        "/fastapi.png",
-        "/python.png",
-        "/googleadk.png",
-      ],
+      name: "SpellPrimer",
+      button: button6,
+      buttonset: button6set,
+      link: "https://github.com/cala28124-sketch/spellbook",
+      image: "/spellbook.png",
+      techlist: ["/reactlogo.png", "/Tauri.png", "/MongoDB.png"],
       winner: false,
       winnerlink: "",
+      WIP: true,
       description:
-        "An accesible browser extension that allows one to check the credibility, and accuracy of a webpage, providing a summary of the page and what it contains, and how credible/accurate each point is. This project was made by me and three others at Shellhacks 2025.",
-    },
-    {
-      name: "PNGpal",
-      button: button2,
-      buttonset: button2set,
-      link: "https://github.com/cala28124-sketch/pngPalme",
-      image: "/pngpalimage.png",
-      techlist: ["/python.png", "/reactlogo.png", "/elevenlabs.png"],
-      winner: false,
-      winnerlink: "",
-      description:
-        "A chatbot that overlays itself on the users screen, allowing them to freely ask financial advice, giving back a response when doing so, and recording the transcript of the conversation for the user to read. This was a project made by me and three others at KnightHacks 2025.",
-    },
-    {
-      name: "Personal Portfolio",
-      button: button3,
-      buttonset: button3set,
-      link: "https://github.com/cala28124-sketch/portfolio-project",
-      image: "/personalport.png",
-      techlist: ["/tailwind.png", "/reactlogo.png", "/typescript.png"],
-      winner: false,
-      winnerlink: "",
-      description:
-        "My personal portfolio website, built to showcase my skills, projects, and experience. Built using React and Tailwind CSS, this website is designed to be responsive and user-friendly, providing visitors with an easy way to learn more about me and my work. Made as my first personal project.",
-    },
-    {
-      name: "Flaming Notes",
-      button: button4,
-      buttonset: button4set,
-      link: "https://github.com/cala28124-sketch/Flaming-Notes",
-      image: "/flamingnotes.jpg",
-      techlist: ["/reactlogo.png", "/MongoDB.png", "/Go.png", "/googleadk.png"],
-      winner: false,
-      winnerlink: "",
-      description:
-        "Built at SwampHacks 2025, Flaming Notes was built to allow students an accesible way to freely share notes related to a specific class. It uses uploaded student notes to generate a compliation of them using gemini in the back end, and allows anyone to freely see it.",
+        "A digital DnD spellbook made to be able to store, catalogue, and quickly add spells for TTRPG games! Built using React/Tauri, along with MongoDB for a DB, this was created due to the concept being extremely useful for a campaign I currently play in.",
     },
     {
       name: "ElderWatch",
@@ -134,8 +99,66 @@ const PopUpProject = ({
       ],
       winner: true,
       winnerlink: "https://devpost.com/software/elderwatch",
+      WIP: false,
       description:
         "Built at HackUSF 2026, ElderWatch was built with the motivation of being able to more easily monitor and keep in touches with one’s Elders. It uses Computer Vision and Snowflake to get data from live images, and give live updates to a website dashboard.",
+    },
+    {
+      name: "Flaming Notes",
+      button: button4,
+      buttonset: button4set,
+      link: "https://github.com/cala28124-sketch/Flaming-Notes",
+      image: "/flamingnotes.jpg",
+      techlist: ["/reactlogo.png", "/MongoDB.png", "/Go.png", "/googleadk.png"],
+      winner: false,
+      winnerlink: "",
+      WIP: false,
+      description:
+        "Built at SwampHacks 2025, Flaming Notes was built to allow students an accesible way to freely share notes related to a specific class. It uses uploaded student notes to generate a compliation of them using gemini in the back end, allowing public access.",
+    },
+    {
+      name: "Personal Portfolio",
+      button: button3,
+      buttonset: button3set,
+      link: "https://github.com/cala28124-sketch/portfolio-project",
+      image: "/personalport.png",
+      techlist: ["/tailwind.png", "/reactlogo.png", "/typescript.png"],
+      winner: false,
+      winnerlink: "",
+      WIP: false,
+      description:
+        "My personal portfolio website, built to showcase my skills, projects, and experience. Built using React and Tailwind CSS, this website is designed to be responsive and user-friendly, providing visitors with an an easy way to learn more about me.",
+    },
+    {
+      name: "PNGpal",
+      button: button2,
+      buttonset: button2set,
+      link: "https://github.com/cala28124-sketch/pngPalme",
+      image: "/pngpalimage.png",
+      techlist: ["/python.png", "/reactlogo.png", "/elevenlabs.png"],
+      winner: false,
+      winnerlink: "",
+      WIP: false,
+      description:
+        "A chatbot that overlays itself on the users screen, allowing them to freely ask financial advice, giving back a response when doing so, and recording the transcript of the conversation for the user to read. This was a project made by me and three others at KnightHacks 2025.",
+    },
+    {
+      name: "TruthMeter",
+      button: button1,
+      buttonset: button1set,
+      link: "https://github.com/JustinTeape/factCheck",
+      image: "/truthmeter.png",
+      techlist: [
+        "/reactlogo.png",
+        "/fastapi.png",
+        "/python.png",
+        "/googleadk.png",
+      ],
+      winner: false,
+      winnerlink: "",
+      WIP: false,
+      description:
+        "An accesible browser extension that allows one to check the credibility, and accuracy of a webpage, providing a summary of the page and what it contains, and how credible/accurate each point is. This project was made by me and three others at Shellhacks 2025.",
     },
   ];
 
@@ -229,6 +252,18 @@ const PopUpProject = ({
                     </p>
                   </div>
                 </a>
+                <div
+                  className={`${item.WIP ? "my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 text-green-800 hover:text-black hover:bg-yellow-300 hover:border-black transition-colors duration-300" : "hidden"}`}
+                >
+                  <p className="font font-bold text-base my-2">
+                    Work in Progress
+                  </p>
+                </div>
+                <div
+                  className={`${!item.WIP && !item.winner ? "my-2 bg-green-300 rounded-md w-[200px] h-[50px] flex justify-center items-center border-5 border-green-800 text-green-800 hover:text-green-800 hover:bg-green-500 hover:borde-green-300 transition-colors duration-300" : "hidden"}`}
+                >
+                  <p className="font font-bold text-base my-2">Completed!</p>
+                </div>
 
                 <div className="mx-auto border-4 border-transparent">
                   <p className="text-center text-sm text-green-800 font-bold">

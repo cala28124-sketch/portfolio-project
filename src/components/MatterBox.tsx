@@ -47,6 +47,8 @@ interface Props {
   setproject4: (arg0: boolean) => void;
   project5: boolean;
   setproject5: (arg0: boolean) => void;
+  project6: boolean;
+  setproject6: (arg0: boolean) => void;
   career1: boolean;
   setcareer1: (arg0: boolean) => void;
   career2: boolean;
@@ -80,6 +82,8 @@ const MatterBox: FC<Props> = ({
   setproject4,
   project5,
   setproject5,
+  project6,
+  setproject6,
   career1,
   setcareer1,
   career2,
@@ -103,6 +107,8 @@ const MatterBox: FC<Props> = ({
   const [IsOpenFlaming, setIsOpenFlaming] = useState(false);
   const [isClosedElder, setIsClosedElder] = useState(true);
   const [IsOpenElder, setIsOpenElder] = useState(false);
+  const [isClosedSpell, setIsClosedSpell] = useState(true);
+  const [IsOpenSpell, setIsOpenSpell] = useState(false);
   const [isClosedPinch, setIsClosedPinch] = useState(true);
   const [isOpenPinch, setIsOpenPinch] = useState(false);
   const [isClosedUCF, setIsClosedUCF] = useState(true);
@@ -219,6 +225,7 @@ const MatterBox: FC<Props> = ({
       setproject3(false);
       setproject4(false);
       setproject5(false);
+      setproject6(false);
       setcareer1(false);
       setcareer2(false);
 
@@ -314,6 +321,7 @@ const MatterBox: FC<Props> = ({
     setproject3,
     setproject4,
     setproject5,
+    setproject6,
     setspawnabout,
     setspawncareer,
     setspawnproject,
@@ -358,6 +366,8 @@ const MatterBox: FC<Props> = ({
         button4set={setproject4}
         button5={project5}
         button5set={setproject5}
+        button6={project6}
+        button6set={setproject6}
       ></PopUpProject>
 
       <PopUpCareer
@@ -521,6 +531,32 @@ const MatterBox: FC<Props> = ({
             <div className="text-sm bg-green-400 rounded-lg p-1">FastAPI</div>
             <div className="text-sm bg-green-400 rounded-lg p-1">YOLO8</div>
             <div className="text-sm bg-green-400 rounded-lg p-1">MediaPipe</div>
+          </>
+        }
+      ></PopUpCompP>
+      <PopUpCompP
+        isClosed={isClosedSpell}
+        setIsClosed={setIsClosedSpell}
+        setIsOpen={setIsOpenSpell}
+        isOpen={IsOpenSpell}
+        Mount={Mount}
+        name="SpellPrimer"
+        img="/spellbook.png"
+        git="https://github.com/cala28124-sketch/spellbook"
+        ID="Spell"
+        overview="A digital DnD spellbook made to be able to store, catalogue, and quickly add spells for TTRPG games! Built using React/Tauri, along with MongoDB for a DB, this was created due to the concept being extremely useful for a campaign I currently play in. It’s currently a work in progress with bare bone capabilities, though I hope to finish it soon!"
+        experience="Currently, this project exists as a way for me to learn and further my ability to implement CRUD operations on a project, and also exists as my first personal project with backend implementation along with frontend. The project itself is something I’ve had an extremely fun time working on being connected to one of my main interests of TTRPGs, the idea coming from a magic themed campaign I currently play in. Past that, it’s helped me learn a lot about the specifics of how the frontend and backend communicate, along with the basics of databases and their usages through its usage of mongo in its applications. It’s also helped me to hone my skills with frontend development through further practice."
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Tailwind CSS
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">MongoDB</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Tauri</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              TypeScript
+            </div>
           </>
         }
       ></PopUpCompP>
@@ -853,6 +889,22 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
           setspawn={setproject5}
+        ></TestComp>
+        <TestComp
+          boxRef={boxRef}
+          spawn={project6}
+          engineRef={engineRef}
+          isClosed={isClosedSpell}
+          setIsClosed={setIsClosedSpell}
+          setIsOpen={setIsOpenSpell}
+          text="SpellPrimer"
+          image="/spellbook.png"
+          ID="project6"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+          setspawn={setproject6}
         ></TestComp>
         <TestComp
           boxRef={boxRef}

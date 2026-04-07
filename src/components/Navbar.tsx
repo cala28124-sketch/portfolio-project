@@ -28,6 +28,7 @@ interface Props {
   setproject3: (arg0: boolean) => void;
   setproject4: (arg0: boolean) => void;
   setproject5: (arg0: boolean) => void;
+  setproject6: (arg0: boolean) => void;
   setcareer1: (arg0: boolean) => void;
   setcareer2: (arg0: boolean) => void;
 }
@@ -46,6 +47,7 @@ const Navbar = ({
   setproject3,
   setproject4,
   setproject5,
+  setproject6,
   setcareer1,
   setcareer2,
 }: Props) => {
@@ -147,6 +149,7 @@ const Navbar = ({
                 setproject3(false);
                 setproject4(false);
                 setproject5(false);
+                setproject6(false);
                 setcareer1(false);
                 setcareer2(false);
               }}
@@ -211,6 +214,7 @@ const Navbar = ({
                 setproject3(false);
                 setproject4(false);
                 setproject5(false);
+                setproject6(false);
                 setcareer1(false);
                 setcareer2(false);
               }}
