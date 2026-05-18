@@ -31,6 +31,7 @@ interface Props {
   setproject6: (arg0: boolean) => void;
   setcareer1: (arg0: boolean) => void;
   setcareer2: (arg0: boolean) => void;
+  setcareer3: (arg0: boolean) => void;
 }
 
 const Navbar = ({
@@ -50,6 +51,7 @@ const Navbar = ({
   setproject6,
   setcareer1,
   setcareer2,
+  setcareer3,
 }: Props) => {
   const [Mount, setMount] = useState(false);
   const [dropdownopen, setdropdownopen] = useState(false);
@@ -152,6 +154,7 @@ const Navbar = ({
                 setproject6(false);
                 setcareer1(false);
                 setcareer2(false);
+                setcareer3(false);
               }}
             >
               <img
@@ -217,6 +220,7 @@ const Navbar = ({
                 setproject6(false);
                 setcareer1(false);
                 setcareer2(false);
+                setcareer3(false);
               }}
             >
               <img

@@ -53,6 +53,8 @@ interface Props {
   setcareer1: (arg0: boolean) => void;
   career2: boolean;
   setcareer2: (arg0: boolean) => void;
+  career3: boolean;
+  setcareer3: (arg0: boolean) => void;
 }
 
 const MatterBox: FC<Props> = ({
@@ -88,6 +90,8 @@ const MatterBox: FC<Props> = ({
   setcareer1,
   career2,
   setcareer2,
+  career3,
+  setcareer3,
 }: Props) => {
   const [isOpentitle, setIsOpentitle] = useState(false);
   const [isClosedtitle, setIsClosedtitle] = useState(true);
@@ -113,6 +117,8 @@ const MatterBox: FC<Props> = ({
   const [isOpenPinch, setIsOpenPinch] = useState(false);
   const [isClosedUCF, setIsClosedUCF] = useState(true);
   const [isOpenUCF, setIsOpenUCF] = useState(false);
+  const [isClosedLifeStage, setIsClosedLifeStage] = useState(true);
+  const [isOpenLifeStage, setIsOpenLifeStage] = useState(false);
   const [isClosedMore, setIsClosedMore] = useState(true);
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isClosedDrive, setIsClosedDrive] = useState(true);
@@ -228,6 +234,7 @@ const MatterBox: FC<Props> = ({
       setproject6(false);
       setcareer1(false);
       setcareer2(false);
+      setcareer3(false);
 
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
@@ -316,6 +323,7 @@ const MatterBox: FC<Props> = ({
     setaboutme4,
     setcareer1,
     setcareer2,
+    setcareer3,
     setproject1,
     setproject2,
     setproject3,
@@ -380,8 +388,8 @@ const MatterBox: FC<Props> = ({
         button1set={setcareer1}
         button2={career2}
         button2set={setcareer2}
-        button3={project3}
-        button3set={setproject3}
+        button3={career3}
+        button3set={setcareer3}
       ></PopUpCareer>
 
       <PopUpCompP
@@ -544,8 +552,8 @@ const MatterBox: FC<Props> = ({
         img="/spellbook.png"
         git="https://github.com/cala28124-sketch/spellbook"
         ID="Spell"
-        overview="A digital DnD spellbook made to be able to store, catalogue, and quickly add spells for TTRPG games! Built using React/Tauri, along with MongoDB for a DB, this was created due to the concept being extremely useful for a campaign I currently play in. It’s currently a work in progress with bare bone capabilities, though I hope to finish it soon!"
-        experience="Currently, this project exists as a way for me to learn and further my ability to implement CRUD operations on a project, and also exists as my first personal project with backend implementation along with frontend. The project itself is something I’ve had an extremely fun time working on being connected to one of my main interests of TTRPGs, the idea coming from a magic themed campaign I currently play in. Past that, it’s helped me learn a lot about the specifics of how the frontend and backend communicate, along with the basics of databases and their usages through its usage of mongo in its applications. It’s also helped me to hone my skills with frontend development through further practice."
+        overview="A digital DnD spellbook made to be able to store, catalogue, and quickly add spells for TTRPG games! Built using React/Tauri, along with MongoDB for a DB, this was created due to the concept being extremely useful for a campaign I currently play in."
+        experience="This project existed as a way for me to learn and further my ability to implement CRUD operations on a project, and also exists as my first personal project with backend implementation along with frontend. The project itself is something I’ve had an extremely fun time working on being connected to one of my main interests of TTRPGs, the idea coming from a magic themed campaign I currently play in. Past that, it’s helped me learn a lot about the specifics of how the frontend and backend communicate, along with the basics of databases and their usages through its usage of mongo in its applications. It’s also helped me to hone my skills with frontend development through further practice."
         techStack={
           <>
             <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
@@ -656,6 +664,32 @@ const MatterBox: FC<Props> = ({
         date="August 2025 - Present"
         jobTitle="B.S in computer science"
       ></PopUpCompC>
+      <PopUpCompC
+        isClosed={isClosedLifeStage}
+        setIsClosed={setIsClosedLifeStage}
+        setIsOpen={setIsOpenLifeStage}
+        isOpen={isOpenLifeStage}
+        Mount={Mount}
+        name="Life Stages"
+        img="/Lifestages.png"
+        ID="lifestages"
+        overview="I currently just started this internship as of May 11th, and have been excited to start working! Though as of writing this Ive only been here for a week, I'm very happy to have been able to get an internship during my freshman year, especially during the summer, and want to give it my all. Stay tuned, as I'll post updates of it here!"
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Firebase</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Swift</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Figma</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">Wordpress</div>
+          </>
+        }
+        Key={
+          <>
+            <li>None Currently! I just started.</li>
+          </>
+        }
+        date="May 2026 - Present"
+        jobTitle="Software Engineer Intern"
+      ></PopUpCompC>
       <PopUpMore
         isClosed={isClosedMore}
         setIsClosed={setIsClosedMore}
@@ -722,7 +756,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedproject}
           setIsOpen={setIsOpenproject}
           text="open projects"
-          image="/Elder.jpg"
+          image="/spellbook.png"
           ID="boxproject"
           setMount={setMount}
           Mount={Mount}
@@ -738,7 +772,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedcareer}
           setIsOpen={setIsOpencareer}
           text="open career"
-          image="/ucflogo.png"
+          image="/Lifestages.png"
           ID="boxcareer"
           setMount={setMount}
           Mount={Mount}
@@ -937,6 +971,22 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
           setspawn={setcareer2}
+        ></TestComp>
+        <TestComp
+          boxRef={boxRef}
+          spawn={career3}
+          engineRef={engineRef}
+          isClosed={isClosedLifeStage}
+          setIsClosed={setIsClosedLifeStage}
+          setIsOpen={setIsOpenLifeStage}
+          text="Life Stages"
+          image="/Lifestages.png"
+          ID="career3"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+          setspawn={setcareer3}
         ></TestComp>
       </div>
     </>

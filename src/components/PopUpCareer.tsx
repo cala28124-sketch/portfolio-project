@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // this is a component containing the pop up box for the about me section. It is to be called by the specific physics box that uses it.
 
 import { useEffect, useState } from "react";
@@ -25,6 +26,8 @@ const PopUpCareer = ({
   button1set,
   button2,
   button2set,
+  button3,
+  button3set,
 }: Props) => {
   const [Mount1, setMount] = useState(false);
 
@@ -43,6 +46,63 @@ const PopUpCareer = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isClosed]);
+
+  interface Career {
+    name: string;
+    button: boolean;
+    buttonset: (arg0: boolean) => void;
+    date: string;
+    location: string;
+    position: string;
+    worklist: string[];
+    comment: string;
+    image: string;
+  }
+
+  const CareerList: Career[] = [
+    {
+      name: "Life Stages",
+      button: button3,
+      buttonset: button3set,
+      date: "May 2026-Present",
+      location: "",
+      position: "Software Engineer Intern",
+      worklist: [
+        "My first internship, where I currently work as a software engineer intern for a startup company based around creating an app to help people with mental health and wellness through journaling and mood tracking.",
+        "Though I just began, I currently have been working with the UI, and am scheduled to begin working on the app once I've been taught more about the required technologies.",
+      ],
+      comment: "My first internship...",
+      image: "/Lifestages.png",
+    },
+    {
+      name: "University of Central Florida",
+      button: button2,
+      buttonset: button2set,
+      date: "August 2025-June 2029",
+      location: "Orlando, Florida",
+      position: "Undergraduate Computer Science Major",
+      worklist: [
+        "My current institute of study, where I reside as a freshmen going into my spring semester.",
+        "I currently have a cumulative GPA of 3.8, maintaing solid grades and community activity with clubs like Knight Hacks",
+      ],
+      comment: "This is where I go to school!",
+      image: "/ucflogo.png",
+    },
+    {
+      name: "Pinch a Penny Pool Supply Store",
+      button: button1,
+      buttonset: button1set,
+      date: "June 2023-August 2025",
+      location: "Miramar, Florida",
+      position: "Sales Associate",
+      worklist: [
+        "Assisting Customers with pool related needs and questions, while selling and maintaining product stock",
+        "Worked with coworkers to maintain store, while helping with store remodeling, fixing vaccuum products, and unloading stock into store",
+      ],
+      comment: "My first job...",
+      image: "/Pinchlogo.png",
+    },
+  ];
 
   return (
     <>
@@ -94,7 +154,63 @@ const PopUpCareer = ({
             Here is a brief overview of my career journey, highlighting my past
             and current experiences. Click on the images to spawn info boxes!
           </p>
-          <div className="flex flex-col items-center w-full p-2">
+          {CareerList.map((item) => (
+            <div className="flex flex-col items-center w-full p-2">
+              <div className="h-fit w-[90%] border-green-800 border-5 bg-green-400 flex flex-col md:flex-row-reverse ">
+                <div className="flex flex-col items-center justify-center p-3">
+                  <button
+                    onClick={() => {
+                      item.buttonset(true);
+                    }}
+                    className={`p-2 transition-opacity duration-800
+                    ${item.button ? "opacity-0" : "opacity-100"}`}
+                  >
+                    <img
+                      className="enlargen2 block mx-auto p-2 h-[150px] bg-green-800"
+                      src={item.image}
+                      alt={item.name}
+                    ></img>
+                  </button>
+                  <p className="text-center text-sm text-green-800 m-0 p-0">
+                    {item.date}
+                  </p>
+                  <p className="text-center text-sm text-green-800 font-bold">
+                    {item.location}
+                  </p>
+                </div>
+                <div className="flex flex-col p-3 w-full md:w-4/5">
+                  <p className="font-bold text-green-800 text-l md:text-xl m-0">
+                    {item.name}
+                  </p>
+                  <p className="font-bold text-green-800 text-sm">
+                    {item.position}
+                  </p>
+
+                  <ul className="list-disc list-inside p-0 text-green-800">
+                    <p className="font-bold text-green-800 m-0">My Work</p>
+                    {item.worklist.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center">
+                    <p className="text-green-1000 m-0 text-xs">
+                      {item.comment}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default PopUpCareer;
+
+/*
+<div className="flex flex-col items-center w-full p-2">
             <div className="h-fit w-[90%] border-green-800 border-5 bg-green-400 flex flex-col md:flex-row-reverse ">
               <div className="flex flex-col items-center justify-center p-3">
                 <button
@@ -193,10 +309,5 @@ const PopUpCareer = ({
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </>
-  );
-};
 
-export default PopUpCareer;
+        */

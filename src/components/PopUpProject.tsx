@@ -81,7 +81,7 @@ const PopUpProject = ({
       techlist: ["/reactlogo.png", "/Tauri.png", "/MongoDB.png"],
       winner: false,
       winnerlink: "",
-      WIP: true,
+      WIP: false,
       description:
         "A digital DnD spellbook made to be able to store, catalogue, and quickly add spells for TTRPG games! Built using React/Tauri, along with MongoDB for a DB, this was created due to the concept being extremely useful for a campaign I currently play in.",
     },

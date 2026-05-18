@@ -28,6 +28,7 @@ function App() {
   const [project6, setproject6] = useState(false);
   const [career1, setcareer1] = useState(false);
   const [career2, setcareer2] = useState(false);
+  const [career3, setcareer3] = useState(false);
 
   const menuClick = () => {
     setStop(true);
@@ -90,6 +91,8 @@ function App() {
         setcareer1={setcareer1}
         career2={career2}
         setcareer2={setcareer2}
+        career3={career3}
+        setcareer3={setcareer3}
       ></MatterBox>
       <Navbar
         menuclick={menuClick}
@@ -122,6 +125,7 @@ function App() {
         setproject6={setproject6}
         setcareer1={setcareer1}
         setcareer2={setcareer2}
+        setcareer3={setcareer3}
       />
     </>
   );
