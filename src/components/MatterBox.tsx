@@ -49,6 +49,8 @@ interface Props {
   setproject5: (arg0: boolean) => void;
   project6: boolean;
   setproject6: (arg0: boolean) => void;
+  project7: boolean;
+  setproject7: (arg0: boolean) => void;
   career1: boolean;
   setcareer1: (arg0: boolean) => void;
   career2: boolean;
@@ -86,6 +88,8 @@ const MatterBox: FC<Props> = ({
   setproject5,
   project6,
   setproject6,
+  project7,
+  setproject7,
   career1,
   setcareer1,
   career2,
@@ -113,6 +117,8 @@ const MatterBox: FC<Props> = ({
   const [IsOpenElder, setIsOpenElder] = useState(false);
   const [isClosedSpell, setIsClosedSpell] = useState(true);
   const [IsOpenSpell, setIsOpenSpell] = useState(false);
+  const [isClosedDay, setIsClosedDay] = useState(true);
+  const [IsOpenDay, setIsOpenDay] = useState(false);
   const [isClosedPinch, setIsClosedPinch] = useState(true);
   const [isOpenPinch, setIsOpenPinch] = useState(false);
   const [isClosedUCF, setIsClosedUCF] = useState(true);
@@ -232,6 +238,7 @@ const MatterBox: FC<Props> = ({
       setproject4(false);
       setproject5(false);
       setproject6(false);
+      setproject7(false);
       setcareer1(false);
       setcareer2(false);
       setcareer3(false);
@@ -330,6 +337,7 @@ const MatterBox: FC<Props> = ({
     setproject4,
     setproject5,
     setproject6,
+    setproject7,
     setspawnabout,
     setspawncareer,
     setspawnproject,
@@ -376,6 +384,8 @@ const MatterBox: FC<Props> = ({
         button5set={setproject5}
         button6={project6}
         button6set={setproject6}
+        button7={project7}
+        button7set={setproject7}
       ></PopUpProject>
 
       <PopUpCareer
@@ -568,6 +578,36 @@ const MatterBox: FC<Props> = ({
           </>
         }
       ></PopUpCompP>
+      <PopUpCompP
+        isClosed={isClosedDay}
+        setIsClosed={setIsClosedDay}
+        setIsOpen={setIsOpenDay}
+        isOpen={IsOpenDay}
+        Mount={Mount}
+        name="Daylist"
+        img="/daylist.png"
+        git="https://github.com/cala28124-sketch/daylist"
+        ID="Day"
+        overview="A small web application that allows the user to create and add playlists to there spotify based off of a mood/topic at any time in the day. It utilizes Gemini Flash to process the request and research songs, and sends the formatted version to the spotify API to create and add a playlist to the users profile."
+        experience="Made at bloomhacks, for me my main goal for this project was to learn more about implementing backend and utilizing APIs- which is exactly what I did. With my teammates, I was able to learn a lot about the utilization of APIs and backend formatting/creation, which was a lot of fun to learn about as well. Additonally, as I was the most experienced on the team, this project was really my first time acting as the team leader and the backbone of a group of people. While working on my own tasks, I had made it a point to help and assist my teammates for anything they where new or inexperienced with, while also picking up the slack where it needed to be done. At the end, I had finished most of the front end, and around half the back end, finishing my first hackaday project."
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Tailwind CSS
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Spotify API
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Gemini Flash
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              TypeScript
+            </div>
+          </>
+        }
+      ></PopUpCompP>
       <PopUpCompC
         isClosed={isClosedPinch}
         setIsClosed={setIsClosedPinch}
@@ -673,7 +713,7 @@ const MatterBox: FC<Props> = ({
         name="Life Stages"
         img="/Lifestages.png"
         ID="lifestages"
-        overview="I currently just started this internship as of May 11th, and have been excited to start working! Though as of writing this Ive only been here for a week, I'm very happy to have been able to get an internship during my freshman year, especially during the summer, and want to give it my all. Stay tuned, as I'll post updates of it here!"
+        overview="Though I have not yet finished my internship here, as Im currently around the halfway mark, I've had the pleasure of working with a wonderful team. I've been able to greatly enhance my knowledge of integrating myself and working in larger codebases, along with furthering my experience of working in a actual technical environment."
         techStack={
           <>
             <div className="text-sm bg-green-400 rounded-lg p-1">Firebase</div>
@@ -684,7 +724,9 @@ const MatterBox: FC<Props> = ({
         }
         Key={
           <>
-            <li>None Currently! I just started.</li>
+            <li>Creating and adding new games to the mobile app.</li>
+            <li>Wireframing and enhancing app UI.</li>
+            <li>Expanding and improving intern onboarding.</li>
           </>
         }
         date="May 2026 - Present"
@@ -756,7 +798,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedproject}
           setIsOpen={setIsOpenproject}
           text="open projects"
-          image="/spellbook.png"
+          image="/daylist.png"
           ID="boxproject"
           setMount={setMount}
           Mount={Mount}
@@ -939,6 +981,22 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
           setspawn={setproject6}
+        ></TestComp>
+        <TestComp
+          boxRef={boxRef}
+          spawn={project7}
+          engineRef={engineRef}
+          isClosed={isClosedDay}
+          setIsClosed={setIsClosedDay}
+          setIsOpen={setIsOpenDay}
+          text="Daylist"
+          image="/daylist.png"
+          ID="project7"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+          setspawn={setproject7}
         ></TestComp>
         <TestComp
           boxRef={boxRef}

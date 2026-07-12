@@ -69,7 +69,7 @@ const PopUpCareer = ({
       position: "Software Engineer Intern",
       worklist: [
         "My first internship, where I currently work as a software engineer intern for a startup company based around creating an app to help people with mental health and wellness through journaling and mood tracking.",
-        "Though I just began, I currently have been working with the UI, and am scheduled to begin working on the app once I've been taught more about the required technologies.",
+        "My current projects mostly involve the app, Align, and polishing/adding new features, while enhancing the UI of the app. Currently I'm working on expanding the game features included in the app.",
       ],
       comment: "My first internship...",
       image: "/Lifestages.png",

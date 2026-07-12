@@ -20,6 +20,8 @@ interface Props {
   button5set: (arg0: boolean) => void;
   button6: boolean;
   button6set: (arg0: boolean) => void;
+  button7: boolean;
+  button7set: (arg0: boolean) => void;
 }
 
 const PopUpProject = ({
@@ -39,6 +41,8 @@ const PopUpProject = ({
   button5set,
   button6,
   button6set,
+  button7,
+  button7set,
 }: Props) => {
   const [Mount1, setMount] = useState(false);
 
@@ -72,6 +76,19 @@ const PopUpProject = ({
   }
 
   const ProjectList: Project[] = [
+    {
+      name: "Daylist",
+      button: button7,
+      buttonset: button7set,
+      link: "https://github.com/cala28124-sketch/daylist",
+      image: "/daylist.png",
+      techlist: ["/reactlogo.png", "/gemini.png", "/spotify.png"],
+      winner: false,
+      winnerlink: "",
+      WIP: false,
+      description:
+        "A webapp allowing you to generate Spotify Playlists and add them directly to your account based off of your time of day! Built with React, and GeminiFlash/Spotify API, this was created at bloomhacks 2026.",
+    },
     {
       name: "SpellPrimer",
       button: button6,
