@@ -57,6 +57,8 @@ interface Props {
   setcareer2: (arg0: boolean) => void;
   career3: boolean;
   setcareer3: (arg0: boolean) => void;
+  career4: boolean;
+  setcareer4: (arg0: boolean) => void;
 }
 
 const MatterBox: FC<Props> = ({
@@ -96,6 +98,8 @@ const MatterBox: FC<Props> = ({
   setcareer2,
   career3,
   setcareer3,
+  career4,
+  setcareer4,
 }: Props) => {
   const [isOpentitle, setIsOpentitle] = useState(false);
   const [isClosedtitle, setIsClosedtitle] = useState(true);
@@ -125,6 +129,8 @@ const MatterBox: FC<Props> = ({
   const [isOpenUCF, setIsOpenUCF] = useState(false);
   const [isClosedLifeStage, setIsClosedLifeStage] = useState(true);
   const [isOpenLifeStage, setIsOpenLifeStage] = useState(false);
+  const [isClosedTraackr, setIsClosedTraackr] = useState(true);
+  const [isOpenTraackr, setIsOpenTraackr] = useState(false);
   const [isClosedMore, setIsClosedMore] = useState(true);
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isClosedDrive, setIsClosedDrive] = useState(true);
@@ -242,6 +248,7 @@ const MatterBox: FC<Props> = ({
       setcareer1(false);
       setcareer2(false);
       setcareer3(false);
+      setcareer4(false);
 
       for (const entry of entries) {
         const { width, height } = entry.contentRect;
@@ -331,6 +338,7 @@ const MatterBox: FC<Props> = ({
     setcareer1,
     setcareer2,
     setcareer3,
+    setcareer4,
     setproject1,
     setproject2,
     setproject3,
@@ -400,6 +408,8 @@ const MatterBox: FC<Props> = ({
         button2set={setcareer2}
         button3={career3}
         button3set={setcareer3}
+        button4={career4}
+        button4set={setcareer4}
       ></PopUpCareer>
 
       <PopUpCompP
@@ -713,7 +723,7 @@ const MatterBox: FC<Props> = ({
         name="Life Stages"
         img="/Lifestages.png"
         ID="lifestages"
-        overview="Though I have not yet finished my internship here, as Im currently around the halfway mark, I've had the pleasure of working with a wonderful team. I've been able to greatly enhance my knowledge of integrating myself and working in larger codebases, along with furthering my experience of working in a actual technical environment."
+        overview="Throughout this internship, I had the pleasure of working with a wonderful team in an amazing environment. The experience helped me to greatly enhance my knowledge of integrating myself and working in larger codebases, along with furthering my experience of working in a actual technical environment. Additionally, I was able to gain quite a lot of experience in mobile development, along with the nature of communicating and working with a larger team."
         techStack={
           <>
             <div className="text-sm bg-green-400 rounded-lg p-1">Firebase</div>
@@ -727,9 +737,39 @@ const MatterBox: FC<Props> = ({
             <li>Creating and adding new games to the mobile app.</li>
             <li>Wireframing and enhancing app UI.</li>
             <li>Expanding and improving intern onboarding.</li>
+            <li>Enhancing team workflow, and widening team capabilities.</li>
+            <li>
+              Finishing and wrapping up unfinished features, enhancing app
+              capability.
+            </li>
           </>
         }
-        date="May 2026 - Present"
+        date="May 2026 - August 2026"
+        jobTitle="Software Engineer Intern"
+      ></PopUpCompC>
+      <PopUpCompC
+        isClosed={isClosedTraackr}
+        setIsClosed={setIsClosedTraackr}
+        setIsOpen={setIsOpenTraackr}
+        isOpen={isOpenTraackr}
+        Mount={Mount}
+        name="Traackr"
+        img="/Traackr.png"
+        ID="Traackr"
+        overview="Nothing yet! I just started."
+        techStack={
+          <>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Stay Tuned!
+            </div>
+          </>
+        }
+        Key={
+          <>
+            <li>Stay Tuned!</li>
+          </>
+        }
+        date="August 2026 - Present"
         jobTitle="Software Engineer Intern"
       ></PopUpCompC>
       <PopUpMore
@@ -814,7 +854,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedcareer}
           setIsOpen={setIsOpencareer}
           text="open career"
-          image="/Lifestages.png"
+          image="/Traackr.png"
           ID="boxcareer"
           setMount={setMount}
           Mount={Mount}
@@ -1045,6 +1085,22 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
           setspawn={setcareer3}
+        ></TestComp>
+        <TestComp
+          boxRef={boxRef}
+          spawn={career4}
+          engineRef={engineRef}
+          isClosed={isClosedTraackr}
+          setIsClosed={setIsClosedTraackr}
+          setIsOpen={setIsOpenTraackr}
+          text="Traackr"
+          image="/Traackr.png"
+          ID="career4"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+          setspawn={setcareer4}
         ></TestComp>
       </div>
     </>

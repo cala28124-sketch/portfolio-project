@@ -15,6 +15,8 @@ interface Props {
   button2set: (arg0: boolean) => void;
   button3: boolean;
   button3set: (arg0: boolean) => void;
+  button4: boolean;
+  button4set: (arg0: boolean) => void;
 }
 
 const PopUpCareer = ({
@@ -28,6 +30,8 @@ const PopUpCareer = ({
   button2set,
   button3,
   button3set,
+  button4,
+  button4set,
 }: Props) => {
   const [Mount1, setMount] = useState(false);
 
@@ -62,14 +66,25 @@ const PopUpCareer = ({
   const CareerList: Career[] = [
     {
       name: "Life Stages",
+      button: button4,
+      buttonset: button4set,
+      date: "August 2026-Present",
+      location: "Remote",
+      position: "Software Engineer Intern",
+      worklist: ["Nothing yet! Just starting, so stay tuned!"],
+      comment: "My second internship...",
+      image: "/Traackr.png",
+    },
+    {
+      name: "Life Stages",
       button: button3,
       buttonset: button3set,
-      date: "May 2026-Present",
-      location: "",
+      date: "May 2026-August 2026",
+      location: "Remote",
       position: "Software Engineer Intern",
       worklist: [
-        "My first internship, where I currently work as a software engineer intern for a startup company based around creating an app to help people with mental health and wellness through journaling and mood tracking.",
-        "My current projects mostly involve the app, Align, and polishing/adding new features, while enhancing the UI of the app. Currently I'm working on expanding the game features included in the app.",
+        "My first internship, where I worked as a software engineer intern for a startup company based around creating an app to help people with mental health and wellness through journaling and mood tracking.",
+        "My past projects mostly involved the app, Align, and polishing/adding new features, while enhancing the UI of the app. I mainly focused on adding new gamelike features, along with working on past unfinished projects.",
       ],
       comment: "My first internship...",
       image: "/Lifestages.png",
