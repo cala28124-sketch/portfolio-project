@@ -22,6 +22,10 @@ interface Props {
   button6set: (arg0: boolean) => void;
   button7: boolean;
   button7set: (arg0: boolean) => void;
+  button8: boolean;
+  button8set: (arg0: boolean) => void;
+  button9: boolean;
+  button9set: (arg0: boolean) => void;
 }
 
 const PopUpProject = ({
@@ -43,6 +47,10 @@ const PopUpProject = ({
   button6set,
   button7,
   button7set,
+  button8,
+  button8set,
+  button9,
+  button9set,
 }: Props) => {
   const [Mount1, setMount] = useState(false);
 
@@ -76,6 +84,32 @@ const PopUpProject = ({
   }
 
   const ProjectList: Project[] = [
+    {
+      name: "Ghost Hands",
+      button: button9,
+      buttonset: button9set,
+      link: "https://github.com/cala28124-sketch/Ghost-Hands",
+      image: "/GhostHand.png",
+      techlist: ["/reactlogo.png", "/python.png", "/meta.png"],
+      winner: false,
+      winnerlink: "",
+      WIP: false,
+      description:
+      "A project made at Knight Hacks 2029, translating professionals tutorial videos into alternate reality actionable tutorials playable on the Meta Quest 3S",
+    },
+    {
+      name: "Ifly",
+      button: button8,
+      buttonset: button8set,
+      link: "https://github.com/cala28124-sketch/ifly",
+      image: "/Ifly.png",
+      techlist: ["/python.png", "/Pi.png", "/OpenCV.png"],
+      winner: false,
+      winnerlink: "",
+      WIP: false,
+      description:
+        "A hardware project utilizing a rasberry pi connected to a camera and a digitlized fly brain to make a motion detector, visualizing how the fly responds through its brain signals",
+    },
     {
       name: "Daylist",
       button: button7,

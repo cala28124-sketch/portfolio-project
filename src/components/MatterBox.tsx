@@ -51,6 +51,10 @@ interface Props {
   setproject6: (arg0: boolean) => void;
   project7: boolean;
   setproject7: (arg0: boolean) => void;
+  project8: boolean;
+  setproject8: (arg0: boolean) => void;
+  project9: boolean;
+  setproject9: (arg0: boolean) => void;
   career1: boolean;
   setcareer1: (arg0: boolean) => void;
   career2: boolean;
@@ -92,6 +96,10 @@ const MatterBox: FC<Props> = ({
   setproject6,
   project7,
   setproject7,
+  project8,
+  setproject8,
+  project9,
+  setproject9,
   career1,
   setcareer1,
   career2,
@@ -123,6 +131,10 @@ const MatterBox: FC<Props> = ({
   const [IsOpenSpell, setIsOpenSpell] = useState(false);
   const [isClosedDay, setIsClosedDay] = useState(true);
   const [IsOpenDay, setIsOpenDay] = useState(false);
+  const [isClosedFly, setIsClosedFly] = useState(true);
+  const [IsOpenFly, setIsOpenFly] = useState(false);
+  const [isClosedGhost, setIsClosedGhost] = useState(true);
+  const [IsOpenGhost, setIsOpenGhost] = useState(false);
   const [isClosedPinch, setIsClosedPinch] = useState(true);
   const [isOpenPinch, setIsOpenPinch] = useState(false);
   const [isClosedUCF, setIsClosedUCF] = useState(true);
@@ -245,6 +257,8 @@ const MatterBox: FC<Props> = ({
       setproject5(false);
       setproject6(false);
       setproject7(false);
+      setproject8(false);
+      setproject9(false);
       setcareer1(false);
       setcareer2(false);
       setcareer3(false);
@@ -346,6 +360,8 @@ const MatterBox: FC<Props> = ({
     setproject5,
     setproject6,
     setproject7,
+    setproject8,
+    setproject9,
     setspawnabout,
     setspawncareer,
     setspawnproject,
@@ -394,6 +410,10 @@ const MatterBox: FC<Props> = ({
         button6set={setproject6}
         button7={project7}
         button7set={setproject7}
+        button8={project8}
+        button8set={setproject8}
+        button9={project9}
+        button9set={setproject9}
       ></PopUpProject>
 
       <PopUpCareer
@@ -618,6 +638,69 @@ const MatterBox: FC<Props> = ({
           </>
         }
       ></PopUpCompP>
+      <PopUpCompP
+        isClosed={isClosedFly}
+        setIsClosed={setIsClosedFly}
+        setIsOpen={setIsOpenFly}
+        isOpen={IsOpenFly}
+        Mount={Mount}
+        name="Ifly"
+        img="/Ifly.png"
+        git="https://github.com/cala28124-sketch/ifly"
+        ID="Fly"
+        overview="A hardware project utilizing a rasberry pi to make a motion dector using a digitlized flys brain. It lets the fly do the decision making, the rasberry pi being connected to a camera which directly connects to the flys brain. It also displays visual input of the sections of the flys brain that are being stimulated."
+        experience="This was my first hardware project, and oh man was it a fun one. I used a rasberry pi I had sitting around from a past even I had won, along with a spare camera. With them, me and my team though it would be cool to experiment with the recent implementation of a digital fly brain made open source, and so we connected the two. Because I had the most interest in the hardware aspect, my main focus was really not only setting up and connecting the Pi, but making sure the brain was able to properly see the visual input and display what areas of the brain where reacting. Overall, this project helped to teach me a lot about hardware and its connections when implementing it with software, along with alot of the nuances that come with it."
+        techStack={
+          <>
+          <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Python
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              PyTorch
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              OpenCV
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              RasberryPi
+            </div>
+          </>
+        }
+      ></PopUpCompP>
+      <PopUpCompP
+        isClosed={isClosedGhost}
+        setIsClosed={setIsClosedGhost}
+        setIsOpen={setIsOpenGhost}
+        isOpen={IsOpenGhost}
+        Mount={Mount}
+        name="Ghost Hands"
+        img="/GhostHand.png"
+        git="https://github.com/cala28124-sketch/Ghost-Hands"
+        ID="Ghost"
+        overview="Made at Knight Hacks 2029, this is a project utilizing the Alternate Reality capabilities of the Meta Quest 3S. It allows for the uploading of experts performing certain tasks, and directly translates this to a actionable training sequence someone wearing the headset can go through to learn- for example, solving a rubix cube."
+        experience="For me, this project was really me and my teams way of exploring. Being me and one others teammate second hardware project, while being the first of the two others, we wanted to be able to go to a somewhat new frontier for us, and explore translating the real world into VR. I had the main role of setting up our pipelines between the basic frontend we implemented and the VR headset, and it helped me a lot in solidifying my knowledge of system design, while also helping me to explore what it means to conenct a device to software using implementations im already use to using, like APIs and databases. Overall it was a super fun project ontop of an amazing hackathon at Knight Hacks 9."
+        techStack={
+          <>
+          <div className="text-sm bg-green-400 rounded-lg p-1">React</div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Python
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Mediapipe
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Express
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Meta Quest 3S
+            </div>
+            <div className="text-sm bg-green-400 rounded-lg p-1">
+              Neon Postgress
+            </div>
+          </>
+        }
+      ></PopUpCompP>
       <PopUpCompC
         isClosed={isClosedPinch}
         setIsClosed={setIsClosedPinch}
@@ -756,17 +839,37 @@ const MatterBox: FC<Props> = ({
         name="Traackr"
         img="/Traackr.png"
         ID="Traackr"
-        overview="Nothing yet! I just started."
+        overview="At traackr, my main work consists of working with the core system infrastructure through technologies like docker and kubernetes, along with verifying and testing the companies API and data."
         techStack={
           <>
             <div className="text-sm bg-green-400 rounded-lg p-1">
+              Docker
+            </div>
+             <div className="text-sm bg-green-400 rounded-lg p-1">
+              Kubernetes
+            </div>
+             <div className="text-sm bg-green-400 rounded-lg p-1">
+              Terraform
+            </div>
+             <div className="text-sm bg-green-400 rounded-lg p-1">
+              AWS
+            </div>
+             <div className="text-sm bg-green-400 rounded-lg p-1">
+              Playwright
+            </div>
+             <div className="text-sm bg-green-400 rounded-lg p-1">
+              Databricks
+            </div>
+             <div className="text-sm bg-green-400 rounded-lg p-1">
               Stay Tuned!
             </div>
           </>
         }
         Key={
           <>
-            <li>Stay Tuned!</li>
+            <li>Deployed two new staging environments used by the entire 50+ engineering team</li>
+             <li>Automated 100+ e2e API tests helping to speed up development as a whole</li>
+              <li>Stay Tuned!</li>
           </>
         }
         date="August 2026 - Present"
@@ -838,7 +941,7 @@ const MatterBox: FC<Props> = ({
           setIsClosed={setIsClosedproject}
           setIsOpen={setIsOpenproject}
           text="open projects"
-          image="/daylist.png"
+          image="/GhostHand.png"
           ID="boxproject"
           setMount={setMount}
           Mount={Mount}
@@ -1037,6 +1140,38 @@ const MatterBox: FC<Props> = ({
           screenwidth={Width}
           screenheight={Height}
           setspawn={setproject7}
+        ></TestComp>
+        <TestComp
+          boxRef={boxRef}
+          spawn={project8}
+          engineRef={engineRef}
+          isClosed={isClosedFly}
+          setIsClosed={setIsClosedFly}
+          setIsOpen={setIsOpenFly}
+          text="Ifly"
+          image="/Ifly.png"
+          ID="project8"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+          setspawn={setproject8}
+        ></TestComp>
+        <TestComp
+          boxRef={boxRef}
+          spawn={project9}
+          engineRef={engineRef}
+          isClosed={isClosedGhost}
+          setIsClosed={setIsClosedGhost}
+          setIsOpen={setIsOpenGhost}
+          text="Ghost Hands"
+          image="/GhostHand.png"
+          ID="project9"
+          setMount={setMount}
+          Mount={Mount}
+          screenwidth={Width}
+          screenheight={Height}
+          setspawn={setproject9}
         ></TestComp>
         <TestComp
           boxRef={boxRef}

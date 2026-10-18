@@ -65,13 +65,15 @@ const PopUpCareer = ({
 
   const CareerList: Career[] = [
     {
-      name: "Life Stages",
+      name: "Traackr",
       button: button4,
       buttonset: button4set,
-      date: "August 2026-Present",
+      date: "August 2026-November 2026",
       location: "Remote",
       position: "Software Engineer Intern",
-      worklist: ["Nothing yet! Just starting, so stay tuned!"],
+      worklist: ["My Second Engineering intenrship, traackr is a much bigger pond compared to my first, and so far has allowed me to grow leaps and bounds as a engineer.", 
+        "So far, my main projects have consisted of establishing e2e testing for the companies API, along with setting up staging environments necesarry to do so",
+        "Theres more coming! So, stay tuned!"],
       comment: "My second internship...",
       image: "/Traackr.png",
     },
